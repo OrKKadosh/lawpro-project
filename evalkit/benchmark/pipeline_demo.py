@@ -65,6 +65,7 @@ def run_pipeline_demo_for_case(case: Case, tracker: BudgetTracker, tool: str | N
             f"no ship-eligible tool found for {case.case_id} in results/controlled_benchmark_{case.case_id}.json "
             "-- run the controlled benchmark (evalkit/report.py) first, or pass tool= explicitly"
         )
+    tracker.check_floor()  # /v1/summarize is a paid call too -- the safety floor applies to it, not just /v1/generate
     response = client.summarize(tool, case_id=case.case_id, timeline=timeline_events)
     tracker.record("pipeline_demo_summarize", response)
     summary_text = response["summary"]

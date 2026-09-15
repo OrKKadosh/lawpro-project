@@ -99,6 +99,15 @@ tests, `python -m chronos.timeline check <file>` for schema validation.]
 - Track and print cumulative spend against the budget cap.
 - Document scope decisions (what you didn't build and why) in the
   writeup — the brief explicitly says this is acceptable and expected.
+- After any non-trivial change to `evalkit/` (extraction, scoring, CLI
+  logic) or `chronos/` usage, run the `code-reviewer` subagent (fresh
+  context, read-only) before considering the change done. Report its
+  findings in full — don't silently patch and move on, and don't
+  summarize away a finding you disagree with.
+- Before finalizing the recommendation in `WRITEUP.md`, run the
+  `eval-reviewer` subagent (fresh context) over the methodology and
+  findings, same rule: report its findings, don't quietly absorb or
+  dismiss them.
 
 ## Out of scope unless asked
 - Visual polish on the app interface.

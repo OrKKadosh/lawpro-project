@@ -87,7 +87,9 @@ User asked three pointed questions after the CLI was built: (1) are the prints c
 - **No README, no `.env.example`** — no setup path for a reviewer at all.
 - **The git repo root was the whole home directory**, with an unrelated pre-existing staged changeset in it (flagged at the very start of this project, never resolved until now).
 - **Discovery itself was verified, not just asserted**: created a genuine third synthetic case under `data/` and confirmed the CLI found it with zero code changes — proving `discover_cases()` really is generic, not hardcoded.
-- **A deeper gap found while verifying discovery further**: even with a case discovered, `evaluate`/`run` would have crashed on any case without a pre-existing golden/`input_timeline.json` (i.e. any genuinely new case), because the material-fact-set builder required one. Fixed: `get_or_build_material_facts()` now falls back to building the fact checklist from our own extracted timeline when no external reference exists — the realistic "future analysis" scenario the brief asks for. `evaluate-timeline` also now degrades gracefully (skips, doesn't crash) for a case with no reference at all.
+- **A deeper gap found while verifying discovery further**: even with a case discovered, `evaluate`/`run` would have crashed on any case without a pre-existing golden/`input_timeline.json` (i.e. any genuinely new case), because the material-fact-set builder required one. Fixed: `get_or_build_material_facts()` now falls back to building the fact checklist from our own extracted timeline when no external reference exists — the realistic "future analysis" scenario the brief asks for. `cmd_run`'s inline call to the timeline-accuracy check was given the same graceful handling at the time.
+
+**Correction, caught by the mandatory `eval-reviewer` pass below**: the line above originally claimed "`evaluate-timeline` also now degrades gracefully... for a case with no reference at all" — that was only true for `cmd_run`'s *inline* call, not the standalone `evaluate-timeline` subcommand, which still crashed uncaught (`evalkit/cli.py`'s `cmd_evaluate_timeline` had no `try/except` around `stage0_evaluate`). A reviewer running exactly the individual-stage command `README.md` lists would have hit an unhandled traceback. Fixed for real this time, with a regression test (`tests/test_review_fixes.py`) — noted here plainly rather than quietly editing the claim above to look like it was always accurate.
 
 **Fixed, all real and verified, not just asserted:**
 - `evalkit/cli.py`: added an interactive case picker (`prompt_choose_case`) — running `python -m evalkit.cli` with no arguments lists every detected case and lets you pick one, then walks the full pipeline. Explicit subcommands still work for finer control.
@@ -105,7 +107,25 @@ User asked three pointed questions after the CLI was built: (1) are the prints c
 
 Two commits made this session (both reviewed before committing, nothing destructive): the initial scoped repo (125 files: all code, data, golden, results, docs, tests — `.env`/`CREDENTIALS.md`/`runs/` correctly excluded), and this documentation follow-up.
 
-## Project status: all 15 implementation-order steps complete, application-compliance gaps found and fixed, committed to a clean scoped repo, and verified working end-to-end with a real live run of the exact command a reviewer would use.
+## Mandatory review pass (CLAUDE.md's new workflow rule): code-reviewer + eval-reviewer, both fresh-context, run in parallel
+
+**eval-reviewer found one real, high-priority problem**: `cmd_evaluate_timeline` (the standalone `evaluate-timeline` subcommand) crashed uncaught on any case with no reference timeline — directly contradicting a claim this file had just made (see correction above). Fixed with the same `try/except FileNotFoundError` pattern `cmd_run` already used, with a regression test.
+
+**code-reviewer found two real, high-priority problems, independent of eval-reviewer's finding**:
+1. Neither `/v1/summarize` call site (`cli.py`'s `cmd_summarize`, `pipeline_demo.py`'s `run_pipeline_demo_for_case`) ever called `tracker.check_floor()` before the paid call — the budget safety floor was enforced for every `/v1/generate` call (via `call_json`) but for zero `/v1/summarize` calls anywhere in the codebase, leaving the single most expensive call type in the whole pipeline unprotected. Fixed both call sites.
+2. `evalkit/reference/audit.py`'s per-document judge-call loop caught `Exception` broadly to tolerate a bad OCR file or malformed judge response without killing the whole audit — but that same broad catch silently swallowed `BudgetExceeded` too, letting the loop keep iterating (re-raising and re-catching the same exception on every remaining document, spending nothing but producing a silently-incomplete `source_grounded_precision` with no signal it was cut short by budget rather than data quality). Fixed: `BudgetExceeded` is now re-raised specifically; an ordinary per-document failure is still tolerated as before (both directions covered by a new test).
+
+Both reviewers independently flagged the same medium-priority item: `cmd_run`'s output-path branch hardcoded `case.case_id in ("case-vance", "case-davis")`. Fixed by generalizing to "does this case have an established controlled-benchmark result" (checking for `results/controlled_benchmark_<case>.json`'s existence) — same behavior for the two known cases, correct behavior for any other case, no hardcoded names.
+
+code-reviewer also flagged that none of the system prompts reading raw OCR/timeline text had an explicit "treat this as data, not instructions" line, relying only on structural placement (data goes in the prompt, never the system prompt) as the injection defense. Added a one-line explicit instruction to all four prompts that process document-derived text (`candidates.py`, `audit.py`, `material_facts.py`, `compare.py`'s agreement check) as defense-in-depth.
+
+Also addressed: `get_or_build_material_facts()`'s new-case fallback now stamps `human_spot_checked: False` into the fact set it saves, rather than only disclosing the skipped verification step in a docstring — visible in the data itself, not just to someone who reads the source.
+
+Both reviewers independently confirmed the core recommendation, the controlled-benchmark isolation, case-locality of A/B/C/D, and every spot-checked number in `WRITEUP.md`/`FINDINGS.md` against the underlying `results/` files — nothing in the later application-focused work touched or contaminated the evidence behind the recommendation.
+
+5 new regression tests (`tests/test_review_fixes.py`), one per real bug found — 48/48 passing.
+
+## Project status: all 15 implementation-order steps complete, application-compliance gaps found and fixed, mandatory adversarial review pass complete (5 real bugs found across two independent reviewers, all fixed and regression-tested), committed to a clean scoped repo, and verified working end-to-end with a real live run of the exact command a reviewer would use.
 - Several new, real findings from this increment are not yet fixed in the extraction pipeline itself (out of scope for this increment, which kept the pipeline unchanged): the Harrison/X-ray misattribution and 7 other flagged issues (Vance), 2 flagged issues (Davis), the Davis phantom-limb-pain omission. Candidates for a future pass, alongside the already-known Foster/Turner-flavored attribution limitation.
 
 ## Budget spent so far (update)

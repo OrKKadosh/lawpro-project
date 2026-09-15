@@ -88,7 +88,14 @@ def cmd_evaluate_timeline(args: argparse.Namespace) -> None:
     case = get_case(args.case_id)
     timeline_events = _load_candidate_timeline(case.case_id)
     tracker = BudgetTracker()
-    result = stage0_evaluate(case, timeline_events, tracker)
+    try:
+        result = stage0_evaluate(case, timeline_events, tracker)
+    except FileNotFoundError:
+        print(f"{case.case_id} has no reference timeline (no golden/input_timeline.json) -- "
+              f"nothing to check the extraction's accuracy against. This isn't an error: a genuinely "
+              f"new case can still be summarized and evaluated (see `summarize`/`evaluate`), it just "
+              f"has no external reference to score the extraction itself against.")
+        return
     out_path = RESULTS_DIR / "timeline_eval" / f"{case.case_id}.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(result, indent=2), encoding="utf-8")
@@ -105,6 +112,7 @@ def cmd_summarize(args: argparse.Namespace) -> None:
     # Non-negotiable per CLAUDE.md: validate before ever calling /v1/summarize.
     chronos_timeline.parse({"events": timeline_events})
     tracker = BudgetTracker()
+    tracker.check_floor()  # /v1/summarize is a paid call too -- the safety floor applies to it, not just /v1/generate
     response = client.summarize(args.tool, case_id=case.case_id, timeline=timeline_events)
     tracker.record("cli_summarize", response)
     print(json.dumps(response, indent=2))
@@ -198,7 +206,13 @@ def cmd_run(args: argparse.Namespace) -> None:
     print()
     print(render_judge_output(case.case_id, tool, demo_result["judge_output"], demo_result["scorecard"]))
 
-    out_path = RESULTS_DIR / f"pipeline_demo_{case.case_id}.json" if case.case_id in ("case-vance", "case-davis") \
+    # A case with an established controlled-benchmark result (results/controlled_benchmark_<case>.json
+    # -- part of the committed evidence trail, PLAN.md S14) gets the stable, reviewer-referenced
+    # results/ path; any other case (no pre-existing controlled benchmark to speak of) gets a scratch
+    # path under runs/ -- a general condition, not a hardcoded case-name check (found and fixed after
+    # an earlier version of this line hardcoded {"case-vance","case-davis"} literally).
+    has_controlled_benchmark = (RESULTS_DIR / f"controlled_benchmark_{case.case_id}.json").is_file()
+    out_path = RESULTS_DIR / f"pipeline_demo_{case.case_id}.json" if has_controlled_benchmark \
         else ROOT / "runs" / "cli_evaluations" / f"{case.case_id}_{tool}_run.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(demo_result, indent=2), encoding="utf-8")
