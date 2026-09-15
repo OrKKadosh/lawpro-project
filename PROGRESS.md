@@ -79,7 +79,27 @@ Ran the `eval-reviewer` subagent fresh-context over the whole project (not just 
 
 All 33 tests still passing after the fixes; the dynamic tool-selection change verified against real data (still resolves to D/A) before trusting it.
 
-## Project status: all 15 implementation-order steps complete.
+## Application-compliance audit, prompted by direct user questions — real gaps found and fixed
+
+User asked three pointed questions after the CLI was built: (1) are the prints clear, (2) should the interface be friendlier, (3) does this actually satisfy the brief's application requirements, specifically dynamic case discovery and "run from a clean checkout." Checking #3 honestly (not just asserting compliance) surfaced real gaps the earlier adversarial review had missed, since it reviewed methodology/code correctness, not "does a fresh clone actually run":
+
+- **`data/` (17MB) and `golden/` were completely untracked by git** — a real clean checkout would have had no case data at all.
+- **No README, no `.env.example`** — no setup path for a reviewer at all.
+- **The git repo root was the whole home directory**, with an unrelated pre-existing staged changeset in it (flagged at the very start of this project, never resolved until now).
+- **Discovery itself was verified, not just asserted**: created a genuine third synthetic case under `data/` and confirmed the CLI found it with zero code changes — proving `discover_cases()` really is generic, not hardcoded.
+- **A deeper gap found while verifying discovery further**: even with a case discovered, `evaluate`/`run` would have crashed on any case without a pre-existing golden/`input_timeline.json` (i.e. any genuinely new case), because the material-fact-set builder required one. Fixed: `get_or_build_material_facts()` now falls back to building the fact checklist from our own extracted timeline when no external reference exists — the realistic "future analysis" scenario the brief asks for. `evaluate-timeline` also now degrades gracefully (skips, doesn't crash) for a case with no reference at all.
+
+**Fixed, all real and verified, not just asserted:**
+- `evalkit/cli.py`: added an interactive case picker (`prompt_choose_case`) — running `python -m evalkit.cli` with no arguments lists every detected case and lets you pick one, then walks the full pipeline. Explicit subcommands still work for finer control.
+- `evalkit/budget.py`: replaced raw internal category names (`stage0_candidate_audit`, etc.) in user-facing prints with plain-English labels; `runs/budget_log.jsonl` keeps the precise technical category for anyone who wants it.
+- `evalkit/report_readable.py`: added `render_judge_output()` — the same plain-English treatment the extraction/conflict side already had, now applied to summary evaluation too (which specific claims failed, quoting exactly why, what material facts were missed).
+- `evalkit/judge/material_facts.py`: `get_or_build_material_facts()`, the new-case fallback described above.
+- Initialized a clean git repo scoped to just this directory (nested repo, home-directory repo untouched), added `README.md`, `.env.example`, committed everything needed to run (data/golden/code/tests/results), explicitly excluding `.env`/`CREDENTIALS.md`/`runs/`/local session-lock files. **Verified for real**: cloned to a fresh temp directory and ran `list-cases` + the full `pytest` suite there — both passed with zero pre-existing state.
+- One process note: briefly ran `git config user.name` locally out of habit before checking whether it was needed — it wasn't (global config already had it) — caught immediately and reverted. Worth naming plainly rather than glossing over, even though it was low-stakes.
+
+10 new tests added (`tests/test_cli.py`, `tests/test_material_facts_fallback.py`) covering the interactive picker and the new-case fallback logic — 43/43 passing.
+
+## Project status: all 15 implementation-order steps complete, plus a verified-compliant, git-committed, cloneable application.
 - Several new, real findings from this increment are not yet fixed in the extraction pipeline itself (out of scope for this increment, which kept the pipeline unchanged): the Harrison/X-ray misattribution and 7 other flagged issues (Vance), 2 flagged issues (Davis), the Davis phantom-limb-pain omission. Candidates for a future pass, alongside the already-known Foster/Turner-flavored attribution limitation.
 
 ## Budget spent so far (update)
