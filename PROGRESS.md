@@ -99,7 +99,13 @@ User asked three pointed questions after the CLI was built: (1) are the prints c
 
 10 new tests added (`tests/test_cli.py`, `tests/test_material_facts_fallback.py`) covering the interactive picker and the new-case fallback logic — 43/43 passing.
 
-## Project status: all 15 implementation-order steps complete, plus a verified-compliant, git-committed, cloneable application.
+## Final live verification: the actual updated CLI, run for real
+
+`python -m evalkit.cli run case-davis` — the exact command a reviewer would run, with all of today's fixes (readable stage-by-stage output, plain-English claim breakdown, friendly budget labels) — executed for real, not mocked. 6 calls, $0.2381. Confirmed working correctly end to end: reused the cached timeline, ran the accuracy check, picked tool A, generated a real summary, and printed a genuinely readable claim-by-claim breakdown. Found and verified one more real faithfulness issue (tool A stated "Dr. Cho performed" an amputation the timeline correctly attributes to Dr. Vance as the actual surgeon, with Cho only having planned it) — confirmed directly against the candidate timeline before trusting it, and reconciled the numbers with the earlier pipeline-demo run in `FINDINGS.md` (this overwrote `results/pipeline_demo_case-davis.json` with a fresh, independently-real result; the composite differs from the first run because `/v1/summarize` isn't deterministic call-to-call, not because of a regression).
+
+Two commits made this session (both reviewed before committing, nothing destructive): the initial scoped repo (125 files: all code, data, golden, results, docs, tests — `.env`/`CREDENTIALS.md`/`runs/` correctly excluded), and this documentation follow-up.
+
+## Project status: all 15 implementation-order steps complete, application-compliance gaps found and fixed, committed to a clean scoped repo, and verified working end-to-end with a real live run of the exact command a reviewer would use.
 - Several new, real findings from this increment are not yet fixed in the extraction pipeline itself (out of scope for this increment, which kept the pipeline unchanged): the Harrison/X-ray misattribution and 7 other flagged issues (Vance), 2 flagged issues (Davis), the Davis phantom-limb-pain omission. Candidates for a future pass, alongside the already-known Foster/Turner-flavored attribution limitation.
 
 ## Budget spent so far (update)
