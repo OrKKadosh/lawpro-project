@@ -1,0 +1,47 @@
+{
+  "case_id": "case-vance",
+  "label": "Vance \u2014 MVA with entrapment, Sep 2023 (synthetic, from medrec dev)",
+  "source_medrec_case": "x8mavuseyowx9nkkt07ioxvo",
+  "documents": [
+    {
+      "doc_id": "01_ems_and_ed",
+      "title": "01_ems_and_ed.pdf",
+      "pages": 9
+    },
+    {
+      "doc_id": "02_hospitalization",
+      "title": "02_hospitalization.pdf",
+      "pages": 6
+    },
+    {
+      "doc_id": "03_prior_records",
+      "title": "03_prior_records.pdf",
+      "pages": 5
+    },
+    {
+      "doc_id": "04_ortho_followup",
+      "title": "04_ortho_followup.pdf",
+      "pages": 8
+    },
+    {
+      "doc_id": "05_pt_lang_weimann",
+      "title": "05_pt_lang_weimann.pdf",
+      "pages": 33
+    },
+    {
+      "doc_id": "06_pt_emory_sports",
+      "title": "06_pt_emory_sports.pdf",
+      "pages": 32
+    },
+    {
+      "doc_id": "07_imaging_pharmacy",
+      "title": "07_imaging_pharmacy.pdf",
+      "pages": 4
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "title": "08_billing_and_claims.pdf",
+      "pages": 18
+    }
+  ]
+}

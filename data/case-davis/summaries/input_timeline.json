@@ -1,0 +1,239 @@
+{
+  "case_id": "case-davis",
+  "events": [
+    {
+      "date": "2022-07-12",
+      "type": "encounter",
+      "detail": "Jonathan Davis seen at Oakridge Family Medicine for left shoulder pain after a low-speed motorcycle fall, diagnosed with left AC joint sprain (Grade I/II) and mild rotator cuff tendinitis.",
+      "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "date": "2022-07-12",
+      "type": "imaging",
+      "detail": "X-rays of left shoulder showed mild AC joint gapping with no fracture.",
+      "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "date": "2022-07-12",
+      "type": "therapy",
+      "detail": "Physical therapy referred to Hope Valley for 12 sessions for left shoulder AC joint sprain.",
+      "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "EMS (Liberty County EMS Rescue 14) dispatched at 12:45 to NSK plant for industrial machinery entrapment; found Jonathan Davis, 28, with left arm crushed by metal stamping press, tourniquet applied by factory responder, IV Fentanyl 100mcg given, transported to Midwest Regional trauma unit.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Jonathan Davis admitted emergently to Midwest Regional Medical Center ICU-04 at 13:25 with admitting diagnosis of complete traumatic amputation between shoulder and elbow, left arm (S48.112A); attending Dr. Marcus Vance, admitting Dr. David Cho.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p2"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "ED triage at 13:28, ESI Level 1 (Emergent), chief complaint left upper extremity entrapment/crush/near-amputation; BP 88/50, HR 130, RR 24, SpO2 93%, pain 10/10.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p3"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Emergency physician diagnostic impression: mangled unsalvageable left upper extremity with complete vascular and neurologic disruption, and traumatic shock secondary to acute blood loss and pain.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "imaging",
+      "detail": "X-ray and CT angiography of left upper extremity showed extensive comminuted open segmental fractures of forearm/hand, comminuted displaced supracondylar humerus fracture, and complete cessation of contrast enhancement in the brachial artery at distal third humerus, consistent with unsalvageable limb.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p5"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "medication",
+      "detail": "Emergency blood transfusion initiated with 2 units PRBC prior to transfer to OR.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Emergent left transhumeral (above-elbow) amputation performed by Dr. Marcus Vance with myofascial closure, bone beveling, and traction-neurectomy of median, ulnar, and radial nerves; EBL 650 mL, JP drain placed.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Labs showed leukocytosis (WBC 14.2), anemia (Hgb 8.9, Hct 27.2), and urine drug screen positive for trace cannabinoids, negative ethanol.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p7"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "medication",
+      "detail": "Postoperative inpatient pain regimen initiated: Hydromorphone (Dilaudid) PCA, Gabapentin 300mg PO, Ancef (Cefazolin) 1g IV, and PRN Oxycodone 5-10mg PO.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p3"
+    },
+    {
+      "date": "2024-01-09",
+      "type": "encounter",
+      "detail": "ICU/trauma ward nursing monitoring showed improving vitals (BP 154/88 down to 131/87, HR 98 down to 82) and pain trending from 10 to 5 over 24 hours.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p2"
+    },
+    {
+      "date": "2024-01-12",
+      "type": "procedure",
+      "detail": "JP drain removed on postoperative day 4 per hospital course.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
+    },
+    {
+      "date": "2024-01-15",
+      "type": "encounter",
+      "detail": "Discharged from Midwest Regional Medical Center after 7-day admission; transitioned to oral Oxycodone and Gabapentin 300mg TID, follow-up with Dr. Vance in 1 week and PM&R/prosthetic evaluation with Dr. Elena Rostova in 4 weeks.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
+    },
+    {
+      "date": "2024-01-15",
+      "type": "medication",
+      "detail": "Discharge medications: Gabapentin 300mg PO TID, Oxycodone 5mg PO q4-6h PRN, Cefdinir 300mg PO BID for 5 more days.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "encounter",
+      "detail": "1-month orthopedic follow-up with Dr. Marcus Vance; stump fully healed but severe phantom limb pain (8/10) and stump hypersensitivity noted, especially over medial/posterior terminal stump.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p1"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "medication",
+      "detail": "Gabapentin increased to 600mg PO TID for phantom limb pain.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p1"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "therapy",
+      "detail": "Referral made to Hope Valley for stump desensitization therapy and to NextStep Prosthetics (CPO Robert Chen) for initial shrinker sock fitting.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p1"
+    },
+    {
+      "date": "2024-06-18",
+      "type": "encounter",
+      "detail": "5-month orthopedic visit with Dr. Vance; new tender 1.5cm mobile nodule at distal medial left stump reproducing electrical shock pain, diagnosed as post-amputation traumatic neuroma of ulnar/median nerve stump interfering with prosthetic fitting.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p2"
+    },
+    {
+      "date": "2024-06-18",
+      "type": "diagnosis",
+      "detail": "Surgery scheduled for neuroma excision and deep muscle transposition, planned for 11/12/2024 to allow tissue maturation.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p2"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Left residual limb stump revision: excision of 1.8 x 1.4 cm neuroma of median/ulnar nerves with proximal nerve transposition and embedding into triceps muscle, performed by Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p3"
+    },
+    {
+      "date": "2024-12-15",
+      "type": "encounter",
+      "detail": "Hope Valley notified attorney Marcus Vance Sr. that Liberty Mutual placed prosthetic therapy authorization on hold pending peer review of proposed Myoelectric Transhumeral Prosthesis, suspending PT/OT sessions.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p1"
+    },
+    {
+      "date": "2025-01-10",
+      "type": "encounter",
+      "detail": "New patient intake at Hope Valley for rehab following amputation and neuroma surgery; pain 4/10 currently (range 2-9), on Gabapentin 600mg TID and Tylenol Extra Strength, off work, poor sleep due to phantom sensations.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+    },
+    {
+      "date": "2025-01-12",
+      "type": "therapy",
+      "detail": "Physical therapy initial evaluation at Hope Valley for status post left transhumeral amputation with phantom limb pain and neuroma revision; left shoulder abduction 120/180, flexion 130/180, pain 5/10; plan for therapy 2-3x weekly for 12-18 months.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p3"
+    },
+    {
+      "date": "2025-02-05",
+      "type": "procedure",
+      "detail": "Delivery and initial fitting of custom myoelectric left transhumeral prosthesis (carbon-fiber socket, Utah Myoelectric Elbow, Motion Control MC Hand) by CPO Robert Chen; 80% accuracy in electrode signal control demonstrated.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p4"
+    },
+    {
+      "date": "2025-02-10",
+      "type": "therapy",
+      "detail": "PT visit 1 at Hope Valley: electrode placement practice and signal control exercises, pain 5/10.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p5"
+    },
+    {
+      "date": "2025-02-17",
+      "type": "therapy",
+      "detail": "PT visit 2 at Hope Valley: object grasp drills, shoulder fatigue noted at 15 minutes, pain 4/10.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p6"
+    },
+    {
+      "date": "2025-03-03",
+      "type": "therapy",
+      "detail": "PT visit 3 at Hope Valley: repetitive grasping of cups, increasing prosthesis wearing time to 2 hours, pain 4/10.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p7"
+    },
+    {
+      "date": "2025-04-14",
+      "type": "therapy",
+      "detail": "PT visit 4 at Hope Valley: bilateral upper extremity coordination tasks, pain 3/10.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p10"
+    },
+    {
+      "date": "2025-05-12",
+      "type": "encounter",
+      "detail": "Patient no-showed scheduled Hope Valley PT appointment; voicemail left, reschedule offered.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p17"
+    },
+    {
+      "date": "2025-06-02",
+      "type": "therapy",
+      "detail": "PT visit 5 at Hope Valley: prosthetic hand orientation drills, cooking simulator tasks, pain 3/10.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p11"
+    },
+    {
+      "date": "2025-08-11",
+      "type": "therapy",
+      "detail": "PT visit 6 at Hope Valley: resisted shoulder exercises, left side core stabilization, pain 2/10; patient attributed missed visits to holiday workload and transportation issues.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p12"
+    },
+    {
+      "date": "2025-10-06",
+      "type": "therapy",
+      "detail": "PT visit 7 at Hope Valley: heavy carrying simulation, industrial tool adaptation, pain 2/10.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p13"
+    },
+    {
+      "date": "2025-11-10",
+      "type": "encounter",
+      "detail": "Patient no-showed scheduled Hope Valley PT appointment; voicemail left, reschedule offered.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p17"
+    },
+    {
+      "date": "2025-12-15",
+      "type": "therapy",
+      "detail": "PT visit 8 at Hope Valley: simulating maintenance task actions, push-pull mechanics, pain 1/10.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p14"
+    },
+    {
+      "date": "2026-03-09",
+      "type": "therapy",
+      "detail": "PT visit 9 at Hope Valley: fine motor control practice manipulating screws and small bolts, pain 1/10.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p15"
+    },
+    {
+      "date": "2026-06-15",
+      "type": "therapy",
+      "detail": "PT visit 10 at Hope Valley: final functional capacity evaluation with prosthetic arm, pain 1/10.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p16"
+    },
+    {
+      "date": "2026-06-22",
+      "type": "encounter",
+      "detail": "Physical therapy discharge summary: patient achieved master-level operation of myoelectric prosthesis, independent ADLs, driving, and carrying up to 25 lbs; near-normal left shoulder ROM; discharged to return to modified light/medium duty at NSK.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p18"
+    }
+  ]
+}

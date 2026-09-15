@@ -1,0 +1,172 @@
+{
+  "case_id": "case-vance",
+  "reference_path": "C:\\Users\\wix\\Documents\\\u05de\u05d9\u05d5\u05e0\u05d9\u05dd \u05dc\u05e2\u05d1\u05d5\u05d3\u05d4\\interview-ai-or-kadosh\\exercise\\golden\\case-vance.timeline.json",
+  "likely_reference_omissions": [
+    "[01_ems_and_ed] The EMS run sheet documents the mechanism of injury as a 2-vehicle collision with heavy side-impact damage requiring jaws-of-life extrication, and patient admission of drinking 4 beers before driving, which is not captured in any event.",
+    "[01_ems_and_ed] The lab report shows serum ethanol of 110 mg/dL (H), elevated WBC 14.2, and low hemoglobin 12.8, none of which are reflected in the events.",
+    "[01_ems_and_ed] The ED physician note documents a 2cm superficial scalp laceration with active bleeding controlled by pressure dressing, decreased distal sensation in the radial nerve distribution, and delayed capillary refill (3.5 seconds) with 1+ weak radial pulse, none of which are captured.",
+    "[01_ems_and_ed] The admission face sheet lists multiple diagnoses including cervical spine injury, left knee contusion, and alcohol intoxication, and identifies Dr. Myrtle Turner as attending and Dr. Elizabeth Foster as admitting physician, which is not reflected in the events.",
+    "[01_ems_and_ed] The x-ray of the left upper extremity found a highly unstable compound mid-shaft humerus fracture with 2.2 cm overriding and a displaced spiral distal radius fracture with intra-articular extension, details not included in any event.",
+    "[01_ems_and_ed] The cervical spine x-ray found C5-C6 disc narrowing with osteophytic lipping, mild retrolisthesis, and moderate prevertebral soft tissue swelling consistent with acute trauma, in addition to the disc bulge already noted.",
+    "[02_hospitalization] The patient was admitted 2023-09-04 following a severe MVA (per discharge summary clinical course).",
+    "[02_hospitalization] Surgery performed on 09/07/2023 included ORIF of left humerus fracture with 8-hole dynamic compression plate and ORIF of left distal radius fracture with volar locking plate, plus debridement of open wound and extensor tendon sheath repair.",
+    "[02_hospitalization] Dr. Charles Vance, MD (Resident) assisted in the surgery.",
+    "[02_hospitalization] Post-operative MAR shows scheduled Oxycodone, IV Ancef (Cefazolin), PRN Dilaudid (Hydromorphone), and Ibuprofen administered 09/04-09/07.",
+    "[02_hospitalization] Nursing flowsheet documents vital signs and neuro checks q4h under concussion precautions from 09/04 through 09/08, with pain scores trending down from 10 to 4.",
+    "[02_hospitalization] Discharge summary notes improved but slightly diminished radial nerve sensory deficit, 2+ radial pulses, <2 sec capillary refill, and moderate neck/back pain treated with muscle relaxants and soft collar.",
+    "[02_hospitalization] Discharge instructions include non-weight bearing activity restriction, 14-day Oxycodone taper to Ibuprofen, follow-up with Dr. Turner in 2 weeks for staple removal, and physical therapy 3x/week for 6 months, plus warning signs of infection or DVT.",
+    "[03_prior_records] The evaluation note's Plan included ordering a cervical MRI in addition to X-ray, initiating physical therapy, stretching, and NSAIDs, and a 2-week follow-up, none of which are captured in any event.",
+    "[03_prior_records] The X-ray impression also explicitly notes 'No fracture or subluxation,' a negative finding not reflected in the imaging event.",
+    "[03_prior_records] The intake questionnaire records additional clinical history (pain severity 6/10 current, worst 8, best 3; current medication Advil; prior self-treatment with ice packs; poor sleep due to neck ache; occasional alcohol use 3-6 drinks/week; active work status; non-smoker) that is not reflected in any event.",
+    "[04_ortho_followup] The 02/08/2023 [p1] visit notes weak left wrist extension (3/5) and diminished radial sensation with slight subjective improvement, and refers patient to outpatient PT 3x/week, which is not captured in any event.",
+    "[04_ortho_followup] The 12/14/2023 follow-up note [p4] documents persistent restricted ROM of left elbow/wrist, decreased radial nerve sensation, worsening neck pain, and an order for MRI of left upper extremity and C-spine, which is separate from the imaging event and not reflected.",
+    "[04_ortho_followup] The 02/08/2024 visit [p5] notes transition of PT care to Emory Sports Medicine Complex, complete bony fusion, and residual limitations in forearm pronation/supination, shoulder ROM, and cervical ROM, none of which are captured in any event.",
+    "[04_ortho_followup] The 03/14/2024 final assessment [p6] documents that the patient reached maximum medical improvement (MMI) with permanent disability including 15-degree elbow flexion/extension deficit, 20-degree wrist supination deficit, permanently blunted radial sensation, and chronic neck pain, which is a clinically significant finding omitted from the events.",
+    "[05_pt_lang_weimann] The discharge summary (p33) notes the patient requested transition of care to Emory Sports Medicine Complex for advanced athletic rehabilitation, which is not captured as a distinct event.",
+    "[05_pt_lang_weimann] The plan of care on p1 specifies therapeutic exercises, passive/active-assisted ROM, and hot/cold pack therapy 3x/week for 12 weeks, which is not reflected as a standalone plan-of-care event.",
+    "[05_pt_lang_weimann] The attendance record (p32) notes the patient attributed the lapse in attendance to 'holiday season workload and transportation logistics' and that the therapist counseled the patient that interruption of the strengthening phase causes measurable regression and extends the plan of care, which is not captured in any event.",
+    "[05_pt_lang_weimann] Multiple visit notes (e.g., p3, p4, p9, p10, p11, p17, p18, p25, p29) document recurring cervical symptom provocation requiring monitoring/modification throughout the episode of care, which is only partially reflected via isolated events and not tracked as an ongoing pattern.",
+    "[05_pt_lang_weimann] The initial evaluation (p1) documents specific quantitative deficits (e.g., Left Elbow Flexion 45/140, Left Wrist Extension 10/60, Cervical Rotation 20/80, strength grades 2/5) that are not reflected in the events' functional limitation description.",
+    "[06_pt_emory_sports] The discharge summary (p32) also notes 'marked sensory blunting over the radial hand' at discharge, which is not captured in any event.",
+    "[06_pt_emory_sports] The discharge summary (p32) notes the patient 'achieved Maximum Medical Improvement (MMI)' and chronic neck pain baseline of 3/10, which are not reflected in any event.",
+    "[06_pt_emory_sports] The initial evaluation (p1) documented specific objective deficits (e.g., Left Elbow Flexion 110/140, Left Wrist Extension 35/60, Cervical Rotation Left 45/80, MMT grades 3+/5 and 3/5) and functional status (antalgic gait, modified ADL independence, off full duty), none of which appear in the timeline events.",
+    "[06_pt_emory_sports] The plan of care (p1) specifying '3 times per week for 10 weeks' of progressive resistance strengthening, neuromuscular re-education, myofascial release, and thermal therapies is not represented as a distinct event.",
+    "[06_pt_emory_sports] Additional cervical symptom flare-ups occurred on 02/28/2024 (Visit 22, p23) and 03/04/2024 and 03/06/2024 (Visits 24-25, p25-26) that are not captured as events, despite similar flares on other dates being included.",
+    "[07_imaging_pharmacy] The MRI on 12/18/2023 found moderate bilateral neural foraminal narrowing, greater on the left, with mild central spinal stenosis (canal narrowed to 9.5mm) and no acute spinal cord myelopathy, interpreted by Dr. Lucas Harrison, MD.",
+    "[07_imaging_pharmacy] The pharmacy record shows multiple opioid (Oxycodone-Acetaminophen) fills on 09/08/2023 and 09/22/2023 prescribed by Dr. Myrtle Turner for severe/orthopedic pain, which is not reflected in any event.",
+    "[07_imaging_pharmacy] The pharmacy record shows ongoing Ibuprofen 800mg fills on 11/16/2023, 01/15/2024, and 02/15/2024 for pain management, not captured in the timeline.",
+    "[07_imaging_pharmacy] Dr. Turner's letter documents that Mr. Vance underwent surgical intervention on September 7, 2023, including dynamic plate fixation of the left humerus and volar plate fixation of the left distal radius, following an MVA on September 4, 2023, which is not reflected in any event.",
+    "[07_imaging_pharmacy] Dr. Turner's letter states Mr. Vance reached Maximum Medical Improvement (MMI) on March 14, 2024, with permanent impairments including a 15-degree flexion/extension deficit at the left elbow, 20-degree loss of forearm supination, blunted radial sensory distribution, and a permanent 20-pound lifting restriction with the left arm, none of which are captured in the events shown.",
+    "[08_billing_and_claims] The hospital UB-04 (p1) states the claim is an 'Auto liability - third-party claim' with a 'Lien filed,' and a separate hospital lien notice (p17) shows a $82,450.00 lien filed against the patient's legal settlement, which is not reflected in any event.",
+    "[08_billing_and_claims] The EMS ambulance transport claim (p4) by Paramedic James Vance, NREMT-P on 09/04/2023 (CPT A0427, A0425) for ground ambulance transport is not reflected in any event.",
+    "[08_billing_and_claims] Dr. Myrtle Turner, MD, FACS performed orthopedic surgical procedures (CPT 24515, 25607) on 09/07/2023 and provided ongoing follow-up visits through 03/14/2024, which is not reflected in any event.",
+    "[08_billing_and_claims] A separate CT scan (CPT 72141, cervical spine MRI or similar) was performed on 12/18/2023 by Dr. Lucas Harrison, MD at Advanced Imaging of Littel, not reflected in any event.",
+    "[08_billing_and_claims] Physical therapy services continued from Amanda Gregory, PT, OCS from 01/08/2024 through 03/22/2024, which is not reflected in any event.",
+    "[08_billing_and_claims] The itemized statement (p2-p3) shows numerous additional line items (wound care supplies, cardiac monitoring, morphine, lisinopril, tourniquet/fluoroscopy use, additional knee X-rays) across the hospital stay from 09/04/2023-09/08/2023 that are not individually reflected in events.",
+    "[08_billing_and_claims] The Lang-Weimann Medical Center billing statement (p18) shows an outstanding patient balance of $648.00 for physical therapy services rendered 09/15/2023-12/08/2023, not reflected in any event.",
+    "[08_billing_and_claims] EOBs show multiple insurance payments and CO-45 contractual adjustments (e.g., Aetna paid $65,960.00 on the hospital claim, $6,216.00 to Dr. Turner, $5,184.00 to Robert Stewart, $5,208.00 to Amanda Gregory) that are not reflected in any event."
+  ],
+  "likely_reference_errors": [
+    {
+      "doc_id": "03_prior_records",
+      "event_index": 1,
+      "date": "2022-09-10",
+      "detail": "Medical record discrepancy regarding the exact date of the gym weightlifting injury causing neck pain, Dr. Alistair Finch, MD, Back & Spine Restoration Center.",
+      "source": "03_prior_records p2",
+      "explanation": "There is a genuine date ambiguity (intake 'last week' from 09/10 vs. eval note '6 days ago' from 09/12, i.e. ~09/03 vs ~09/06), but the source itself never frames this as a 'discrepancy' nor attributes p2 to Dr. Finch, since p2 is a patient-completed form.",
+      "confidence": 0.55
+    },
+    {
+      "doc_id": "05_pt_lang_weimann",
+      "event_index": 14,
+      "date": "2023-09-15",
+      "detail": "Initial physical therapy evaluation following post-surgical ORIF of left humerus and radius with significant functional limitations, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p1",
+      "explanation": "p1 is the initial evaluation with pain 8/10, ROM/strength deficits, and antalgic gait/modified independence, which supports 'significant functional limitations,' but the note does not use that exact phrase, so wording is a reasonable but non-verbatim characterization.",
+      "confidence": 0.75
+    },
+    {
+      "doc_id": "06_pt_emory_sports",
+      "event_index": 79,
+      "date": "2024-02-23",
+      "detail": "Physical therapy session focused on upper extremity stabilization and myofascial cervical release with good tolerance, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p21",
+      "explanation": "p21 (Visit 20, 02/23/2024) session focus is 'Upper extremity stabilization. Myofascial cervical release' and tolerance is listed as 'Good', but the assessment also notes 'Cervical symptoms provoked this session; monitored and modified,' which the event's characterization as simply 'good tolerance' obscures/contradicts.",
+      "confidence": 0.75
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 8,
+      "date": "2023-09-04",
+      "detail": "Nerve block tray administered for anesthesia during surgical procedure, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "08_billing_and_claims p2",
+      "explanation": "P2 lists 'NERVE BLOCK TRAY' charge on 09/04/2023 under REV 0370 but does not attribute this to Dr. Elizabeth Foster or specify it was for anesthesia during a specific surgical procedure; Dr. Foster is only named as attending on p1, not tied to this specific line item.",
+      "confidence": 0.5
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 15,
+      "date": "2023-09-15",
+      "detail": "Initial physical therapy evaluation for left arm fractures and cervicalgia, Robert Stewart, PT, DPT, Lang-Weimann Medical Center - Physical Therapy.",
+      "source": "08_billing_and_claims p8",
+      "explanation": "P8 shows CPT 97161 (PT evaluation) on 09/15/2023 by Robert Stewart, PT, DPT with diagnosis codes S42.302A and M54.2, supporting an initial PT evaluation for arm fracture and cervicalgia, but does not specify 'left arm' laterality.",
+      "confidence": 0.6
+    }
+  ],
+  "conflicts_found_in_source": [
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 9,
+      "date": "2023-09-04",
+      "detail": "Surgical procedures performed on left arm fractures sustained in motor vehicle accident, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "08_billing_and_claims p1",
+      "explanation": "The UB-04 (p1) diagnosis codes are S42.302A (right humerus fracture, per convention 'right arm'), S52.302A (forearm fracture), and M54.2 (cervicalgia), with procedure codes OPS00ZZ/0PSG0ZZ, none of which specify 'left arm' -- in fact other CMS-1500 forms (p5, p10) use laterality code 'LT' for left-side orthopedic CPT codes, suggesting the fracture was on the left, but the UB-04 itself does not state 'left arm' and the diagnosis codes visible here do not confirm laterality.",
+      "confidence": 0.4
+    }
+  ],
+  "questionable_dates": [
+    {
+      "doc_id": "03_prior_records",
+      "event_index": 0,
+      "date": "2022-09-03",
+      "detail": "Sustained severe neck pain and stiffness during weightlifting accident at gym, described as occurring during heavy squat set, Dr. Alistair Finch, MD, Back & Spine Restoration Center.",
+      "source": "03_prior_records p2",
+      "explanation": "Intake form dated 09/10/2022 states injury occurred 'last week' during a heavy weightlifting accident, and the eval note (p3) says pain began 6 days before 09/12/2022 (~09/06), so 09/03 is not clearly supported and this event is misattributed to Dr. Finch when p2 is a patient-completed questionnaire with no provider signature.",
+      "confidence": 0.75
+    }
+  ],
+  "incorrect_source_attribution": [
+    {
+      "doc_id": "01_ems_and_ed",
+      "event_index": 7,
+      "date": "2023-09-04",
+      "detail": "Immediate consultation with orthopedic surgery for emergency open reduction and internal fixation, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "01_ems_and_ed p5",
+      "explanation": "The p5 note states 'Consult Orthopedic Surgery (Dr. Myrtle Turner) immediately for emergency open reduction and internal fixation (ORIF)' authored/signed by Dr. Elizabeth Foster, so the consulted surgeon is Dr. Turner, not Dr. Foster as the event implies.",
+      "confidence": 0.85
+    },
+    {
+      "doc_id": "04_ortho_followup",
+      "event_index": 49,
+      "date": "2023-12-14",
+      "detail": "X-ray showing well-healed left humerus and distal radius fractures with stable internal hardware and excellent bony bridging, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p7",
+      "explanation": "The imaging findings ('Well-healed left humerus and left distal radius fractures with stable internal hardware,' 'excellent bony bridging callus') are accurately quoted from p7, but the report is signed/interpreted by Dr. Myrtle Turner as radiologist per p7/p8, so attribution is technically correct though it's a diagnostic imaging report rather than a follow-up visit note, and this is distinct from the same-date office follow-up note (p4) which discusses different findings (persistent ROM restriction, ordering MRI) not mentioned in this imaging-only event.",
+      "confidence": 0.85
+    },
+    {
+      "doc_id": "07_imaging_pharmacy",
+      "event_index": 93,
+      "date": null,
+      "detail": "Pre-existing 4mm posterior disc bulge at C5-C6 level documented prior to the September 2023 incident, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "07_imaging_pharmacy p4",
+      "explanation": "The letter states 'progression of a C5-C6 disc bulge from 4mm pre-existing (September 2022) to 6mm post-incident (December 2023)' per Dr. Turner, but the actual 4mm measurement was originally from an 'external X-ray from 2022-09-15' per the MRI report by Dr. Lucas Harrison, not documented by Dr. Turner herself.",
+      "confidence": 0.6
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 4,
+      "date": "2022-09-12",
+      "detail": "Patient had prior treatment for cervicalgia in 2022, before the motor vehicle accident, Dr. Alistair Finch, MD, Back & Spine Restoration Center.",
+      "source": "08_billing_and_claims p6",
+      "explanation": "P6 shows diagnosis M54.2 (cervicalgia) with dates of service 09/12/2022 and 09/15/2022 under Dr. Alistair Finch, Back & Spine Restoration Center, but the referring/rendering provider field lists 'DR. ALISTAIR FINCH, MD' only as referring provider, not explicitly confirmed as treating clinician for cervicalgia; date and provider match but detail of 'prior treatment for cervicalgia' is reasonably supported.",
+      "confidence": 0.6
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 10,
+      "date": "2023-09-05",
+      "detail": "CT scan of head without contrast performed during hospital stay, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "08_billing_and_claims p2",
+      "explanation": "P2 confirms 'CT HEAD W/O CONTRAST' on 09/05/2023 (CPT 72125), but does not attribute this order/performance to Dr. Elizabeth Foster; she is only named as attending physician on the UB-04 (p1), not specifically linked to this imaging order.",
+      "confidence": 0.5
+    }
+  ],
+  "judge_call_failures": [],
+  "coverage": {
+    "events_total": 94,
+    "events_fully_audited_high_materiality": 32,
+    "events_sampled_routine": 6,
+    "routine_sample_method": "evenly-spaced, deterministic, n=6 (PLAN.md SS7/D.2: risk-based, not exhaustive by default)"
+  }
+}

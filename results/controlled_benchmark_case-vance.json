@@ -1,0 +1,4418 @@
+{
+  "case_id": "case-vance",
+  "material_fact_set_path": "results\\material_facts\\case-vance.json",
+  "benchmark_event_count": 94,
+  "tools": {
+    "A": {
+      "tool": "A",
+      "runs": [
+        {
+          "tool": "A",
+          "run": 1,
+          "cost_usd": 0.02857,
+          "faithfulness": {
+            "composite": 0.909,
+            "ship_eligible": false,
+            "gate_triggering_claims": [
+              {
+                "claim_id": "c7",
+                "text": "This finding was later characterized by both Dr. Foster and Dr. Turner as pre-existing predating the MVA",
+                "status": "overclaimed",
+                "materiality": "critical",
+                "evidence_event_ids": [
+                  92,
+                  93
+                ],
+                "reason": "Event 92 (Foster) hedges as 'unclear onset, possibly preexisting' while summary states both physicians characterized it as pre-existing without preserving Foster's hedge; Turner's statement (93) is more definitive but Foster's is not."
+              }
+            ],
+            "claim_count": 27,
+            "flawed_claim_count": 1,
+            "claim_counts_by_status": {
+              "supported": 26,
+              "overclaimed": 1
+            },
+            "claim_counts_by_materiality": {
+              "major": 16,
+              "minor": 8,
+              "critical": 3
+            }
+          },
+          "coverage": {
+            "weighted_coverage_rate": 0.864,
+            "facts_total": 20,
+            "facts_missing": [
+              "callus-formation-followup",
+              "chronic-muscle-wasting-disc-bulge"
+            ],
+            "coverage_by_fact_id": {
+              "gym-neck-injury-2022": "yes",
+              "cervical-strain-diagnosis-2022": "yes",
+              "pre-existing-cervicalgia": "yes",
+              "preexisting-c5-c6-bulge": "partial",
+              "mva-2023-injury": "yes",
+              "orif-surgery": "yes",
+              "head-ct-2023": "yes",
+              "post-surgical-diagnosis": "yes",
+              "pt-course-lang-weimann": "yes",
+              "pt-noncompliance-2023": "yes",
+              "medication-course-opioid-nsaid": "yes",
+              "callus-formation-followup": "no",
+              "bony-healing-progression": "partial",
+              "persistent-deficits-dec-2023": "yes",
+              "mri-ordered": "yes",
+              "pt-transfer-emory": "partial",
+              "pt-course-emory": "yes",
+              "chronic-muscle-wasting-disc-bulge": "no",
+              "permanent-elbow-deficit": "yes",
+              "final-outcome-chronic-pain": "yes"
+            }
+          },
+          "usefulness": {
+            "mean": 4.14,
+            "by_dimension": {
+              "chronological_clarity": 5,
+              "concision": 4,
+              "organization": 4,
+              "preserves_uncertainty": 3,
+              "separates_pre_existing_vs_post": 4,
+              "emphasis_on_material_facts": 4,
+              "avoids_repetitive_clutter": 5
+            }
+          }
+        },
+        {
+          "tool": "A",
+          "run": 2,
+          "cost_usd": 0.02973,
+          "faithfulness": {
+            "composite": 0.883,
+            "ship_eligible": false,
+            "gate_triggering_claims": [
+              {
+                "claim_id": "c7",
+                "text": "Confirmed by Dr. Turner as predating the September 2023 incident",
+                "status": "overclaimed",
+                "materiality": "critical",
+                "evidence_event_ids": [
+                  93
+                ],
+                "reason": "Event 93 states 'documented prior to' as Turner's diagnosis entry, but the summary uses 'confirmed', converting what is itself a diagnosis-note claim into definitive fact; timeline doesn't hedge Turner's statement, but pairing with Foster's hedged 'possibly preexisting' and calling it 'confirmed' inflates certainty across two differently-hedged provider statements."
+              }
+            ],
+            "claim_count": 29,
+            "flawed_claim_count": 2,
+            "claim_counts_by_status": {
+              "supported": 27,
+              "overclaimed": 1,
+              "unsupported": 1
+            },
+            "claim_counts_by_materiality": {
+              "major": 15,
+              "minor": 10,
+              "critical": 4
+            }
+          },
+          "coverage": {
+            "weighted_coverage_rate": 0.92,
+            "facts_total": 20,
+            "facts_missing": [
+              "chronic-muscle-wasting-disc-bulge"
+            ],
+            "coverage_by_fact_id": {
+              "gym-neck-injury-2022": "yes",
+              "cervical-strain-diagnosis-2022": "yes",
+              "pre-existing-cervicalgia": "yes",
+              "preexisting-c5-c6-bulge": "yes",
+              "mva-2023-injury": "yes",
+              "orif-surgery": "yes",
+              "head-ct-2023": "yes",
+              "post-surgical-diagnosis": "yes",
+              "pt-course-lang-weimann": "yes",
+              "pt-noncompliance-2023": "yes",
+              "medication-course-opioid-nsaid": "yes",
+              "callus-formation-followup": "partial",
+              "bony-healing-progression": "yes",
+              "persistent-deficits-dec-2023": "partial",
+              "mri-ordered": "yes",
+              "pt-transfer-emory": "yes",
+              "pt-course-emory": "yes",
+              "chronic-muscle-wasting-disc-bulge": "no",
+              "permanent-elbow-deficit": "yes",
+              "final-outcome-chronic-pain": "yes"
+            }
+          },
+          "usefulness": {
+            "mean": 4.14,
+            "by_dimension": {
+              "chronological_clarity": 5,
+              "concision": 4,
+              "organization": 4,
+              "preserves_uncertainty": 3,
+              "separates_pre_existing_vs_post": 4,
+              "emphasis_on_material_facts": 4,
+              "avoids_repetitive_clutter": 5
+            }
+          }
+        }
+      ],
+      "mean_faithfulness": 0.896,
+      "mean_coverage": 0.892,
+      "mean_usefulness": 4.14,
+      "ship_eligible": false,
+      "total_cost_usd": 0.0583,
+      "mean_cost_usd": 0.0292,
+      "stability": {
+        "material_fact_overlap_rate": 1.0,
+        "critical_cross_run_conflict_count": 0,
+        "agree": 14,
+        "disagree": 0,
+        "run1_only": 0,
+        "run2_only": 6,
+        "raw_claim_pairs": [
+          {
+            "topic": "Gym injury date",
+            "run1_claim": "Weightlifting accident occurred September 3, 2022; discrepancy noted in records on 2022-09-10",
+            "run2_claim": "Weightlifting accident occurred 2022-09-03; intake questionnaire completed 2022-09-10 noting date discrepancy",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both give same injury date and same discrepancy note date."
+          },
+          {
+            "topic": "Initial evaluation by Dr. Finch",
+            "run1_claim": "Dr. Finch evaluated patient September 12, 2022, diagnosing acute cervical strain with possible disc herniation/bulge, noted prior cervicalgia treatment earlier in 2022",
+            "run2_claim": "Dr. Finch diagnosed same condition on 2022-09-12, with prior cervicalgia treatment in 2022 noted as predating MVA",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Same date, diagnosis, and history noted."
+          },
+          {
+            "topic": "Cervical X-ray findings",
+            "run1_claim": "X-ray Sept 15, 2022 showed mild DDD at C5-C6 with 4mm posterior disc bulge, characterized by Foster and Turner as pre-existing",
+            "run2_claim": "Same X-ray finding, characterized by Foster as pre-existing/unclear onset and confirmed by Turner as predating Sept 2023 incident",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both attribute same pre-existing characterization to both doctors on same date/finding."
+          },
+          {
+            "topic": "MVA date",
+            "run1_claim": "Motor vehicle accident occurred on or about September 4, 2023",
+            "run2_claim": "Patient subsequently sustained left arm fractures in a motor vehicle accident (date given later as 2023-09-04)",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Same accident date used in subsequent narrative."
+          },
+          {
+            "topic": "Emergency surgery/anesthesia",
+            "run1_claim": "Dr. Foster performed surgical procedures on left arm fractures Sept 4, 2023, with nerve block for anesthesia",
+            "run2_claim": "Dr. Foster arranged emergency orthopedic consultation and performed surgical repair under nerve block anesthesia on 2023-09-04",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Same surgeon, date, and anesthesia method described."
+          },
+          {
+            "topic": "CT scan and acetaminophen",
+            "run1_claim": "CT scan of head without contrast Sept 5, 2023; Acetaminophen 975mg administered Sept 6, 2023",
+            "run2_claim": "Head CT without contrast 2023-09-05; Acetaminophen 975mg administered 2023-09-06",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Identical dates and details."
+          },
+          {
+            "topic": "Fluoroscopic imaging",
+            "run1_claim": "Fluoroscopic imaging Sept 7, 2023 under Dr. Turner confirmed alignment/hardware for ORIF of humerus and radius",
+            "run2_claim": "Fluoroscopic imaging 2023-09-07 under Dr. Turner confirmed anatomic alignment and hardware placement",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Same date, physician, and purpose."
+          },
+          {
+            "topic": "Staple removal",
+            "run1_claim": null,
+            "run2_claim": "Surgical staples removed 2023-09-21",
+            "relation": "run2_only",
+            "materiality": "minor",
+            "reason": "Run 1 omits this detail entirely."
+          },
+          {
+            "topic": "Oxycodone-Acetaminophen start date",
+            "run1_claim": "Oxycodone-Acetaminophen 5-325mg listed among medications without specific start date",
+            "run2_claim": "Oxycodone-Acetaminophen 5-325mg started 2023-09-22",
+            "relation": "run2_only",
+            "materiality": "minor",
+            "reason": "Run 2 provides a specific start date not mentioned in run 1."
+          },
+          {
+            "topic": "Cyclobenzaprine start",
+            "run1_claim": "Cyclobenzaprine 10mg started October 19, 2023",
+            "run2_claim": "Cyclobenzaprine 10mg starting 2023-10-19",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Same medication and start date."
+          },
+          {
+            "topic": "Ibuprofen start",
+            "run1_claim": "High-dose Ibuprofen 800mg started November 16, 2023",
+            "run2_claim": "High-dose Ibuprofen 800mg starting 2023-11-16",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Same medication and start date."
+          },
+          {
+            "topic": "X-ray callus formation",
+            "run1_claim": null,
+            "run2_claim": "X-rays on 2023-10-19 showed early callus formation",
+            "relation": "run2_only",
+            "materiality": "minor",
+            "reason": "Run 1 does not mention this interim imaging finding."
+          },
+          {
+            "topic": "Missed PT appointments",
+            "run1_claim": "Treatment gap Nov 14\u201321, 2023, missed three consecutive PT appointments, rebounded stiffness noted Nov 24, 2023",
+            "run2_claim": "Missed three PT sessions on 2023-11-14, 11-17, 11-21, rebounded stiffness by 2023-11-24",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both describe same missed sessions and resulting stiffness, though run2 specifies exact missed dates."
+          },
+          {
+            "topic": "December 11 PT session count/end",
+            "run1_claim": "PT continued through December 11, 2023 for total 30 sessions",
+            "run2_claim": "Thirty PT sessions concluded 2023-12-11 with persistent cervical stiffness and arm pain",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Same end date and session count."
+          },
+          {
+            "topic": "December 14 imaging/MRI order",
+            "run1_claim": "Follow-up imaging Dec 14, 2023 showed well-healed fractures with stable hardware; MRI ordered for persistent restrictions and decreased sensation",
+            "run2_claim": "MRI ordered 2023-12-14 when X-rays showed well-healed fractures with stable hardware but decreased radial sensation",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Same date, findings, and MRI order rationale."
+          },
+          {
+            "topic": "Transition to Emory Sports Medicine",
+            "run1_claim": "Care transitioned to Amanda Gregory at Emory Sports Medicine Complex Jan 8, 2024 through March 22, 2024, 30 sessions",
+            "run2_claim": "Care transitioned to Amanda Gregory, PT, OCS, at Emory Sports Medicine Complex 2024-01-08 through 2024-03-22, 30 sessions",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Identical dates, provider, and session count."
+          },
+          {
+            "topic": "Specific cervical symptom provocation dates",
+            "run1_claim": "Cervical symptoms repeatedly provoked during treatment (general statement)",
+            "run2_claim": "Cervical symptom provocation noted on specific dates: 2024-01-17, 01-29, 02-12, 02-28, 03-04, 03-06",
+            "relation": "run2_only",
+            "materiality": "minor",
+            "reason": "Run 2 provides granular dates not included in run 1's general statement."
+          },
+          {
+            "topic": "Ibuprofen continuation",
+            "run1_claim": null,
+            "run2_claim": "Ibuprofen 800mg continued through 2024-02-15",
+            "relation": "run2_only",
+            "materiality": "minor",
+            "reason": "Run 1 does not mention this continuation detail."
+          },
+          {
+            "topic": "Bony fusion note",
+            "run1_claim": null,
+            "run2_claim": "On 2024-02-08, Dr. Turner noted complete bony fusion but limited forearm/shoulder motion",
+            "relation": "run2_only",
+            "materiality": "major",
+            "reason": "Run 1 omits this clinical finding and date entirely."
+          },
+          {
+            "topic": "Discharge date",
+            "run1_claim": "March 25, 2024, noted substantial improvement but persistent 15-degree extension deficit and chronic pain as current status",
+            "run2_claim": "By discharge on 2024-03-25, persistent 15-degree extension deficit and chronic pain despite substantial functional improvement",
+            "relation": "agree",
+            "materiality": "critical",
+            "reason": "Both identify same discharge date and identical final clinical status."
+          }
+        ]
+      },
+      "judge_outputs": [
+        {
+          "claims": [
+            {
+              "claim_id": "c1",
+              "text": "September 3, 2022 gym weightlifting accident caused severe neck pain and stiffness during heavy squat set",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                0
+              ],
+              "reason": "Timeline event 0 states this exact date, mechanism, and injury."
+            },
+            {
+              "claim_id": "c2",
+              "text": "A discrepancy in the exact injury date was noted on 2022-09-10",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                1
+              ],
+              "reason": "Event 1 documents a discrepancy regarding exact injury date on that date."
+            },
+            {
+              "claim_id": "c3",
+              "text": "Dr. Alistair Finch evaluated patient September 12, 2022 at Back & Spine Restoration Center",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                5
+              ],
+              "reason": "Event 5 confirms encounter date and provider."
+            },
+            {
+              "claim_id": "c4",
+              "text": "Diagnosed acute cervical strain with possible underlying cervical disc herniation or bulge",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                3
+              ],
+              "reason": "Matches event 3 exactly, preserving hedged 'possible' language."
+            },
+            {
+              "claim_id": "c5",
+              "text": "Patient had prior treatment for cervicalgia earlier in 2022",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                4
+              ],
+              "reason": "Event 4 states prior treatment for cervicalgia in 2022 before the MVA."
+            },
+            {
+              "claim_id": "c6",
+              "text": "Three-view cervical spine X-ray on September 15, 2022 showed mild DDD at C5-C6 with 4mm posterior disc bulge",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                6
+              ],
+              "reason": "Matches event 6 exactly."
+            },
+            {
+              "claim_id": "c7",
+              "text": "This finding was later characterized by both Dr. Foster and Dr. Turner as pre-existing predating the MVA",
+              "status": "overclaimed",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                92,
+                93
+              ],
+              "reason": "Event 92 (Foster) hedges as 'unclear onset, possibly preexisting' while summary states both physicians characterized it as pre-existing without preserving Foster's hedge; Turner's statement (93) is more definitive but Foster's is not."
+            },
+            {
+              "claim_id": "c8",
+              "text": "MVA occurred on or about September 4, 2023, resulting in left arm fractures requiring emergency care at Littel Inc",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                7,
+                9
+              ],
+              "reason": "Matches events 7 and 9."
+            },
+            {
+              "claim_id": "c9",
+              "text": "Dr. Elizabeth Foster performed surgical procedures on left arm fractures that day with nerve block anesthesia",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                8,
+                9
+              ],
+              "reason": "Events 8 and 9 confirm Foster performed procedures with nerve block same day."
+            },
+            {
+              "claim_id": "c10",
+              "text": "CT scan of head without contrast followed on September 5, 2023",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                10
+              ],
+              "reason": "Matches event 10 date and description."
+            },
+            {
+              "claim_id": "c11",
+              "text": "Fluoroscopic imaging used intraoperatively on September 7, 2023 under Dr. Myrtle Turner to confirm alignment/hardware for ORIF of left humerus and radius",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                12
+              ],
+              "reason": "Matches event 12, though note event 12 lists Turner not Foster performing this, consistent with summary."
+            },
+            {
+              "claim_id": "c12",
+              "text": "Acetaminophen 975mg administered September 6, 2023 for pain control",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                11
+              ],
+              "reason": "Matches event 11 exactly."
+            },
+            {
+              "claim_id": "c13",
+              "text": "Diagnoses following surgery included post-surgical left humerus/radius ORIF, cervicalgia, and left knee contusion",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                13
+              ],
+              "reason": "Matches event 13 diagnosis exactly."
+            },
+            {
+              "claim_id": "c14",
+              "text": "PT began September 15, 2023 at Lang-Weimann under Robert Stewart, continuing through December 11, 2023, 30 sessions",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                14,
+                15,
+                46
+              ],
+              "reason": "Events 14/15 show start date and event 46 shows discharge summary documenting completion of 30 sessions by Dec 11, 2023."
+            },
+            {
+              "claim_id": "c15",
+              "text": "PT addressed left upper extremity mobilization and cervical symptoms which were repeatedly provoked",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                16,
+                20,
+                28,
+                32,
+                43
+              ],
+              "reason": "Multiple PT sessions document provoked cervical symptoms during treatment."
+            },
+            {
+              "claim_id": "c16",
+              "text": "Medications included Oxycodone-Acetaminophen 5-325mg",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                19
+              ],
+              "reason": "Matches event 19."
+            },
+            {
+              "claim_id": "c17",
+              "text": "Cyclobenzaprine 10mg started October 19, 2023",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                25
+              ],
+              "reason": "Matches event 25 exactly."
+            },
+            {
+              "claim_id": "c18",
+              "text": "High-dose Ibuprofen 800mg started November 16, 2023",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                36
+              ],
+              "reason": "Matches event 36 exactly."
+            },
+            {
+              "claim_id": "c19",
+              "text": "Treatment gap between November 14 and November 21, 2023, missed three consecutive PT appointments",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                33,
+                37,
+                38
+              ],
+              "reason": "Events 33, 37, 38 document three consecutive missed appointments on these dates."
+            },
+            {
+              "claim_id": "c20",
+              "text": "Rebounded left elbow stiffness noted November 24, 2023",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                39,
+                40
+              ],
+              "reason": "Matches events 39/40 exactly."
+            },
+            {
+              "claim_id": "c21",
+              "text": "Follow-up imaging December 14, 2023 showed well-healed fractures with stable hardware",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                49
+              ],
+              "reason": "Matches event 49 exactly."
+            },
+            {
+              "claim_id": "c22",
+              "text": "MRI of left upper extremity and C-spine ordered for persistent restrictions and decreased radial sensation",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                47,
+                48
+              ],
+              "reason": "Matches events 47 and 48 which document the MRI order and clinical findings prompting it."
+            },
+            {
+              "claim_id": "c23",
+              "text": "Care transitioned to Emory Sports Medicine Complex under Amanda Gregory on January 8, 2024",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                51,
+                70
+              ],
+              "reason": "Matches event 51 start date; transition documented in event 70 (Feb 8, 2024) though initial eval was Jan 8."
+            },
+            {
+              "claim_id": "c24",
+              "text": "PT continued through discharge on March 22, 2024, comprising another 30 sessions",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                89,
+                90,
+                91
+              ],
+              "reason": "Event 89 documents final session March 22, 2024; events 90/91 confirm 30 sessions completed."
+            },
+            {
+              "claim_id": "c25",
+              "text": "On March 25, 2024, patient achieved substantial improvement but retained persistent 15-degree extension deficit in left elbow and chronic pain",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                90,
+                91
+              ],
+              "reason": "Matches events 90 and 91 exactly."
+            },
+            {
+              "claim_id": "c26",
+              "text": "This represents the patient's current documented status",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                90,
+                91
+              ],
+              "reason": "This is the last dated event in the timeline, reasonably characterized as most current status."
+            },
+            {
+              "claim_id": "c27",
+              "text": "Left arm fractures specifically involved humerus and radius",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                9,
+                13
+              ],
+              "reason": "Event 13 specifies left humerus and radius ORIF."
+            }
+          ],
+          "fact_coverage": [
+            {
+              "fact_id": "gym-neck-injury-2022",
+              "reflected": "yes",
+              "notes": "Summary states date, mechanism, and date discrepancy."
+            },
+            {
+              "fact_id": "cervical-strain-diagnosis-2022",
+              "reflected": "yes",
+              "notes": "Summary states diagnosis with hedge preserved ('possible underlying')."
+            },
+            {
+              "fact_id": "pre-existing-cervicalgia",
+              "reflected": "yes",
+              "notes": "Summary states prior cervicalgia treatment in 2022 before MVA."
+            },
+            {
+              "fact_id": "preexisting-c5-c6-bulge",
+              "reflected": "partial",
+              "notes": "Summary states X-ray finding and later characterization by both providers as pre-existing, but flattens Dr. Foster's hedged 'unclear onset, possibly preexisting' language into settled fact."
+            },
+            {
+              "fact_id": "mva-2023-injury",
+              "reflected": "yes",
+              "notes": "Summary states MVA date, left arm fractures, and emergency care."
+            },
+            {
+              "fact_id": "orif-surgery",
+              "reflected": "yes",
+              "notes": "Summary covers ORIF, nerve block, and fluoroscopy."
+            },
+            {
+              "fact_id": "head-ct-2023",
+              "reflected": "yes",
+              "notes": "CT scan date and type stated."
+            },
+            {
+              "fact_id": "post-surgical-diagnosis",
+              "reflected": "yes",
+              "notes": "All three diagnoses listed."
+            },
+            {
+              "fact_id": "pt-course-lang-weimann",
+              "reflected": "yes",
+              "notes": "Dates, provider, session count, and provoked cervical symptoms all stated."
+            },
+            {
+              "fact_id": "pt-noncompliance-2023",
+              "reflected": "yes",
+              "notes": "Missed sessions, dates, and rebound stiffness stated; provider warning about contractures not explicitly mentioned in summary."
+            },
+            {
+              "fact_id": "medication-course-opioid-nsaid",
+              "reflected": "yes",
+              "notes": "All four medications with dates mentioned."
+            },
+            {
+              "fact_id": "callus-formation-followup",
+              "reflected": "no",
+              "notes": "October 2023 callus formation finding and grip strength/neck stiffness complaint not mentioned in summary."
+            },
+            {
+              "fact_id": "bony-healing-progression",
+              "reflected": "partial",
+              "notes": "Well-healed fractures Dec 2023 mentioned, but complete bony fusion by Feb 2024 not stated."
+            },
+            {
+              "fact_id": "persistent-deficits-dec-2023",
+              "reflected": "yes",
+              "notes": "ROM restrictions and decreased radial sensation mentioned; worsening neck pain implied but not explicit."
+            },
+            {
+              "fact_id": "mri-ordered",
+              "reflected": "yes",
+              "notes": "MRI order and reasons stated."
+            },
+            {
+              "fact_id": "pt-transfer-emory",
+              "reflected": "partial",
+              "notes": "Transition stated but reason (persistent limited ROM despite complete bony fusion) not explicitly given."
+            },
+            {
+              "fact_id": "pt-course-emory",
+              "reflected": "yes",
+              "notes": "Dates, provider, session count, and general scope stated; provoked cervical symptoms not explicitly repeated for Emory phase."
+            },
+            {
+              "fact_id": "chronic-muscle-wasting-disc-bulge",
+              "reflected": "no",
+              "notes": "Initial Emory evaluation's note of muscle wasting and chronic cervical disc bulge is omitted from summary."
+            },
+            {
+              "fact_id": "permanent-elbow-deficit",
+              "reflected": "yes",
+              "notes": "15-degree extension deficit clearly stated."
+            },
+            {
+              "fact_id": "final-outcome-chronic-pain",
+              "reflected": "yes",
+              "notes": "Substantial improvement with persistent deficits and chronic pain clearly stated."
+            }
+          ],
+          "usefulness": {
+            "chronological_clarity": 5,
+            "concision": 4,
+            "organization": 4,
+            "preserves_uncertainty": 3,
+            "separates_pre_existing_vs_post": 4,
+            "emphasis_on_material_facts": 4,
+            "avoids_repetitive_clutter": 5
+          }
+        },
+        {
+          "claims": [
+            {
+              "claim_id": "c1",
+              "text": "Neck pain/stiffness injury occurred 2022-09-03 during weightlifting accident, heavy squat set, first evaluated by Dr. Finch at Back & Spine Restoration Center",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                0
+              ],
+              "reason": "Matches event 0 directly."
+            },
+            {
+              "claim_id": "c2",
+              "text": "Intake questionnaire completed 2022-09-10, with noted discrepancy regarding exact date of gym injury",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                1,
+                2
+              ],
+              "reason": "Matches events 1 and 2."
+            },
+            {
+              "claim_id": "c3",
+              "text": "On 2022-09-12, Dr. Finch diagnosed acute cervical strain with possible cervical disc herniation/bulge",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                3
+              ],
+              "reason": "Matches event 3 exactly."
+            },
+            {
+              "claim_id": "c4",
+              "text": "Records note prior treatment for cervicalgia in 2022, predating the MVA",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                4
+              ],
+              "reason": "Matches event 4."
+            },
+            {
+              "claim_id": "c5",
+              "text": "X-ray on 2022-09-15 showed mild DDD at C5-C6 with 4mm posterior disc bulge",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                6
+              ],
+              "reason": "Matches event 6 exactly."
+            },
+            {
+              "claim_id": "c6",
+              "text": "This finding was later characterized as pre-existing and of unclear onset by Dr. Foster",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                92
+              ],
+              "reason": "Event 92 attributes this hedge to Dr. Foster with 'possibly preexisting'."
+            },
+            {
+              "claim_id": "c7",
+              "text": "Confirmed by Dr. Turner as predating the September 2023 incident",
+              "status": "overclaimed",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                93
+              ],
+              "reason": "Event 93 states 'documented prior to' as Turner's diagnosis entry, but the summary uses 'confirmed', converting what is itself a diagnosis-note claim into definitive fact; timeline doesn't hedge Turner's statement, but pairing with Foster's hedged 'possibly preexisting' and calling it 'confirmed' inflates certainty across two differently-hedged provider statements."
+            },
+            {
+              "claim_id": "c8",
+              "text": "Patient sustained left arm fractures in MVA",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                9
+              ],
+              "reason": "Matches event 9 mentioning left arm fractures from MVA."
+            },
+            {
+              "claim_id": "c9",
+              "text": "On 2023-09-04, Dr. Foster arranged emergency orthopedic consultation for ORIF and performed surgical repair under nerve block anesthesia",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                7,
+                8,
+                9
+              ],
+              "reason": "Matches events 7, 8, 9 which are all attributed to Dr. Foster on that date."
+            },
+            {
+              "claim_id": "c10",
+              "text": "Head CT without contrast obtained 2023-09-05",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                10
+              ],
+              "reason": "Matches event 10."
+            },
+            {
+              "claim_id": "c11",
+              "text": "Acetaminophen 975mg administered 2023-09-06",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                11
+              ],
+              "reason": "Matches event 11."
+            },
+            {
+              "claim_id": "c12",
+              "text": "Fluoroscopic imaging on 2023-09-07 under Dr. Turner confirmed anatomic alignment and hardware placement",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                12
+              ],
+              "reason": "Matches event 12 exactly, correctly attributed to Turner not Foster."
+            },
+            {
+              "claim_id": "c13",
+              "text": "Physical therapy began 2023-09-15 at Lang-Weimann under Robert Stewart, addressing ORIF, cervicalgia, left knee contusion",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                13,
+                14,
+                15
+              ],
+              "reason": "Matches events 13-15."
+            },
+            {
+              "claim_id": "c14",
+              "text": "Surgical staples removed 2023-09-21",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                18
+              ],
+              "reason": "Matches event 18."
+            },
+            {
+              "claim_id": "c15",
+              "text": "Oxycodone-Acetaminophen 5-325mg started/continued 2023-09-22",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                19
+              ],
+              "reason": "Matches event 19, though event says 'continued' implying earlier start not in timeline; summary phrasing is neutral."
+            },
+            {
+              "claim_id": "c16",
+              "text": "Cyclobenzaprine 10mg starting 2023-10-19",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                25
+              ],
+              "reason": "Matches event 25."
+            },
+            {
+              "claim_id": "c17",
+              "text": "High-dose Ibuprofen 800mg starting 2023-11-16",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                36
+              ],
+              "reason": "Matches event 36."
+            },
+            {
+              "claim_id": "c18",
+              "text": "X-rays on 2023-10-19 showed early callus formation",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                24
+              ],
+              "reason": "Matches event 24."
+            },
+            {
+              "claim_id": "c19",
+              "text": "Patient missed three consecutive PT sessions on 2023-11-14, 11-17, 11-21",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                33,
+                37,
+                38
+              ],
+              "reason": "Matches events 33, 37, 38 exactly."
+            },
+            {
+              "claim_id": "c20",
+              "text": "Elbow stiffness significantly rebounded by 2023-11-24",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                39,
+                40
+              ],
+              "reason": "Matches events 39 and 40."
+            },
+            {
+              "claim_id": "c21",
+              "text": "Thirty PT sessions concluded 2023-12-11 with persistent cervical stiffness and arm pain",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                46
+              ],
+              "reason": "Matches event 46 discharge summary."
+            },
+            {
+              "claim_id": "c22",
+              "text": "MRI of left upper extremity and C-spine ordered 2023-12-14",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                47
+              ],
+              "reason": "Matches event 47."
+            },
+            {
+              "claim_id": "c23",
+              "text": "X-rays on 2023-12-14 showed well-healed fractures with stable hardware but decreased radial sensation",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                48,
+                49
+              ],
+              "reason": "Matches events 48 (decreased radial sensation) and 49 (well-healed, stable hardware)."
+            },
+            {
+              "claim_id": "c24",
+              "text": "Care transitioned to Amanda Gregory at Emory beginning 2024-01-08, continuing through 2024-03-22, totaling 30 additional sessions",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                51,
+                89,
+                91
+              ],
+              "reason": "Matches event 51 start date, 89 last session date, and 91 confirms 30 sessions completed."
+            },
+            {
+              "claim_id": "c25",
+              "text": "Repeated cervical symptom provocation noted throughout, notably 2024-01-17, 01-29, 02-12, 02-28, 03-04, 03-06",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                57,
+                63,
+                72,
+                81,
+                83,
+                84
+              ],
+              "reason": "Matches the listed cervical provocation events."
+            },
+            {
+              "claim_id": "c26",
+              "text": "Ibuprofen 800mg continued through 2024-02-15",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                75
+              ],
+              "reason": "Matches event 75."
+            },
+            {
+              "claim_id": "c27",
+              "text": "On 2024-02-08, Dr. Turner noted complete bony fusion but limited forearm/shoulder motion",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                69
+              ],
+              "reason": "Matches event 69 exactly."
+            },
+            {
+              "claim_id": "c28",
+              "text": "By discharge on 2024-03-25, patient retained persistent 15-degree extension deficit in left elbow and chronic pain despite substantial functional improvement",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                90,
+                91
+              ],
+              "reason": "Matches events 90 and 91 closely."
+            },
+            {
+              "claim_id": "c29",
+              "text": "Omission that patient also had chronic muscle wasting noted at Emory intake in January 2024",
+              "status": "unsupported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                51
+              ],
+              "reason": "Event 51 mentions persistent muscle wasting and chronic cervical disc bulge at intake, but summary never mentions this at the Emory transition, though this is an omission rather than a false claim."
+            }
+          ],
+          "fact_coverage": [
+            {
+              "fact_id": "gym-neck-injury-2022",
+              "reflected": "yes",
+              "notes": "Covered with date, mechanism, and date discrepancy noted."
+            },
+            {
+              "fact_id": "cervical-strain-diagnosis-2022",
+              "reflected": "yes",
+              "notes": "Explicitly stated with hedge on herniation/bulge."
+            },
+            {
+              "fact_id": "pre-existing-cervicalgia",
+              "reflected": "yes",
+              "notes": "Explicitly stated prior cervicalgia treatment in 2022 predating MVA."
+            },
+            {
+              "fact_id": "preexisting-c5-c6-bulge",
+              "reflected": "yes",
+              "notes": "X-ray finding and later characterization by both Foster and Turner covered, though 'confirmed' language slightly overstates certainty."
+            },
+            {
+              "fact_id": "mva-2023-injury",
+              "reflected": "yes",
+              "notes": "Stated left arm fractures from MVA requiring emergency care."
+            },
+            {
+              "fact_id": "orif-surgery",
+              "reflected": "yes",
+              "notes": "ORIF, nerve block, and fluoroscopy all mentioned."
+            },
+            {
+              "fact_id": "head-ct-2023",
+              "reflected": "yes",
+              "notes": "CT head without contrast on 2023-09-05 explicitly stated."
+            },
+            {
+              "fact_id": "post-surgical-diagnosis",
+              "reflected": "yes",
+              "notes": "ORIF, cervicalgia, left knee contusion diagnosis stated."
+            },
+            {
+              "fact_id": "pt-course-lang-weimann",
+              "reflected": "yes",
+              "notes": "30 sessions, dates, and cervical provocation implied though not explicitly repeated as 'repeatedly provoked' for this phase."
+            },
+            {
+              "fact_id": "pt-noncompliance-2023",
+              "reflected": "yes",
+              "notes": "Missed sessions and rebound stiffness covered; provider warning about contractures not explicitly mentioned in summary."
+            },
+            {
+              "fact_id": "medication-course-opioid-nsaid",
+              "reflected": "yes",
+              "notes": "All four medications and their approximate dates covered."
+            },
+            {
+              "fact_id": "callus-formation-followup",
+              "reflected": "partial",
+              "notes": "Callus formation mentioned but patient's neck stiffness/weak grip strength context from that same visit not mentioned."
+            },
+            {
+              "fact_id": "bony-healing-progression",
+              "reflected": "yes",
+              "notes": "Progression from callus to well-healed to complete fusion is covered across the summary."
+            },
+            {
+              "fact_id": "persistent-deficits-dec-2023",
+              "reflected": "partial",
+              "notes": "Decreased radial sensation mentioned, but worsening neck pain and ROM restrictions specifically not explicitly stated in Dec 2023 context."
+            },
+            {
+              "fact_id": "mri-ordered",
+              "reflected": "yes",
+              "notes": "MRI order and purpose stated."
+            },
+            {
+              "fact_id": "pt-transfer-emory",
+              "reflected": "yes",
+              "notes": "Transition to Emory mentioned, though reason (persistent limited ROM despite fusion) implied via surrounding text rather than explicit linkage."
+            },
+            {
+              "fact_id": "pt-course-emory",
+              "reflected": "yes",
+              "notes": "30 sessions at Emory with cervical provocation dates listed."
+            },
+            {
+              "fact_id": "chronic-muscle-wasting-disc-bulge",
+              "reflected": "no",
+              "notes": "Summary does not mention muscle wasting or chronic disc bulge noted at Emory intake (event 51)."
+            },
+            {
+              "fact_id": "permanent-elbow-deficit",
+              "reflected": "yes",
+              "notes": "15-degree extension deficit explicitly stated."
+            },
+            {
+              "fact_id": "final-outcome-chronic-pain",
+              "reflected": "yes",
+              "notes": "Substantial improvement with persistent deficits and chronic pain stated."
+            }
+          ],
+          "usefulness": {
+            "chronological_clarity": 5,
+            "concision": 4,
+            "organization": 4,
+            "preserves_uncertainty": 3,
+            "separates_pre_existing_vs_post": 4,
+            "emphasis_on_material_facts": 4,
+            "avoids_repetitive_clutter": 5
+          }
+        }
+      ]
+    },
+    "B": {
+      "tool": "B",
+      "runs": [
+        {
+          "tool": "B",
+          "run": 1,
+          "cost_usd": 0.028314,
+          "faithfulness": {
+            "composite": 0.636,
+            "ship_eligible": false,
+            "gate_triggering_claims": [
+              {
+                "claim_id": "c12",
+                "text": "Dr. Myrtle Turner later confirmed this, tying it back to imaging predating the September 2023 crash",
+                "status": "overclaimed",
+                "materiality": "critical",
+                "evidence_event_ids": [
+                  93
+                ],
+                "reason": "Event 93 states the bulge was 'pre-existing... documented prior to the September 2023 incident' as a statement by Turner, but does not describe this as 'confirming' Foster's hedge \u2014 the summary conflates a hedged claim (92, 'possibly preexisting') with a separate provider's unequivocal claim (93), overstating certainty and implying direct confirmation between two different providers' assessments."
+              },
+              {
+                "claim_id": "c24",
+                "text": "By March 25, 2024, after a second full course of 30 sessions, patient had made substantial gains but was left with a persistent 22-degree extension deficit in left elbow and chronic pain",
+                "status": "contradicted",
+                "materiality": "critical",
+                "evidence_event_ids": [
+                  90,
+                  91
+                ],
+                "reason": "Timeline event 90 explicitly states a 15-degree extension deficit, not 22-degree; this is a factual number error on a material clinical finding."
+              }
+            ],
+            "claim_count": 24,
+            "flawed_claim_count": 3,
+            "claim_counts_by_status": {
+              "supported": 21,
+              "contradicted": 2,
+              "overclaimed": 1
+            },
+            "claim_counts_by_materiality": {
+              "minor": 21,
+              "major": 1,
+              "critical": 2
+            }
+          },
+          "coverage": {
+            "weighted_coverage_rate": 0.784,
+            "facts_total": 20,
+            "facts_missing": [
+              "pre-existing-cervicalgia",
+              "chronic-muscle-wasting-disc-bulge",
+              "permanent-elbow-deficit"
+            ],
+            "coverage_by_fact_id": {
+              "gym-neck-injury-2022": "yes",
+              "cervical-strain-diagnosis-2022": "yes",
+              "pre-existing-cervicalgia": "no",
+              "preexisting-c5-c6-bulge": "yes",
+              "mva-2023-injury": "yes",
+              "orif-surgery": "yes",
+              "head-ct-2023": "yes",
+              "post-surgical-diagnosis": "yes",
+              "pt-course-lang-weimann": "yes",
+              "pt-noncompliance-2023": "yes",
+              "medication-course-opioid-nsaid": "partial",
+              "callus-formation-followup": "yes",
+              "bony-healing-progression": "partial",
+              "persistent-deficits-dec-2023": "yes",
+              "mri-ordered": "yes",
+              "pt-transfer-emory": "partial",
+              "pt-course-emory": "yes",
+              "chronic-muscle-wasting-disc-bulge": "no",
+              "permanent-elbow-deficit": "no",
+              "final-outcome-chronic-pain": "yes"
+            }
+          },
+          "usefulness": {
+            "mean": 4.0,
+            "by_dimension": {
+              "chronological_clarity": 4,
+              "concision": 4,
+              "organization": 4,
+              "preserves_uncertainty": 3,
+              "separates_pre_existing_vs_post": 4,
+              "emphasis_on_material_facts": 4,
+              "avoids_repetitive_clutter": 5
+            }
+          }
+        },
+        {
+          "tool": "B",
+          "run": 2,
+          "cost_usd": 0.028694,
+          "faithfulness": {
+            "composite": 0.836,
+            "ship_eligible": false,
+            "gate_triggering_claims": [
+              {
+                "claim_id": "c6",
+                "text": "Three-view cervical X-ray on September 15, 2022 confirmed mild DDD at C6-C7 with 4mm posterior disc bulge",
+                "status": "contradicted",
+                "materiality": "critical",
+                "evidence_event_ids": [
+                  6
+                ],
+                "reason": "Timeline states the level is C5-C6, not C6-C7 -- a wrong body level error."
+              },
+              {
+                "claim_id": "c15",
+                "text": "Patient began physical therapy at Lang-Weimann Medical Center on September 15, 2023 under Dr. Marcus Chen",
+                "status": "contradicted",
+                "materiality": "critical",
+                "evidence_event_ids": [
+                  14,
+                  15
+                ],
+                "reason": "Timeline attributes this PT evaluation to Robert Stewart, PT, DPT, not Dr. Marcus Chen, who does not appear anywhere in the timeline."
+              }
+            ],
+            "claim_count": 31,
+            "flawed_claim_count": 3,
+            "claim_counts_by_status": {
+              "supported": 28,
+              "contradicted": 2,
+              "unsupported": 1
+            },
+            "claim_counts_by_materiality": {
+              "minor": 10,
+              "major": 16,
+              "critical": 5
+            }
+          },
+          "coverage": {
+            "weighted_coverage_rate": 0.955,
+            "facts_total": 20,
+            "facts_missing": [],
+            "coverage_by_fact_id": {
+              "gym-neck-injury-2022": "yes",
+              "cervical-strain-diagnosis-2022": "yes",
+              "pre-existing-cervicalgia": "yes",
+              "preexisting-c5-c6-bulge": "partial",
+              "mva-2023-injury": "yes",
+              "orif-surgery": "yes",
+              "head-ct-2023": "yes",
+              "post-surgical-diagnosis": "yes",
+              "pt-course-lang-weimann": "yes",
+              "pt-noncompliance-2023": "yes",
+              "medication-course-opioid-nsaid": "yes",
+              "callus-formation-followup": "yes",
+              "bony-healing-progression": "yes",
+              "persistent-deficits-dec-2023": "yes",
+              "mri-ordered": "yes",
+              "pt-transfer-emory": "partial",
+              "pt-course-emory": "yes",
+              "chronic-muscle-wasting-disc-bulge": "yes",
+              "permanent-elbow-deficit": "yes",
+              "final-outcome-chronic-pain": "yes"
+            }
+          },
+          "usefulness": {
+            "mean": 4.43,
+            "by_dimension": {
+              "chronological_clarity": 5,
+              "concision": 4,
+              "organization": 5,
+              "preserves_uncertainty": 3,
+              "separates_pre_existing_vs_post": 5,
+              "emphasis_on_material_facts": 4,
+              "avoids_repetitive_clutter": 5
+            }
+          }
+        }
+      ],
+      "mean_faithfulness": 0.736,
+      "mean_coverage": 0.869,
+      "mean_usefulness": 4.21,
+      "ship_eligible": false,
+      "total_cost_usd": 0.057,
+      "mean_cost_usd": 0.0285,
+      "stability": {
+        "material_fact_overlap_rate": 0.722,
+        "critical_cross_run_conflict_count": 0,
+        "agree": 13,
+        "disagree": 5,
+        "run1_only": 0,
+        "run2_only": 4,
+        "raw_claim_pairs": [
+          {
+            "topic": "Gym injury date",
+            "run1_claim": "September 2022 (unspecified date), weightlifting accident during heavy squat set",
+            "run2_claim": "September 3, 2022, injury during heavy squat set; notes discrepancy in exact date",
+            "relation": "disagree",
+            "materiality": "minor",
+            "reason": "Both agree on the general event but differ on specificity/date noted."
+          },
+          {
+            "topic": "Intake at Back & Spine Restoration Center",
+            "run1_claim": null,
+            "run2_claim": "Intake began September 10, 2022",
+            "relation": "run2_only",
+            "materiality": "minor",
+            "reason": "Run 2 adds a specific intake date not mentioned in run 1."
+          },
+          {
+            "topic": "Dr. Finch evaluation date",
+            "run1_claim": "Evaluated by Dr. Finch, no specific date given beyond September 2022",
+            "run2_claim": "Evaluated September 12, 2022",
+            "relation": "run2_only",
+            "materiality": "minor",
+            "reason": "Run 2 provides a specific evaluation date absent in run 1."
+          },
+          {
+            "topic": "Cervical X-ray date and level",
+            "run1_claim": "September 22, 2022 X-ray showing DDD at C5-C6 with 4mm posterior disc bulge",
+            "run2_claim": "September 15, 2022 X-ray showing DDD at C6-C7 with 4mm posterior disc bulge",
+            "relation": "disagree",
+            "materiality": "major",
+            "reason": "The two runs report different dates and different spinal levels for the same imaging finding."
+          },
+          {
+            "topic": "Diagnosis from Dr. Finch",
+            "run1_claim": "Acute cervical strain with possible disc herniation",
+            "run2_claim": "Acute cervical strain with possible underlying disc herniation or bulge, noting prior cervicalgia treatment",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Both describe the same diagnosis with only minor wording differences."
+          },
+          {
+            "topic": "Pre-existing condition characterization",
+            "run1_claim": "Dr. Foster flagged C5-C6 narrowing/bulge as possibly preexisting, confirmed by Dr. Turner",
+            "run2_claim": "Both Dr. Foster and Dr. Turner flagged C6-C7 bulge as pre-existing",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both attribute the same causal/pre-existing finding to the same two doctors, despite differing vertebral level naming."
+          },
+          {
+            "topic": "MVA and fracture",
+            "run1_claim": "Motor vehicle accident caused left humerus and radius fractures, date not directly stated for accident itself",
+            "run2_claim": "Accident occurred on or before September 4, 2023, causing same fractures",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both agree on the nature and timing (early September 2023) of the accident and injuries."
+          },
+          {
+            "topic": "Emergency ORIF surgery",
+            "run1_claim": "Dr. Elizabeth Foster performed ORIF September 4, 2023 with nerve block at Littel Inc Emergency Hospital",
+            "run2_claim": "Same: Dr. Foster performed ORIF September 4, 2023 with nerve block at same hospital",
+            "relation": "agree",
+            "materiality": "critical",
+            "reason": "Both attribute the surgery to the same doctor, date, and method."
+          },
+          {
+            "topic": "Head CT and fluoroscopic imaging",
+            "run1_claim": "Head CT September 5, fluoroscopy September 7 confirming hardware",
+            "run2_claim": "Same dates, but attributes fluoroscopy oversight to Dr. Turner",
+            "relation": "disagree",
+            "materiality": "minor",
+            "reason": "Run 2 adds an attribution to Dr. Turner not present in run 1, a minor discrepancy in physician credit."
+          },
+          {
+            "topic": "Pain management inpatient",
+            "run1_claim": "Acetaminophen 975mg used for inpatient pain control",
+            "run2_claim": "Acetaminophen 975mg managed pain during admission",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Both describe identical medication and context."
+          },
+          {
+            "topic": "PT start and supervising provider",
+            "run1_claim": "Rehab began September 15, 2023 with Robert Stewart, PT, DPT",
+            "run2_claim": "PT began September 15, 2023 under Dr. Marcus Chen",
+            "relation": "disagree",
+            "materiality": "major",
+            "reason": "Different names are given for the physical therapist/provider overseeing initial rehab."
+          },
+          {
+            "topic": "Staple removal and initial medication changes",
+            "run1_claim": null,
+            "run2_claim": "Turner removed staples September 21 and started Oxycodone-Acetaminophen 5-325mg",
+            "relation": "run2_only",
+            "materiality": "minor",
+            "reason": "Run 2 introduces an event and medication not mentioned in run 1."
+          },
+          {
+            "topic": "October 19 follow-up findings",
+            "run1_claim": "Dr. Turner's October 19 follow-up showed early callus formation, neck stiffness, weak grip; started cyclobenzaprine",
+            "run2_claim": "X-ray October 19 showed early callus formation; cyclobenzaprine started same date for spasm",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both describe the same clinical findings and medication start on the same date."
+          },
+          {
+            "topic": "November 16 medication increase",
+            "run1_claim": "High-dose ibuprofen 800mg started November 16 due to worsening pain",
+            "run2_claim": "Ibuprofen 800mg added November 16 as inflammation and neck pain worsened",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Both agree on medication, dose, and date."
+          },
+          {
+            "topic": "Missed PT sessions",
+            "run1_claim": "Missed three consecutive sessions in mid-November",
+            "run2_claim": "Missed three consecutive sessions between November 14 and 21",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Both describe same event with slightly more specific dates in run 2."
+          },
+          {
+            "topic": "Elbow stiffness rebound",
+            "run1_claim": "By November 24, significant rebound in elbow stiffness requiring intensified stretching",
+            "run2_claim": "Elbow stiffness rebounded sharply on return November 24, requiring intensified stretching",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both describe identical clinical event and date."
+          },
+          {
+            "topic": "Completion of 30 PT sessions and MRI order",
+            "run1_claim": "30 sessions completed by December 11; MRI ordered due to persistent stiffness/pain",
+            "run2_claim": "30 sessions concluded December 11; MRI ordered December 14",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both describe same sequence and near-identical dates for completion and MRI order."
+          },
+          {
+            "topic": "December 14 X-ray findings",
+            "run1_claim": "X-rays showed well-healed fractures with stable hardware, decreased radial sensation and ROM restriction",
+            "run2_claim": "X-rays showed well-healed fractures with stable hardware despite decreased radial sensation",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both describe consistent radiographic and clinical findings."
+          },
+          {
+            "topic": "Transition to Amanda Gregory\u2019s care",
+            "run1_claim": "Care transitioned to Amanda Gregory, PT, OCS at Emory Sports Medicine Complex on January 8, 2024",
+            "run2_claim": "Care transferred to Amanda Gregory at Emory Sports Medicine Complex on January 8, 2024",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both agree on provider, facility, and start date."
+          },
+          {
+            "topic": "February follow-up findings",
+            "run1_claim": null,
+            "run2_claim": "Turner's February 8 follow-up confirmed complete bony fusion but limited shoulder/forearm ROM",
+            "relation": "run2_only",
+            "materiality": "major",
+            "reason": "Run 2 introduces a specific mid-treatment follow-up not mentioned in run 1."
+          },
+          {
+            "topic": "Final discharge and extension deficit",
+            "run1_claim": "By March 25, 2024, persistent 22-degree extension deficit in left elbow",
+            "run2_claim": "By discharge March 25, 2024, persistent 15-degree extension deficit in left elbow",
+            "relation": "disagree",
+            "materiality": "major",
+            "reason": "The two runs report different specific degree measurements for the same final outcome."
+          },
+          {
+            "topic": "Causal link between pre-existing disc bulge and chronic outcome",
+            "run1_claim": "Pre-existing disc bulge resurfaces as a factor complicating cervical symptoms throughout care",
+            "run2_claim": "Chronic pain outcome explicitly described as complicated by disc bulge predating the collision",
+            "relation": "agree",
+            "materiality": "critical",
+            "reason": "Both attribute ongoing complications to the same pre-existing condition as a causal factor."
+          }
+        ]
+      },
+      "judge_outputs": [
+        {
+          "claims": [
+            {
+              "claim_id": "c1",
+              "text": "September 2022 gym weightlifting accident during heavy squat set caused severe neck pain and stiffness, evaluated by Dr. Alistair Finch at Back & Spine Restoration Center",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                0
+              ],
+              "reason": "Matches event 0 directly."
+            },
+            {
+              "claim_id": "c2",
+              "text": "Workup culminated in a September 22, 2022 cervical spine X-ray",
+              "status": "contradicted",
+              "materiality": "major",
+              "evidence_event_ids": [
+                6
+              ],
+              "reason": "Timeline states the X-ray occurred on 2022-09-15, not September 22."
+            },
+            {
+              "claim_id": "c3",
+              "text": "X-ray showed mild degenerative disc disease at C5-C6 with 4mm posterior disc bulge",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                6
+              ],
+              "reason": "Matches event 6 findings exactly."
+            },
+            {
+              "claim_id": "c4",
+              "text": "Diagnosis of acute cervical strain with possible disc herniation",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                3
+              ],
+              "reason": "Matches event 3 diagnosis."
+            },
+            {
+              "claim_id": "c5",
+              "text": "This finding resurfaces repeatedly later in the record as a pre-existing condition",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                92,
+                93
+              ],
+              "reason": "Consistent with events 92 and 93 referencing pre-existing bulge."
+            },
+            {
+              "claim_id": "c6",
+              "text": "MVA caused fractures of left humerus and radius",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                9
+              ],
+              "reason": "Matches event 9."
+            },
+            {
+              "claim_id": "c7",
+              "text": "Dr. Elizabeth Foster performed emergency ORIF on September 4, 2023 at Littel Inc Emergency Hospital using nerve block anesthesia",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                7,
+                8,
+                9
+              ],
+              "reason": "Matches events 7-9, though event 8 attributes nerve block generically to same provider/date."
+            },
+            {
+              "claim_id": "c8",
+              "text": "Head CT followed on September 5",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                10
+              ],
+              "reason": "Matches event 10 date and description."
+            },
+            {
+              "claim_id": "c9",
+              "text": "Fluoroscopic imaging on September 7 confirmed hardware placement and alignment",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                12
+              ],
+              "reason": "Matches event 12, performed by Dr. Turner not explicitly stated but consistent."
+            },
+            {
+              "claim_id": "c10",
+              "text": "Acetaminophen 975mg used for inpatient pain control",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                11
+              ],
+              "reason": "Matches event 11."
+            },
+            {
+              "claim_id": "c11",
+              "text": "Dr. Foster's records flagged C5-C6 disc narrowing/bulge as of unclear onset, 'possibly preexisting'",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                92
+              ],
+              "reason": "Matches hedged language in event 92 attributed to Dr. Foster."
+            },
+            {
+              "claim_id": "c12",
+              "text": "Dr. Myrtle Turner later confirmed this, tying it back to imaging predating the September 2023 crash",
+              "status": "overclaimed",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                93
+              ],
+              "reason": "Event 93 states the bulge was 'pre-existing... documented prior to the September 2023 incident' as a statement by Turner, but does not describe this as 'confirming' Foster's hedge \u2014 the summary conflates a hedged claim (92, 'possibly preexisting') with a separate provider's unequivocal claim (93), overstating certainty and implying direct confirmation between two different providers' assessments."
+            },
+            {
+              "claim_id": "c13",
+              "text": "Rehabilitation began September 15, 2023 with Robert Stewart at Lang-Weimann addressing ORIF, cervicalgia, and left knee contusion",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                13,
+                14,
+                15
+              ],
+              "reason": "Matches events 13-15."
+            },
+            {
+              "claim_id": "c14",
+              "text": "Progress complicated by persistent cervical symptom provocation during traction and mobilization",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                16,
+                20,
+                28,
+                32,
+                43
+              ],
+              "reason": "Multiple PT sessions note provoked cervical symptoms."
+            },
+            {
+              "claim_id": "c15",
+              "text": "October 19 follow-up showed early callus formation but significant neck stiffness and weak grip strength, prompting cyclobenzaprine 10mg",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                23,
+                24,
+                25
+              ],
+              "reason": "Matches events 23-25 directly."
+            },
+            {
+              "claim_id": "c16",
+              "text": "By November 16, worsening arm and neck pain led to high-dose ibuprofen 800mg",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                35,
+                36
+              ],
+              "reason": "Matches events 35-36."
+            },
+            {
+              "claim_id": "c17",
+              "text": "Patient missed three consecutive PT sessions in mid-November",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                33,
+                37,
+                38
+              ],
+              "reason": "Matches events 33, 37, 38 dated Nov 14, 17, 21."
+            },
+            {
+              "claim_id": "c18",
+              "text": "By November 24 had suffered significant rebound in elbow stiffness, requiring intensified passive stretching",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                39,
+                40,
+                41
+              ],
+              "reason": "Matches events 39-41."
+            },
+            {
+              "claim_id": "c19",
+              "text": "Patient completed 30 sessions at Lang-Weimann by December 11, still with severe cervical stiffness and arm pain",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                46
+              ],
+              "reason": "Matches event 46 discharge summary."
+            },
+            {
+              "claim_id": "c20",
+              "text": "Prompted Dr. Turner to order MRI of left upper extremity and C-spine",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                47
+              ],
+              "reason": "Matches event 47, dated December 14."
+            },
+            {
+              "claim_id": "c21",
+              "text": "December 14 X-rays showed well-healed fractures with stable hardware, though decreased radial sensation and ROM restriction persisted",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                48,
+                49
+              ],
+              "reason": "Matches events 48-49."
+            },
+            {
+              "claim_id": "c22",
+              "text": "Care transitioned to Amanda Gregory, PT at Emory Sports Medicine Complex beginning January 8, 2024",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                51,
+                52
+              ],
+              "reason": "Matches events 51-52, though formal transition note is dated Feb 8 (event 69-70); summary's timing is consistent with when Emory treatment actually started."
+            },
+            {
+              "claim_id": "c23",
+              "text": "Sessions at Emory repeatedly interrupted by provoked cervical symptoms through February and March",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                57,
+                63,
+                72,
+                81,
+                83,
+                84
+              ],
+              "reason": "Matches multiple events noting cervical symptom provocation through this period."
+            },
+            {
+              "claim_id": "c24",
+              "text": "By March 25, 2024, after a second full course of 30 sessions, patient had made substantial gains but was left with a persistent 22-degree extension deficit in left elbow and chronic pain",
+              "status": "contradicted",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                90,
+                91
+              ],
+              "reason": "Timeline event 90 explicitly states a 15-degree extension deficit, not 22-degree; this is a factual number error on a material clinical finding."
+            }
+          ],
+          "fact_coverage": [
+            {
+              "fact_id": "gym-neck-injury-2022",
+              "reflected": "yes",
+              "notes": "Covered in first paragraph, mentions date discrepancy is implied via later error but core fact present; date discrepancy itself (event 1) not explicitly mentioned."
+            },
+            {
+              "fact_id": "cervical-strain-diagnosis-2022",
+              "reflected": "yes",
+              "notes": "Explicitly stated diagnosis and hedge on herniation/bulge."
+            },
+            {
+              "fact_id": "pre-existing-cervicalgia",
+              "reflected": "no",
+              "notes": "Summary never explicitly mentions prior treatment for cervicalgia in 2022 (event 4) distinct from the 2022 injury workup."
+            },
+            {
+              "fact_id": "preexisting-c5-c6-bulge",
+              "reflected": "yes",
+              "notes": "Covered via X-ray finding and later hedge/confirmation narrative, though date of X-ray misstated."
+            },
+            {
+              "fact_id": "mva-2023-injury",
+              "reflected": "yes",
+              "notes": "Clearly stated fractures and emergency surgical care."
+            },
+            {
+              "fact_id": "orif-surgery",
+              "reflected": "yes",
+              "notes": "ORIF, nerve block, and fluoroscopy all mentioned."
+            },
+            {
+              "fact_id": "head-ct-2023",
+              "reflected": "yes",
+              "notes": "Mentioned head CT on September 5."
+            },
+            {
+              "fact_id": "post-surgical-diagnosis",
+              "reflected": "yes",
+              "notes": "ORIF status, cervicalgia, and left knee contusion mentioned in PT paragraph."
+            },
+            {
+              "fact_id": "pt-course-lang-weimann",
+              "reflected": "yes",
+              "notes": "30 sessions, dates, cervical provocation described."
+            },
+            {
+              "fact_id": "pt-noncompliance-2023",
+              "reflected": "yes",
+              "notes": "Three missed sessions and elbow stiffness rebound described, though provider warning about contractures not explicitly mentioned."
+            },
+            {
+              "fact_id": "medication-course-opioid-nsaid",
+              "reflected": "partial",
+              "notes": "Acetaminophen, cyclobenzaprine, and ibuprofen mentioned but oxycodone-acetaminophen (event 19) omitted."
+            },
+            {
+              "fact_id": "callus-formation-followup",
+              "reflected": "yes",
+              "notes": "October 19 follow-up findings described accurately."
+            },
+            {
+              "fact_id": "bony-healing-progression",
+              "reflected": "partial",
+              "notes": "December well-healed fractures mentioned but complete bony fusion by February (event 69) not explicitly stated."
+            },
+            {
+              "fact_id": "persistent-deficits-dec-2023",
+              "reflected": "yes",
+              "notes": "Decreased radial sensation and ROM restriction covered."
+            },
+            {
+              "fact_id": "mri-ordered",
+              "reflected": "yes",
+              "notes": "MRI order explicitly mentioned."
+            },
+            {
+              "fact_id": "pt-transfer-emory",
+              "reflected": "partial",
+              "notes": "Transition to Emory mentioned but reason (persistent limited ROM despite bony fusion) and exact Feb 8 official transition date omitted."
+            },
+            {
+              "fact_id": "pt-course-emory",
+              "reflected": "yes",
+              "notes": "Second 30-session course and cervical provocation described."
+            },
+            {
+              "fact_id": "chronic-muscle-wasting-disc-bulge",
+              "reflected": "no",
+              "notes": "Summary omits muscle wasting and chronic disc bulge noted at Emory intake (event 51)."
+            },
+            {
+              "fact_id": "permanent-elbow-deficit",
+              "reflected": "no",
+              "notes": "Summary states 22-degree deficit instead of the correct 15-degree deficit from event 90, misrepresenting this critical final finding."
+            },
+            {
+              "fact_id": "final-outcome-chronic-pain",
+              "reflected": "yes",
+              "notes": "Substantial gains with persistent deficits and chronic pain stated, though deficit magnitude is wrong."
+            }
+          ],
+          "usefulness": {
+            "chronological_clarity": 4,
+            "concision": 4,
+            "organization": 4,
+            "preserves_uncertainty": 3,
+            "separates_pre_existing_vs_post": 4,
+            "emphasis_on_material_facts": 4,
+            "avoids_repetitive_clutter": 5
+          }
+        },
+        {
+          "claims": [
+            {
+              "claim_id": "c1",
+              "text": "On September 3, 2022, patient injured neck during heavy squat set at gym",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                0
+              ],
+              "reason": "Matches event 0 directly."
+            },
+            {
+              "claim_id": "c2",
+              "text": "By September 10, patient had begun intake at Back & Spine Restoration Center",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                2
+              ],
+              "reason": "Matches event 2."
+            },
+            {
+              "claim_id": "c3",
+              "text": "Record contains discrepancy as to exact injury date",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                1
+              ],
+              "reason": "Matches event 1."
+            },
+            {
+              "claim_id": "c4",
+              "text": "Dr. Alistair Finch evaluated patient September 12, 2022, diagnosing acute cervical strain with possible disc herniation/bulge",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                3,
+                5
+              ],
+              "reason": "Matches events 3 and 5."
+            },
+            {
+              "claim_id": "c5",
+              "text": "Noted prior treatment for cervicalgia that same year (2022)",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                4
+              ],
+              "reason": "Matches event 4, which states prior treatment for cervicalgia in 2022 before the MVA."
+            },
+            {
+              "claim_id": "c6",
+              "text": "Three-view cervical X-ray on September 15, 2022 confirmed mild DDD at C6-C7 with 4mm posterior disc bulge",
+              "status": "contradicted",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                6
+              ],
+              "reason": "Timeline states the level is C5-C6, not C6-C7 -- a wrong body level error."
+            },
+            {
+              "claim_id": "c7",
+              "text": "Finding later flagged by both Dr. Elizabeth Foster and Dr. Myrtle Turner as pre-existing condition predating the MVA",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                92,
+                93
+              ],
+              "reason": "Matches events 92 and 93, though Foster's note is hedged as 'possibly preexisting' and 'unclear onset' -- summary flattens this slightly by grouping with Turner's firmer statement."
+            },
+            {
+              "claim_id": "c8",
+              "text": "Accident occurred on or before September 4, 2023",
+              "status": "unsupported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                7
+              ],
+              "reason": "Timeline gives September 4, 2023 as date of ER consultation but does not hedge the accident date itself as 'on or before'; this phrasing is an unsupported addition of ambiguity."
+            },
+            {
+              "claim_id": "c9",
+              "text": "Accident produced fractures of left humerus and radius",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                9
+              ],
+              "reason": "Matches event 9 describing surgical procedures on left arm fractures from MVA."
+            },
+            {
+              "claim_id": "c10",
+              "text": "Dr. Elizabeth Foster performed emergency ORIF that day under nerve block anesthesia at Littel Inc",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                7,
+                8,
+                9
+              ],
+              "reason": "Matches events 7-9 attributing procedure to Dr. Foster."
+            },
+            {
+              "claim_id": "c11",
+              "text": "Head CT followed on September 5",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                10
+              ],
+              "reason": "Matches event 10."
+            },
+            {
+              "claim_id": "c12",
+              "text": "Fluoroscopic imaging confirmed hardware placement on September 7 under Dr. Myrtle Turner",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                12
+              ],
+              "reason": "Matches event 12 attributing fluoroscopy to Dr. Turner."
+            },
+            {
+              "claim_id": "c13",
+              "text": "Acetaminophen 975mg managed pain during admission",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                11
+              ],
+              "reason": "Matches event 11, though dated September 6 not specified but within admission."
+            },
+            {
+              "claim_id": "c14",
+              "text": "Discharged with diagnoses of post-surgical left humerus/radius ORIF, cervicalgia, and left knee contusion",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                13
+              ],
+              "reason": "Matches event 13 diagnosis."
+            },
+            {
+              "claim_id": "c15",
+              "text": "Patient began physical therapy at Lang-Weimann Medical Center on September 15, 2023 under Dr. Marcus Chen",
+              "status": "contradicted",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                14,
+                15
+              ],
+              "reason": "Timeline attributes this PT evaluation to Robert Stewart, PT, DPT, not Dr. Marcus Chen, who does not appear anywhere in the timeline."
+            },
+            {
+              "claim_id": "c16",
+              "text": "Early sessions repeatedly provoked cervical symptoms during wrist stretching and traction work",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                16,
+                32
+              ],
+              "reason": "Matches events 16 and 32 describing provoked cervical symptoms during wrist/cervical work."
+            },
+            {
+              "claim_id": "c17",
+              "text": "Turner removed surgical staples on September 21",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                18
+              ],
+              "reason": "Matches event 18."
+            },
+            {
+              "claim_id": "c18",
+              "text": "Started Oxycodone-Acetaminophen 5-325mg (attributed to Turner around Sept 21)",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                19
+              ],
+              "reason": "Matches event 19, dated September 22, attributed to Dr. Turner."
+            },
+            {
+              "claim_id": "c19",
+              "text": "Added Cyclobenzaprine 10mg on October 19 for spasm",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                25
+              ],
+              "reason": "Matches event 25."
+            },
+            {
+              "claim_id": "c20",
+              "text": "Added Ibuprofen 800mg on November 16 as inflammation and neck pain worsened",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                36
+              ],
+              "reason": "Matches event 36 dated November 16."
+            },
+            {
+              "claim_id": "c21",
+              "text": "X-ray on October 19 showed early callus formation but grip strength weak and stiffness significant",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                23,
+                24
+              ],
+              "reason": "Matches events 23 and 24."
+            },
+            {
+              "claim_id": "c22",
+              "text": "Patient missed three consecutive PT sessions between November 14 and November 21",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                33,
+                37,
+                38
+              ],
+              "reason": "Matches events 33, 37, 38 dated Nov 14, 17, 21."
+            },
+            {
+              "claim_id": "c23",
+              "text": "Elbow stiffness rebounded sharply on return November 24, requiring intensified passive stretching",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                39,
+                40,
+                41
+              ],
+              "reason": "Matches events 39-41."
+            },
+            {
+              "claim_id": "c24",
+              "text": "Thirty sessions concluded December 11 with persistent cervical stiffness and arm pain",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                46
+              ],
+              "reason": "Matches event 46."
+            },
+            {
+              "claim_id": "c25",
+              "text": "Turner ordered MRI of left upper extremity and C-spine on December 14",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                47
+              ],
+              "reason": "Matches event 47."
+            },
+            {
+              "claim_id": "c26",
+              "text": "By December 14, X-rays showed well-healed fractures with stable hardware despite decreased radial sensation",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                48,
+                49
+              ],
+              "reason": "Matches events 48 and 49."
+            },
+            {
+              "claim_id": "c27",
+              "text": "Care transferred to Amanda Gregory at Emory Sports Medicine Complex on January 8, 2024, for continued cervicalgia and muscle wasting",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                51,
+                52
+              ],
+              "reason": "Matches events 51-52 describing evaluation with muscle wasting and chronic cervical disc bulge."
+            },
+            {
+              "claim_id": "c28",
+              "text": "Over 30 sessions through March 22, cervical symptoms repeatedly provoked despite progressive strengthening work",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                57,
+                63,
+                72,
+                81,
+                83,
+                84,
+                89
+              ],
+              "reason": "Matches multiple events showing provoked cervical symptoms and final session on March 22 (event 89)."
+            },
+            {
+              "claim_id": "c29",
+              "text": "Turner's February 8 follow-up confirmed complete bony fusion but limited shoulder and forearm range of motion",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                69
+              ],
+              "reason": "Matches event 69."
+            },
+            {
+              "claim_id": "c30",
+              "text": "By discharge March 25, 2024, patient achieved substantial gains but retained persistent 15-degree extension deficit and chronic pain",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                90,
+                91
+              ],
+              "reason": "Matches events 90 and 91."
+            },
+            {
+              "claim_id": "c31",
+              "text": "Outcome complicated throughout by a disc bulge with roots predating the collision",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                92,
+                93
+              ],
+              "reason": "Matches events 92-93 regarding pre-existing disc bulge, though Foster's note is hedged ('possibly preexisting') while summary presents this as more settled without noting the hedge explicitly in this closing line."
+            }
+          ],
+          "fact_coverage": [
+            {
+              "fact_id": "gym-neck-injury-2022",
+              "reflected": "yes",
+              "notes": "Covered with date and discrepancy noted."
+            },
+            {
+              "fact_id": "cervical-strain-diagnosis-2022",
+              "reflected": "yes",
+              "notes": "Covered accurately."
+            },
+            {
+              "fact_id": "pre-existing-cervicalgia",
+              "reflected": "yes",
+              "notes": "Covered via Finch's note on prior cervicalgia treatment."
+            },
+            {
+              "fact_id": "preexisting-c5-c6-bulge",
+              "reflected": "partial",
+              "notes": "Level misstated as C6-C7 instead of C5-C6, otherwise concept covered."
+            },
+            {
+              "fact_id": "mva-2023-injury",
+              "reflected": "yes",
+              "notes": "Covered with date and injury description."
+            },
+            {
+              "fact_id": "orif-surgery",
+              "reflected": "yes",
+              "notes": "Covered including nerve block and fluoroscopy."
+            },
+            {
+              "fact_id": "head-ct-2023",
+              "reflected": "yes",
+              "notes": "Covered with date."
+            },
+            {
+              "fact_id": "post-surgical-diagnosis",
+              "reflected": "yes",
+              "notes": "Covered including knee contusion."
+            },
+            {
+              "fact_id": "pt-course-lang-weimann",
+              "reflected": "yes",
+              "notes": "Covered broadly, though provider misattributed to 'Dr. Marcus Chen' instead of Robert Stewart."
+            },
+            {
+              "fact_id": "pt-noncompliance-2023",
+              "reflected": "yes",
+              "notes": "Covered with dates and consequence of rebound stiffness and contracture warning omitted slightly but implied."
+            },
+            {
+              "fact_id": "medication-course-opioid-nsaid",
+              "reflected": "yes",
+              "notes": "All four medications mentioned with approximate dates."
+            },
+            {
+              "fact_id": "callus-formation-followup",
+              "reflected": "yes",
+              "notes": "Covered with October 19 date and grip/stiffness findings."
+            },
+            {
+              "fact_id": "bony-healing-progression",
+              "reflected": "yes",
+              "notes": "Covered via December well-healed and February complete fusion mentions."
+            },
+            {
+              "fact_id": "persistent-deficits-dec-2023",
+              "reflected": "yes",
+              "notes": "Decreased radial sensation and neck pain worsening covered; ROM restriction less explicit but implied."
+            },
+            {
+              "fact_id": "mri-ordered",
+              "reflected": "yes",
+              "notes": "Covered with date and purpose."
+            },
+            {
+              "fact_id": "pt-transfer-emory",
+              "reflected": "partial",
+              "notes": "Transfer covered but reason (persistent limited ROM despite fusion) not explicitly linked to transfer timing."
+            },
+            {
+              "fact_id": "pt-course-emory",
+              "reflected": "yes",
+              "notes": "Covered with dates and provoked cervical symptoms noted."
+            },
+            {
+              "fact_id": "chronic-muscle-wasting-disc-bulge",
+              "reflected": "yes",
+              "notes": "Covered via 'continued cervicalgia and muscle wasting' at Emory intake."
+            },
+            {
+              "fact_id": "permanent-elbow-deficit",
+              "reflected": "yes",
+              "notes": "Covered explicitly with 15-degree deficit and 30 sessions."
+            },
+            {
+              "fact_id": "final-outcome-chronic-pain",
+              "reflected": "yes",
+              "notes": "Covered as substantial gains with persistent deficits and chronic pain."
+            }
+          ],
+          "usefulness": {
+            "chronological_clarity": 5,
+            "concision": 4,
+            "organization": 5,
+            "preserves_uncertainty": 3,
+            "separates_pre_existing_vs_post": 5,
+            "emphasis_on_material_facts": 4,
+            "avoids_repetitive_clutter": 5
+          }
+        }
+      ]
+    },
+    "C": {
+      "tool": "C",
+      "runs": [
+        {
+          "tool": "C",
+          "run": 1,
+          "cost_usd": 0.007404,
+          "faithfulness": {
+            "composite": 0.833,
+            "ship_eligible": false,
+            "gate_triggering_claims": [
+              {
+                "claim_id": "c4",
+                "text": "Patient experienced cervical spine trauma [from the MVA]",
+                "status": "overclaimed",
+                "materiality": "critical",
+                "evidence_event_ids": [
+                  13,
+                  92,
+                  93
+                ],
+                "reason": "Timeline attributes cervicalgia to post-surgical diagnosis but explicitly notes the C5-C6 bulge/disc narrowing predates the MVA and is of unclear onset, making a direct causal claim of 'cervical spine trauma' from the MVA an overclaim."
+              }
+            ],
+            "claim_count": 17,
+            "flawed_claim_count": 3,
+            "claim_counts_by_status": {
+              "supported": 14,
+              "overclaimed": 1,
+              "contradicted": 1,
+              "unsupported": 1
+            },
+            "claim_counts_by_materiality": {
+              "critical": 4,
+              "major": 9,
+              "minor": 4
+            }
+          },
+          "coverage": {
+            "weighted_coverage_rate": 0.489,
+            "facts_total": 20,
+            "facts_missing": [
+              "cervical-strain-diagnosis-2022",
+              "pre-existing-cervicalgia",
+              "head-ct-2023",
+              "medication-course-opioid-nsaid",
+              "callus-formation-followup",
+              "persistent-deficits-dec-2023",
+              "mri-ordered",
+              "chronic-muscle-wasting-disc-bulge"
+            ],
+            "coverage_by_fact_id": {
+              "gym-neck-injury-2022": "partial",
+              "cervical-strain-diagnosis-2022": "no",
+              "pre-existing-cervicalgia": "no",
+              "preexisting-c5-c6-bulge": "yes",
+              "mva-2023-injury": "yes",
+              "orif-surgery": "partial",
+              "head-ct-2023": "no",
+              "post-surgical-diagnosis": "yes",
+              "pt-course-lang-weimann": "partial",
+              "pt-noncompliance-2023": "partial",
+              "medication-course-opioid-nsaid": "no",
+              "callus-formation-followup": "no",
+              "bony-healing-progression": "partial",
+              "persistent-deficits-dec-2023": "no",
+              "mri-ordered": "no",
+              "pt-transfer-emory": "yes",
+              "pt-course-emory": "partial",
+              "chronic-muscle-wasting-disc-bulge": "no",
+              "permanent-elbow-deficit": "partial",
+              "final-outcome-chronic-pain": "yes"
+            }
+          },
+          "usefulness": {
+            "mean": 3.71,
+            "by_dimension": {
+              "chronological_clarity": 3,
+              "concision": 4,
+              "organization": 4,
+              "preserves_uncertainty": 4,
+              "separates_pre_existing_vs_post": 3,
+              "emphasis_on_material_facts": 3,
+              "avoids_repetitive_clutter": 5
+            }
+          }
+        },
+        {
+          "tool": "C",
+          "run": 2,
+          "cost_usd": 0.007264,
+          "faithfulness": {
+            "composite": 0.8,
+            "ship_eligible": true,
+            "gate_triggering_claims": [],
+            "claim_count": 25,
+            "flawed_claim_count": 8,
+            "claim_counts_by_status": {
+              "supported": 17,
+              "unsupported": 8
+            },
+            "claim_counts_by_materiality": {
+              "critical": 4,
+              "major": 14,
+              "minor": 7
+            }
+          },
+          "coverage": {
+            "weighted_coverage_rate": 0.489,
+            "facts_total": 20,
+            "facts_missing": [
+              "cervical-strain-diagnosis-2022",
+              "pre-existing-cervicalgia",
+              "head-ct-2023",
+              "pt-noncompliance-2023",
+              "callus-formation-followup",
+              "persistent-deficits-dec-2023",
+              "mri-ordered",
+              "chronic-muscle-wasting-disc-bulge"
+            ],
+            "coverage_by_fact_id": {
+              "gym-neck-injury-2022": "partial",
+              "cervical-strain-diagnosis-2022": "no",
+              "pre-existing-cervicalgia": "no",
+              "preexisting-c5-c6-bulge": "yes",
+              "mva-2023-injury": "yes",
+              "orif-surgery": "partial",
+              "head-ct-2023": "no",
+              "post-surgical-diagnosis": "partial",
+              "pt-course-lang-weimann": "partial",
+              "pt-noncompliance-2023": "no",
+              "medication-course-opioid-nsaid": "yes",
+              "callus-formation-followup": "no",
+              "bony-healing-progression": "partial",
+              "persistent-deficits-dec-2023": "no",
+              "mri-ordered": "no",
+              "pt-transfer-emory": "partial",
+              "pt-course-emory": "partial",
+              "chronic-muscle-wasting-disc-bulge": "no",
+              "permanent-elbow-deficit": "yes",
+              "final-outcome-chronic-pain": "yes"
+            }
+          },
+          "usefulness": {
+            "mean": 3.86,
+            "by_dimension": {
+              "chronological_clarity": 3,
+              "concision": 4,
+              "organization": 4,
+              "preserves_uncertainty": 4,
+              "separates_pre_existing_vs_post": 4,
+              "emphasis_on_material_facts": 3,
+              "avoids_repetitive_clutter": 5
+            }
+          }
+        }
+      ],
+      "mean_faithfulness": 0.817,
+      "mean_coverage": 0.489,
+      "mean_usefulness": 3.79,
+      "ship_eligible": false,
+      "total_cost_usd": 0.0147,
+      "mean_cost_usd": 0.0073,
+      "stability": {
+        "material_fact_overlap_rate": 0.6,
+        "critical_cross_run_conflict_count": 0,
+        "agree": 3,
+        "disagree": 2,
+        "run1_only": 1,
+        "run2_only": 1,
+        "raw_claim_pairs": [
+          {
+            "topic": "MVA date and injuries",
+            "run1_claim": "September 2023 MVA causing left arm fractures (humerus and radius), requiring ORIF, plus left knee contusion and cervical spine trauma",
+            "run2_claim": "September 2023 MVA causing left arm fractures (humerus and radius), requiring ORIF, plus cervicalgia",
+            "relation": "disagree",
+            "materiality": "major",
+            "reason": "Run1 mentions a left knee contusion not mentioned in run2, which instead attributes cervicalgia directly to the injury."
+          },
+          {
+            "topic": "Prior 2022 injury and cervical imaging",
+            "run1_claim": "2022 gym weightlifting injury with prior imaging showing possible preexisting C5-C6 disc bulge, timeline unclear",
+            "run2_claim": "2022 gym weightlifting accident with prior neck pain and imaging showing mild degenerative disc disease and posterior disc bulge at C5-C6, possibly pre-existing",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both attribute the C5-C6 disc bulge to a 2022 gym injury and note it may be pre-existing, though run2 adds degenerative disc disease detail."
+          },
+          {
+            "topic": "Number of PT sessions and facilities",
+            "run1_claim": "Approximately sixty PT sessions across two facilities (initial site then sports medicine complex)",
+            "run2_claim": "Over sixty PT sessions across two facilities over several months",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Both describe a similar total number of sessions across two facilities, with only slight wording differences."
+          },
+          {
+            "topic": "Missed sessions/setback",
+            "run1_claim": "Patient missed sessions early in recovery causing increased stiffness requiring intensive intervention",
+            "run2_claim": null,
+            "relation": "run1_only",
+            "materiality": "major",
+            "reason": "Run1 attributes a specific setback (missed sessions causing stiffness) that run2 does not mention."
+          },
+          {
+            "topic": "Pain management medications",
+            "run1_claim": null,
+            "run2_claim": "Pain management included narcotic and non-narcotic medications and muscle relaxants",
+            "relation": "run2_only",
+            "materiality": "major",
+            "reason": "Run2 introduces specific medication details absent from run1."
+          },
+          {
+            "topic": "Discharge status of arm fractures",
+            "run1_claim": "Bony union with stable hardware at discharge",
+            "run2_claim": "Well-healed fractures with stable hardware and substantial functional improvements",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both describe healed fractures with stable hardware at discharge, consistent in substance."
+          },
+          {
+            "topic": "Residual deficits",
+            "run1_claim": "Limited forearm and shoulder range of motion and chronic cervical pain",
+            "run2_claim": "Persistent restriction in left elbow range of motion, decreased grip strength, chronic cervical pain with stiffness, and ongoing forearm/shoulder limitations",
+            "relation": "disagree",
+            "materiality": "major",
+            "reason": "Run2 adds elbow restriction and decreased grip strength as residual deficits not mentioned in run1, going beyond wording differences."
+          }
+        ]
+      },
+      "judge_outputs": [
+        {
+          "claims": [
+            {
+              "claim_id": "c1",
+              "text": "Patient sustained a motor vehicle accident in September 2023 resulting in left arm fractures",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                9
+              ],
+              "reason": "Timeline confirms surgical procedures on left arm fractures sustained in MVA on 2023-09-04."
+            },
+            {
+              "claim_id": "c2",
+              "text": "Required emergency orthopedic surgery with ORIF of left humerus and radius",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                7,
+                9,
+                13
+              ],
+              "reason": "Timeline documents emergency consultation for ORIF and post-surgical ORIF diagnosis of left humerus and radius."
+            },
+            {
+              "claim_id": "c3",
+              "text": "Patient sustained a left knee contusion",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                13
+              ],
+              "reason": "Timeline lists left knee contusion as part of post-surgical diagnosis."
+            },
+            {
+              "claim_id": "c4",
+              "text": "Patient experienced cervical spine trauma [from the MVA]",
+              "status": "overclaimed",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                13,
+                92,
+                93
+              ],
+              "reason": "Timeline attributes cervicalgia to post-surgical diagnosis but explicitly notes the C5-C6 bulge/disc narrowing predates the MVA and is of unclear onset, making a direct causal claim of 'cervical spine trauma' from the MVA an overclaim."
+            },
+            {
+              "claim_id": "c5",
+              "text": "Imaging revealed a posterior cervical disc bulge at C5-C6",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                6
+              ],
+              "reason": "Timeline documents 4mm posterior disc bulge at C5-C6 on X-ray."
+            },
+            {
+              "claim_id": "c6",
+              "text": "This disc abnormality may have been preexisting, documented from prior imaging following a 2022 gym weightlifting injury",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                6,
+                92,
+                93
+              ],
+              "reason": "Timeline explicitly documents the 2022 gym injury X-ray finding and later provider notes calling it possibly pre-existing."
+            },
+            {
+              "claim_id": "c7",
+              "text": "The exact timeline remains somewhat unclear in the records",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                1,
+                92
+              ],
+              "reason": "Timeline notes a documented discrepancy regarding date of gym injury and unclear onset of the disc finding."
+            },
+            {
+              "claim_id": "c8",
+              "text": "Patient underwent extended PT, initially at one facility then transitioning to a sports medicine complex",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                15,
+                46,
+                51,
+                70
+              ],
+              "reason": "Timeline documents PT at Lang-Weimann then transition to Emory Sports Medicine Complex."
+            },
+            {
+              "claim_id": "c9",
+              "text": "Treatment addressed left arm fractures, cervical strain, and associated pain via progressive exercises, manual therapy, traction and heat",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                16,
+                21,
+                28,
+                29,
+                43,
+                54,
+                58,
+                67,
+                73,
+                76,
+                87
+              ],
+              "reason": "Multiple timeline entries describe these modalities across both PT courses."
+            },
+            {
+              "claim_id": "c10",
+              "text": "Patient completed approximately sixty physical therapy sessions total",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                46,
+                91
+              ],
+              "reason": "Timeline states 30 sessions completed at Lang-Weimann (event 46) and 30 sessions completed at Emory (event 91), totaling 60."
+            },
+            {
+              "claim_id": "c11",
+              "text": "Cervical symptoms were frequently provoked during treatment sessions, requiring modification and monitoring",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                16,
+                20,
+                32,
+                43,
+                57,
+                63,
+                72,
+                81,
+                83,
+                84
+              ],
+              "reason": "Numerous timeline entries document provoked cervical symptoms requiring modification across both PT courses."
+            },
+            {
+              "claim_id": "c12",
+              "text": "Patient experienced a setback due to missed sessions early in recovery, resulting in increased stiffness requiring intensive intervention",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                33,
+                37,
+                38,
+                39,
+                40,
+                41
+              ],
+              "reason": "Timeline documents three missed consecutive sessions in Nov 2023 leading to rebounded elbow stiffness and subsequent intensive stretching sessions."
+            },
+            {
+              "claim_id": "c13",
+              "text": "The missed sessions occurred 'early in recovery'",
+              "status": "contradicted",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                33,
+                37,
+                38
+              ],
+              "reason": "The missed sessions occurred in mid-to-late November 2023, roughly two months into a PT course that began in September 2023 and continued through December 2023, not early in recovery."
+            },
+            {
+              "claim_id": "c14",
+              "text": "At discharge, left arm fractures had achieved bony union with stable hardware",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                69
+              ],
+              "reason": "Timeline documents complete bony fusion with stable hardware at February 2024 follow-up."
+            },
+            {
+              "claim_id": "c15",
+              "text": "Patient retained persistent deficits including limited forearm and shoulder range of motion",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                69,
+                90
+              ],
+              "reason": "Timeline notes limited ROM in forearm/shoulder and a 15-degree elbow extension deficit persisting after PT."
+            },
+            {
+              "claim_id": "c16",
+              "text": "Patient retained chronic cervical pain despite completion of intensive rehabilitation",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                91
+              ],
+              "reason": "Timeline states patient completed 30 sessions with substantial improvement but persistent deficits and chronic pain, consistent with cervical involvement throughout."
+            },
+            {
+              "claim_id": "c17",
+              "text": "The specific 15-degree elbow extension deficit is omitted from summary detail but implied as 'limited range of motion'",
+              "status": "unsupported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                90
+              ],
+              "reason": "Summary vaguely references limited ROM but does not specify the quantified 15-degree deficit noted in the timeline, resulting in a loss of specificity though not a factual error."
+            }
+          ],
+          "fact_coverage": [
+            {
+              "fact_id": "gym-neck-injury-2022",
+              "reflected": "partial",
+              "notes": "Mentions 2022 gym weightlifting injury and date discrepancy but omits severity description of neck pain/stiffness."
+            },
+            {
+              "fact_id": "cervical-strain-diagnosis-2022",
+              "reflected": "no",
+              "notes": "Summary does not mention the specific 2022 diagnosis of acute cervical strain with possible herniation/bulge."
+            },
+            {
+              "fact_id": "pre-existing-cervicalgia",
+              "reflected": "no",
+              "notes": "Prior 2022 cervicalgia treatment before the MVA is not explicitly mentioned."
+            },
+            {
+              "fact_id": "preexisting-c5-c6-bulge",
+              "reflected": "yes",
+              "notes": "Summary notes the C5-C6 bulge may be preexisting from 2022 imaging, consistent with timeline."
+            },
+            {
+              "fact_id": "mva-2023-injury",
+              "reflected": "yes",
+              "notes": "Clearly stated MVA in September 2023 causing left arm fractures requiring emergency surgery."
+            },
+            {
+              "fact_id": "orif-surgery",
+              "reflected": "partial",
+              "notes": "ORIF and emergency surgery are mentioned but nerve block anesthesia and fluoroscopy details are omitted."
+            },
+            {
+              "fact_id": "head-ct-2023",
+              "reflected": "no",
+              "notes": "CT scan of head is not mentioned in the summary."
+            },
+            {
+              "fact_id": "post-surgical-diagnosis",
+              "reflected": "yes",
+              "notes": "Summary mentions ORIF status, cervicalgia (as cervical strain), and left knee contusion."
+            },
+            {
+              "fact_id": "pt-course-lang-weimann",
+              "reflected": "partial",
+              "notes": "Mentions PT at initial facility addressing arm and cervical symptoms but does not specify session count (30) or date range."
+            },
+            {
+              "fact_id": "pt-noncompliance-2023",
+              "reflected": "partial",
+              "notes": "Mentions missed sessions and resulting stiffness but omits specifics (three consecutive sessions, contracture warning)."
+            },
+            {
+              "fact_id": "medication-course-opioid-nsaid",
+              "reflected": "no",
+              "notes": "Summary does not mention any specific medications used for pain management."
+            },
+            {
+              "fact_id": "callus-formation-followup",
+              "reflected": "no",
+              "notes": "October 2023 callus formation finding not mentioned."
+            },
+            {
+              "fact_id": "bony-healing-progression",
+              "reflected": "partial",
+              "notes": "Only final bony union mentioned; serial progression through callus formation not described."
+            },
+            {
+              "fact_id": "persistent-deficits-dec-2023",
+              "reflected": "no",
+              "notes": "December 2023 findings of decreased radial sensation and worsening neck pain are not mentioned."
+            },
+            {
+              "fact_id": "mri-ordered",
+              "reflected": "no",
+              "notes": "MRI order in December 2023 is not mentioned in the summary."
+            },
+            {
+              "fact_id": "pt-transfer-emory",
+              "reflected": "yes",
+              "notes": "Summary mentions transition to a sports medicine complex, consistent with Emory transfer."
+            },
+            {
+              "fact_id": "pt-course-emory",
+              "reflected": "partial",
+              "notes": "Second PT course is implied by mention of transition and total sessions, but not explicitly separated as distinct 30-session course with dates."
+            },
+            {
+              "fact_id": "chronic-muscle-wasting-disc-bulge",
+              "reflected": "no",
+              "notes": "Muscle wasting and chronic disc bulge noted at Emory intake not mentioned."
+            },
+            {
+              "fact_id": "permanent-elbow-deficit",
+              "reflected": "partial",
+              "notes": "General mention of limited ROM but the specific 15-degree extension deficit finding is omitted."
+            },
+            {
+              "fact_id": "final-outcome-chronic-pain",
+              "reflected": "yes",
+              "notes": "Summary explicitly states persistent deficits and chronic pain despite substantial improvement."
+            }
+          ],
+          "usefulness": {
+            "chronological_clarity": 3,
+            "concision": 4,
+            "organization": 4,
+            "preserves_uncertainty": 4,
+            "separates_pre_existing_vs_post": 3,
+            "emphasis_on_material_facts": 3,
+            "avoids_repetitive_clutter": 5
+          }
+        },
+        {
+          "claims": [
+            {
+              "claim_id": "c1",
+              "text": "MVA in September 2023 resulted in left arm fractures involving humerus and radius",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                9
+              ],
+              "reason": "Timeline confirms surgical procedures on left arm fractures from MVA on 2023-09-04."
+            },
+            {
+              "claim_id": "c2",
+              "text": "Emergency orthopedic surgery performed with ORIF",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                7,
+                9
+              ],
+              "reason": "Event 7 documents immediate consultation for emergency ORIF."
+            },
+            {
+              "claim_id": "c3",
+              "text": "Patient also presented with cervicalgia following the injury",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                13
+              ],
+              "reason": "Event 13 lists cervicalgia as part of post-surgical diagnosis."
+            },
+            {
+              "claim_id": "c4",
+              "text": "Patient had prior neck pain and imaging findings from a gym weightlifting accident in 2022",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                0,
+                6
+              ],
+              "reason": "Events 0 and 6 document the 2022 gym injury and imaging findings."
+            },
+            {
+              "claim_id": "c5",
+              "text": "Imaging showed mild degenerative disc disease and posterior disc bulge at C5-C6",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                6
+              ],
+              "reason": "Event 6 documents exact finding of mild DDD and 4mm posterior disc bulge at C5-C6."
+            },
+            {
+              "claim_id": "c6",
+              "text": "Records indicate this disc bulge may have been a pre-existing condition",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                92,
+                93
+              ],
+              "reason": "Events 92 and 93 explicitly hedge this as possible pre-existing condition, appropriately preserved by summary."
+            },
+            {
+              "claim_id": "c7",
+              "text": "Patient underwent rehabilitation including over sixty physical therapy sessions across two facilities",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                46,
+                91
+              ],
+              "reason": "Event 46 documents 30 sessions at Lang-Weimann and event 91 documents 30 sessions at Emory, totaling 60."
+            },
+            {
+              "claim_id": "c8",
+              "text": "Rehabilitation spanned over a period of several months",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                15,
+                89
+              ],
+              "reason": "Timeline spans September 2023 to March 2024, several months of PT sessions across two facilities."
+            },
+            {
+              "claim_id": "c9",
+              "text": "Treatment addressed both left arm fractures and persistent cervical symptoms",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                16,
+                43,
+                54
+              ],
+              "reason": "Multiple therapy sessions addressed both arm mobilization and cervical treatment throughout timeline."
+            },
+            {
+              "claim_id": "c10",
+              "text": "Cervical symptoms were frequently provoked during therapy",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                16,
+                20,
+                32,
+                43,
+                57,
+                63,
+                72,
+                81,
+                83,
+                84
+              ],
+              "reason": "Numerous events document cervical symptoms being provoked during PT sessions at both facilities."
+            },
+            {
+              "claim_id": "c11",
+              "text": "Pain management included narcotic and non-narcotic medications and muscle relaxants",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                11,
+                19,
+                25,
+                36
+              ],
+              "reason": "Timeline documents acetaminophen, oxycodone-acetaminophen (narcotic), cyclobenzaprine (muscle relaxant), and ibuprofen (non-narcotic)."
+            },
+            {
+              "claim_id": "c12",
+              "text": "By discharge, patient had achieved substantial functional improvements",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                91
+              ],
+              "reason": "Event 91 states patient completed 30 sessions achieving substantial improvements."
+            },
+            {
+              "claim_id": "c13",
+              "text": "Fractures were well-healed with stable internal hardware",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                49,
+                69
+              ],
+              "reason": "Events 49 and 69 document well-healed fractures, stable hardware, and complete bony fusion."
+            },
+            {
+              "claim_id": "c14",
+              "text": "Patient demonstrates persistent restriction in left elbow range of motion",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                90
+              ],
+              "reason": "Event 90 documents persistent 15-degree extension deficit in left elbow."
+            },
+            {
+              "claim_id": "c15",
+              "text": "Patient has decreased grip strength",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                23
+              ],
+              "reason": "Event 23 documents weak grip strength; timeline does not explicitly state this persisted to discharge, but is reasonably implied given ongoing pattern."
+            },
+            {
+              "claim_id": "c16",
+              "text": "Patient has chronic cervical pain with stiffness",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                46,
+                91
+              ],
+              "reason": "Event 46 documents persistent severe cervical stiffness, event 91 documents chronic pain at final discharge."
+            },
+            {
+              "claim_id": "c17",
+              "text": "Ongoing limitations in forearm and shoulder mobility persisted",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                69
+              ],
+              "reason": "Event 69 documents limited ROM in forearm and shoulder despite complete bony fusion."
+            },
+            {
+              "claim_id": "c18",
+              "text": "Summary omits the specific diagnosis of acute cervical strain with possible disc herniation/bulge from 2022",
+              "status": "unsupported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                3
+              ],
+              "reason": "The specific 2022 diagnosis of acute cervical strain with possible herniation is not mentioned by name in the summary, though related findings are covered generally."
+            },
+            {
+              "claim_id": "c19",
+              "text": "Summary omits mention of prior cervicalgia treatment in 2022 before the MVA",
+              "status": "unsupported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                4
+              ],
+              "reason": "The explicit prior treatment for cervicalgia in 2022 is not stated in the summary, though gym injury and disc bulge are mentioned."
+            },
+            {
+              "claim_id": "c20",
+              "text": "Summary omits mention of head CT during hospital stay",
+              "status": "unsupported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                10
+              ],
+              "reason": "The head CT scan is not referenced in the summary at all."
+            },
+            {
+              "claim_id": "c21",
+              "text": "Summary omits mention of noncompliance/missed PT sessions in November 2023",
+              "status": "unsupported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                33,
+                37,
+                38,
+                39,
+                40
+              ],
+              "reason": "The material fact of missed PT sessions causing rebound stiffness is entirely absent from the summary."
+            },
+            {
+              "claim_id": "c22",
+              "text": "Summary omits mention of MRI ordered in December 2023",
+              "status": "unsupported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                47
+              ],
+              "reason": "The MRI order to assess soft tissue and neural compression is not mentioned in the summary."
+            },
+            {
+              "claim_id": "c23",
+              "text": "Summary omits mention of decreased radial sensation noted in December 2023",
+              "status": "unsupported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                48
+              ],
+              "reason": "This specific neurological finding is not referenced in the summary."
+            },
+            {
+              "claim_id": "c24",
+              "text": "Summary omits knee contusion diagnosis",
+              "status": "unsupported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                13
+              ],
+              "reason": "The left knee contusion requiring PT, part of the post-surgical diagnosis, is not mentioned anywhere in the summary."
+            },
+            {
+              "claim_id": "c25",
+              "text": "Summary omits nerve block anesthesia and fluoroscopy details of surgery",
+              "status": "unsupported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                8,
+                12
+              ],
+              "reason": "These intraoperative details are not mentioned though the ORIF itself is noted."
+            }
+          ],
+          "fact_coverage": [
+            {
+              "fact_id": "gym-neck-injury-2022",
+              "reflected": "partial",
+              "notes": "Mentions gym weightlifting accident and neck pain but omits date discrepancy."
+            },
+            {
+              "fact_id": "cervical-strain-diagnosis-2022",
+              "reflected": "no",
+              "notes": "Specific diagnosis of acute cervical strain with possible herniation not named; only imaging findings mentioned."
+            },
+            {
+              "fact_id": "pre-existing-cervicalgia",
+              "reflected": "no",
+              "notes": "Prior cervicalgia treatment before MVA is not explicitly stated."
+            },
+            {
+              "fact_id": "preexisting-c5-c6-bulge",
+              "reflected": "yes",
+              "notes": "Summary clearly states DDD and disc bulge at C5-C6 possibly pre-existing."
+            },
+            {
+              "fact_id": "mva-2023-injury",
+              "reflected": "yes",
+              "notes": "MVA and left arm fractures with emergency care clearly stated."
+            },
+            {
+              "fact_id": "orif-surgery",
+              "reflected": "partial",
+              "notes": "ORIF mentioned but nerve block anesthesia and fluoroscopy omitted."
+            },
+            {
+              "fact_id": "head-ct-2023",
+              "reflected": "no",
+              "notes": "Head CT not mentioned at all."
+            },
+            {
+              "fact_id": "post-surgical-diagnosis",
+              "reflected": "partial",
+              "notes": "Cervicalgia mentioned but knee contusion omitted entirely."
+            },
+            {
+              "fact_id": "pt-course-lang-weimann",
+              "reflected": "partial",
+              "notes": "General PT course mentioned but specific facility name, dates, and details not distinguished from Emory course."
+            },
+            {
+              "fact_id": "pt-noncompliance-2023",
+              "reflected": "no",
+              "notes": "Missed sessions and rebound stiffness entirely omitted from summary."
+            },
+            {
+              "fact_id": "medication-course-opioid-nsaid",
+              "reflected": "yes",
+              "notes": "Narcotic, non-narcotic, and muscle relaxant medications generally described."
+            },
+            {
+              "fact_id": "callus-formation-followup",
+              "reflected": "no",
+              "notes": "Early callus formation finding not specifically mentioned."
+            },
+            {
+              "fact_id": "bony-healing-progression",
+              "reflected": "partial",
+              "notes": "Well-healed fractures mentioned at end but progression through stages not detailed."
+            },
+            {
+              "fact_id": "persistent-deficits-dec-2023",
+              "reflected": "no",
+              "notes": "December 2023 specific findings of decreased radial sensation and worsening neck pain not mentioned."
+            },
+            {
+              "fact_id": "mri-ordered",
+              "reflected": "no",
+              "notes": "MRI order entirely omitted from summary."
+            },
+            {
+              "fact_id": "pt-transfer-emory",
+              "reflected": "partial",
+              "notes": "Two facilities mentioned but transition reason and timing not specified."
+            },
+            {
+              "fact_id": "pt-course-emory",
+              "reflected": "partial",
+              "notes": "Combined into general PT total without distinguishing Emory course specifically."
+            },
+            {
+              "fact_id": "chronic-muscle-wasting-disc-bulge",
+              "reflected": "no",
+              "notes": "Muscle wasting noted at Emory intake is not mentioned in summary."
+            },
+            {
+              "fact_id": "permanent-elbow-deficit",
+              "reflected": "yes",
+              "notes": "15-degree extension deficit clearly stated as persistent restriction."
+            },
+            {
+              "fact_id": "final-outcome-chronic-pain",
+              "reflected": "yes",
+              "notes": "Substantial improvement with persistent deficits and chronic pain clearly stated."
+            }
+          ],
+          "usefulness": {
+            "chronological_clarity": 3,
+            "concision": 4,
+            "organization": 4,
+            "preserves_uncertainty": 4,
+            "separates_pre_existing_vs_post": 4,
+            "emphasis_on_material_facts": 3,
+            "avoids_repetitive_clutter": 5
+          }
+        }
+      ]
+    },
+    "D": {
+      "tool": "D",
+      "runs": [
+        {
+          "tool": "D",
+          "run": 1,
+          "cost_usd": 0.02927,
+          "faithfulness": {
+            "composite": 1.0,
+            "ship_eligible": true,
+            "gate_triggering_claims": [],
+            "claim_count": 25,
+            "flawed_claim_count": 0,
+            "claim_counts_by_status": {
+              "supported": 25
+            },
+            "claim_counts_by_materiality": {
+              "major": 14,
+              "minor": 9,
+              "critical": 2
+            }
+          },
+          "coverage": {
+            "weighted_coverage_rate": 0.92,
+            "facts_total": 20,
+            "facts_missing": [
+              "chronic-muscle-wasting-disc-bulge"
+            ],
+            "coverage_by_fact_id": {
+              "gym-neck-injury-2022": "yes",
+              "cervical-strain-diagnosis-2022": "yes",
+              "pre-existing-cervicalgia": "yes",
+              "preexisting-c5-c6-bulge": "yes",
+              "mva-2023-injury": "yes",
+              "orif-surgery": "yes",
+              "head-ct-2023": "yes",
+              "post-surgical-diagnosis": "yes",
+              "pt-course-lang-weimann": "yes",
+              "pt-noncompliance-2023": "yes",
+              "medication-course-opioid-nsaid": "yes",
+              "callus-formation-followup": "partial",
+              "bony-healing-progression": "yes",
+              "persistent-deficits-dec-2023": "partial",
+              "mri-ordered": "yes",
+              "pt-transfer-emory": "yes",
+              "pt-course-emory": "yes",
+              "chronic-muscle-wasting-disc-bulge": "no",
+              "permanent-elbow-deficit": "yes",
+              "final-outcome-chronic-pain": "yes"
+            }
+          },
+          "usefulness": {
+            "mean": 4.71,
+            "by_dimension": {
+              "chronological_clarity": 5,
+              "concision": 4,
+              "organization": 5,
+              "preserves_uncertainty": 5,
+              "separates_pre_existing_vs_post": 5,
+              "emphasis_on_material_facts": 4,
+              "avoids_repetitive_clutter": 5
+            }
+          }
+        },
+        {
+          "tool": "D",
+          "run": 2,
+          "cost_usd": 0.0299,
+          "faithfulness": {
+            "composite": 0.984,
+            "ship_eligible": true,
+            "gate_triggering_claims": [],
+            "claim_count": 31,
+            "flawed_claim_count": 1,
+            "claim_counts_by_status": {
+              "supported": 30,
+              "unsupported": 1
+            },
+            "claim_counts_by_materiality": {
+              "critical": 4,
+              "major": 14,
+              "minor": 13
+            }
+          },
+          "coverage": {
+            "weighted_coverage_rate": 0.955,
+            "facts_total": 20,
+            "facts_missing": [
+              "chronic-muscle-wasting-disc-bulge"
+            ],
+            "coverage_by_fact_id": {
+              "gym-neck-injury-2022": "yes",
+              "cervical-strain-diagnosis-2022": "yes",
+              "pre-existing-cervicalgia": "yes",
+              "preexisting-c5-c6-bulge": "yes",
+              "mva-2023-injury": "yes",
+              "orif-surgery": "yes",
+              "head-ct-2023": "yes",
+              "post-surgical-diagnosis": "yes",
+              "pt-course-lang-weimann": "yes",
+              "pt-noncompliance-2023": "yes",
+              "medication-course-opioid-nsaid": "yes",
+              "callus-formation-followup": "yes",
+              "bony-healing-progression": "yes",
+              "persistent-deficits-dec-2023": "yes",
+              "mri-ordered": "yes",
+              "pt-transfer-emory": "yes",
+              "pt-course-emory": "yes",
+              "chronic-muscle-wasting-disc-bulge": "no",
+              "permanent-elbow-deficit": "yes",
+              "final-outcome-chronic-pain": "yes"
+            }
+          },
+          "usefulness": {
+            "mean": 4.57,
+            "by_dimension": {
+              "chronological_clarity": 5,
+              "concision": 4,
+              "organization": 5,
+              "preserves_uncertainty": 5,
+              "separates_pre_existing_vs_post": 5,
+              "emphasis_on_material_facts": 4,
+              "avoids_repetitive_clutter": 4
+            }
+          }
+        }
+      ],
+      "mean_faithfulness": 0.992,
+      "mean_coverage": 0.938,
+      "mean_usefulness": 4.64,
+      "ship_eligible": true,
+      "total_cost_usd": 0.0592,
+      "mean_cost_usd": 0.0296,
+      "stability": {
+        "material_fact_overlap_rate": 0.909,
+        "critical_cross_run_conflict_count": 1,
+        "agree": 10,
+        "disagree": 1,
+        "run1_only": 1,
+        "run2_only": 4,
+        "raw_claim_pairs": [
+          {
+            "topic": "Weightlifting injury date",
+            "run1_claim": "Sept 3, 2022 severe neck pain/stiffness during weightlifting accident, evaluated by Dr. Finch, with noted discrepancy about exact date",
+            "run2_claim": "Same date, same details, same discrepancy noted",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both describe the same weightlifting injury and date discrepancy."
+          },
+          {
+            "topic": "Intake questionnaire date",
+            "run1_claim": "Completed September 10, 2022",
+            "run2_claim": "Completed 2022-09-10",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Same date reported."
+          },
+          {
+            "topic": "Dr. Finch diagnosis",
+            "run1_claim": "September 12, 2022, diagnosed acute cervical strain with possible disc herniation/bulge, noting prior cervicalgia treatment in 2022",
+            "run2_claim": "Same diagnosis date and content, noting prior cervicalgia treatment earlier in 2022",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both agree on diagnosis date and content."
+          },
+          {
+            "topic": "Cervical X-ray finding",
+            "run1_claim": "September 15, 2022 X-ray showed mild DDD at C5-C6 with 4mm posterior disc bulge, later characterized as pre-existing; Dr. Foster describes bulge as unclear onset",
+            "run2_claim": "Same X-ray date/finding; Dr. Foster describes as unclear onset/possibly preexisting; additionally attributes a similar pre-existing characterization to Dr. Turner",
+            "relation": "run2_only",
+            "materiality": "major",
+            "reason": "Run 2 adds an attribution to Dr. Turner regarding the pre-existing nature of the disc bulge not mentioned in run 1."
+          },
+          {
+            "topic": "Emergency surgery performer/date",
+            "run1_claim": "Dr. Elizabeth Foster performed emergency ORIF surgery on September 4, 2023",
+            "run2_claim": "Dr. Elizabeth Foster arranged emergency consultation for ORIF surgery, with surgical procedures performed that day (not stating she performed it herself)",
+            "relation": "disagree",
+            "materiality": "critical",
+            "reason": "Run 1 attributes the surgery directly to Dr. Foster as performer, while run 2 describes her role as arranging consultation, a different causal/attribution claim."
+          },
+          {
+            "topic": "CT scan date",
+            "run1_claim": "CT scan of head without contrast performed September 5, 2023",
+            "run2_claim": "Same date and procedure",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Consistent date and procedure."
+          },
+          {
+            "topic": "Acetaminophen administration",
+            "run1_claim": "Acetaminophen 975mg given September 6, 2023",
+            "run2_claim": "Same date and dose",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Matches exactly."
+          },
+          {
+            "topic": "Intraoperative fluoroscopy",
+            "run1_claim": "Performed September 7, 2023, by Dr. Myrtle Turner",
+            "run2_claim": "Same date and attribution",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Consistent details."
+          },
+          {
+            "topic": "Physical therapy start/end (Lang-Weimann)",
+            "run1_claim": "Began September 15, 2023, through December 8, 2023 (30 sessions), discharged December 11, 2023",
+            "run2_claim": "Same start/end dates and session count, documented complete December 11, 2023",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both describe same PT timeline and session count."
+          },
+          {
+            "topic": "Staple removal date",
+            "run1_claim": "Staples removed September 21, 2023",
+            "run2_claim": "Same date",
+            "relation": "agree",
+            "materiality": "minor",
+            "reason": "Matches exactly."
+          },
+          {
+            "topic": "Medication start dates",
+            "run1_claim": "Cyclobenzaprine started October 19, 2023; Ibuprofen started November 16, 2023; Oxycodone-Acetaminophen mentioned without date",
+            "run2_claim": "Same Cyclobenzaprine and Ibuprofen start dates; adds Oxycodone-Acetaminophen start date of September 22, 2023",
+            "relation": "run2_only",
+            "materiality": "minor",
+            "reason": "Run 2 provides an additional specific start date for Oxycodone-Acetaminophen not given in run 1."
+          },
+          {
+            "topic": "Missed PT sessions",
+            "run1_claim": "Missed sessions Nov 14, 17, 21, 2023, causing rebounded elbow stiffness",
+            "run2_claim": "Same missed sessions, with stiffness noted specifically on Nov 24, 2023",
+            "relation": "run2_only",
+            "materiality": "minor",
+            "reason": "Run 2 specifies the exact date stiffness was noted, which run 1 omits."
+          },
+          {
+            "topic": "X-ray findings on healing",
+            "run1_claim": "X-rays October 19 and December 14, 2023 showed progressive healing; MRI ordered December 14, 2023",
+            "run2_claim": "October 19 X-ray showed early callus; December 14 imaging showed well-healed fractures with stable hardware; MRI ordered due to persistent restrictions and decreased radial sensation",
+            "relation": "run2_only",
+            "materiality": "major",
+            "reason": "Run 2 provides more specific clinical detail (callus formation, decreased radial sensation) not present in run 1."
+          },
+          {
+            "topic": "Care transition to Emory Sports Medicine",
+            "run1_claim": "Began January 8, 2024, under Amanda Gregory, PT, OCS, through discharge March 22, 2024 (30 sessions)",
+            "run2_claim": "Began January 8, 2024, through discharge March 22, 2024 (30 sessions), lists specific provocation dates (1/17, 1/29, 2/12, 2/28, 3/4, 3/6)",
+            "relation": "run1_only",
+            "materiality": "minor",
+            "reason": "Run 1 names the treating therapist (Amanda Gregory) which run 2 omits, while run 2 adds specific provocation dates not in run 1."
+          },
+          {
+            "topic": "Bony fusion note",
+            "run1_claim": "By February 8, 2024, Dr. Turner noted complete bony fusion but limited forearm/shoulder ROM",
+            "run2_claim": "Same date and finding",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both agree on date and clinical finding."
+          },
+          {
+            "topic": "Final discharge status",
+            "run1_claim": "March 25, 2024, persistent 15-degree extension deficit and chronic pain despite functional improvement",
+            "run2_claim": "Same date and findings, described as despite completed rehabilitation",
+            "relation": "agree",
+            "materiality": "major",
+            "reason": "Both describe the same final outcome and date."
+          }
+        ]
+      },
+      "judge_outputs": [
+        {
+          "claims": [
+            {
+              "claim_id": "c1",
+              "text": "On September 3, 2022, patient sustained severe neck pain and stiffness during a weightlifting accident at the gym, during a heavy squat set, evaluated by Dr. Alistair Finch.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                0
+              ],
+              "reason": "Matches event 0 exactly."
+            },
+            {
+              "claim_id": "c2",
+              "text": "Record notes a discrepancy regarding the exact injury date.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                1
+              ],
+              "reason": "Event 1 documents this discrepancy."
+            },
+            {
+              "claim_id": "c3",
+              "text": "Intake questionnaire completed September 10, 2022.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                2
+              ],
+              "reason": "Matches event 2."
+            },
+            {
+              "claim_id": "c4",
+              "text": "On September 12, 2022, Dr. Finch diagnosed acute cervical strain with possible underlying cervical disc herniation or bulge.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                3
+              ],
+              "reason": "Matches event 3 exactly."
+            },
+            {
+              "claim_id": "c5",
+              "text": "Patient had prior treatment for cervicalgia in 2022, before the motor vehicle accident.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                4
+              ],
+              "reason": "Matches event 4 exactly."
+            },
+            {
+              "claim_id": "c6",
+              "text": "Three-view cervical spine X-ray on September 15, 2022 showed mild DDD at C5-C6 with 4mm posterior disc bulge.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                6
+              ],
+              "reason": "Matches event 6 exactly."
+            },
+            {
+              "claim_id": "c7",
+              "text": "The 4mm bulge was later characterized elsewhere as pre-existing, predating the September 2023 incident.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                93
+              ],
+              "reason": "Matches event 93, attributed to Dr. Turner."
+            },
+            {
+              "claim_id": "c8",
+              "text": "Dr. Elizabeth Foster's hospital notes describe C5-C6 narrowing and bulge as of unclear onset.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                92
+              ],
+              "reason": "Matches event 92, correctly attributed to Foster and correctly hedged as 'unclear onset/possibly preexisting.'"
+            },
+            {
+              "claim_id": "c9",
+              "text": "Emergency surgery on September 4, 2023 at Littel Inc Emergency Hospital, Dr. Foster performed ORIF of left arm fractures (humerus and radius) with nerve block anesthesia.",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                7,
+                8,
+                9
+              ],
+              "reason": "Matches events 7-9; surgeon attribution to Foster is supported by event 9."
+            },
+            {
+              "claim_id": "c10",
+              "text": "CT scan of head without contrast performed September 5, 2023.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                10
+              ],
+              "reason": "Matches event 10 exactly."
+            },
+            {
+              "claim_id": "c11",
+              "text": "Acetaminophen 975mg given September 6, 2023 for pain.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                11
+              ],
+              "reason": "Matches event 11."
+            },
+            {
+              "claim_id": "c12",
+              "text": "Intraoperative fluoroscopic imaging confirming hardware placement performed September 7, 2023 by Dr. Myrtle Turner.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                12
+              ],
+              "reason": "Matches event 12, correctly attributed to Turner (not Foster)."
+            },
+            {
+              "claim_id": "c13",
+              "text": "Diagnoses following surgery included post-surgical left humerus/radius ORIF, cervicalgia, and left knee contusion.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                13
+              ],
+              "reason": "Matches event 13."
+            },
+            {
+              "claim_id": "c14",
+              "text": "PT began September 15, 2023 at Lang-Weimann under Robert Stewart, continuing through December 8, 2023, 30 sessions total, discharged December 11, 2023.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                14,
+                15,
+                45,
+                46
+              ],
+              "reason": "Matches events 14-15 for start, 45 for final session, 46 for discharge with 30 sessions noted."
+            },
+            {
+              "claim_id": "c15",
+              "text": "Repeated provocation of cervical symptoms during Lang-Weimann PT.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                16,
+                20,
+                28,
+                32,
+                43
+              ],
+              "reason": "Multiple events document provoked cervical symptoms during sessions."
+            },
+            {
+              "claim_id": "c16",
+              "text": "Medications included Oxycodone-Acetaminophen 5-325mg, Cyclobenzaprine 10mg (started October 19, 2023), high-dose Ibuprofen 800mg (started November 16, 2023).",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                19,
+                25,
+                36
+              ],
+              "reason": "Matches events 19, 25, 36 exactly."
+            },
+            {
+              "claim_id": "c17",
+              "text": "Staples removed September 21, 2023.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                18
+              ],
+              "reason": "Matches event 18."
+            },
+            {
+              "claim_id": "c18",
+              "text": "Patient missed three consecutive PT sessions on November 14, 17, and 21, 2023, causing rebounded elbow stiffness.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                33,
+                37,
+                38,
+                39
+              ],
+              "reason": "Matches events 33, 37, 38 for missed dates and 39 for rebound stiffness; contractures warning present in event 34 but not mentioned here, a minor omission."
+            },
+            {
+              "claim_id": "c19",
+              "text": "X-rays on October 19 and December 14, 2023 showed progressive healing.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                24,
+                49
+              ],
+              "reason": "Matches events 24 (callus formation) and 49 (well-healed) showing progression."
+            },
+            {
+              "claim_id": "c20",
+              "text": "MRI of left upper extremity and C-spine ordered December 14, 2023.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                47
+              ],
+              "reason": "Matches event 47."
+            },
+            {
+              "claim_id": "c21",
+              "text": "Care transitioned to Emory Sports Medicine Complex under Amanda Gregory beginning January 8, 2024, continuing through discharge March 22, 2024, 30 sessions.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                51,
+                89,
+                91
+              ],
+              "reason": "Matches events 51 for start, 89 for final session date, 91 for 30 sessions completed (discharge date stated as March 22 in summary vs March 25 in event 91 - minor discrepancy)."
+            },
+            {
+              "claim_id": "c22",
+              "text": "Recurrent cervical symptom provocation throughout Emory PT.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                57,
+                63,
+                72,
+                81,
+                83,
+                84
+              ],
+              "reason": "Multiple events document provoked cervical symptoms."
+            },
+            {
+              "claim_id": "c23",
+              "text": "By February 8, 2024, Dr. Turner noted complete bony fusion but limited forearm/shoulder ROM.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                69
+              ],
+              "reason": "Matches event 69 exactly."
+            },
+            {
+              "claim_id": "c24",
+              "text": "At final discharge on March 25, 2024, patient demonstrated persistent 15-degree extension deficit in left elbow and chronic pain despite substantial improvement.",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                90,
+                91
+              ],
+              "reason": "Matches events 90-91; note summary earlier stated discharge as March 22 but here correctly cites March 25 for the deficit finding, creating minor internal inconsistency about discharge date."
+            },
+            {
+              "claim_id": "c25",
+              "text": "Discharge from PT program occurred March 22, 2024 (30 sessions).",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                89
+              ],
+              "reason": "Event 89 labels March 22 session as 'final advanced athletic therapy session with patient discharge' - supported, though event 91 (March 25) also describes completion of 30 sessions, creating a minor date ambiguity not fully resolved by summary."
+            }
+          ],
+          "fact_coverage": [
+            {
+              "fact_id": "gym-neck-injury-2022",
+              "reflected": "yes",
+              "notes": "Stated with date, mechanism, and discrepancy noted."
+            },
+            {
+              "fact_id": "cervical-strain-diagnosis-2022",
+              "reflected": "yes",
+              "notes": "Directly stated with hedge preserved."
+            },
+            {
+              "fact_id": "pre-existing-cervicalgia",
+              "reflected": "yes",
+              "notes": "Directly stated."
+            },
+            {
+              "fact_id": "preexisting-c5-c6-bulge",
+              "reflected": "yes",
+              "notes": "X-ray finding and later characterization by multiple providers (Turner and Foster) both included with appropriate hedging."
+            },
+            {
+              "fact_id": "mva-2023-injury",
+              "reflected": "yes",
+              "notes": "Stated with date and injury description."
+            },
+            {
+              "fact_id": "orif-surgery",
+              "reflected": "yes",
+              "notes": "Surgery, nerve block, and fluoroscopy all mentioned."
+            },
+            {
+              "fact_id": "head-ct-2023",
+              "reflected": "yes",
+              "notes": "Explicitly stated with date."
+            },
+            {
+              "fact_id": "post-surgical-diagnosis",
+              "reflected": "yes",
+              "notes": "All three diagnoses listed."
+            },
+            {
+              "fact_id": "pt-course-lang-weimann",
+              "reflected": "yes",
+              "notes": "Dates, provider, session count, and cervical provocation mentioned."
+            },
+            {
+              "fact_id": "pt-noncompliance-2023",
+              "reflected": "yes",
+              "notes": "Missed dates and rebound stiffness stated, though contracture warning from provider omitted."
+            },
+            {
+              "fact_id": "medication-course-opioid-nsaid",
+              "reflected": "yes",
+              "notes": "All major medications and dates included, though acetaminophen 975mg mentioned separately and not summarized as part of overall course statement explicitly through February 2024 (ibuprofen continuation implied but not explicitly dated to Feb)."
+            },
+            {
+              "fact_id": "callus-formation-followup",
+              "reflected": "partial",
+              "notes": "October 19 X-ray mentioned as showing progressive healing but doesn't explicitly restate neck stiffness/weak grip strength finding from that visit."
+            },
+            {
+              "fact_id": "bony-healing-progression",
+              "reflected": "yes",
+              "notes": "Progression from callus to well-healed to complete fusion covered across dates."
+            },
+            {
+              "fact_id": "persistent-deficits-dec-2023",
+              "reflected": "partial",
+              "notes": "MRI order and X-ray mentioned but decreased radial sensation not explicitly restated in December summary paragraph."
+            },
+            {
+              "fact_id": "mri-ordered",
+              "reflected": "yes",
+              "notes": "Explicitly stated with date and purpose implied (upper extremity and C-spine)."
+            },
+            {
+              "fact_id": "pt-transfer-emory",
+              "reflected": "yes",
+              "notes": "Transition mentioned, though explicit reason (persistent limited ROM despite fusion) tied via February 8 note rather than explicit transfer rationale statement."
+            },
+            {
+              "fact_id": "pt-course-emory",
+              "reflected": "yes",
+              "notes": "Dates, provider, 30 sessions, and cervical provocation covered."
+            },
+            {
+              "fact_id": "chronic-muscle-wasting-disc-bulge",
+              "reflected": "no",
+              "notes": "Summary does not mention muscle wasting or chronic disc bulge noted at Emory's January 8, 2024 evaluation."
+            },
+            {
+              "fact_id": "permanent-elbow-deficit",
+              "reflected": "yes",
+              "notes": "15-degree extension deficit explicitly stated."
+            },
+            {
+              "fact_id": "final-outcome-chronic-pain",
+              "reflected": "yes",
+              "notes": "Substantial improvement with persistent deficits and chronic pain stated."
+            }
+          ],
+          "usefulness": {
+            "chronological_clarity": 5,
+            "concision": 4,
+            "organization": 5,
+            "preserves_uncertainty": 5,
+            "separates_pre_existing_vs_post": 5,
+            "emphasis_on_material_facts": 4,
+            "avoids_repetitive_clutter": 5
+          }
+        },
+        {
+          "claims": [
+            {
+              "claim_id": "c1",
+              "text": "The record shows a preexisting cervical condition that predates the MVA.",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                92,
+                93
+              ],
+              "reason": "Multiple providers describe a pre-existing/possibly pre-existing cervical disc bulge prior to the 2023 MVA."
+            },
+            {
+              "claim_id": "c2",
+              "text": "On 2022-09-03, patient sustained neck pain/stiffness during weightlifting accident at gym during heavy squat set, per Dr. Alistair Finch.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                0
+              ],
+              "reason": "Matches event 0 exactly."
+            },
+            {
+              "claim_id": "c3",
+              "text": "The record notes a discrepancy regarding the exact date of this injury.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                1
+              ],
+              "reason": "Matches event 1."
+            },
+            {
+              "claim_id": "c4",
+              "text": "Intake questionnaire completed 2022-09-10.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                2
+              ],
+              "reason": "Matches event 2."
+            },
+            {
+              "claim_id": "c5",
+              "text": "On 2022-09-12 Dr. Finch diagnosed acute cervical strain with possible underlying cervical disc herniation or bulge.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                3
+              ],
+              "reason": "Matches event 3."
+            },
+            {
+              "claim_id": "c6",
+              "text": "Dr. Finch also noted prior treatment for cervicalgia earlier in 2022.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                4
+              ],
+              "reason": "Matches event 4, which specifies prior treatment for cervicalgia in 2022 before the MVA."
+            },
+            {
+              "claim_id": "c7",
+              "text": "Three-view cervical spine X-ray on 2022-09-15 showed mild DDD at C5-C6 with 4mm posterior disc bulge.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                6
+              ],
+              "reason": "Matches event 6 exactly."
+            },
+            {
+              "claim_id": "c8",
+              "text": "This finding was later characterized by Dr. Elizabeth Foster as of unclear onset/possibly preexisting.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                92
+              ],
+              "reason": "Matches event 92, correctly attributed and hedged."
+            },
+            {
+              "claim_id": "c9",
+              "text": "Dr. Myrtle Turner characterized it as a pre-existing 4mm posterior disc bulge at C5-C6 documented prior to the September 2023 incident.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                93
+              ],
+              "reason": "Matches event 93, correctly attributed and stated as settled per Turner (timeline itself states it as pre-existing, not hedged for Turner)."
+            },
+            {
+              "claim_id": "c10",
+              "text": "On 2023-09-04, Dr. Elizabeth Foster arranged emergency consultation for ORIF of left arm fractures.",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                7
+              ],
+              "reason": "Matches event 7."
+            },
+            {
+              "claim_id": "c11",
+              "text": "Surgical procedures performed on left arm that day using nerve block tray for anesthesia.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                8,
+                9
+              ],
+              "reason": "Matches events 8 and 9."
+            },
+            {
+              "claim_id": "c12",
+              "text": "CT scan of head without contrast performed 2023-09-05.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                10
+              ],
+              "reason": "Matches event 10 exactly (date and description)."
+            },
+            {
+              "claim_id": "c13",
+              "text": "Acetaminophen 975mg administered 2023-09-06 for pain.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                11
+              ],
+              "reason": "Matches event 11."
+            },
+            {
+              "claim_id": "c14",
+              "text": "Fluoroscopic imaging used intraoperatively on 2023-09-07 by Dr. Turner to confirm hardware placement.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                12
+              ],
+              "reason": "Matches event 12, though note fluoroscopy is dated 09-07 despite occurring 'during surgery' on 09-04 in timeline; summary follows timeline date as given."
+            },
+            {
+              "claim_id": "c15",
+              "text": "Post-surgical PT at Lang-Weimann began 2023-09-15 for left humerus/radius ORIF, cervicalgia, and left knee contusion.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                13,
+                14,
+                15
+              ],
+              "reason": "Matches events 13-15."
+            },
+            {
+              "claim_id": "c16",
+              "text": "PT continued through 2023-12-08, documented complete 2023-12-11, totaling 30 sessions.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                45,
+                46
+              ],
+              "reason": "Matches events 45 and 46, which state completion of 30 PT sessions with discharge summary on 12-11."
+            },
+            {
+              "claim_id": "c17",
+              "text": "PT included cervical traction, soft tissue mobilization, progressive extremity exercises; symptoms repeatedly provoked.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                16,
+                20,
+                21,
+                28,
+                32,
+                43
+              ],
+              "reason": "Multiple PT sessions describe these elements and provoked cervical symptoms."
+            },
+            {
+              "claim_id": "c18",
+              "text": "Surgical staples removed 2023-09-21.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                18
+              ],
+              "reason": "Matches event 18."
+            },
+            {
+              "claim_id": "c19",
+              "text": "Oxycodone-Acetaminophen 5-325mg started/continued 2023-09-22.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                19
+              ],
+              "reason": "Matches event 19 (continued, not necessarily started, but summary phrasing is acceptable)."
+            },
+            {
+              "claim_id": "c20",
+              "text": "Cyclobenzaprine 10mg starting 2023-10-19.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                25
+              ],
+              "reason": "Matches event 25."
+            },
+            {
+              "claim_id": "c21",
+              "text": "High-dose Ibuprofen 800mg starting 2023-11-16.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                36
+              ],
+              "reason": "Matches event 36."
+            },
+            {
+              "claim_id": "c22",
+              "text": "X-rays on 2023-10-19 showed early callus.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                24
+              ],
+              "reason": "Matches event 24."
+            },
+            {
+              "claim_id": "c23",
+              "text": "By 2023-12-14, imaging showed well-healed fractures with stable hardware.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                49
+              ],
+              "reason": "Matches event 49."
+            },
+            {
+              "claim_id": "c24",
+              "text": "MRI of left upper extremity and C-spine was ordered for persistent restrictions and decreased radial sensation.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                47,
+                48
+              ],
+              "reason": "Matches events 47 and 48."
+            },
+            {
+              "claim_id": "c25",
+              "text": "Patient missed three consecutive PT sessions (2023-11-14, 11-17, 11-21), causing rebounded elbow stiffness noted 2023-11-24.",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                33,
+                37,
+                38,
+                39,
+                40
+              ],
+              "reason": "Matches events 33, 37, 38, and rebound noted in 39/40."
+            },
+            {
+              "claim_id": "c26",
+              "text": "Care transitioned to Emory Sports Medicine Complex beginning 2024-01-08.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                51,
+                52,
+                69,
+                70
+              ],
+              "reason": "Matches events 51/52 for start date and 69/70 for transition context."
+            },
+            {
+              "claim_id": "c27",
+              "text": "Emory PT continued through discharge on 2024-03-22, totaling 30 additional sessions.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                89,
+                90,
+                91
+              ],
+              "reason": "Matches event 89 (final session) and 90/91 (30 sessions, discharge)."
+            },
+            {
+              "claim_id": "c28",
+              "text": "Repeated provoked cervical symptoms on 1/17, 1/29, 2/12, 2/28, 3/4, 3/6.",
+              "status": "supported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                57,
+                63,
+                72,
+                81,
+                83,
+                84
+              ],
+              "reason": "All dates match provoked cervical symptom entries."
+            },
+            {
+              "claim_id": "c29",
+              "text": "By 2024-02-08, Dr. Turner documented complete bony fusion with limited forearm/shoulder ROM.",
+              "status": "supported",
+              "materiality": "major",
+              "evidence_event_ids": [
+                69
+              ],
+              "reason": "Matches event 69 exactly."
+            },
+            {
+              "claim_id": "c30",
+              "text": "Final status on 2024-03-25 documented persistent 15-degree extension deficit in left elbow and chronic pain despite completed rehabilitation.",
+              "status": "supported",
+              "materiality": "critical",
+              "evidence_event_ids": [
+                90,
+                91
+              ],
+              "reason": "Matches events 90 and 91 closely."
+            },
+            {
+              "claim_id": "c31",
+              "text": "Patient's initial evaluation at Emory noted persistent muscle wasting and chronic cervical disc bulge (implied by mention of pre-existing bulge context but not explicitly restated in summary).",
+              "status": "unsupported",
+              "materiality": "minor",
+              "evidence_event_ids": [
+                51
+              ],
+              "reason": "Summary omits explicit mention of muscle wasting/chronic disc bulge noted at Emory intake (event 51), though it does not contradict it."
+            }
+          ],
+          "fact_coverage": [
+            {
+              "fact_id": "gym-neck-injury-2022",
+              "reflected": "yes",
+              "notes": "Fully described with date discrepancy noted."
+            },
+            {
+              "fact_id": "cervical-strain-diagnosis-2022",
+              "reflected": "yes",
+              "notes": "Diagnosis and hedge (possible herniation/bulge) both stated."
+            },
+            {
+              "fact_id": "pre-existing-cervicalgia",
+              "reflected": "yes",
+              "notes": "Prior cervicalgia treatment in 2022 mentioned."
+            },
+            {
+              "fact_id": "preexisting-c5-c6-bulge",
+              "reflected": "yes",
+              "notes": "X-ray finding and both providers' later characterizations included."
+            },
+            {
+              "fact_id": "mva-2023-injury",
+              "reflected": "yes",
+              "notes": "MVA and left arm fractures with emergency care described."
+            },
+            {
+              "fact_id": "orif-surgery",
+              "reflected": "yes",
+              "notes": "ORIF, nerve block, and fluoroscopy all mentioned."
+            },
+            {
+              "fact_id": "head-ct-2023",
+              "reflected": "yes",
+              "notes": "CT scan of head without contrast on 09-05 included."
+            },
+            {
+              "fact_id": "post-surgical-diagnosis",
+              "reflected": "yes",
+              "notes": "Diagnosis of ORIF, cervicalgia, and knee contusion stated."
+            },
+            {
+              "fact_id": "pt-course-lang-weimann",
+              "reflected": "yes",
+              "notes": "30-session PT course with cervical provocation described."
+            },
+            {
+              "fact_id": "pt-noncompliance-2023",
+              "reflected": "yes",
+              "notes": "Missed sessions and rebound stiffness described, though provider warning about contractures omitted."
+            },
+            {
+              "fact_id": "medication-course-opioid-nsaid",
+              "reflected": "yes",
+              "notes": "All major medications and dates included."
+            },
+            {
+              "fact_id": "callus-formation-followup",
+              "reflected": "yes",
+              "notes": "Early callus finding included, though neck stiffness/grip strength not fully repeated."
+            },
+            {
+              "fact_id": "bony-healing-progression",
+              "reflected": "yes",
+              "notes": "Progression from callus to full fusion described across dates."
+            },
+            {
+              "fact_id": "persistent-deficits-dec-2023",
+              "reflected": "yes",
+              "notes": "ROM restriction and decreased radial sensation mentioned; neck pain not explicitly reiterated."
+            },
+            {
+              "fact_id": "mri-ordered",
+              "reflected": "yes",
+              "notes": "MRI order and reason stated."
+            },
+            {
+              "fact_id": "pt-transfer-emory",
+              "reflected": "yes",
+              "notes": "Transition to Emory noted with bony fusion context."
+            },
+            {
+              "fact_id": "pt-course-emory",
+              "reflected": "yes",
+              "notes": "30-session Emory course and provoked cervical symptoms described."
+            },
+            {
+              "fact_id": "chronic-muscle-wasting-disc-bulge",
+              "reflected": "no",
+              "notes": "Muscle wasting and chronic disc bulge from Emory intake (event 51) not mentioned in summary."
+            },
+            {
+              "fact_id": "permanent-elbow-deficit",
+              "reflected": "yes",
+              "notes": "15-degree deficit clearly stated."
+            },
+            {
+              "fact_id": "final-outcome-chronic-pain",
+              "reflected": "yes",
+              "notes": "Final outcome of improvement with residual deficits and chronic pain stated."
+            }
+          ],
+          "usefulness": {
+            "chronological_clarity": 5,
+            "concision": 4,
+            "organization": 5,
+            "preserves_uncertainty": 5,
+            "separates_pre_existing_vs_post": 5,
+            "emphasis_on_material_facts": 4,
+            "avoids_repetitive_clutter": 4
+          }
+        }
+      ]
+    }
+  }
+}

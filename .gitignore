@@ -1,0 +1,22 @@
+# Secrets — never commit
+.env
+CREDENTIALS.md
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Transient / regenerable run artifacts (see PLAN.md §14 — results/ is committed, runs/ is not)
+runs/
+cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local Claude Code session state (machine/session-specific, not project config)
+.claude/scheduled_tasks.lock

@@ -1,0 +1,59 @@
+{
+  "case_id": "case-davis",
+  "reference_path": "C:\\Users\\wix\\Documents\\\u05de\u05d9\u05d5\u05e0\u05d9\u05dd \u05dc\u05e2\u05d1\u05d5\u05d3\u05d4\\interview-ai-or-kadosh\\exercise\\data\\case-davis\\summaries\\input_timeline.json",
+  "likely_reference_omissions": [
+    "[01_EMS_and_ED_Admit_2024-01-08] EMS run sheet details the mechanism (industrial stamping press entrapment), field vitals (BP 92/58, HR 124, RR 22, SpO2 95, GCS 11, pain 10), and prehospital interventions (tourniquet applied by factory responder at 12:48, IV Fentanyl 100mcg, tourniquet time documented) that are not captured in any event.",
+    "[01_EMS_and_ED_Admit_2024-01-08] The ED physician note documents a ~20 minute entrapment time and that the patient was 'pale, diaphoretic, and hypotensive' with 'weak peripheral pulses' on arrival, which is not reflected in the timeline.",
+    "[01_EMS_and_ED_Admit_2024-01-08] The plan from the ED physician record specifies emergency blood transfusion (2 units PRBC) was initiated and the patient was transferred directly to the OR for emergent amputation, which is not included as a separate event.",
+    "[01_EMS_and_ED_Admit_2024-01-08] The triage assessment notes a high fall risk score (Morse 65), a positive alcohol screen (patient reports 2 beers, odor noted by EMS, serum ETOH ordered), and Tdap administered per protocol, none of which appear in the timeline.",
+    "[01_EMS_and_ED_Admit_2024-01-08] The face sheet indicates insurance/guarantor is Workers' Compensation via NSK Corporation and lists emergency contact Megan Davis (spouse), which is administrative but potentially material and is omitted.",
+    "[02_Inpatient_Surgery_and_Ward_Stay] The patient was disposed to the ICU postoperatively for hemodynamic monitoring per the operative report ('DISPOSITION: Recovery room, then to ICU for hemodynamic monitoring'), and the discharge summary specifies this ICU monitoring lasted 24 hours.",
+    "[02_Inpatient_Surgery_and_Ward_Stay] The operative report notes severe contamination of the limb from machine grease and metallic dust, and that 9 liters of normal saline with bacitracin was used for wound decontamination.",
+    "[02_Inpatient_Surgery_and_Ward_Stay] The fluid replacement given intraoperatively included 2 units Packed Red Blood Cells and 1 Liter Lactated Ringers, which relates to the anemia documented in labs but is not captured as a transfusion event.",
+    "[02_Inpatient_Surgery_and_Ward_Stay] Nursing flowsheet vital signs from 01/09-01/10 (e.g., HR up to 98, SpO2 as low as 95%, pain scores of 10) and neuro checks q4h for concussion precautions are not reflected in any event.",
+    "[02_Inpatient_Surgery_and_Ward_Stay] Physical Therapy and PM&R (Dr. Elena Rostova) were consulted during the inpatient stay to coordinate prosthetic fit and phantom pain management, which is only partially captured via the discharge follow-up plan.",
+    "[03_Ortho_Followups_and_Neuroma_Revision] The 02/12/2024 visit noted the patient's phantom limb pain rated 8/10, worse at night, with severe hypersensitivity to light palpation and radiation of pain into absent ulnar/median distributions on tapping, which is not captured in any event.",
+    "[03_Ortho_Followups_and_Neuroma_Revision] The 06/18/2024 note indicates the patient had completed several months of desensitization therapy but the neuroma pain was severely hindering his prosthetic fitting process, which is only partly reflected.",
+    "[03_Ortho_Followups_and_Neuroma_Revision] The operative report notes the nerve trunks were dissected proximally for approximately 5 cm and transected with a fresh scalpel blade before embedding with 5-0 epineural sutures, details not mentioned in the events.",
+    "[04_Prosthetic_Fitting_and_Rehabilitation_Series] The 12/15/2024 fax from Hope Valley notifies that Liberty Mutual requested a peer review of the prosthetic prescription and that PT/OT was suspended pending authorization, a treatment gap not reflected in any listed event.",
+    "[04_Prosthetic_Fitting_and_Rehabilitation_Series] The attendance record (p17) also documents a second no-show on 11/10/2025 with voicemail left and reschedule offered, which is not captured as its own event.",
+    "[04_Prosthetic_Fitting_and_Rehabilitation_Series] The attendance record notes that upon return on 08/11/2025 the patient attributed missed visits to 'holiday season workload and transportation logistics' and was counseled that interruption of the strengthening phase causes measurable regression and extends the plan of care, which is not reflected in any event.",
+    "[04_Prosthetic_Fitting_and_Rehabilitation_Series] PT visits 3 (03/03/2025), 4 (04/14/2025), 5 (06/02/2025), 6 (08/11/2025), 8 (12/15/2025), and 9 (03/09/2026) with their specific session foci and pain scores are not represented as individual timeline events.",
+    "[04_Prosthetic_Fitting_and_Rehabilitation_Series] The discharge summary's pain trend graph implies a longer pain history dating back to 2024-01-08 (pre-amputation pain of 10) that is not reflected elsewhere in the timeline.",
+    "[05_Prior_Medical_Records_2022] The plan included conservative treatment measures: rest, ice, and Ibuprofen 600mg every 6 hours as needed, not captured in any event.",
+    "[05_Prior_Medical_Records_2022] The patient was placed on modified duty at work limiting overhead lifting with the left arm for 4 weeks, which is not reflected in the timeline.",
+    "[05_Prior_Medical_Records_2022] The patient's occupation as a tech at NSK involving lifting as a core job duty is relevant context omitted from the events.",
+    "[05_Prior_Medical_Records_2022] Physical exam findings such as positive painful arc test (90-120 degrees) and active abduction limited to 110 degrees due to pain are not included in any event."
+  ],
+  "likely_reference_errors": [],
+  "conflicts_found_in_source": [],
+  "questionable_dates": [
+    {
+      "doc_id": "02_Inpatient_Surgery_and_Ward_Stay",
+      "event_index": 13,
+      "date": "2024-01-12",
+      "detail": "JP drain removed on postoperative day 4 per hospital course.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p8",
+      "explanation": "The discharge summary states 'JP drain removed on postoperative day 4' but does not specify a calendar date; if surgery was 01/08, postoperative day 4 would be 01/12, but this is an inference not explicitly stated in the source.",
+      "confidence": 0.55
+    }
+  ],
+  "incorrect_source_attribution": [
+    {
+      "doc_id": "01_EMS_and_ED_Admit_2024-01-08",
+      "event_index": 4,
+      "date": "2024-01-08",
+      "detail": "Jonathan Davis admitted emergently to Midwest Regional Medical Center ICU-04 at 13:25 with admitting diagnosis of complete traumatic amputation between shoulder and elbow, left arm (S48.112A); attending Dr. Marcus Vance, admitting Dr. David Cho.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p2",
+      "explanation": "Face sheet lists 'Admitting' physician as Dr. David Cho and 'Attending' as Dr. Marcus Vance, matching the detail, but admit time and unit (13:25, ICU-04) and diagnosis code S48.112A are correctly supported; overall the event is accurate though labeling Cho as 'admitting Dr.' matches source exactly ('Admitting Dr. David Cho, MD, FACEP'), so this is fully supported not partial.",
+      "confidence": 0.6
+    }
+  ],
+  "judge_call_failures": [],
+  "coverage": {
+    "events_total": 39,
+    "events_fully_audited_high_materiality": 20,
+    "events_sampled_routine": 6,
+    "routine_sample_method": "evenly-spaced, deterministic, n=6 (PLAN.md SS7/D.2: risk-based, not exhaustive by default)"
+  }
+}

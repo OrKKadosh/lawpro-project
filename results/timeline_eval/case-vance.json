@@ -1,0 +1,7 @@
+{
+  "extraction_score": {
+    "composite": 0.9,
+    "has_confirmed_fabrication": false
+  },
+  "source_grounded_precision": 0.95
+}

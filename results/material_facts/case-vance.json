@@ -1,0 +1,263 @@
+{
+  "case_id": "case-vance",
+  "benchmark_timeline_path": "C:\\Users\\wix\\Documents\\\u05de\u05d9\u05d5\u05e0\u05d9\u05dd \u05dc\u05e2\u05d1\u05d5\u05d3\u05d4\\interview-ai-or-kadosh\\exercise\\golden\\case-vance.timeline.json",
+  "benchmark_event_count": 94,
+  "material_facts": [
+    {
+      "fact_id": "gym-neck-injury-2022",
+      "category": "incident/mechanism",
+      "description": "Patient sustained severe neck pain and stiffness during a weightlifting accident at a gym in September 2022, with some discrepancy in the exact date documented.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "fact_id": "cervical-strain-diagnosis-2022",
+      "category": "major diagnosis",
+      "description": "Patient was diagnosed with acute cervical strain with possible underlying cervical disc herniation or bulge following the 2022 gym injury.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        3,
+        5
+      ]
+    },
+    {
+      "fact_id": "pre-existing-cervicalgia",
+      "category": "relevant pre-existing condition",
+      "description": "Patient had prior treatment for cervicalgia in 2022 before the motor vehicle accident.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        4
+      ]
+    },
+    {
+      "fact_id": "preexisting-c5-c6-bulge",
+      "category": "relevant pre-existing condition",
+      "description": "A 4mm posterior disc bulge and degenerative disc disease at C5-C6 was documented on X-ray in September 2022, and later noted by multiple providers as a possible pre-existing condition predating the 2023 MVA.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        6,
+        92,
+        93
+      ]
+    },
+    {
+      "fact_id": "mva-2023-injury",
+      "category": "incident/mechanism",
+      "description": "Patient sustained left arm (humerus and radius) fractures in a motor vehicle accident in September 2023 requiring emergency surgical care.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        7,
+        9
+      ]
+    },
+    {
+      "fact_id": "orif-surgery",
+      "category": "surgery/procedure",
+      "description": "Patient underwent emergency open reduction and internal fixation of left humerus and radius fractures with nerve block anesthesia and intraoperative fluoroscopy.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        7,
+        8,
+        9,
+        12
+      ]
+    },
+    {
+      "fact_id": "head-ct-2023",
+      "category": "major imaging finding",
+      "description": "A CT scan of the head without contrast was performed during the September 2023 hospital stay following the MVA.",
+      "materiality_weight": 1,
+      "supporting_event_ids": [
+        10
+      ]
+    },
+    {
+      "fact_id": "post-surgical-diagnosis",
+      "category": "major diagnosis",
+      "description": "Patient was diagnosed post-surgically with left humerus and radius ORIF status, cervicalgia, and left knee contusion requiring physical therapy.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        13
+      ]
+    },
+    {
+      "fact_id": "pt-course-lang-weimann",
+      "category": "treatment course",
+      "description": "Patient underwent an initial course of approximately 30 physical therapy sessions from September 2023 to December 2023 at Lang-Weimann Medical Center addressing left arm ROM/strength deficits and cervical stiffness/pain, with cervical symptoms repeatedly provoked during treatment.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        14,
+        15,
+        16,
+        20,
+        21,
+        22,
+        26,
+        27,
+        28,
+        29,
+        31,
+        32,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "fact_id": "pt-noncompliance-2023",
+      "category": "treatment gap/compliance issue",
+      "description": "Patient missed three consecutive scheduled physical therapy appointments in November 2023 without notice, resulting in significant rebound of left elbow stiffness and increased pain, with provider warning about risk of contractures.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        33,
+        34,
+        35,
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "fact_id": "medication-course-opioid-nsaid",
+      "category": "treatment course",
+      "description": "Patient's pain was managed with a medication course including acetaminophen, oxycodone-acetaminophen, cyclobenzaprine for muscle spasm, and high-dose ibuprofen from September 2023 through February 2024.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        11,
+        19,
+        25,
+        36,
+        50,
+        55,
+        75
+      ]
+    },
+    {
+      "fact_id": "callus-formation-followup",
+      "category": "treatment course",
+      "description": "Follow-up imaging in October 2023 showed early callus formation around the humerus and distal radius hardware, with the patient compliant with PT but reporting significant neck stiffness and weak grip strength.",
+      "materiality_weight": 1,
+      "supporting_event_ids": [
+        23,
+        24
+      ]
+    },
+    {
+      "fact_id": "bony-healing-progression",
+      "category": "major imaging finding",
+      "description": "Serial X-rays through December 2023 and February 2024 showed progression from early callus to well-healed fractures with stable hardware and eventual complete bony fusion.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        49,
+        69
+      ]
+    },
+    {
+      "fact_id": "persistent-deficits-dec-2023",
+      "category": "functional limitation",
+      "description": "By December 2023, despite near-consolidated fractures, patient had persistent range-of-motion restrictions, decreased radial sensation, and worsening neck pain.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        48
+      ]
+    },
+    {
+      "fact_id": "mri-ordered",
+      "category": "treatment course",
+      "description": "Follow-up MRI of the left upper extremity and cervical spine was ordered in December 2023 to assess soft tissue integrity and possible neural compression.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        47
+      ]
+    },
+    {
+      "fact_id": "pt-transfer-emory",
+      "category": "treatment course",
+      "description": "Patient's physical therapy care was transitioned from Lang-Weimann Medical Center to Emory Sports Medicine Complex in early 2024 due to persistent limited range of motion despite complete bony fusion.",
+      "materiality_weight": 1,
+      "supporting_event_ids": [
+        69,
+        70
+      ]
+    },
+    {
+      "fact_id": "pt-course-emory",
+      "category": "treatment course",
+      "description": "Patient underwent a second course of approximately 30 physical therapy sessions from January 2024 through March 2024 at Emory Sports Medicine Complex addressing continued left arm/elbow/wrist strengthening and cervical symptoms, with cervical symptoms repeatedly provoked during treatment.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        51,
+        52,
+        53,
+        54,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        71,
+        72,
+        73,
+        74,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ]
+    },
+    {
+      "fact_id": "chronic-muscle-wasting-disc-bulge",
+      "category": "major diagnosis",
+      "description": "Initial evaluation at Emory in January 2024 noted persistent muscle wasting and chronic cervical disc bulge in addition to post-surgical ORIF status.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        51
+      ]
+    },
+    {
+      "fact_id": "permanent-elbow-deficit",
+      "category": "functional limitation",
+      "description": "Patient demonstrated a persistent 15-degree extension deficit in the left elbow despite completing the full rehabilitation program of 30 sessions at Emory.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        90
+      ]
+    },
+    {
+      "fact_id": "final-outcome-chronic-pain",
+      "category": "prognosis/MMI",
+      "description": "Patient completed 30 sessions of intensive rehabilitation achieving substantial improvement but was left with persistent functional deficits and chronic pain.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        91
+      ]
+    }
+  ]
+}

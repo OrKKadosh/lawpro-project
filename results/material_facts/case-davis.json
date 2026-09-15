@@ -1,0 +1,183 @@
+{
+  "case_id": "case-davis",
+  "benchmark_timeline_path": "C:\\Users\\wix\\Documents\\\u05de\u05d9\u05d5\u05e0\u05d9\u05dd \u05dc\u05e2\u05d1\u05d5\u05d3\u05d4\\interview-ai-or-kadosh\\exercise\\data\\case-davis\\summaries\\input_timeline.json",
+  "benchmark_event_count": 39,
+  "material_facts": [
+    {
+      "fact_id": "prior-shoulder-injury",
+      "category": "relevant pre-existing condition",
+      "description": "Davis had a prior 2022 left shoulder AC joint sprain and mild rotator cuff tendinitis from a motorcycle fall, treated with x-rays and a 12-session physical therapy course.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "fact_id": "index-incident",
+      "category": "incident/mechanism",
+      "description": "On 2024-01-08, Davis's left arm was crushed by an industrial metal stamping press at NSK plant, requiring EMS extrication, tourniquet application, and emergent transport to trauma care.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        3
+      ]
+    },
+    {
+      "fact_id": "traumatic-amputation-diagnosis",
+      "category": "major diagnosis",
+      "description": "Davis was diagnosed with a complete traumatic amputation of the left arm between the shoulder and elbow with complete vascular and neurologic disruption and traumatic shock from blood loss.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "fact_id": "imaging-findings",
+      "category": "major imaging finding",
+      "description": "Imaging showed comminuted open segmental fractures of the forearm/hand, a comminuted displaced supracondylar humerus fracture, and complete cessation of brachial artery contrast enhancement, confirming an unsalvageable limb.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        7
+      ]
+    },
+    {
+      "fact_id": "emergency-transfusion",
+      "category": "treatment course",
+      "description": "Davis received an emergency transfusion of 2 units PRBC for traumatic blood loss/shock prior to surgery.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        8
+      ]
+    },
+    {
+      "fact_id": "amputation-surgery",
+      "category": "surgery/procedure",
+      "description": "Dr. Marcus Vance performed an emergent left transhumeral (above-elbow) amputation with myofascial closure, bone beveling, and traction-neurectomy of the median, ulnar, and radial nerves.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        9
+      ]
+    },
+    {
+      "fact_id": "postop-labs",
+      "category": "major diagnosis",
+      "description": "Postoperative labs showed leukocytosis and anemia, with a urine drug screen positive only for trace cannabinoids and negative for ethanol.",
+      "materiality_weight": 1,
+      "supporting_event_ids": [
+        10
+      ]
+    },
+    {
+      "fact_id": "inpatient-pain-management",
+      "category": "treatment course",
+      "description": "Postoperative inpatient care included a multimodal pain regimen (Dilaudid PCA, gabapentin, prophylactic IV antibiotics, PRN oxycodone), JP drain placement and removal on POD4, with improving vitals and pain over the 7-day admission before discharge on oral pain medications.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "fact_id": "phantom-limb-pain",
+      "category": "material complication",
+      "description": "At one-month follow-up, Davis developed severe phantom limb pain (8/10) and stump hypersensitivity, requiring increased gabapentin dosing and referral for desensitization therapy and prosthetic fitting.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "fact_id": "traumatic-neuroma",
+      "category": "material complication",
+      "description": "At five months post-amputation, Davis developed a symptomatic post-amputation traumatic neuroma of the ulnar/median nerve stump causing electrical shock pain and interfering with prosthetic fitting.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        19,
+        20
+      ]
+    },
+    {
+      "fact_id": "neuroma-revision-surgery",
+      "category": "surgery/procedure",
+      "description": "Dr. Marcus Vance performed a stump revision surgery excising a 1.8 x 1.4 cm neuroma of the median/ulnar nerves with proximal nerve transposition and embedding into the triceps muscle.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        21
+      ]
+    },
+    {
+      "fact_id": "insurance-authorization-delay",
+      "category": "treatment gap/compliance issue",
+      "description": "Liberty Mutual placed prosthetic therapy authorization on hold pending peer review of the proposed myoelectric transhumeral prosthesis, suspending PT/OT sessions.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        22
+      ]
+    },
+    {
+      "fact_id": "rehab-intake-functional-status",
+      "category": "functional limitation",
+      "description": "At rehab intake and PT evaluation following amputation and neuroma surgery, Davis had reduced left shoulder range of motion (abduction 120/180, flexion 130/180), ongoing phantom pain, poor sleep, and was off work.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        23,
+        24
+      ]
+    },
+    {
+      "fact_id": "myoelectric-prosthesis-fitting",
+      "category": "surgery/procedure",
+      "description": "Davis was fitted with a custom myoelectric left transhumeral prosthesis (carbon-fiber socket, Utah Myoelectric Elbow, Motion Control MC Hand), demonstrating 80% electrode signal control accuracy at initial fitting.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        25
+      ]
+    },
+    {
+      "fact_id": "prosthetic-pt-course",
+      "category": "treatment course",
+      "description": "Davis underwent an extended physical therapy course (February 2025 to June 2026) at Hope Valley for prosthetic training, progressing through electrode control, grasping/ADL tasks, shoulder strengthening, and functional/vocational simulation with pain decreasing from 5/10 to 1/10.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        26,
+        27,
+        28,
+        29,
+        31,
+        32,
+        33,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "fact_id": "pt-noshows",
+      "category": "treatment gap/compliance issue",
+      "description": "Davis had two no-show PT appointments (attributed to workload and transportation issues) during the prosthetic training course.",
+      "materiality_weight": 1,
+      "supporting_event_ids": [
+        30,
+        32,
+        34
+      ]
+    },
+    {
+      "fact_id": "pt-discharge-outcome",
+      "category": "prognosis/MMI",
+      "description": "Davis was discharged from physical therapy having achieved master-level operation of his myoelectric prosthesis, independent ADLs, driving, and carrying up to 25 lbs, with near-normal left shoulder ROM, and was released to modified light/medium duty work.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        38
+      ]
+    }
+  ]
+}

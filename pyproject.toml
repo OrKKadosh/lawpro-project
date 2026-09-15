@@ -1,0 +1,12 @@
+[project]
+name = "evalkit"
+version = "0.1.0"
+description = "Timeline extraction and summarizer evaluation pipeline for the LawPro.ai exercise"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,569 @@
+{
+  "case_id": "case-vance",
+  "events": [
+    {
+      "date": "2022-09-03",
+      "type": "diagnosis",
+      "detail": "Patient-reported (unsigned intake form): sustained severe neck pain and stiffness during weightlifting accident at gym, described as occurring during heavy squat set, Back & Spine Restoration Center.",
+      "source": "03_prior_records p2"
+    },
+    {
+      "date": "2022-09-10",
+      "type": "encounter",
+      "detail": "Initial patient intake questionnaire completed for neck pain following gym accident, Unknown, Back & Spine Restoration Center.",
+      "source": "03_prior_records p2"
+    },
+    {
+      "date": "2022-09-12",
+      "type": "diagnosis",
+      "detail": "Diagnosed with acute cervical strain with possible underlying cervical disc herniation or bulge, Dr. Alistair Finch, MD, Back & Spine Restoration Center.",
+      "source": "03_prior_records p3"
+    },
+    {
+      "date": "2022-09-12",
+      "type": "diagnosis",
+      "detail": "Patient had prior treatment for cervicalgia in 2022, before the motor vehicle accident, Dr. Alistair Finch, MD, Back & Spine Restoration Center.",
+      "source": "08_billing_and_claims p6"
+    },
+    {
+      "date": "2022-09-12",
+      "type": "encounter",
+      "detail": "Comprehensive spine and physical medicine evaluation for persistent cervical pain following gym injury, Dr. Alistair Finch, MD, Back & Spine Restoration Center.",
+      "source": "03_prior_records p3"
+    },
+    {
+      "date": "2022-09-15",
+      "type": "imaging",
+      "detail": "Three-view cervical spine X-ray showing mild degenerative disc disease at C5-C6 with 4mm posterior disc bulge, Dr. Alistair Finch, MD, Back & Spine Restoration Center.",
+      "source": "03_prior_records p4"
+    },
+    {
+      "date": "2023-09-04",
+      "type": "encounter",
+      "detail": "Immediate consultation with orthopedic surgery for emergency open reduction and internal fixation, Dr. Myrtle Turner, MD, FACS, Littel Inc Emergency Hospital.",
+      "source": "01_ems_and_ed p5"
+    },
+    {
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Alcohol intoxication noted on admission; elevated serum ethanol 110 mg/dL (reference range <10 mg/dL), Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "01_ems_and_ed p2"
+    },
+    {
+      "date": "2023-09-04",
+      "type": "procedure",
+      "detail": "Nerve block tray administered for anesthesia during surgical procedure, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "08_billing_and_claims p2"
+    },
+    {
+      "date": "2023-09-07",
+      "type": "procedure",
+      "detail": "Surgical procedures performed on left arm fractures sustained in motor vehicle accident, Dr. Myrtle Turner, MD, FACS, Littel Inc Emergency Hospital.",
+      "source": "02_hospitalization p5"
+    },
+    {
+      "date": "2023-09-05",
+      "type": "imaging",
+      "detail": "CT scan of head without contrast performed during hospital stay, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "08_billing_and_claims p2"
+    },
+    {
+      "date": "2023-09-06",
+      "type": "medication",
+      "detail": "Administered Acetaminophen 975mg for pain management during hospital stay, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "08_billing_and_claims p2"
+    },
+    {
+      "date": "2023-09-07",
+      "type": "imaging",
+      "detail": "Fluoroscopic imaging performed during surgery to confirm anatomic alignment and hardware placement, Dr. Myrtle Turner, MD, FACS, Littel Inc Emergency Hospital.",
+      "source": "02_hospitalization p5"
+    },
+    {
+      "date": "2023-09-15",
+      "type": "diagnosis",
+      "detail": "Diagnosed with post-surgical left humerus and radius ORIF, cervicalgia, and left knee contusion requiring physical therapy intervention, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p1"
+    },
+    {
+      "date": "2023-09-15",
+      "type": "encounter",
+      "detail": "Initial physical therapy evaluation following post-surgical ORIF of left humerus and radius with significant functional limitations, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p1"
+    },
+    {
+      "date": "2023-09-15",
+      "type": "therapy",
+      "detail": "Initial physical therapy evaluation for left arm fractures and cervicalgia, Robert Stewart, PT, DPT, Lang-Weimann Medical Center - Physical Therapy.",
+      "source": "08_billing_and_claims p8"
+    },
+    {
+      "date": "2023-09-20",
+      "type": "therapy",
+      "detail": "Physical therapy session with passive wrist stretching and cervical traction, noting provoked cervical symptoms requiring modification, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p3"
+    },
+    {
+      "date": "2023-09-21",
+      "type": "encounter",
+      "detail": "Referred to immediate outpatient physical therapy 3x/week for active mobilization of left shoulder, elbow, wrist, and neck, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p1"
+    },
+    {
+      "date": "2023-09-21",
+      "type": "therapy",
+      "detail": "Surgical staples removed during follow-up visit with wounds healing cleanly, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p1"
+    },
+    {
+      "date": "2023-09-22",
+      "type": "medication",
+      "detail": "Continued Oxycodone-Acetaminophen 5-325mg for ongoing orthopedic pain management, Dr. Myrtle Turner, MD, FACS, Oak Street Pharmacy.",
+      "source": "07_imaging_pharmacy p3"
+    },
+    {
+      "date": "2023-09-22",
+      "type": "therapy",
+      "detail": "Physical therapy session focusing on elbow ROM with patient reporting severe neck pain radiating to shoulder, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p4"
+    },
+    {
+      "date": "2023-09-27",
+      "type": "therapy",
+      "detail": "Physical therapy session with passive ROM exercises and cervical massage for extreme stiffness, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p6"
+    },
+    {
+      "date": "2023-10-13",
+      "type": "therapy",
+      "detail": "Physical therapy session with patient complaining of deep left humerus aching, treated with soft tissue massage and cold packs, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p13"
+    },
+    {
+      "date": "2023-10-19",
+      "type": "encounter",
+      "detail": "Follow-up showing early callus formation, patient compliant with PT, but experiencing significant neck stiffness and weak grip strength, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p2"
+    },
+    {
+      "date": "2023-10-19",
+      "type": "imaging",
+      "detail": "X-ray showing early callus formation around the humerus and distal radius plates, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p2"
+    },
+    {
+      "date": "2023-10-19",
+      "type": "medication",
+      "detail": "Started on Cyclobenzaprine 10mg for neck muscle spasm management, Dr. Myrtle Turner, MD, FACS, Oak Street Pharmacy.",
+      "source": "07_imaging_pharmacy p3"
+    },
+    {
+      "date": "2023-10-27",
+      "type": "therapy",
+      "detail": "Physical therapy session with passive elbow stretching, patient noting weather changes increase joint pain, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p19"
+    },
+    {
+      "date": "2023-11-01",
+      "type": "therapy",
+      "detail": "Physical therapy session focusing on active humerus and wrist mobilization with heat and cold therapies applied, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p21"
+    },
+    {
+      "date": "2023-11-03",
+      "type": "therapy",
+      "detail": "Physical therapy session with elbow active range of motion, hand putty exercises, and cervical traction, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p22"
+    },
+    {
+      "date": "2023-11-06",
+      "type": "therapy",
+      "detail": "Physical therapy session utilizing upper extremity ergometer, cervical stretching, and hot pack application, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p23"
+    },
+    {
+      "date": "2023-11-08",
+      "type": "diagnosis",
+      "detail": "Patient experienced increased left humerus pain after attempting to lift a grocery bag during recovery, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p24"
+    },
+    {
+      "date": "2023-11-08",
+      "type": "therapy",
+      "detail": "Physical therapy session with increased pain complaints after patient attempted to lift grocery bag, requiring rest breaks, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p24"
+    },
+    {
+      "date": "2023-11-10",
+      "type": "therapy",
+      "detail": "Physical therapy session with passive wrist extension stretches and soft tissue mobilization to neck, with cervical symptoms provoked, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p25"
+    },
+    {
+      "date": "2023-11-14",
+      "type": "diagnosis",
+      "detail": "Patient failed to attend scheduled physical therapy appointment without notice, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p32"
+    },
+    {
+      "date": "2023-11-16",
+      "type": "diagnosis",
+      "detail": "Patient missed several physical therapy sessions, with provider stressing importance of continuous therapy to prevent contractures, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p3"
+    },
+    {
+      "date": "2023-11-16",
+      "type": "encounter",
+      "detail": "Patient complains of worsening left arm aching and severe neck pain, with missed PT sessions noted, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p3"
+    },
+    {
+      "date": "2023-11-16",
+      "type": "medication",
+      "detail": "Started on high-dose Ibuprofen 800mg for anti-inflammatory pain management, Dr. Myrtle Turner, MD, FACS, Oak Street Pharmacy.",
+      "source": "07_imaging_pharmacy p3"
+    },
+    {
+      "date": "2023-11-17",
+      "type": "diagnosis",
+      "detail": "Patient failed to attend second consecutive scheduled physical therapy appointment without notice, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p32"
+    },
+    {
+      "date": "2023-11-21",
+      "type": "diagnosis",
+      "detail": "Patient failed to attend third consecutive scheduled physical therapy appointment without response to contact attempts, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p32"
+    },
+    {
+      "date": "2023-11-24",
+      "type": "diagnosis",
+      "detail": "Left elbow stiffness significantly rebounded after patient missed three consecutive physical therapy sessions, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p26"
+    },
+    {
+      "date": "2023-11-24",
+      "type": "therapy",
+      "detail": "Patient returned after missing three consecutive sessions with significantly rebounded left elbow stiffness and increased pain, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p26"
+    },
+    {
+      "date": "2023-11-27",
+      "type": "therapy",
+      "detail": "Physical therapy session with intense passive elbow flexion stretching to counteract stiffening and cold pack application, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p27"
+    },
+    {
+      "date": "2023-11-29",
+      "type": "therapy",
+      "detail": "Physical therapy session focusing on left wrist active mobilizations, therapy putty exercises, and cervical heat pack, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p28"
+    },
+    {
+      "date": "2023-12-01",
+      "type": "therapy",
+      "detail": "Physical therapy session with suboccipital release, passive cervical mobilization, and elbow stretching with cervical symptoms provoked, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p29"
+    },
+    {
+      "date": "2023-12-04",
+      "type": "therapy",
+      "detail": "Physical therapy session utilizing upper extremity ergometer, grip strengthening exercises, and ice therapy to humerus, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p30"
+    },
+    {
+      "date": "2023-12-08",
+      "type": "therapy",
+      "detail": "Final physical therapy session at facility with active and passive stretching before patient transfer to sports complex, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p31"
+    },
+    {
+      "date": "2023-12-11",
+      "type": "encounter",
+      "detail": "Discharge summary documenting completion of 30 PT sessions with persistent severe cervical stiffness and left arm pain, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p33"
+    },
+    {
+      "date": "2023-12-14",
+      "type": "encounter",
+      "detail": "Ordered follow-up MRI of left upper extremity and C-Spine to assess soft tissue integrity and neural compression, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p4"
+    },
+    {
+      "date": "2023-12-14",
+      "type": "encounter",
+      "detail": "Follow-up showing nearly consolidated fractures but persistent ROM restrictions and decreased radial sensation, with worsening neck pain, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p4"
+    },
+    {
+      "date": "2023-12-14",
+      "type": "imaging",
+      "detail": "X-ray showing well-healed left humerus and distal radius fractures with stable internal hardware and excellent bony bridging, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p7"
+    },
+    {
+      "date": "2023-12-14",
+      "type": "medication",
+      "detail": "Continued Cyclobenzaprine 10mg for ongoing muscle spasm management, Dr. Myrtle Turner, MD, FACS, Oak Street Pharmacy.",
+      "source": "07_imaging_pharmacy p3"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Initial physical therapy evaluation for post-surgical left humerus/radius ORIF with persistent muscle wasting and chronic cervical disc bulge, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "therapy",
+      "detail": "Physical therapy re-evaluation for continued treatment of left arm fractures and cervicalgia, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "08_billing_and_claims p10"
+    },
+    {
+      "date": "2024-01-10",
+      "type": "therapy",
+      "detail": "First physical therapy treatment session with progressive dumbbell curls and manual therapy, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p2"
+    },
+    {
+      "date": "2024-01-12",
+      "type": "therapy",
+      "detail": "Physical therapy session focusing on neuromuscular re-education and cervical traction, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p3"
+    },
+    {
+      "date": "2024-01-15",
+      "type": "medication",
+      "detail": "Continued high-dose Ibuprofen 800mg for ongoing anti-inflammatory pain management, Dr. Myrtle Turner, MD, FACS, Oak Street Pharmacy.",
+      "source": "07_imaging_pharmacy p3"
+    },
+    {
+      "date": "2024-01-15",
+      "type": "therapy",
+      "detail": "Physical therapy session with Theraband resistance training and myofascial release, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p4"
+    },
+    {
+      "date": "2024-01-17",
+      "type": "diagnosis",
+      "detail": "Cervical symptoms were provoked during physical therapy session requiring monitoring and modification of treatment, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p5"
+    },
+    {
+      "date": "2024-01-17",
+      "type": "therapy",
+      "detail": "Physical therapy session with wrist strengthening and moist heat to cervical spine, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p5"
+    },
+    {
+      "date": "2024-01-19",
+      "type": "therapy",
+      "detail": "Physical therapy session with progressive resistance elbow curls and upper extremity stretching, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p6"
+    },
+    {
+      "date": "2024-01-22",
+      "type": "therapy",
+      "detail": "Physical therapy session focusing on shoulder and elbow stabilization exercises, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p7"
+    },
+    {
+      "date": "2024-01-24",
+      "type": "therapy",
+      "detail": "Physical therapy session with cervical range of motion and paraspinal trigger point therapy, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p8"
+    },
+    {
+      "date": "2024-01-26",
+      "type": "therapy",
+      "detail": "Physical therapy session with wrist pronation/supination drills using light weights, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p9"
+    },
+    {
+      "date": "2024-01-29",
+      "type": "diagnosis",
+      "detail": "Cervical symptoms were provoked during physical therapy session requiring monitoring and modification of treatment, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p10"
+    },
+    {
+      "date": "2024-01-29",
+      "type": "therapy",
+      "detail": "Physical therapy session with progressive resistance training using 3 lb weights and moist heat, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p10"
+    },
+    {
+      "date": "2024-01-31",
+      "type": "therapy",
+      "detail": "Physical therapy session with active-assisted wall climbs and grip strength exercises, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p11"
+    },
+    {
+      "date": "2024-02-02",
+      "type": "therapy",
+      "detail": "Physical therapy session with passive elbow stretching and myofascial release, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p12"
+    },
+    {
+      "date": "2024-02-05",
+      "type": "therapy",
+      "detail": "Physical therapy session with shoulder cuff exercises using therabands and cervical stretching, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p13"
+    },
+    {
+      "date": "2024-02-07",
+      "type": "therapy",
+      "detail": "Physical therapy session with continuous arm ergometer and forearm stretching with ice therapy, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p14"
+    },
+    {
+      "date": "2024-02-08",
+      "type": "encounter",
+      "detail": "Follow-up showing complete bony fusion but limited range of motion in forearm and shoulder, with patient transitioning PT care, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p5"
+    },
+    {
+      "date": "2024-02-08",
+      "type": "therapy",
+      "detail": "Patient transitioned physical therapy care to Emory Sports Medicine Complex, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p5"
+    },
+    {
+      "date": "2024-02-09",
+      "type": "therapy",
+      "detail": "Physical therapy session with elbow flexion under resistance and neck muscle strengthening, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p15"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "diagnosis",
+      "detail": "Cervical symptoms were provoked during physical therapy session requiring monitoring and modification of treatment, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p16"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "therapy",
+      "detail": "Physical therapy session with Theraband grip training and passive cervical traction, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p16"
+    },
+    {
+      "date": "2024-02-14",
+      "type": "therapy",
+      "detail": "Physical therapy session with progressive resistance humerus curls using 4 lb weights, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p17"
+    },
+    {
+      "date": "2024-02-15",
+      "type": "medication",
+      "detail": "Continued high-dose Ibuprofen 800mg for ongoing anti-inflammatory pain management, Dr. Myrtle Turner, MD, FACS, Oak Street Pharmacy.",
+      "source": "07_imaging_pharmacy p3"
+    },
+    {
+      "date": "2024-02-16",
+      "type": "therapy",
+      "detail": "Physical therapy session with cervical spine mobilization and paraspinal massage, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p18"
+    },
+    {
+      "date": "2024-02-19",
+      "type": "therapy",
+      "detail": "Physical therapy session with active wall climbs and forearm pronation strengthening, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p19"
+    },
+    {
+      "date": "2024-02-21",
+      "type": "therapy",
+      "detail": "Physical therapy session with dumbbell wrist extension exercises and cold pack application, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p20"
+    },
+    {
+      "date": "2024-02-23",
+      "type": "therapy",
+      "detail": "Physical therapy session focused on upper extremity stabilization and myofascial cervical release with good tolerance, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p21"
+    },
+    {
+      "date": "2024-02-26",
+      "type": "therapy",
+      "detail": "Physical therapy session focused on neuromuscular wrist extension re-education and ice pack application, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p22"
+    },
+    {
+      "date": "2024-02-28",
+      "type": "therapy",
+      "detail": "Physical therapy session with shoulder abduction theraband training and moist heat to neck, with cervical symptoms provoked, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p23"
+    },
+    {
+      "date": "2024-03-01",
+      "type": "therapy",
+      "detail": "Physical therapy session focused on left elbow end-range extension mobilization and cold pack application, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p24"
+    },
+    {
+      "date": "2024-03-04",
+      "type": "therapy",
+      "detail": "Physical therapy session with grip strength therapy putty and passive neck stretching, with cervical symptoms provoked, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p25"
+    },
+    {
+      "date": "2024-03-06",
+      "type": "therapy",
+      "detail": "Physical therapy session with theraband pull-aparts and myofascial neck mobilization, with cervical symptoms provoked, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p26"
+    },
+    {
+      "date": "2024-03-08",
+      "type": "therapy",
+      "detail": "Physical therapy session with elbow flexion progressive training using 5 lbs weight and ice to humerus, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p27"
+    },
+    {
+      "date": "2024-03-11",
+      "type": "therapy",
+      "detail": "Physical therapy session with upper extremity ergometer, forearm strengthening, and moist heat application, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p28"
+    },
+    {
+      "date": "2024-03-13",
+      "type": "therapy",
+      "detail": "Physical therapy session focused on cervical spine ROM and traction with shoulder stabilization exercises, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p29"
+    },
+    {
+      "date": "2024-03-15",
+      "type": "therapy",
+      "detail": "Physical therapy session with elbow range of motion stretching and hand coordination exercises, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p30"
+    },
+    {
+      "date": "2024-03-22",
+      "type": "therapy",
+      "detail": "Final advanced athletic therapy session with patient discharge from physical therapy program, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p31"
+    },
+    {
+      "date": "2024-03-25",
+      "type": "diagnosis",
+      "detail": "Patient demonstrates persistent 15-degree extension deficit in left elbow despite completing 30 sessions of physical therapy, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p32"
+    },
+    {
+      "date": "2024-03-25",
+      "type": "encounter",
+      "detail": "Patient completed 30 sessions of intensive rehabilitation achieving substantial improvements but with persistent deficits and chronic pain, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p32"
+    },
+    {
+      "date": null,
+      "type": "diagnosis",
+      "detail": "C5-C6 disc narrowing and bulge of unclear onset, possibly preexisting condition, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "01_ems_and_ed p8"
+    },
+    {
+      "date": null,
+      "type": "diagnosis",
+      "detail": "Pre-existing 4mm posterior disc bulge at C5-C6 level documented prior to the September 2023 incident, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "07_imaging_pharmacy p4"
+    }
+  ]
+}

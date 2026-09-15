@@ -1,0 +1,37 @@
+{
+  "case_id": "case-davis",
+  "label": "Davis \u2014 traumatic amputation and prosthetic rehabilitation, Jan 2024 (synthetic, from medrec dev)",
+  "source_medrec_case": "ym42yn9n7g66u7stbwzt2v45",
+  "documents": [
+    {
+      "doc_id": "01_EMS_and_ED_Admit_2024-01-08",
+      "title": "01_EMS_and_ED_Admit_2024-01-08.pdf",
+      "pages": 6
+    },
+    {
+      "doc_id": "02_Inpatient_Surgery_and_Ward_Stay",
+      "title": "02_Inpatient_Surgery_and_Ward_Stay.pdf",
+      "pages": 9
+    },
+    {
+      "doc_id": "03_Ortho_Followups_and_Neuroma_Revision",
+      "title": "03_Ortho_Followups_and_Neuroma_Revision.pdf",
+      "pages": 3
+    },
+    {
+      "doc_id": "04_Prosthetic_Fitting_and_Rehabilitation_Series",
+      "title": "04_Prosthetic_Fitting_and_Rehabilitation_Series.pdf",
+      "pages": 18
+    },
+    {
+      "doc_id": "05_Prior_Medical_Records_2022",
+      "title": "05_Prior_Medical_Records_2022.pdf",
+      "pages": 1
+    },
+    {
+      "doc_id": "06_Comprehensive_Billing_and_Financial_Audit",
+      "title": "06_Comprehensive_Billing_and_Financial_Audit.pdf",
+      "pages": 10
+    }
+  ]
+}
