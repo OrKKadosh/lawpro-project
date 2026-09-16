@@ -9,8 +9,9 @@ silently propagating garbage. No LLM call here.
 
 from __future__ import annotations
 
+import re
 from datetime import date as _date
-from typing import Any
+from typing import Any, Optional
 
 EVENT_TYPES = ("encounter", "imaging", "medication", "procedure", "therapy", "diagnosis")
 STATUS_VALUES = (
@@ -42,6 +43,29 @@ def _clamp01(value: Any, default: float = 0.5) -> float:
     except (TypeError, ValueError):
         return default
     return max(0.0, min(1.0, v))
+
+
+def _normalize_page(value: Any) -> Optional[int]:
+    """Coerce every page format actually observed in real extraction output
+    (int 1, string "1", "p1", "page 1") into a plain int -- project.py's
+    `f"{doc} p{page}"` composition assumes an int and produces a real bug
+    otherwise (FINDINGS.md: a raw "p1" string surviving uncoerced produced
+    "document pp1" in the final timeline's `source` field for 75/140 of
+    case-davis's committed events, which the source-audit parser then
+    silently failed to match and dropped with zero record -- confirmed for
+    real, not hypothetical). Returns None for anything genuinely
+    unparseable rather than guessing -- a missing/garbage page number must
+    stay visibly absent, never silently coerced into a plausible-looking
+    but wrong one."""
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        return value
+    if isinstance(value, str):
+        match = re.search(r"\d+", value)
+        if match:
+            return int(match.group())
+    return None
 
 
 def normalize_candidate(raw: dict[str, Any]) -> dict[str, Any]:
@@ -91,7 +115,7 @@ def normalize_candidate(raw: dict[str, Any]) -> dict[str, Any]:
 
     return {
         "source_doc_id": raw.get("source_doc_id"),
-        "source_page": raw.get("source_page"),
+        "source_page": _normalize_page(raw.get("source_page")),
         "evidence_text": str(raw.get("evidence_text", ""))[:600],
         "raw_date": raw.get("raw_date"),
         "normalized_date": normalized_date,

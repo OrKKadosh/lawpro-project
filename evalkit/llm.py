@@ -26,6 +26,17 @@ class LLMCallError(RuntimeError):
     """Raised when a call still isn't valid JSON after one retry."""
 
 
+class TruncatedResponseError(LLMCallError):
+    """Raised when a response was cut off by max_tokens mid-array and no
+    COMPLETE JSON could be obtained even after the repair retry -- a
+    genuinely different failure mode from ordinary malformed JSON, and one
+    that must never be silently accepted as a normal success. A response
+    salvaged from truncation is real, partial, already-paid-for data (some
+    callers -- recall-oriented candidate extraction -- deliberately choose
+    to keep it via `allow_salvage=True`), but the caller must always be
+    told it happened, never left to assume the response was complete."""
+
+
 def call_json(
     tracker: BudgetTracker,
     category: str,
@@ -34,29 +45,78 @@ def call_json(
     system: Optional[str] = None,
     model: str = constants.SONNET_5,
     max_tokens: int = 4096,
+    allow_salvage: bool = False,
 ) -> dict[str, Any]:
     """Call /v1/generate, parse the response as JSON, retry once on parse failure.
 
     Returns the parsed JSON object. Raises LLMCallError if it's still not
     valid JSON after the retry, or BudgetExceeded (from budget.py) if the
     floor would be breached before a call is attempted.
+
+    A response cut off by max_tokens (detected via `_salvage_truncated_
+    array`'s partial-parse) is NEVER treated as an ordinary success, even
+    though it produces valid-looking JSON for the objects that did complete
+    (FINDINGS.md: this was a real, unguarded gap -- a 16000-token-capped
+    extraction call salvaging 37 of 60 real events looked identical to a
+    normal 37-event response, with nothing anywhere recording that
+    truncation happened). By default (`allow_salvage=False`, every judge
+    call site), a salvaged parse is treated exactly like a JSON parse
+    failure -- the repair retry is attempted, and if the retry ALSO comes
+    back truncated, `TruncatedResponseError` is raised rather than quietly
+    returning partial data. A caller that explicitly wants the partial data
+    over nothing (candidate extraction: recall-oriented, a caller-level
+    retry/chunk-split strategy already exists to recover the rest) passes
+    `allow_salvage=True`; even then, the returned dict carries
+    `_incomplete_salvaged_response: True` so the caller has to notice
+    rather than being able to ignore it by construction.
     """
     tracker.check_floor()
-    parsed, raw_text, error = _attempt(tracker, category, prompt, system, model, max_tokens)
-    if parsed is not None:
+    parsed, raw_text, error, salvaged = _attempt(tracker, category, prompt, system, model, max_tokens)
+    if parsed is not None and not salvaged:
         return parsed
+    if parsed is not None and salvaged and allow_salvage:
+        first_salvage = parsed
 
     tracker.check_floor()
-    repair_prompt = (
-        f"{prompt}\n\n---\nYour previous response was not valid JSON. "
-        f"Parse error: {error}\nPrevious response:\n{raw_text}\n\n"
-        "Respond again with ONLY valid JSON, no other text, no markdown fences."
-    )
-    parsed, raw_text, error = _attempt(tracker, category, repair_prompt, system, model, max_tokens)
-    if parsed is not None:
-        return parsed
+    if parsed is not None and salvaged:
+        repair_prompt = (
+            f"{prompt}\n\n---\nYour previous response was CUT OFF before it finished (truncated mid-array). "
+            "Respond again with the COMPLETE JSON, no other text, no markdown fences -- make sure every "
+            "object in the array is fully closed and the response is not cut off this time."
+        )
+    else:
+        repair_prompt = (
+            f"{prompt}\n\n---\nYour previous response was not valid JSON. "
+            f"Parse error: {error}\nPrevious response:\n{raw_text}\n\n"
+            "Respond again with ONLY valid JSON, no other text, no markdown fences."
+        )
+    parsed2, raw_text2, error2, salvaged2 = _attempt(tracker, category, repair_prompt, system, model, max_tokens)
+    if parsed2 is not None and not salvaged2:
+        return parsed2
+    if allow_salvage:
+        candidates = []
+        if parsed is not None and salvaged:
+            candidates.append(first_salvage)
+        if parsed2 is not None and salvaged2:
+            candidates.append(parsed2)
+        if candidates:
+            # Both attempts truncated -- keep whichever salvage actually recovered MORE
+            # complete objects, not just whichever ran second. The repair prompt echoes the
+            # whole original prompt plus new instructions, so it can plausibly truncate
+            # EARLIER into the array than the first attempt did; blindly preferring the
+            # second attempt could silently discard a strictly better partial result,
+            # working against "recall-oriented, partial data beats none" (this module's
+            # whole reason for supporting allow_salvage in the first place).
+            best = max(candidates, key=_salvaged_item_count)
+            best["_incomplete_salvaged_response"] = True
+            return best
 
-    raise LLMCallError(f"Still not valid JSON after one retry: {error}\nRaw: {raw_text[:500]}")
+    if salvaged or salvaged2:
+        raise TruncatedResponseError(
+            f"Response truncated by max_tokens and could not be completed after retry "
+            f"(category={category!r}, max_tokens={max_tokens}). Raw (first attempt): {raw_text[:500]}"
+        )
+    raise LLMCallError(f"Still not valid JSON after one retry: {error2}\nRaw: {raw_text2[:500]}")
 
 
 TRANSIENT_RETRY_DELAY_SECONDS = 3
@@ -85,18 +145,23 @@ def _attempt(
     system: Optional[str],
     model: str,
     max_tokens: int,
-) -> tuple[Optional[dict], str, Optional[str]]:
+) -> tuple[Optional[dict], str, Optional[str], bool]:
     response = _generate_with_transient_retry(prompt, model=model, system=system, max_tokens=max_tokens)
     tracker.record(category, response)
     raw_text = response.get("text", "")
     _log_prompt(category, prompt, system, raw_text)
     try:
-        return _extract_json(raw_text), raw_text, None
+        parsed, salvaged = _extract_json(raw_text)
+        return parsed, raw_text, None, salvaged
     except (json.JSONDecodeError, ValueError) as exc:
-        return None, raw_text, str(exc)
+        return None, raw_text, str(exc), False
 
 
-def _extract_json(text: str) -> dict:
+def _extract_json(text: str) -> tuple[dict, bool]:
+    """Returns (parsed, was_salvaged) -- was_salvaged is True whenever the
+    clean json.loads() failed and a partial-array salvage was used instead,
+    meaning the parsed dict is INCOMPLETE relative to what the model
+    actually generated before being cut off."""
     text = text.strip()
     if text.startswith("```"):
         first_newline = text.find("\n")
@@ -105,12 +170,23 @@ def _extract_json(text: str) -> dict:
             text = text[:-3]
         text = text.strip()
     try:
-        return json.loads(text)
+        return json.loads(text), False
     except json.JSONDecodeError as exc:
         salvaged = _salvage_truncated_array(text)
         if salvaged is not None:
-            return salvaged
+            return salvaged, True
         raise exc
+
+
+def _salvaged_item_count(parsed: dict) -> int:
+    """How many complete objects a salvaged parse actually recovered --
+    used only to pick the better of two truncated salvages (call_json),
+    never to judge a clean parse. A salvaged dict is always {key: [objects]}
+    by construction (_salvage_truncated_array's return shape)."""
+    for value in parsed.values():
+        if isinstance(value, list):
+            return len(value)
+    return 0
 
 
 def _salvage_truncated_array(text: str) -> Optional[dict]:

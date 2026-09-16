@@ -1,0 +1,848 @@
+{
+  "case_id": "case-davis",
+  "description": "The final, strict-schema clinical timeline our extraction pipeline produced for this case (the exact output of run_full_extraction -> project_events). This is what a summarizer tool actually receives as input in the end-to-end pipeline demo.",
+  "event_count": 140,
+  "validation_problems": [],
+  "events": [
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Left arm industrial machinery entrapment, arm crush injury.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Left arm/hand complete mechanical disruption, bone protrusion, cold pulseless hand.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Left arm tourniquet application, factory responder.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Machine dismantled by emergency crews to free arm.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "medication",
+      "detail": "IV access: Fentanyl 100mcg.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "GCS 11, brief loss of consciousness (reported history).",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Tansfer to Midwest Regional trauma unit.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Left arm hospital admission, Dr. Marcus Vance, MD, FACS.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p2"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Complete traumatic amputation at level between shoulder and elbow, left arm, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p2"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Consulting Dr. Marcus Vance, MD, FACS; Dr. Elena Rostova, MD, Dr. Marcus Vance, MD, FACS; Dr. Elena Rostova, MD.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p2"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Left upper extremity entrapment, crush, near-amputation, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p3"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Serum ETOH test (ordered).",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p3"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Left upper extremity crush injury with complete brachial artery and nerve transection, exposed bone, massive soft tissue loss, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Left upper extremity unsalvageable crush injury with complete vascular/neurologic disruption; traumatic shock secondary to blood loss, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Immediate orthopedic trauma consultation (Dr. Marcus Vance) (ordered), Dr. Marcus Vance.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "PRBC transfusion: packed red blood cells 2 units, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Left arm emergent amputation (planned), Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "imaging",
+      "detail": "Left upper extremity (humerus, elbow, forearm) X-ray and CT angiography, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p5"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Left humerus/forearm/hand comminuted displaced supracondylar humerus fracture, open segmental forearm/hand fractures, carpal disorganization, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p5"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Brachial artery, left arm CT angiography, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p5"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Left upper extremity unsalvageable limb, complete mechanical and vascular disruption, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p5"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "imaging",
+      "detail": "Left elbow and forearm angiography, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p6"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Left upper extremity, above elbow (transhumeral) left transhumeral (above-elbow) amputation with myofascial closure, bone beveling, traction-neurectomy of median, ulnar, radial nerves, primary closure, Dr. Marcus Vance, MD, FACS.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Brachial artery, left arm ligation and division of brachial artery, Dr. Marcus Vance, MD, FACS.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Median, ulnar, radial nerves, left arm traction-neurectomy with bupivacaine injection: bupivacaine 0.5%, Dr. Marcus Vance, MD, FACS.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "The humerus was sectioned at the junction of the middle and distal thirds using an oscillating saw, Dr. Marcus Vance, MD, FACS.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "medication",
+      "detail": "Blood loss during surgery: Packed Red Blood Cells; Lactated Ringers 2 units PRBC; 1 Liter LR, Dr. Marcus Vance, MD, FACS.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Postoperative ICU admission, Dr. Marcus Vance, MD, FACS.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p1"
+    },
+    {
+      "date": "2024-01-09",
+      "type": "therapy",
+      "detail": "01/09 16:00 BP 139/88 HR 90 ... pain 7 ... amb w/ PT, T. Kovac RN.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p2"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "imaging",
+      "detail": "Elevated WBC, low Hgb, low Hct consistent with blood loss/inflammation.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p7"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "imaging",
+      "detail": "Urine drug screen.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p7"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "imaging",
+      "detail": "Urine drug screen.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p7"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Postoperative ICU monitoring.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
+    },
+    {
+      "date": null,
+      "type": "medication",
+      "detail": "He was transitioned from IV PCA Dilaudid to oral Oxycodone and Gabapentin 300mg TID.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
+    },
+    {
+      "date": "2024-01-12",
+      "type": "procedure",
+      "detail": "Left arm stump JP drain removal.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
+    },
+    {
+      "date": null,
+      "type": "encounter",
+      "detail": "Left arm phantom pain, need for prosthetic fitting, Dr. Elena Rostova.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
+    },
+    {
+      "date": "2024-01-15",
+      "type": "medication",
+      "detail": "Cefdinir 300mg PO BID for 5 more days (ordered).",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
+    },
+    {
+      "date": "2024-01-15",
+      "type": "medication",
+      "detail": "Phantom/neuropathic pain: Gabapentin 300mg PO TID (ordered).",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "encounter",
+      "detail": "Left upper limb status post left transhumeral amputation, healing well, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p1"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "diagnosis",
+      "detail": "Left hand (phantom) phantom limb pain, rated 8/10, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p1"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "diagnosis",
+      "detail": "Left stump, distal severe hypersensitivity to palpation, tapping triggers radiating pain into absent ulnar/median distributions, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p1"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "diagnosis",
+      "detail": "Left stump severe phantom limb pain and early post-amputation stump hypersensitivity, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p1"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "medication",
+      "detail": "Increase Gabapentin to 600mg PO TID (ordered), Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p1"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "therapy",
+      "detail": "Left stump referral for stump desensitization therapy (ordered), Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p1"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "procedure",
+      "detail": "Left stump shrinker sock fitting (recommended), Robert Chen, CPO.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p1"
+    },
+    {
+      "date": "2024-06-18",
+      "type": "encounter",
+      "detail": "Left stump 5-month clinical follow-up visit, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p2"
+    },
+    {
+      "date": null,
+      "type": "therapy",
+      "detail": "Left stump desensitization therapy, Hope Valley.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p2"
+    },
+    {
+      "date": "2024-06-18",
+      "type": "diagnosis",
+      "detail": "Left stump, distal medial painful lump, sharp shooting pain, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p2"
+    },
+    {
+      "date": "2024-06-18",
+      "type": "diagnosis",
+      "detail": "Left stump, medial residual border 1.5 cm tender firm mobile nodule reproducing electrical shock to phantom hand, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p2"
+    },
+    {
+      "date": "2024-06-18",
+      "type": "diagnosis",
+      "detail": "Left stump, ulnar/median nerve post-amputation traumatic neuroma, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p2"
+    },
+    {
+      "date": "2024-06-18",
+      "type": "diagnosis",
+      "detail": "Left stump failed conservative management of stump hypersensitivity, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p2"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Left stump neuroma excision and deep muscle transposition (planned), Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p2"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Left residual limb (transhumeral stump) excision of neuroma, proximal resection of median and ulnar nerves with transposition into triceps muscle, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p3"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "diagnosis",
+      "detail": "Left residual limb, ulnar/median nerve terminals neuroma measuring 1.8 cm x 1.4 cm, bound in dense scar tissue, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p3"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Triceps muscle, left arm embedding of proximal nerve stumps into triceps muscle with 5-0 epineural sutures, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p3"
+    },
+    {
+      "date": "2024-12-15",
+      "type": "therapy",
+      "detail": "Physical and occupational therapy (cancelled), M. Reyes.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p1"
+    },
+    {
+      "date": "2024-12-15",
+      "type": "procedure",
+      "detail": "Left arm Myoelectric Transhumeral Prosthesis prescription (considered).",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p1"
+    },
+    {
+      "date": "2025-01-10",
+      "type": "encounter",
+      "detail": "Status post left arm amputation.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+    },
+    {
+      "date": "2025-01-10",
+      "type": "medication",
+      "detail": "Current medication: Gabapentin 600mg TID.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+    },
+    {
+      "date": null,
+      "type": "procedure",
+      "detail": "Left arm amputation.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+    },
+    {
+      "date": null,
+      "type": "procedure",
+      "detail": "Left arm stump neuroma surgery.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+    },
+    {
+      "date": "2025-01-10",
+      "type": "diagnosis",
+      "detail": "Left hand phantom sensations.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+    },
+    {
+      "date": "2025-01-12",
+      "type": "encounter",
+      "detail": "Left shoulder/arm status post left transhumeral amputation with severe phantom limb pain, status post neuroma revision, Sarah Jenkins, PT, DPT.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p3"
+    },
+    {
+      "date": "2025-01-12",
+      "type": "encounter",
+      "detail": "Reduced left shoulder ROM, Sarah Jenkins, PT, DPT.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p3"
+    },
+    {
+      "date": "2025-01-12",
+      "type": "encounter",
+      "detail": "Decreased left shoulder strength, Sarah Jenkins, PT, DPT.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p3"
+    },
+    {
+      "date": "2025-01-12",
+      "type": "therapy",
+      "detail": "Left shoulder/arm myoelectric prosthesis training (planned), Sarah Jenkins, PT, DPT.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p3"
+    },
+    {
+      "date": "2025-02-05",
+      "type": "procedure",
+      "detail": "Left upper arm delivery and initial fitting of custom Myoelectric Left Transhumeral Prosthesis, Robert Chen, CPO, LPO.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p4"
+    },
+    {
+      "date": "2025-02-05",
+      "type": "procedure",
+      "detail": "Left arm stump neuroma revision, Dr. Vance.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p4"
+    },
+    {
+      "date": "2025-02-05",
+      "type": "procedure",
+      "detail": "Left residual biceps and triceps electrode calibration for myoelectric prosthesis, Robert Chen, CPO, LPO.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p4"
+    },
+    {
+      "date": "2025-02-05",
+      "type": "therapy",
+      "detail": "Left arm plan for therapy and follow-up (planned), Robert Chen, CPO, LPO.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p4"
+    },
+    {
+      "date": "2025-02-10",
+      "type": "therapy",
+      "detail": "Left arm PT session - electrode placement/signal control training.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p5"
+    },
+    {
+      "date": "2025-02-17",
+      "type": "therapy",
+      "detail": "Left shoulder/arm shoulder fatigue at 15 minutes.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p6"
+    },
+    {
+      "date": "2025-03-03",
+      "type": "therapy",
+      "detail": "Left arm PT session - grasping drills, prosthesis wear time increase.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p7"
+    },
+    {
+      "date": "2025-04-14",
+      "type": "therapy",
+      "detail": "Bilateral upper extremities PT session - bilateral coordination tasks.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p10"
+    },
+    {
+      "date": "2026-06-15",
+      "type": "therapy",
+      "detail": "Final functional capacity evaluation with prosthetic arm; therapeutic exercise; manual therapy.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p16"
+    },
+    {
+      "date": "2026-06-22",
+      "type": "encounter",
+      "detail": "Completed his comprehensive rehabilitation program... discharged to return to modified light/medium duty at NSK, Sarah Jenkins, PT, DPT.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p18"
+    },
+    {
+      "date": "2026-06-22",
+      "type": "diagnosis",
+      "detail": "Left shoulder near normal active range of motion, Sarah Jenkins, PT, DPT.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p18"
+    },
+    {
+      "date": "2022-07-12",
+      "type": "encounter",
+      "detail": "Left shoulder pain following fall from motorcycle, Dr. Arthur Pendelton.",
+      "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "date": "2022-07-12",
+      "type": "encounter",
+      "detail": "Left shoulder/AC joint focal tenderness over AC joint, positive painful arc test 90-120 degrees, limited abduction to 110 degrees, Dr. Arthur Pendelton.",
+      "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "date": "2022-07-12",
+      "type": "imaging",
+      "detail": "X-ray left shoulder, Dr. Arthur Pendelton.",
+      "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "date": "2022-07-12",
+      "type": "diagnosis",
+      "detail": "Left shoulder/AC joint Left AC joint sprain (Grade I/II); mild rotator cuff tendinitis secondary to trauma, Dr. Arthur Pendelton.",
+      "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "date": "2022-07-12",
+      "type": "therapy",
+      "detail": "Left shoulder physical therapy (12 sessions) (ordered), Dr. Arthur Pendelton.",
+      "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "date": "2022-07-12",
+      "type": "diagnosis",
+      "detail": "Left arm work restriction (recommended), Dr. Arthur Pendelton.",
+      "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Emergency department visit, Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Operating Room Services, CPT/HCPCS 27535, 3 units, $45,000.00, Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Principal procedure (ICD-10-PCS 0XJD0ZZ), Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "ICU admission/stay.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Anesthesia service, CPT 01402.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Diagnosis codes S48.112A and S47.2XXA (ICD-10 codes, clinical meaning not narratively confirmed in this chunk), Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "date": "2024-01-09",
+      "type": "procedure",
+      "detail": "Major orthopedic instrument tray supply charge, suggests a second procedure/OR use on 01/09/2024.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "date": "2024-01-11",
+      "type": "procedure",
+      "detail": "Wound (site unspecified) wound culture.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "date": "2024-01-11",
+      "type": "procedure",
+      "detail": "Wound (site unspecified) wound culture.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "date": "2024-01-11",
+      "type": "procedure",
+      "detail": "Cervical spine rigid cervical collar application, billed under CPT 96365 (code mismatch with described item, no further clinical narrative given).",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "date": "2024-01-12",
+      "type": "medication",
+      "detail": "01/12/2024, 0250, J1650, OXYCODONE 5MG TAB.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "date": "2024-01-14",
+      "type": "medication",
+      "detail": "01/14/2024, 0250, J8499, MORPHINE SULFATE 4MG INJ.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "date": "2024-01-15",
+      "type": "imaging",
+      "detail": "Intraoperative C-arm fluoroscopy, suggesting an OR procedure on 01/15/2024.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Operating room procedure, CPT 76000, no further clinical narrative provided, Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Principal procedure (ICD-10-PCS 0QSG04Z), no further clinical narrative given, Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Anesthesia service, CPT 01402.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "diagnosis",
+      "detail": "Diagnosis codes M96.5 (postprocedural scoliosis, per code, but not clinically confirmed in this chunk) and G54.6, Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "24920, 01/08/2024, DX A, Referring Provider Dr. Marcus Vance, MD, FACS, Dr. Marcus Vance, MD, FACS.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p4"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Peripheral nerve (per CPT code convention, not clinically confirmed in text) M96.5, Dr. Marcus Vance, MD, FACS.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p5"
+    },
+    {
+      "date": "2025-02-05",
+      "type": "procedure",
+      "detail": "Lower limb (per code convention, not narratively confirmed) S48.112D, Robert Chen, CPO, LPO.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p6"
+    },
+    {
+      "date": "2025-01-12",
+      "type": "therapy",
+      "detail": "S48.112D, G54.6, Sarah Jenkins, PT, DPT.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p7"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "medication",
+      "detail": "Last tetanus Unsure - Tdap administered per protocol.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p3"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "medication",
+      "detail": "Hydromorphone (Dilaudid) PCA - administered 01/08/2024.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p3"
+    },
+    {
+      "date": "2024-01-14",
+      "type": "medication",
+      "detail": "Hydromorphone (Dilaudid) PCA administered 01/14/2024.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p6"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "medication",
+      "detail": "Gabapentin 300mg PO administered 01/08/2024.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p3"
+    },
+    {
+      "date": "2024-01-14",
+      "type": "medication",
+      "detail": "Gabapentin 300mg PO administered 01/14/2024.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p6"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "medication",
+      "detail": "Ancef (Cefazolin) 1g IV administered 01/08/2024.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p3"
+    },
+    {
+      "date": "2024-01-14",
+      "type": "medication",
+      "detail": "Ancef (Cefazolin) 1g IV administered 01/14/2024.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p6"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "medication",
+      "detail": "PRN pain medication: Oxycodone 5-10mg PO PRN.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p3"
+    },
+    {
+      "date": "2024-01-10",
+      "type": "medication",
+      "detail": "PRN pain medication: Oxycodone 5-10mg PO PRN.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p4"
+    },
+    {
+      "date": "2024-01-12",
+      "type": "medication",
+      "detail": "PRN pain medication: Oxycodone 5-10mg PO PRN.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p5"
+    },
+    {
+      "date": "2025-01-10",
+      "type": "medication",
+      "detail": "Current medication: Tylenol Extra Strength.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+    },
+    {
+      "date": "2024-01-14",
+      "type": "medication",
+      "detail": "01/14/2024, 0250, J8499, LISINOPRIL 10MG TAB.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "medication",
+      "detail": "Pharmacy charge, HCPCS J1650.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "medication",
+      "detail": "Pharmacy charge, HCPCS J1650, specific medication not identified.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "High fall risk.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p3"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "ASSISTANT: Dr. David Cho, MD, Dr. David Cho, MD.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Left arm stump JP drain placement, Dr. Marcus Vance, MD, FACS.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p1"
+    },
+    {
+      "date": null,
+      "type": "encounter",
+      "detail": "Left arm stump daily wound inspection.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
+    },
+    {
+      "date": "2025-08-11",
+      "type": "encounter",
+      "detail": "Upon return on 08/11/2025, patient attributed the lapse to holiday season workload and transportation logistics.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p17"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Patient-reported pain scores over course of treatment.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p18"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Inpatient room and board.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "date": "2024-02-15",
+      "type": "encounter",
+      "detail": "CLM-50761454, Midwest Regional Medical Center, billed $145,230.50, paid 116,184.40, EFT issued 02/15/2024.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p8"
+    },
+    {
+      "date": "2024-01-10",
+      "type": "encounter",
+      "detail": "Pain level 5/10, J. Marsh RN.",
+      "source": "02_Inpatient_Surgery_and_Ward_Stay p2"
+    },
+    {
+      "date": "2024-02-12",
+      "type": "procedure",
+      "detail": "Stump scar is fully healed; staples were removed during previous visit, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p1"
+    },
+    {
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Left residual limb subcuticular suture closure, Dr. Marcus Vance.",
+      "source": "03_Ortho_Followups_and_Neuroma_Revision p3"
+    },
+    {
+      "date": "2025-04-14",
+      "type": "therapy",
+      "detail": "Bilateral upper extremity therapeutic exercise; manual therapy joint/soft tissue mobilization.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p10"
+    },
+    {
+      "date": "2025-05-12",
+      "type": "therapy",
+      "detail": "05/12/2025 NO SHOW; Voicemail left; reschedule offered (cancelled).",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p17"
+    },
+    {
+      "date": "2025-11-10",
+      "type": "therapy",
+      "detail": "11/10/2025 NO SHOW; Voicemail left; reschedule offered (cancelled).",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p17"
+    },
+    {
+      "date": "2026-03-09",
+      "type": "therapy",
+      "detail": "Hand/fingers fine motor control training; therapeutic exercise; manual therapy.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p15"
+    },
+    {
+      "date": "2022-07-12",
+      "type": "diagnosis",
+      "detail": "Head no loss of consciousness reported, Dr. Arthur Pendelton.",
+      "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "date": "2022-07-12",
+      "type": "medication",
+      "detail": "Rest, ice, Ibuprofen 600mg q6h prn (ordered), Dr. Arthur Pendelton.",
+      "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Laboratory panel, CPT 80048.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "date": "2024-01-14",
+      "type": "procedure",
+      "detail": "CBC with differential.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "date": "2024-01-15",
+      "type": "procedure",
+      "detail": "Cervical spine rigid cervical collar, discharge supply.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "date": "2025-02-10",
+      "type": "therapy",
+      "detail": "97110, 02/10/2025, 4 units, Sarah Jenkins, PT, Sarah Jenkins, PT, DPT.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p7"
+    },
+    {
+      "date": "2026-06-15",
+      "type": "therapy",
+      "detail": "97537, 06/15/2026, 4 units, Sarah Jenkins, PT, Sarah Jenkins, PT, DPT.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p7"
+    }
+  ]
+}

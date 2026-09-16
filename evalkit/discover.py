@@ -11,8 +11,24 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
-DATA_DIR = Path(__file__).resolve().parents[1] / "data"
-GOLDEN_DIR = Path(__file__).resolve().parents[1] / "golden"
+ROOT_DIR = Path(__file__).resolve().parents[1]
+DATA_DIR = ROOT_DIR / "data"
+GOLDEN_DIR = ROOT_DIR / "golden"
+
+
+def relpath(path) -> str:
+    """A path relative to the repo root, for anything written into a
+    committed, reviewer-facing result file -- an absolute machine-local
+    path (e.g. C:\\Users\\<name>\\...) leaking into a committed JSON file is
+    not portable and not something a reviewer on a different machine can
+    use (confirmed for real: results/timeline_eval/case-davis.json's
+    `reference_path` field). Falls back to the raw string if `path` isn't
+    actually under the repo root (shouldn't normally happen for this
+    project's own files, but never raise over it)."""
+    try:
+        return str(Path(path).resolve().relative_to(ROOT_DIR)).replace("\\", "/")
+    except ValueError:
+        return str(path)
 
 
 @dataclass
@@ -62,23 +78,29 @@ class Case:
                 return candidate
         raise FileNotFoundError(f"No reference timeline found for case {self.case_id}")
 
-    def corrected_reference_timeline_path(self) -> Path:
-        """The reference timeline used for scoring OUR OWN extraction
-        (evalkit/reference/compare.py) -- deliberately separate from
-        reference_timeline_path(), which the controlled benchmark uses and
-        which must keep pointing at the exact, unedited timeline the 8
-        pre-generated summaries were actually produced from.
+    def adjudicated_reference_timeline_path(self) -> Path:
+        """A source-adjudicated DEVELOPMENT/REFERENCE timeline used only for
+        scoring OUR OWN extraction (evalkit/reference/compare.py) --
+        deliberately separate from reference_timeline_path(), which the
+        controlled benchmark uses and which must keep pointing at the
+        exact, unedited timeline the 8 pre-generated summaries were
+        actually produced from. This file NEVER replaces LawPro's supplied
+        golden in the controlled summarizer benchmark or the shipping
+        recommendation -- see reference_timeline_path()'s own docstring and
+        DECISIONS.md's non-circularity guardrail.
 
-        Prefers golden/<case>.timeline.corrected.json when one exists --
-        a manually-corrected reference whose changes are sourced only from
-        the independent source audit (never from our own candidate
-        extraction, DECISIONS.md) -- falling back to
-        reference_timeline_path() for any case without one (e.g. Davis,
-        whose own audit found no confirmed errors to correct).
+        Prefers golden/<case>.timeline.adjudicated.json when one exists --
+        every edit in it is sourced only from the independent source audit
+        (evalkit/reference/audit.py, which checks the original supplied
+        timeline directly against real OCR pages), never from our own
+        candidate extraction's values (DECISIONS.md's non-circularity
+        guardrail) -- falling back to reference_timeline_path() for any
+        case without one (e.g. Davis, whose own audit found no confirmed
+        errors to adjudicate).
         """
-        corrected = GOLDEN_DIR / f"{self.case_id}.timeline.corrected.json"
-        if corrected.is_file():
-            return corrected
+        adjudicated = GOLDEN_DIR / f"{self.case_id}.timeline.adjudicated.json"
+        if adjudicated.is_file():
+            return adjudicated
         return self.reference_timeline_path()
 
     def pregenerated_summary_paths(self) -> list[Path]:

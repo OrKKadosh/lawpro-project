@@ -26,7 +26,7 @@ from typing import Any, Optional
 
 from chronos import timeline as chronos_timeline
 from evalkit.budget import BudgetTracker
-from evalkit.discover import Case
+from evalkit.discover import Case, relpath
 from evalkit.llm import call_json
 from evalkit.reference.audit import AuditReport, audit_events
 from evalkit.scoring import SEVERITY_WEIGHTS
@@ -318,7 +318,7 @@ def stage0_evaluate(case: Case, candidate_events: list[dict], tracker: BudgetTra
     events (from the already-run reference audit -- the findings that
     justified any correction), and additional source-grounded events our
     extraction found that the reference misses."""
-    ref_path = case.corrected_reference_timeline_path()
+    ref_path = case.adjudicated_reference_timeline_path()
     reference_events = chronos_timeline.parse(ref_path.read_text(encoding="utf-8"))
 
     ref_to_cand, matched_cand, unmatched_cand, ref_scores = align_events(candidate_events, reference_events)
@@ -360,13 +360,14 @@ def stage0_evaluate(case: Case, candidate_events: list[dict], tracker: BudgetTra
 
     return {
         "case_id": case.case_id,
-        "reference_path": str(ref_path),
+        "reference_path": relpath(ref_path),
         "reference_event_count": len(reference_events),
         "candidate_event_count": len(candidate_events),
         "reference_agreement": round(reference_agreement, 3),
         "date_agreement_among_matched": round(date_agreement, 3) if date_agreement is not None else None,
         "type_agreement_among_matched": round(type_agreement, 3) if type_agreement is not None else None,
-        "source_grounded_precision": candidate_audit_dict["coverage"]["source_grounded_precision"],
+        "source_grounded_precision_among_completed": candidate_audit_dict["coverage"]["source_grounded_precision_among_completed"],
+        "source_audit_completion_rate": candidate_audit_dict["coverage"]["audit_completion_rate"],
         "candidate_audit_coverage": candidate_audit_dict["coverage"],
         "extraction_score": extraction_score,
         "reference_events_disputed_by_source_audit": reference_events_disputed_by_source_audit,
@@ -394,9 +395,14 @@ if __name__ == "__main__":
         result = stage0_evaluate(case, candidate_events, tracker)
         out_path = RESULTS_DIR / f"{case.case_id}.json"
         out_path.write_text(json.dumps(result, indent=2), encoding="utf-8")
+        cov = result["candidate_audit_coverage"]
         print(f"  reference_agreement={result['reference_agreement']} "
-              f"source_grounded_precision={result['source_grounded_precision']} "
               f"date_agreement={result['date_agreement_among_matched']}")
+        print(f"  source audit: selected={cov['events_selected_for_audit']} "
+              f"completed={cov['events_with_a_verdict']} "
+              f"completion_rate={cov['audit_completion_rate']} "
+              f"unparseable_sources={cov['unparseable_sources_count']} "
+              f"-> source_grounded_precision_among_completed={cov['source_grounded_precision_among_completed']}")
         print(f"  written to {out_path}")
     print()
     print(tracker.summary())

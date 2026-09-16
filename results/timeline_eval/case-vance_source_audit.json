@@ -1,6 +1,6 @@
 {
   "case_id": "case-vance",
-  "reference_path": "C:\\Users\\wix\\Documents\\\u05de\u05d9\u05d5\u05e0\u05d9\u05dd \u05dc\u05e2\u05d1\u05d5\u05d3\u05d4\\interview-ai-or-kadosh\\exercise\\golden\\case-vance.timeline.json",
+  "reference_path": "golden/case-vance.timeline.json",
   "likely_reference_omissions": [
     "[01_ems_and_ed] The EMS run sheet documents the mechanism of injury as a 2-vehicle collision with heavy side-impact damage requiring jaws-of-life extrication, and patient admission of drinking 4 beers before driving, which is not captured in any event.",
     "[01_ems_and_ed] The lab report shows serum ethanol of 110 mg/dL (H), elevated WBC 14.2, and low hemoglobin 12.8, none of which are reflected in the events.",

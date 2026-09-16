@@ -1,7 +1,3463 @@
 {
-  "extraction_score": {
-    "composite": 0.9,
-    "has_confirmed_fabrication": false
+  "case_id": "case-vance",
+  "reference_path": "golden/case-vance.timeline.adjudicated.json",
+  "reference_event_count": 94,
+  "candidate_event_count": 202,
+  "reference_agreement": 0.574,
+  "date_agreement_among_matched": 0.796,
+  "type_agreement_among_matched": 0.796,
+  "source_grounded_precision_among_completed": 0.861,
+  "source_audit_completion_rate": 1.0,
+  "candidate_audit_coverage": {
+    "events_total": 202,
+    "events_fully_audited_high_materiality": 95,
+    "events_sampled_routine": 6,
+    "events_selected_for_audit": 101,
+    "events_with_a_verdict": 101,
+    "audit_completion_rate": 1.0,
+    "unparseable_sources_count": 0,
+    "source_grounded_precision_among_completed": 0.861,
+    "routine_sample_method": "evenly-spaced, deterministic, n=6 (PLAN.md SS7/D.2: risk-based, not exhaustive by default)"
   },
-  "source_grounded_precision": 0.95
+  "extraction_score": {
+    "composite": 0.495,
+    "has_confirmed_fabrication": true,
+    "counts": {
+      "missing": 51,
+      "matched_agree": 43,
+      "extra_unaudited": 74,
+      "extra_grounded": 73,
+      "extra_ungrounded": 12
+    },
+    "items": [
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 14,
+        "reference_event": {
+          "date": "2023-09-15",
+          "type": "encounter",
+          "detail": "Initial physical therapy evaluation following post-surgical ORIF of left humerus and radius with significant functional limitations, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p1"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 18,
+        "reference_event": {
+          "date": "2023-09-21",
+          "type": "therapy",
+          "detail": "Surgical staples removed during follow-up visit with wounds healing cleanly, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+          "source": "04_ortho_followup p1"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 26,
+        "reference_event": {
+          "date": "2023-10-27",
+          "type": "therapy",
+          "detail": "Physical therapy session with passive elbow stretching, patient noting weather changes increase joint pain, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p19"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 27,
+        "reference_event": {
+          "date": "2023-11-01",
+          "type": "therapy",
+          "detail": "Physical therapy session focusing on active humerus and wrist mobilization with heat and cold therapies applied, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p21"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 28,
+        "reference_event": {
+          "date": "2023-11-03",
+          "type": "therapy",
+          "detail": "Physical therapy session with elbow active range of motion, hand putty exercises, and cervical traction, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p22"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 29,
+        "reference_event": {
+          "date": "2023-11-06",
+          "type": "therapy",
+          "detail": "Physical therapy session utilizing upper extremity ergometer, cervical stretching, and hot pack application, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p23"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 30,
+        "reference_event": {
+          "date": "2023-11-08",
+          "type": "diagnosis",
+          "detail": "Patient experienced increased left humerus pain after attempting to lift a grocery bag during recovery, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p24"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 34,
+        "reference_event": {
+          "date": "2023-11-16",
+          "type": "diagnosis",
+          "detail": "Patient missed several physical therapy sessions, with provider stressing importance of continuous therapy to prevent contractures, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+          "source": "04_ortho_followup p3"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 37,
+        "reference_event": {
+          "date": "2023-11-17",
+          "type": "diagnosis",
+          "detail": "Patient failed to attend second consecutive scheduled physical therapy appointment without notice, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p32"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 38,
+        "reference_event": {
+          "date": "2023-11-21",
+          "type": "diagnosis",
+          "detail": "Patient failed to attend third consecutive scheduled physical therapy appointment without response to contact attempts, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p32"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 40,
+        "reference_event": {
+          "date": "2023-11-24",
+          "type": "therapy",
+          "detail": "Patient returned after missing three consecutive sessions with significantly rebounded left elbow stiffness and increased pain, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p26"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 41,
+        "reference_event": {
+          "date": "2023-11-27",
+          "type": "therapy",
+          "detail": "Physical therapy session with intense passive elbow flexion stretching to counteract stiffening and cold pack application, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p27"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 42,
+        "reference_event": {
+          "date": "2023-11-29",
+          "type": "therapy",
+          "detail": "Physical therapy session focusing on left wrist active mobilizations, therapy putty exercises, and cervical heat pack, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p28"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 43,
+        "reference_event": {
+          "date": "2023-12-01",
+          "type": "therapy",
+          "detail": "Physical therapy session with suboccipital release, passive cervical mobilization, and elbow stretching with cervical symptoms provoked, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p29"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 44,
+        "reference_event": {
+          "date": "2023-12-04",
+          "type": "therapy",
+          "detail": "Physical therapy session utilizing upper extremity ergometer, grip strengthening exercises, and ice therapy to humerus, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p30"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 54,
+        "reference_event": {
+          "date": "2024-01-12",
+          "type": "therapy",
+          "detail": "Physical therapy session focusing on neuromuscular re-education and cervical traction, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p3"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 56,
+        "reference_event": {
+          "date": "2024-01-15",
+          "type": "therapy",
+          "detail": "Physical therapy session with Theraband resistance training and myofascial release, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p4"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 57,
+        "reference_event": {
+          "date": "2024-01-17",
+          "type": "diagnosis",
+          "detail": "Cervical symptoms were provoked during physical therapy session requiring monitoring and modification of treatment, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p5"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 60,
+        "reference_event": {
+          "date": "2024-01-22",
+          "type": "therapy",
+          "detail": "Physical therapy session focusing on shoulder and elbow stabilization exercises, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p7"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 61,
+        "reference_event": {
+          "date": "2024-01-24",
+          "type": "therapy",
+          "detail": "Physical therapy session with cervical range of motion and paraspinal trigger point therapy, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p8"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 62,
+        "reference_event": {
+          "date": "2024-01-26",
+          "type": "therapy",
+          "detail": "Physical therapy session with wrist pronation/supination drills using light weights, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p9"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 63,
+        "reference_event": {
+          "date": "2024-01-29",
+          "type": "diagnosis",
+          "detail": "Cervical symptoms were provoked during physical therapy session requiring monitoring and modification of treatment, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p10"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 64,
+        "reference_event": {
+          "date": "2024-01-29",
+          "type": "therapy",
+          "detail": "Physical therapy session with progressive resistance training using 3 lb weights and moist heat, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p10"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 65,
+        "reference_event": {
+          "date": "2024-01-31",
+          "type": "therapy",
+          "detail": "Physical therapy session with active-assisted wall climbs and grip strength exercises, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p11"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 66,
+        "reference_event": {
+          "date": "2024-02-02",
+          "type": "therapy",
+          "detail": "Physical therapy session with passive elbow stretching and myofascial release, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p12"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 67,
+        "reference_event": {
+          "date": "2024-02-05",
+          "type": "therapy",
+          "detail": "Physical therapy session with shoulder cuff exercises using therabands and cervical stretching, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p13"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 68,
+        "reference_event": {
+          "date": "2024-02-07",
+          "type": "therapy",
+          "detail": "Physical therapy session with continuous arm ergometer and forearm stretching with ice therapy, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p14"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 70,
+        "reference_event": {
+          "date": "2024-02-08",
+          "type": "therapy",
+          "detail": "Patient transitioned physical therapy care to Emory Sports Medicine Complex, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+          "source": "04_ortho_followup p5"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 71,
+        "reference_event": {
+          "date": "2024-02-09",
+          "type": "therapy",
+          "detail": "Physical therapy session with elbow flexion under resistance and neck muscle strengthening, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p15"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 72,
+        "reference_event": {
+          "date": "2024-02-12",
+          "type": "diagnosis",
+          "detail": "Cervical symptoms were provoked during physical therapy session requiring monitoring and modification of treatment, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p16"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 74,
+        "reference_event": {
+          "date": "2024-02-14",
+          "type": "therapy",
+          "detail": "Physical therapy session with progressive resistance humerus curls using 4 lb weights, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p17"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 76,
+        "reference_event": {
+          "date": "2024-02-16",
+          "type": "therapy",
+          "detail": "Physical therapy session with cervical spine mobilization and paraspinal massage, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p18"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 77,
+        "reference_event": {
+          "date": "2024-02-19",
+          "type": "therapy",
+          "detail": "Physical therapy session with active wall climbs and forearm pronation strengthening, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p19"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 78,
+        "reference_event": {
+          "date": "2024-02-21",
+          "type": "therapy",
+          "detail": "Physical therapy session with dumbbell wrist extension exercises and cold pack application, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p20"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 80,
+        "reference_event": {
+          "date": "2024-02-26",
+          "type": "therapy",
+          "detail": "Physical therapy session focused on neuromuscular wrist extension re-education and ice pack application, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p22"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 82,
+        "reference_event": {
+          "date": "2024-03-01",
+          "type": "therapy",
+          "detail": "Physical therapy session focused on left elbow end-range extension mobilization and cold pack application, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p24"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 85,
+        "reference_event": {
+          "date": "2024-03-08",
+          "type": "therapy",
+          "detail": "Physical therapy session with elbow flexion progressive training using 5 lbs weight and ice to humerus, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p27"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 86,
+        "reference_event": {
+          "date": "2024-03-11",
+          "type": "therapy",
+          "detail": "Physical therapy session with upper extremity ergometer, forearm strengthening, and moist heat application, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p28"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 88,
+        "reference_event": {
+          "date": "2024-03-15",
+          "type": "therapy",
+          "detail": "Physical therapy session with elbow range of motion stretching and hand coordination exercises, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p30"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 90,
+        "reference_event": {
+          "date": "2024-03-25",
+          "type": "diagnosis",
+          "detail": "Patient demonstrates persistent 15-degree extension deficit in left elbow despite completing 30 sessions of physical therapy, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p32"
+        }
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 2,
+        "candidate_index": 48,
+        "match_score": 0.667,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 51,
+        "candidate_index": 93,
+        "match_score": 0.6,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 73,
+        "candidate_index": 187,
+        "match_score": 0.5,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 58,
+        "candidate_index": 186,
+        "match_score": 0.5,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 39,
+        "candidate_index": 88,
+        "match_score": 0.5,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 32,
+        "candidate_index": 178,
+        "match_score": 0.5,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 25,
+        "candidate_index": 104,
+        "match_score": 0.5,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 17,
+        "candidate_index": 57,
+        "match_score": 0.5,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 13,
+        "candidate_index": 78,
+        "match_score": 0.478,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 49,
+        "candidate_index": 76,
+        "match_score": 0.476,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 35,
+        "candidate_index": 62,
+        "match_score": 0.471,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 22,
+        "candidate_index": 86,
+        "match_score": 0.45,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 19,
+        "candidate_index": 103,
+        "match_score": 0.444,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 5,
+        "candidate_index": 52,
+        "match_score": 0.44,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 20,
+        "candidate_index": 83,
+        "match_score": 0.429,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 50,
+        "candidate_index": 197,
+        "match_score": 0.412,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 9,
+        "candidate_index": 138,
+        "match_score": 0.412,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 15,
+        "candidate_index": 141,
+        "match_score": 0.4,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 79,
+        "candidate_index": 188,
+        "match_score": 0.391,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 6,
+        "candidate_index": 24,
+        "match_score": 0.389,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 7,
+        "candidate_index": 17,
+        "match_score": 0.375,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 24,
+        "candidate_index": 58,
+        "match_score": 0.353,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 47,
+        "candidate_index": 68,
+        "match_score": 0.35,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 81,
+        "candidate_index": 189,
+        "match_score": 0.348,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 21,
+        "candidate_index": 85,
+        "match_score": 0.333,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 46,
+        "candidate_index": 91,
+        "match_score": 0.318,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 89,
+        "candidate_index": 98,
+        "match_score": 0.316,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 45,
+        "candidate_index": 179,
+        "match_score": 0.316,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 84,
+        "candidate_index": 191,
+        "match_score": 0.304,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 83,
+        "candidate_index": 190,
+        "match_score": 0.304,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 33,
+        "candidate_index": 89,
+        "match_score": 0.278,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 92,
+        "reference_event": {
+          "date": null,
+          "type": "diagnosis",
+          "detail": "C5-C6 disc narrowing and bulge of unclear onset, possibly preexisting condition, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+          "source": "01_ems_and_ed p8"
+        },
+        "note": "was a weak greedy-alignment pairing, reclassified"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 137,
+        "candidate_event": {
+          "date": "2023-11-12",
+          "type": "encounter",
+          "detail": "Emergency hospital services, Littel Inc Emergency Hospital.",
+          "source": "08_billing_and_claims p13"
+        }
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 36,
+        "candidate_index": 194,
+        "match_score": 0.263,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 12,
+        "candidate_index": 35,
+        "match_score": 0.263,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 93,
+        "candidate_index": 111,
+        "match_score": 0.25,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 75,
+        "candidate_index": 196,
+        "match_score": 0.25,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 55,
+        "candidate_index": 195,
+        "match_score": 0.25,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 4,
+        "candidate_index": 45,
+        "match_score": 0.238,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 59,
+        "reference_event": {
+          "date": "2024-01-19",
+          "type": "therapy",
+          "detail": "Physical therapy session with progressive resistance elbow curls and upper extremity stretching, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p6"
+        },
+        "note": "was a weak greedy-alignment pairing, reclassified"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 107,
+        "candidate_event": {
+          "date": null,
+          "type": "therapy",
+          "detail": "Left upper extremity physical therapy.",
+          "source": "07_imaging_pharmacy p4"
+        }
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 10,
+        "candidate_index": 120,
+        "match_score": 0.231,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 11,
+        "reference_event": {
+          "date": "2023-09-06",
+          "type": "medication",
+          "detail": "Administered Acetaminophen 975mg for pain management during hospital stay, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+          "source": "08_billing_and_claims p2"
+        },
+        "note": "was a weak greedy-alignment pairing, reclassified"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 25,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "medication",
+          "detail": "Initiate IV antibiotics (Ancef) and aggressive pain management (ordered), Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p5"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 87,
+        "reference_event": {
+          "date": "2024-03-13",
+          "type": "therapy",
+          "detail": "Physical therapy session focused on cervical spine ROM and traction with shoulder stabilization exercises, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p29"
+        },
+        "note": "was a weak greedy-alignment pairing, reclassified"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 42,
+        "candidate_event": {
+          "date": null,
+          "type": "therapy",
+          "detail": "Left shoulder, arm, wrist, cervical spine physical therapy 3x/week for 6 months (planned), Dr. Myrtle Turner.",
+          "source": "02_hospitalization p6"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 52,
+        "reference_event": {
+          "date": "2024-01-08",
+          "type": "therapy",
+          "detail": "Physical therapy re-evaluation for continued treatment of left arm fractures and cervicalgia, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "08_billing_and_claims p10"
+        },
+        "note": "was a weak greedy-alignment pairing, reclassified"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 185,
+        "candidate_event": {
+          "date": "2024-01-08",
+          "type": "therapy",
+          "detail": "Pain scores documented over course of PT treatment, Amanda Gregory, PT, OCS.",
+          "source": "06_pt_emory_sports p32"
+        }
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 0,
+        "candidate_index": 46,
+        "match_score": 0.2,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 31,
+        "reference_event": {
+          "date": "2023-11-08",
+          "type": "therapy",
+          "detail": "Physical therapy session with increased pain complaints after patient attempted to lift grocery bag, requiring rest breaks, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p24"
+        },
+        "note": "was a weak greedy-alignment pairing, reclassified"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 87,
+        "candidate_event": {
+          "date": "2023-11-08",
+          "type": "therapy",
+          "detail": "Left humerus therapeutic exercise, manual therapy, rest, ice packs, Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p24"
+        }
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 91,
+        "candidate_index": 99,
+        "match_score": 0.176,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 48,
+        "candidate_index": 65,
+        "match_score": 0.167,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 3,
+        "reference_event": {
+          "date": "2022-09-12",
+          "type": "diagnosis",
+          "detail": "Patient had prior treatment for cervicalgia in 2022, before the motor vehicle accident, Dr. Alistair Finch, MD, Back & Spine Restoration Center.",
+          "source": "08_billing_and_claims p6"
+        },
+        "note": "was a weak greedy-alignment pairing, reclassified"
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 53,
+        "candidate_event": {
+          "date": "2022-09-15",
+          "type": "diagnosis",
+          "detail": "Cervical spine no fracture or subluxation, Dr. Alistair Finch.",
+          "source": "03_prior_records p4"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 16,
+        "reference_event": {
+          "date": "2023-09-20",
+          "type": "therapy",
+          "detail": "Physical therapy session with passive wrist stretching and cervical traction, noting provoked cervical symptoms requiring modification, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+          "source": "05_pt_lang_weimann p3"
+        },
+        "note": "was a weak greedy-alignment pairing, reclassified"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 177,
+        "candidate_event": {
+          "date": "2023-09-18",
+          "type": "therapy",
+          "detail": "Left elbow, left arm therapeutic exercise, manual therapy, cold pack, Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p2"
+        }
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 8,
+        "candidate_index": 119,
+        "match_score": 0.143,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 53,
+        "reference_event": {
+          "date": "2024-01-10",
+          "type": "therapy",
+          "detail": "First physical therapy treatment session with progressive dumbbell curls and manual therapy, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+          "source": "06_pt_emory_sports p2"
+        },
+        "note": "was a weak greedy-alignment pairing, reclassified"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 96,
+        "candidate_event": {
+          "date": "2024-01-08",
+          "type": "therapy",
+          "detail": "Left upper extremity, cervical spine progressive resistance strengthening, neuromuscular re-education, myofascial release, thermal therapies (planned), Amanda Gregory, PT, OCS.",
+          "source": "06_pt_emory_sports p1"
+        }
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 69,
+        "reference_event": {
+          "date": "2024-02-08",
+          "type": "encounter",
+          "detail": "Follow-up showing complete bony fusion but limited range of motion in forearm and shoulder, with patient transitioning PT care, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+          "source": "04_ortho_followup p5"
+        },
+        "note": "was a weak greedy-alignment pairing, reclassified"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 128,
+        "candidate_event": {
+          "date": "2024-02-08",
+          "type": "encounter",
+          "detail": "02/08/2024 11 99213 A, Dr. Myrtle Turner, MD, FACS.",
+          "source": "08_billing_and_claims p5"
+        }
+      },
+      {
+        "status": "matched_agree",
+        "severity": "major",
+        "reference_index": 1,
+        "candidate_index": 44,
+        "match_score": 0.133,
+        "agreement_check": "same_event_agrees"
+      },
+      {
+        "status": "missing",
+        "severity": "major",
+        "reference_index": 23,
+        "reference_event": {
+          "date": "2023-10-19",
+          "type": "encounter",
+          "detail": "Follow-up showing early callus formation, patient compliant with PT, but experiencing significant neck stiffness and weak grip strength, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+          "source": "04_ortho_followup p2"
+        },
+        "note": "was a weak greedy-alignment pairing, reclassified"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 125,
+        "candidate_event": {
+          "date": "2023-10-19",
+          "type": "encounter",
+          "detail": "10/19/2023 11 99213 A, Dr. Myrtle Turner, MD, FACS.",
+          "source": "08_billing_and_claims p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 0,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "Dispatched to MVA. Arrived to find 2-vehicle collision with heavy side-impact damage to sedan, Paramedic James Vance, NREMT-P.",
+          "source": "01_ems_and_ed p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 1,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "procedure",
+          "detail": "Mechanical extrication (jaws-of-life), Paramedic James Vance, NREMT-P.",
+          "source": "01_ems_and_ed p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 2,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Head GCS 14, mild altered mental status, Paramedic James Vance, NREMT-P.",
+          "source": "01_ems_and_ed p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 3,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "procedure",
+          "detail": "Cervical spine c-collar application, spine boarding, Paramedic James Vance, NREMT-P.",
+          "source": "01_ems_and_ed p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 4,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "procedure",
+          "detail": "Left arm splinting, wound dressing, Paramedic James Vance, NREMT-P.",
+          "source": "01_ems_and_ed p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 5,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Alcohol consumption prior to driving.",
+          "source": "01_ems_and_ed p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 6,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Odor of alcohol, Paramedic James Vance, NREMT-P.",
+          "source": "01_ems_and_ed p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 7,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Compound (open) fracture of left humerus with active bleeding, Paramedic James Vance, NREMT-P.",
+          "source": "01_ems_and_ed p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 8,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Left wrist/forearm spiral deformity with severe swelling, Paramedic James Vance, NREMT-P.",
+          "source": "01_ems_and_ed p1"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 9,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Left pain complaint.",
+          "source": "01_ems_and_ed p1"
+        },
+        "audit_issue": "unsupported"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 10,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "Transported Code 3 to Littel Inc Emergency Hospital, Paramedic James Vance, NREMT-P.",
+          "source": "01_ems_and_ed p1"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 11,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "Hospital admission, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p2"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 12,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Humerus, radius, neck closed fracture shaft left humerus, open fracture distal radius, acute neck pain, alcohol intoxication, Dr. Myrtle Turner, MD, FACS.",
+          "source": "01_ems_and_ed p2"
+        },
+        "audit_issue": "wrong_attribution"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 13,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "ED triage, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p3"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 14,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "procedure",
+          "detail": "Serum ethanol test (ordered), Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p3"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 15,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "medication",
+          "detail": "Tdap administered per protocol, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p3"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 16,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Patient reports 2 beers at lunch today; odor noted by EMS.",
+          "source": "01_ems_and_ed p3"
+        },
+        "audit_issue": "contradicted"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 18,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "Multi-vehicle side-impact MVA trauma, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 19,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Left 2cm superficial scalp laceration, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 20,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Cervical spine C4-C7 severe cervical tenderness, muscle spasm, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 21,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Left open/compound mid-shaft humerus fracture, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 22,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Left forearm/wrist weak radial pulse, delayed capillary refill, decreased distal sensation, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 23,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Left knee contusion, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 26,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "imaging",
+          "detail": "Obtain emergency X-rays of left arm, C-spine, and lumbar spine (ordered), Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 27,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "imaging",
+          "detail": "Left displaced compound mid-shaft humerus fracture with 2.2cm overriding, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 28,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "imaging",
+          "detail": "Left displaced spiral fracture of distal radius with intra-articular extension, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 29,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "imaging",
+          "detail": "Cervical spine C5-C6 C5-C6 disc narrowing, 6mm disc bulge, mild retrolisthesis; onset date inconclusive per radiologist, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p8"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 30,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "imaging",
+          "detail": "Cervical spine C4-C6 prevertebral soft tissue swelling consistent with acute trauma, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p8"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 31,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Head neuro checks q4h.",
+          "source": "02_hospitalization p2"
+        },
+        "audit_issue": "wrong_date"
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 32,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "procedure",
+          "detail": "OPERATIVE REPORT: LEFT UPPER EXTREMITY RECONSTRUCTION ... Date of Surgery: 2023-09-07 Surgeon: Dr. Myrtle Turner, MD, FACS, Dr. Myrtle Turner, MD, FACS.",
+          "source": "02_hospitalization p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 33,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "procedure",
+          "detail": "Left ORIF, Dr. Myrtle Turner, MD, FACS.",
+          "source": "02_hospitalization p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 34,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "procedure",
+          "detail": "Left wrist Repair of extensor tendon sheath with 4-0 Vicryl, Dr. Myrtle Turner, MD, FACS.",
+          "source": "02_hospitalization p5"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 36,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "Severe MVA injuries.",
+          "source": "02_hospitalization p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 37,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "procedure",
+          "detail": "Left arm reconstruction, Dr. Myrtle Turner.",
+          "source": "02_hospitalization p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 38,
+        "candidate_event": {
+          "date": "2023-09-08",
+          "type": "diagnosis",
+          "detail": "Left arm improved distal neurovascular status, mild residual radial nerve sensory deficit.",
+          "source": "02_hospitalization p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 39,
+        "candidate_event": {
+          "date": "2023-09-08",
+          "type": "diagnosis",
+          "detail": "Moderate neck and back pain: muscle relaxants; soft collar.",
+          "source": "02_hospitalization p6"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 40,
+        "candidate_event": {
+          "date": "2023-09-08",
+          "type": "medication",
+          "detail": "Oxycodone 5mg (1-2 tablets every 6 hours PRN) for 14 days, then transition to Ibuprofen (ordered), Dr. Myrtle Turner.",
+          "source": "02_hospitalization p6"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 41,
+        "candidate_event": {
+          "date": "2023-09-22",
+          "type": "encounter",
+          "detail": "Left arm surgical site staple removal (planned), Dr. Myrtle Turner.",
+          "source": "02_hospitalization p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 43,
+        "candidate_event": {
+          "date": "2023-09-08",
+          "type": "encounter",
+          "detail": "Hospital discharge.",
+          "source": "02_hospitalization p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 47,
+        "candidate_event": {
+          "date": "2022-09-12",
+          "type": "diagnosis",
+          "detail": "Bilateral cervical spine C4-C6 tenderness C4-C6, paraspinal muscle spasm, restricted ROM (flexion 30, extension 15), Dr. Alistair Finch.",
+          "source": "03_prior_records p3"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 49,
+        "candidate_event": {
+          "date": "2022-09-12",
+          "type": "imaging",
+          "detail": "X-ray/MRI cervical spine (ordered), Dr. Alistair Finch.",
+          "source": "03_prior_records p3"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 50,
+        "candidate_event": {
+          "date": "2022-09-12",
+          "type": "therapy",
+          "detail": "Cervical spine physical therapy, stretching, NSAIDs: NSAIDs (ordered), Dr. Alistair Finch.",
+          "source": "03_prior_records p3"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 51,
+        "candidate_event": {
+          "date": "2022-09-15",
+          "type": "imaging",
+          "detail": "X-ray cervical spine, three-view series, Dr. Alistair Finch.",
+          "source": "03_prior_records p4"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 54,
+        "candidate_event": {
+          "date": "2023-09-21",
+          "type": "encounter",
+          "detail": "Left upper extremity healing surgical wounds; pain 7/10, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 55,
+        "candidate_event": {
+          "date": "2023-09-21",
+          "type": "diagnosis",
+          "detail": "Left radial nerve distribution diminished distal sensation, radial distribution, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 56,
+        "candidate_event": {
+          "date": "2023-09-21",
+          "type": "diagnosis",
+          "detail": "Left wrist extension weakness 3/5, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p1"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 59,
+        "candidate_event": {
+          "date": "2023-10-19",
+          "type": "encounter",
+          "detail": "Pain 5/10, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p2"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 60,
+        "candidate_event": {
+          "date": "2023-10-19",
+          "type": "diagnosis",
+          "detail": "Neck stiffness and pain 5/10, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p2"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 61,
+        "candidate_event": {
+          "date": "2023-10-19",
+          "type": "diagnosis",
+          "detail": "Left hand grip strength 4/5, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p2"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 63,
+        "candidate_event": {
+          "date": "2023-11-16",
+          "type": "therapy",
+          "detail": "Physical therapy (cancelled).",
+          "source": "04_ortho_followup p3"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 64,
+        "candidate_event": {
+          "date": "2023-11-16",
+          "type": "therapy",
+          "detail": "Continuous physical therapy (recommended), Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p3"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 66,
+        "candidate_event": {
+          "date": "2023-12-14",
+          "type": "diagnosis",
+          "detail": "Left elbow, wrist persistent ROM restriction, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p4"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 67,
+        "candidate_event": {
+          "date": "2023-12-14",
+          "type": "diagnosis",
+          "detail": "Left radial nerve distribution decreased sensation, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p4"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 69,
+        "candidate_event": {
+          "date": "2024-02-08",
+          "type": "encounter",
+          "detail": "Post-op follow-up visit, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 70,
+        "candidate_event": {
+          "date": "2024-02-08",
+          "type": "diagnosis",
+          "detail": "Left arm bony fusion fully complete, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 71,
+        "candidate_event": {
+          "date": "2024-03-14",
+          "type": "encounter",
+          "detail": "MMI reached, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 72,
+        "candidate_event": {
+          "date": "2024-03-14",
+          "type": "diagnosis",
+          "detail": "Left elbow, wrist 15 degree elbow flexion/extension deficit, 20 degree wrist supination deficit, Dr. Myrtle Turner, MD, FACS.",
+          "source": "04_ortho_followup p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 73,
+        "candidate_event": {
+          "date": "2024-03-14",
+          "type": "diagnosis",
+          "detail": "Sensation over the left radial aspect of the hand remains permanently blunted (provider disputed across sources -- see evidence).",
+          "source": "04_ortho_followup p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 74,
+        "candidate_event": {
+          "date": "2024-03-14",
+          "type": "diagnosis",
+          "detail": "Chronic mild-to-moderate neck pain, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 75,
+        "candidate_event": {
+          "date": "2023-12-14",
+          "type": "imaging",
+          "detail": "Left humerus and forearm X-ray left arm and forearm, frontal and lateral views, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p7"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 77,
+        "candidate_event": {
+          "date": "2023-12-14",
+          "type": "diagnosis",
+          "detail": "Left humerus, distal radius stable hardware, no lucency or displacement, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p7"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 79,
+        "candidate_event": {
+          "date": "2023-09-15",
+          "type": "diagnosis",
+          "detail": "Left Elbow Flexion 45/140; Left Wrist Extension 10/60; Cervical Rotation (Left) 20/80, Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 80,
+        "candidate_event": {
+          "date": "2023-09-15",
+          "type": "diagnosis",
+          "detail": "Left elbow, left wrist reduced muscle strength (2/5), Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 81,
+        "candidate_event": {
+          "date": "2023-09-15",
+          "type": "diagnosis",
+          "detail": "Antalgic gait, modified ADL independence, off full duty work, Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p1"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 82,
+        "candidate_event": {
+          "date": "2023-09-15",
+          "type": "therapy",
+          "detail": "Left arm, cervical spine therapeutic exercise, ROM, hot/cold pack therapy (planned), Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 84,
+        "candidate_event": {
+          "date": "2023-09-22",
+          "type": "diagnosis",
+          "detail": "Neck, shoulder severe neck pain radiating to shoulder.",
+          "source": "05_pt_lang_weimann p4"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 90,
+        "candidate_event": {
+          "date": "2023-12-01",
+          "type": "diagnosis",
+          "detail": "Cervical spine cervical symptoms provoked during treatment, Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p29"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 92,
+        "candidate_event": {
+          "date": "2023-12-11",
+          "type": "encounter",
+          "detail": "Transfer of care (planned).",
+          "source": "05_pt_lang_weimann p33"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 94,
+        "candidate_event": {
+          "date": "2024-01-08",
+          "type": "diagnosis",
+          "detail": "Left elbow, left wrist, cervical spine decreased range of motion left elbow flexion, left wrist extension, cervical rotation, Amanda Gregory, PT, OCS.",
+          "source": "06_pt_emory_sports p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 95,
+        "candidate_event": {
+          "date": "2024-01-08",
+          "type": "diagnosis",
+          "detail": "Left elbow, left wrist reduced strength left elbow flexors and left wrist extensors, Amanda Gregory, PT, OCS.",
+          "source": "06_pt_emory_sports p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 97,
+        "candidate_event": {
+          "date": "2024-01-08",
+          "type": "diagnosis",
+          "detail": "Off full duty work restrictions per surgeon.",
+          "source": "06_pt_emory_sports p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 100,
+        "candidate_event": {
+          "date": "2023-12-18",
+          "type": "imaging",
+          "detail": "MRI Cervical Spine, Dr. Lucas Harrison, MD.",
+          "source": "07_imaging_pharmacy p1"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 101,
+        "candidate_event": {
+          "date": "2022-09-15",
+          "type": "imaging",
+          "detail": "Cervical spine, C5-C6 X-ray, Dr. Lucas Harrison, MD.",
+          "source": "07_imaging_pharmacy p1"
+        },
+        "audit_issue": "wrong_attribution"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 102,
+        "candidate_event": {
+          "date": "2023-09-08",
+          "type": "medication",
+          "detail": "Severe pain: Oxycodone-Acetaminophen 5-325mg 1-2 tabs Q6H PRN, qty 60, Dr. Myrtle Turner, MD, FACS.",
+          "source": "07_imaging_pharmacy p3"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 105,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Motor vehicle collision, Dr. Myrtle Turner, MD, FACS.",
+          "source": "07_imaging_pharmacy p4"
+        },
+        "audit_issue": "unsupported"
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 106,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "procedure",
+          "detail": "Left humerus and left distal radius dynamic plate fixation of left humerus; volar plate fixation of left distal radius, Dr. Myrtle Turner, MD, FACS.",
+          "source": "07_imaging_pharmacy p4"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 108,
+        "candidate_event": {
+          "date": "2024-03-14",
+          "type": "encounter",
+          "detail": "Left upper extremity Maximum Medical Improvement with permanent functional impairment, Dr. Myrtle Turner, MD, FACS.",
+          "source": "07_imaging_pharmacy p4"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 109,
+        "candidate_event": {
+          "date": "2024-03-14",
+          "type": "diagnosis",
+          "detail": "Left arm permanent lifting restriction >20 lbs, Dr. Myrtle Turner, MD, FACS.",
+          "source": "07_imaging_pharmacy p4"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 110,
+        "candidate_event": {
+          "date": "2023-12-01",
+          "type": "diagnosis",
+          "detail": "Cervical spine C5-C6 progression of C5-C6 disc bulge from 4mm to 6mm with left neural foraminal stenosis, Dr. Myrtle Turner, MD, FACS.",
+          "source": "07_imaging_pharmacy p4"
+        },
+        "audit_issue": "wrong_date"
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 112,
+        "candidate_event": {
+          "date": "2024-04-02",
+          "type": "procedure",
+          "detail": "Cervical spine chronic pain management or surgical decompression (recommended), Dr. Myrtle Turner, MD, FACS.",
+          "source": "07_imaging_pharmacy p4"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 113,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "ADMIT DATE / HR 09/04/2023, Littel Inc Emergency Hospital.",
+          "source": "08_billing_and_claims p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 114,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "procedure",
+          "detail": "Operating Room Services, CPT 27535, DR. ELIZABETH FOSTER, MD.",
+          "source": "08_billing_and_claims p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 115,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "procedure",
+          "detail": "Anesthesia, CPT 01402.",
+          "source": "08_billing_and_claims p1"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 116,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "Emergency Room visit.",
+          "source": "08_billing_and_claims p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 117,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "imaging",
+          "detail": "Radiology/Diagnostic - CPT 70450.",
+          "source": "08_billing_and_claims p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 118,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "procedure",
+          "detail": "ICD-10-PCS codes OPS00ZZ/0PSG0ZZ (not narratively described), DR. ELIZABETH FOSTER, MD.",
+          "source": "08_billing_and_claims p1"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 121,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "medication",
+          "detail": "09/07/2023 0250 J8499 MORPHINE SULFATE 4MG INJ 1 3,092.27.",
+          "source": "08_billing_and_claims p2"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 122,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "procedure",
+          "detail": "09/07/2023 11 24515 LT ... Dr. Myrtle Turner, MD, FACS, Dr. Myrtle Turner, MD, FACS.",
+          "source": "08_billing_and_claims p5"
+        },
+        "audit_issue": "wrong_attribution"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 123,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "09/04/2023 11 99223 A ... Dr. Myrtle Turner, MD, FACS, Dr. Myrtle Turner, MD, FACS.",
+          "source": "08_billing_and_claims p5"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 124,
+        "candidate_event": {
+          "date": "2023-09-21",
+          "type": "encounter",
+          "detail": "09/21/2023 11 99213 A, Dr. Myrtle Turner, MD, FACS.",
+          "source": "08_billing_and_claims p5"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 126,
+        "candidate_event": {
+          "date": "2023-11-16",
+          "type": "encounter",
+          "detail": "11/16/2023 11 99213 A, Dr. Myrtle Turner, MD, FACS.",
+          "source": "08_billing_and_claims p5"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 127,
+        "candidate_event": {
+          "date": "2023-12-14",
+          "type": "encounter",
+          "detail": "12/14/2023 11 99213 A, Dr. Myrtle Turner, MD, FACS.",
+          "source": "08_billing_and_claims p5"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 129,
+        "candidate_event": {
+          "date": "2024-03-14",
+          "type": "encounter",
+          "detail": "03/14/2024 11 99214 A, Dr. Myrtle Turner, MD, FACS.",
+          "source": "08_billing_and_claims p5"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 130,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "A0427 (advanced life support ambulance), Paramedic James Vance, NREMT-P.",
+          "source": "08_billing_and_claims p4"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 131,
+        "candidate_event": {
+          "date": "2022-09-12",
+          "type": "encounter",
+          "detail": "09/12/2022 11 99203 A ... Dr. Alistair Finch, MD, Dr. Alistair Finch, MD.",
+          "source": "08_billing_and_claims p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 132,
+        "candidate_event": {
+          "date": "2022-09-15",
+          "type": "imaging",
+          "detail": "09/15/2022 11 72040 A ... Dr. Alistair Finch, MD, Dr. Alistair Finch, MD.",
+          "source": "08_billing_and_claims p6"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 133,
+        "candidate_event": {
+          "date": "2023-12-18",
+          "type": "imaging",
+          "detail": "12/18/2023 11 72141 A ... Dr. Lucas Harrison, MD, Dr. Lucas Harrison, MD.",
+          "source": "08_billing_and_claims p7"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 134,
+        "candidate_event": {
+          "date": "2023-09-15",
+          "type": "therapy",
+          "detail": "09/15/2023 11 97161 A ... Robert Stewart, PT, DPT, Robert Stewart, PT, DPT.",
+          "source": "08_billing_and_claims p8"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 135,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Date of injury, Amanda Gregory, PT, OCS.",
+          "source": "08_billing_and_claims p10"
+        },
+        "audit_issue": "unsupported"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 136,
+        "candidate_event": {
+          "date": "2023-10-02",
+          "type": "encounter",
+          "detail": "EMS/paramedic services, Paramedic James Vance, NREMT-P.",
+          "source": "08_billing_and_claims p12"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 139,
+        "candidate_event": {
+          "date": "2024-04-18",
+          "type": "encounter",
+          "detail": "Physician services (surgical, FACS), Dr. Myrtle Turner, MD, FACS.",
+          "source": "08_billing_and_claims p14"
+        },
+        "audit_issue": "unsupported"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 140,
+        "candidate_event": {
+          "date": "2024-01-15",
+          "type": "therapy",
+          "detail": "CLM-99668711 - Robert Stewart, PT, DPT, billed 6,480.00, Robert Stewart, PT, DPT.",
+          "source": "08_billing_and_claims p15"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 142,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "imaging",
+          "detail": "Leukocytosis (WBC 14.2), Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p4"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 143,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "imaging",
+          "detail": "Mildly low hemoglobin 12.8, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p4"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 144,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "diagnosis",
+          "detail": "Lumbar spine mild paraspinal lumbar tenderness, Dr. Elizabeth Foster, MD.",
+          "source": "01_ems_and_ed p5"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 145,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "Vital sign monitoring.",
+          "source": "02_hospitalization p1"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 146,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "encounter",
+          "detail": "Nursing assessment.",
+          "source": "08_billing_and_claims p2"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 147,
+        "candidate_event": {
+          "date": "2022-09-10",
+          "type": "therapy",
+          "detail": "Neck ice packs.",
+          "source": "03_prior_records p2"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 148,
+        "candidate_event": {
+          "date": "2023-09-06",
+          "type": "therapy",
+          "detail": "09/06 13:00 ... amb w/ PT, T. Kovac RN.",
+          "source": "02_hospitalization p1"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 149,
+        "candidate_event": {
+          "date": "2023-09-08",
+          "type": "therapy",
+          "detail": "09/08 05:00 ... amb w/ PT, T. Kovac RN.",
+          "source": "02_hospitalization p2"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 150,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "therapy",
+          "detail": "09/07 05:00 ... amb w/ PT, R. Bell RN.",
+          "source": "02_hospitalization p1"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 151,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "medication",
+          "detail": "Oxycodone HCI 5mg Oral Tablet ... 09/04/2023 ... PV TK CO.",
+          "source": "02_hospitalization p3"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 152,
+        "candidate_event": {
+          "date": "2023-09-05",
+          "type": "medication",
+          "detail": "Oxycodone HCI 5mg Oral Tablet ... 09/05/2023 ... PV TK CO.",
+          "source": "02_hospitalization p3"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 153,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "medication",
+          "detail": "PRN pain medication administration: Hydromorphone (Dilaudid) 1mg IV PRN.",
+          "source": "02_hospitalization p3"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 154,
+        "candidate_event": {
+          "date": "2023-09-05",
+          "type": "medication",
+          "detail": "PRN pain medication administration: Hydromorphone (Dilaudid) 1mg IV PRN.",
+          "source": "02_hospitalization p3"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 155,
+        "candidate_event": {
+          "date": "2022-09-10",
+          "type": "medication",
+          "detail": "Current medications: Advil as needed.",
+          "source": "03_prior_records p2"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 156,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "medication",
+          "detail": "09/04/2023 0250 J8499 CEPHALEXIN 500MG CAP 1 1,801.23.",
+          "source": "08_billing_and_claims p2"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 157,
+        "candidate_event": {
+          "date": "2023-09-06",
+          "type": "medication",
+          "detail": "09/06/2023 0250 J8499 CEPHALEXIN 500MG CAP 1 1,255.12.",
+          "source": "08_billing_and_claims p2"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 158,
+        "candidate_event": {
+          "date": "2023-09-06",
+          "type": "medication",
+          "detail": "09/06/2023 0250 J1650 ACETAMINOPHEN 975MG 1 2,397.23.",
+          "source": "08_billing_and_claims p2"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 159,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "medication",
+          "detail": "09/07/2023 0250 J8499 LISINOPRIL 10MG TAB 1 3,904.15.",
+          "source": "08_billing_and_claims p2"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 160,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "medication",
+          "detail": "Ancef (Cefazolin) 1g IV ... 09/04/2023 ... JM, J. Marsh RN.",
+          "source": "02_hospitalization p3"
+        },
+        "audit_issue": "unsupported"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 161,
+        "candidate_event": {
+          "date": "2023-09-05",
+          "type": "medication",
+          "detail": "Ancef (Cefazolin) 1g IV ... 09/05/2023 ... JM, J. Marsh RN.",
+          "source": "02_hospitalization p3"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 162,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "medication",
+          "detail": "Ibuprofen 600mg Oral Tablet ... 09/04/2023 ... JM, J. Marsh RN.",
+          "source": "02_hospitalization p3"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 163,
+        "candidate_event": {
+          "date": "2023-09-05",
+          "type": "medication",
+          "detail": "Ibuprofen 600mg Oral Tablet ... 09/05/2023 ... JM, J. Marsh RN.",
+          "source": "02_hospitalization p3"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 164,
+        "candidate_event": {
+          "date": "2023-09-06",
+          "type": "medication",
+          "detail": "Oxycodone HCI 5mg Oral Tablet ... 09/06/2023 ... RB CO, R. Bell RN.",
+          "source": "02_hospitalization p4"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 165,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "medication",
+          "detail": "Oxycodone HCI 5mg Oral Tablet ... 09/07/2023 ... RB RB CO, R. Bell RN.",
+          "source": "02_hospitalization p4"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 166,
+        "candidate_event": {
+          "date": "2023-09-06",
+          "type": "medication",
+          "detail": "PRN pain medication administration: Hydromorphone (Dilaudid) 1mg IV PRN, R. Bell RN.",
+          "source": "02_hospitalization p4"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 167,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "medication",
+          "detail": "PRN pain medication administration: Hydromorphone (Dilaudid) 1mg IV PRN, R. Bell RN.",
+          "source": "02_hospitalization p4"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 168,
+        "candidate_event": {
+          "date": "2023-09-06",
+          "type": "medication",
+          "detail": "Ancef (Cefazolin) 1g IV ... 09/06/2023 ... TK, T. Kovac RN.",
+          "source": "02_hospitalization p4"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 169,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "medication",
+          "detail": "Ancef (Cefazolin) 1g IV ... 09/07/2023 ... TK, T. Kovac RN.",
+          "source": "02_hospitalization p4"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 170,
+        "candidate_event": {
+          "date": "2023-09-06",
+          "type": "medication",
+          "detail": "Ibuprofen 600mg Oral Tablet ... 09/06/2023 ... TK, T. Kovac RN.",
+          "source": "02_hospitalization p4"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 171,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "medication",
+          "detail": "Ibuprofen 600mg Oral Tablet ... 09/07/2023 ... TK, T. Kovac RN.",
+          "source": "02_hospitalization p4"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 172,
+        "candidate_event": {
+          "date": "2023-09-07",
+          "type": "procedure",
+          "detail": "Assistant: Dr. Charles Vance, MD (Resident), Dr. Charles Vance, MD (Resident).",
+          "source": "02_hospitalization p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 173,
+        "candidate_event": {
+          "date": "2023-09-08",
+          "type": "diagnosis",
+          "detail": "Risk of infection or DVT (recommended).",
+          "source": "02_hospitalization p6"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 174,
+        "candidate_event": {
+          "date": "2022-09-26",
+          "type": "encounter",
+          "detail": "Follow-up visit plan (planned), Dr. Alistair Finch.",
+          "source": "03_prior_records p3"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 175,
+        "candidate_event": {
+          "date": "2023-09-21",
+          "type": "procedure",
+          "detail": "Surgical staple removal, Dr. Myrtle Turner.",
+          "source": "04_ortho_followup p1"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 176,
+        "candidate_event": {
+          "date": "2023-10-19",
+          "type": "therapy",
+          "detail": "Patient is compliant with PT at Lang-Weimann, Lang-Weimann.",
+          "source": "04_ortho_followup p2"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 180,
+        "candidate_event": {
+          "date": "2023-12-08",
+          "type": "therapy",
+          "detail": "Therapeutic exercise (97110), manual therapy (97140), Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p31"
+        }
+      },
+      {
+        "status": "extra_ungrounded",
+        "severity": "critical",
+        "candidate_index": 181,
+        "candidate_event": {
+          "date": "2023-11-14",
+          "type": "encounter",
+          "detail": "SCHEDULED DATE 11/14/2023, STATUS NO SHOW, Voicemail left; reschedule offered (cancelled), Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p32"
+        },
+        "audit_issue": "wrong_date"
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 182,
+        "candidate_event": {
+          "date": "2023-11-17",
+          "type": "encounter",
+          "detail": "SCHEDULED DATE 11/17/2023, STATUS NO SHOW, Voicemail left; reschedule offered (cancelled), Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p32"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 183,
+        "candidate_event": {
+          "date": "2023-11-21",
+          "type": "encounter",
+          "detail": "SCHEDULED DATE 11/21/2023, STATUS NO SHOW, Voicemail left; reschedule offered \u2014 no response (cancelled), Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p32"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 184,
+        "candidate_event": {
+          "date": "2023-11-27",
+          "type": "encounter",
+          "detail": "Return to physical therapy after missed appointments, Robert Stewart, PT, DPT.",
+          "source": "05_pt_lang_weimann p32"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 192,
+        "candidate_event": {
+          "date": "2024-04-28",
+          "type": "therapy",
+          "detail": "CLM-39278079 - Amanda Gregory, PT, OCS, billed 6,510.00, Amanda Gregory, PT, OCS.",
+          "source": "08_billing_and_claims p16"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 193,
+        "candidate_event": {
+          "date": "2023-12-18",
+          "type": "imaging",
+          "detail": "Cervical spine MRI report signing, Dr. Lucas Harrison, MD.",
+          "source": "07_imaging_pharmacy p2"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 198,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "medication",
+          "detail": "Pharmacy charge - general: unspecified (J8499 generic code), Littel Inc Emergency Hospital.",
+          "source": "08_billing_and_claims p1"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 199,
+        "candidate_event": {
+          "date": "2023-09-06",
+          "type": "procedure",
+          "detail": "Cardiac monitoring, CPT 93010.",
+          "source": "08_billing_and_claims p2"
+        }
+      },
+      {
+        "status": "extra_unaudited",
+        "severity": null,
+        "candidate_index": 200,
+        "candidate_event": {
+          "date": "2023-09-08",
+          "type": "encounter",
+          "detail": "09/08/2023 11 99232 A ... 3 units, Dr. Myrtle Turner, MD, FACS.",
+          "source": "08_billing_and_claims p5"
+        }
+      },
+      {
+        "status": "extra_grounded",
+        "severity": "minor",
+        "candidate_index": 201,
+        "candidate_event": {
+          "date": "2023-09-04",
+          "type": "procedure",
+          "detail": "A0425 (ambulance mileage), Paramedic James Vance, NREMT-P.",
+          "source": "08_billing_and_claims p4"
+        }
+      }
+    ]
+  },
+  "reference_events_disputed_by_source_audit": [
+    {
+      "doc_id": "03_prior_records",
+      "event_index": 1,
+      "date": "2022-09-10",
+      "detail": "Medical record discrepancy regarding the exact date of the gym weightlifting injury causing neck pain, Dr. Alistair Finch, MD, Back & Spine Restoration Center.",
+      "source": "03_prior_records p2",
+      "explanation": "There is a genuine date ambiguity (intake 'last week' from 09/10 vs. eval note '6 days ago' from 09/12, i.e. ~09/03 vs ~09/06), but the source itself never frames this as a 'discrepancy' nor attributes p2 to Dr. Finch, since p2 is a patient-completed form.",
+      "confidence": 0.55,
+      "dispute_type": "likely_reference_errors"
+    },
+    {
+      "doc_id": "05_pt_lang_weimann",
+      "event_index": 14,
+      "date": "2023-09-15",
+      "detail": "Initial physical therapy evaluation following post-surgical ORIF of left humerus and radius with significant functional limitations, Robert Stewart, PT, DPT, Lang-Weimann Medical Center.",
+      "source": "05_pt_lang_weimann p1",
+      "explanation": "p1 is the initial evaluation with pain 8/10, ROM/strength deficits, and antalgic gait/modified independence, which supports 'significant functional limitations,' but the note does not use that exact phrase, so wording is a reasonable but non-verbatim characterization.",
+      "confidence": 0.75,
+      "dispute_type": "likely_reference_errors"
+    },
+    {
+      "doc_id": "06_pt_emory_sports",
+      "event_index": 79,
+      "date": "2024-02-23",
+      "detail": "Physical therapy session focused on upper extremity stabilization and myofascial cervical release with good tolerance, Amanda Gregory, PT, OCS, Emory Sports Medicine Complex.",
+      "source": "06_pt_emory_sports p21",
+      "explanation": "p21 (Visit 20, 02/23/2024) session focus is 'Upper extremity stabilization. Myofascial cervical release' and tolerance is listed as 'Good', but the assessment also notes 'Cervical symptoms provoked this session; monitored and modified,' which the event's characterization as simply 'good tolerance' obscures/contradicts.",
+      "confidence": 0.75,
+      "dispute_type": "likely_reference_errors"
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 8,
+      "date": "2023-09-04",
+      "detail": "Nerve block tray administered for anesthesia during surgical procedure, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "08_billing_and_claims p2",
+      "explanation": "P2 lists 'NERVE BLOCK TRAY' charge on 09/04/2023 under REV 0370 but does not attribute this to Dr. Elizabeth Foster or specify it was for anesthesia during a specific surgical procedure; Dr. Foster is only named as attending on p1, not tied to this specific line item.",
+      "confidence": 0.5,
+      "dispute_type": "likely_reference_errors"
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 15,
+      "date": "2023-09-15",
+      "detail": "Initial physical therapy evaluation for left arm fractures and cervicalgia, Robert Stewart, PT, DPT, Lang-Weimann Medical Center - Physical Therapy.",
+      "source": "08_billing_and_claims p8",
+      "explanation": "P8 shows CPT 97161 (PT evaluation) on 09/15/2023 by Robert Stewart, PT, DPT with diagnosis codes S42.302A and M54.2, supporting an initial PT evaluation for arm fracture and cervicalgia, but does not specify 'left arm' laterality.",
+      "confidence": 0.6,
+      "dispute_type": "likely_reference_errors"
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 9,
+      "date": "2023-09-04",
+      "detail": "Surgical procedures performed on left arm fractures sustained in motor vehicle accident, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "08_billing_and_claims p1",
+      "explanation": "The UB-04 (p1) diagnosis codes are S42.302A (right humerus fracture, per convention 'right arm'), S52.302A (forearm fracture), and M54.2 (cervicalgia), with procedure codes OPS00ZZ/0PSG0ZZ, none of which specify 'left arm' -- in fact other CMS-1500 forms (p5, p10) use laterality code 'LT' for left-side orthopedic CPT codes, suggesting the fracture was on the left, but the UB-04 itself does not state 'left arm' and the diagnosis codes visible here do not confirm laterality.",
+      "confidence": 0.4,
+      "dispute_type": "conflicts_found_in_source"
+    },
+    {
+      "doc_id": "03_prior_records",
+      "event_index": 0,
+      "date": "2022-09-03",
+      "detail": "Sustained severe neck pain and stiffness during weightlifting accident at gym, described as occurring during heavy squat set, Dr. Alistair Finch, MD, Back & Spine Restoration Center.",
+      "source": "03_prior_records p2",
+      "explanation": "Intake form dated 09/10/2022 states injury occurred 'last week' during a heavy weightlifting accident, and the eval note (p3) says pain began 6 days before 09/12/2022 (~09/06), so 09/03 is not clearly supported and this event is misattributed to Dr. Finch when p2 is a patient-completed questionnaire with no provider signature.",
+      "confidence": 0.75,
+      "dispute_type": "questionable_dates"
+    },
+    {
+      "doc_id": "01_ems_and_ed",
+      "event_index": 7,
+      "date": "2023-09-04",
+      "detail": "Immediate consultation with orthopedic surgery for emergency open reduction and internal fixation, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "01_ems_and_ed p5",
+      "explanation": "The p5 note states 'Consult Orthopedic Surgery (Dr. Myrtle Turner) immediately for emergency open reduction and internal fixation (ORIF)' authored/signed by Dr. Elizabeth Foster, so the consulted surgeon is Dr. Turner, not Dr. Foster as the event implies.",
+      "confidence": 0.85,
+      "dispute_type": "incorrect_source_attribution"
+    },
+    {
+      "doc_id": "04_ortho_followup",
+      "event_index": 49,
+      "date": "2023-12-14",
+      "detail": "X-ray showing well-healed left humerus and distal radius fractures with stable internal hardware and excellent bony bridging, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "04_ortho_followup p7",
+      "explanation": "The imaging findings ('Well-healed left humerus and left distal radius fractures with stable internal hardware,' 'excellent bony bridging callus') are accurately quoted from p7, but the report is signed/interpreted by Dr. Myrtle Turner as radiologist per p7/p8, so attribution is technically correct though it's a diagnostic imaging report rather than a follow-up visit note, and this is distinct from the same-date office follow-up note (p4) which discusses different findings (persistent ROM restriction, ordering MRI) not mentioned in this imaging-only event.",
+      "confidence": 0.85,
+      "dispute_type": "incorrect_source_attribution"
+    },
+    {
+      "doc_id": "07_imaging_pharmacy",
+      "event_index": 93,
+      "date": null,
+      "detail": "Pre-existing 4mm posterior disc bulge at C5-C6 level documented prior to the September 2023 incident, Dr. Myrtle Turner, MD, FACS, Turner Orthopedic & Reconstruction Specialist Group.",
+      "source": "07_imaging_pharmacy p4",
+      "explanation": "The letter states 'progression of a C5-C6 disc bulge from 4mm pre-existing (September 2022) to 6mm post-incident (December 2023)' per Dr. Turner, but the actual 4mm measurement was originally from an 'external X-ray from 2022-09-15' per the MRI report by Dr. Lucas Harrison, not documented by Dr. Turner herself.",
+      "confidence": 0.6,
+      "dispute_type": "incorrect_source_attribution"
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 4,
+      "date": "2022-09-12",
+      "detail": "Patient had prior treatment for cervicalgia in 2022, before the motor vehicle accident, Dr. Alistair Finch, MD, Back & Spine Restoration Center.",
+      "source": "08_billing_and_claims p6",
+      "explanation": "P6 shows diagnosis M54.2 (cervicalgia) with dates of service 09/12/2022 and 09/15/2022 under Dr. Alistair Finch, Back & Spine Restoration Center, but the referring/rendering provider field lists 'DR. ALISTAIR FINCH, MD' only as referring provider, not explicitly confirmed as treating clinician for cervicalgia; date and provider match but detail of 'prior treatment for cervicalgia' is reasonably supported.",
+      "confidence": 0.6,
+      "dispute_type": "incorrect_source_attribution"
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 10,
+      "date": "2023-09-05",
+      "detail": "CT scan of head without contrast performed during hospital stay, Dr. Elizabeth Foster, MD, Littel Inc Emergency Hospital.",
+      "source": "08_billing_and_claims p2",
+      "explanation": "P2 confirms 'CT HEAD W/O CONTRAST' on 09/05/2023 (CPT 72125), but does not attribute this order/performance to Dr. Elizabeth Foster; she is only named as attending physician on the UB-04 (p1), not specifically linked to this imaging order.",
+      "confidence": 0.5,
+      "dispute_type": "incorrect_source_attribution"
+    }
+  ],
+  "additional_source_grounded_events_missing_from_reference": [
+    {
+      "index": 0,
+      "date": "2023-09-04",
+      "type": "encounter",
+      "detail": "Dispatched to MVA. Arrived to find 2-vehicle collision with heavy side-impact damage to sedan, Paramedic James Vance, NREMT-P.",
+      "source": "01_ems_and_ed p1"
+    },
+    {
+      "index": 1,
+      "date": "2023-09-04",
+      "type": "procedure",
+      "detail": "Mechanical extrication (jaws-of-life), Paramedic James Vance, NREMT-P.",
+      "source": "01_ems_and_ed p1"
+    },
+    {
+      "index": 2,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Head GCS 14, mild altered mental status, Paramedic James Vance, NREMT-P.",
+      "source": "01_ems_and_ed p1"
+    },
+    {
+      "index": 3,
+      "date": "2023-09-04",
+      "type": "procedure",
+      "detail": "Cervical spine c-collar application, spine boarding, Paramedic James Vance, NREMT-P.",
+      "source": "01_ems_and_ed p1"
+    },
+    {
+      "index": 4,
+      "date": "2023-09-04",
+      "type": "procedure",
+      "detail": "Left arm splinting, wound dressing, Paramedic James Vance, NREMT-P.",
+      "source": "01_ems_and_ed p1"
+    },
+    {
+      "index": 5,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Alcohol consumption prior to driving.",
+      "source": "01_ems_and_ed p1"
+    },
+    {
+      "index": 6,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Odor of alcohol, Paramedic James Vance, NREMT-P.",
+      "source": "01_ems_and_ed p1"
+    },
+    {
+      "index": 7,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Compound (open) fracture of left humerus with active bleeding, Paramedic James Vance, NREMT-P.",
+      "source": "01_ems_and_ed p1"
+    },
+    {
+      "index": 8,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Left wrist/forearm spiral deformity with severe swelling, Paramedic James Vance, NREMT-P.",
+      "source": "01_ems_and_ed p1"
+    },
+    {
+      "index": 9,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Left pain complaint.",
+      "source": "01_ems_and_ed p1"
+    },
+    {
+      "index": 12,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Humerus, radius, neck closed fracture shaft left humerus, open fracture distal radius, acute neck pain, alcohol intoxication, Dr. Myrtle Turner, MD, FACS.",
+      "source": "01_ems_and_ed p2"
+    },
+    {
+      "index": 14,
+      "date": "2023-09-04",
+      "type": "procedure",
+      "detail": "Serum ethanol test (ordered), Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p3"
+    },
+    {
+      "index": 19,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Left 2cm superficial scalp laceration, Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p5"
+    },
+    {
+      "index": 20,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Cervical spine C4-C7 severe cervical tenderness, muscle spasm, Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p5"
+    },
+    {
+      "index": 21,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Left open/compound mid-shaft humerus fracture, Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p5"
+    },
+    {
+      "index": 22,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Left forearm/wrist weak radial pulse, delayed capillary refill, decreased distal sensation, Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p5"
+    },
+    {
+      "index": 23,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Left knee contusion, Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p5"
+    },
+    {
+      "index": 26,
+      "date": "2023-09-04",
+      "type": "imaging",
+      "detail": "Obtain emergency X-rays of left arm, C-spine, and lumbar spine (ordered), Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p5"
+    },
+    {
+      "index": 27,
+      "date": "2023-09-04",
+      "type": "imaging",
+      "detail": "Left displaced compound mid-shaft humerus fracture with 2.2cm overriding, Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p6"
+    },
+    {
+      "index": 28,
+      "date": "2023-09-04",
+      "type": "imaging",
+      "detail": "Left displaced spiral fracture of distal radius with intra-articular extension, Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p6"
+    },
+    {
+      "index": 29,
+      "date": "2023-09-04",
+      "type": "imaging",
+      "detail": "Cervical spine C5-C6 C5-C6 disc narrowing, 6mm disc bulge, mild retrolisthesis; onset date inconclusive per radiologist, Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p8"
+    },
+    {
+      "index": 30,
+      "date": "2023-09-04",
+      "type": "imaging",
+      "detail": "Cervical spine C4-C6 prevertebral soft tissue swelling consistent with acute trauma, Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p8"
+    },
+    {
+      "index": 31,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Head neuro checks q4h.",
+      "source": "02_hospitalization p2"
+    },
+    {
+      "index": 32,
+      "date": "2023-09-07",
+      "type": "procedure",
+      "detail": "OPERATIVE REPORT: LEFT UPPER EXTREMITY RECONSTRUCTION ... Date of Surgery: 2023-09-07 Surgeon: Dr. Myrtle Turner, MD, FACS, Dr. Myrtle Turner, MD, FACS.",
+      "source": "02_hospitalization p5"
+    },
+    {
+      "index": 33,
+      "date": "2023-09-07",
+      "type": "procedure",
+      "detail": "Left ORIF, Dr. Myrtle Turner, MD, FACS.",
+      "source": "02_hospitalization p5"
+    },
+    {
+      "index": 34,
+      "date": "2023-09-07",
+      "type": "procedure",
+      "detail": "Left wrist Repair of extensor tendon sheath with 4-0 Vicryl, Dr. Myrtle Turner, MD, FACS.",
+      "source": "02_hospitalization p5"
+    },
+    {
+      "index": 37,
+      "date": "2023-09-07",
+      "type": "procedure",
+      "detail": "Left arm reconstruction, Dr. Myrtle Turner.",
+      "source": "02_hospitalization p6"
+    },
+    {
+      "index": 38,
+      "date": "2023-09-08",
+      "type": "diagnosis",
+      "detail": "Left arm improved distal neurovascular status, mild residual radial nerve sensory deficit.",
+      "source": "02_hospitalization p6"
+    },
+    {
+      "index": 39,
+      "date": "2023-09-08",
+      "type": "diagnosis",
+      "detail": "Moderate neck and back pain: muscle relaxants; soft collar.",
+      "source": "02_hospitalization p6"
+    },
+    {
+      "index": 43,
+      "date": "2023-09-08",
+      "type": "encounter",
+      "detail": "Hospital discharge.",
+      "source": "02_hospitalization p6"
+    },
+    {
+      "index": 47,
+      "date": "2022-09-12",
+      "type": "diagnosis",
+      "detail": "Bilateral cervical spine C4-C6 tenderness C4-C6, paraspinal muscle spasm, restricted ROM (flexion 30, extension 15), Dr. Alistair Finch.",
+      "source": "03_prior_records p3"
+    },
+    {
+      "index": 49,
+      "date": "2022-09-12",
+      "type": "imaging",
+      "detail": "X-ray/MRI cervical spine (ordered), Dr. Alistair Finch.",
+      "source": "03_prior_records p3"
+    },
+    {
+      "index": 51,
+      "date": "2022-09-15",
+      "type": "imaging",
+      "detail": "X-ray cervical spine, three-view series, Dr. Alistair Finch.",
+      "source": "03_prior_records p4"
+    },
+    {
+      "index": 55,
+      "date": "2023-09-21",
+      "type": "diagnosis",
+      "detail": "Left radial nerve distribution diminished distal sensation, radial distribution, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p1"
+    },
+    {
+      "index": 56,
+      "date": "2023-09-21",
+      "type": "diagnosis",
+      "detail": "Left wrist extension weakness 3/5, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p1"
+    },
+    {
+      "index": 60,
+      "date": "2023-10-19",
+      "type": "diagnosis",
+      "detail": "Neck stiffness and pain 5/10, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p2"
+    },
+    {
+      "index": 61,
+      "date": "2023-10-19",
+      "type": "diagnosis",
+      "detail": "Left hand grip strength 4/5, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p2"
+    },
+    {
+      "index": 64,
+      "date": "2023-11-16",
+      "type": "therapy",
+      "detail": "Continuous physical therapy (recommended), Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p3"
+    },
+    {
+      "index": 66,
+      "date": "2023-12-14",
+      "type": "diagnosis",
+      "detail": "Left elbow, wrist persistent ROM restriction, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p4"
+    },
+    {
+      "index": 67,
+      "date": "2023-12-14",
+      "type": "diagnosis",
+      "detail": "Left radial nerve distribution decreased sensation, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p4"
+    },
+    {
+      "index": 70,
+      "date": "2024-02-08",
+      "type": "diagnosis",
+      "detail": "Left arm bony fusion fully complete, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p5"
+    },
+    {
+      "index": 71,
+      "date": "2024-03-14",
+      "type": "encounter",
+      "detail": "MMI reached, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p6"
+    },
+    {
+      "index": 72,
+      "date": "2024-03-14",
+      "type": "diagnosis",
+      "detail": "Left elbow, wrist 15 degree elbow flexion/extension deficit, 20 degree wrist supination deficit, Dr. Myrtle Turner, MD, FACS.",
+      "source": "04_ortho_followup p6"
+    },
+    {
+      "index": 73,
+      "date": "2024-03-14",
+      "type": "diagnosis",
+      "detail": "Sensation over the left radial aspect of the hand remains permanently blunted (provider disputed across sources -- see evidence).",
+      "source": "04_ortho_followup p6"
+    },
+    {
+      "index": 74,
+      "date": "2024-03-14",
+      "type": "diagnosis",
+      "detail": "Chronic mild-to-moderate neck pain, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p6"
+    },
+    {
+      "index": 75,
+      "date": "2023-12-14",
+      "type": "imaging",
+      "detail": "Left humerus and forearm X-ray left arm and forearm, frontal and lateral views, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p7"
+    },
+    {
+      "index": 77,
+      "date": "2023-12-14",
+      "type": "diagnosis",
+      "detail": "Left humerus, distal radius stable hardware, no lucency or displacement, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p7"
+    },
+    {
+      "index": 79,
+      "date": "2023-09-15",
+      "type": "diagnosis",
+      "detail": "Left Elbow Flexion 45/140; Left Wrist Extension 10/60; Cervical Rotation (Left) 20/80, Robert Stewart, PT, DPT.",
+      "source": "05_pt_lang_weimann p1"
+    },
+    {
+      "index": 80,
+      "date": "2023-09-15",
+      "type": "diagnosis",
+      "detail": "Left elbow, left wrist reduced muscle strength (2/5), Robert Stewart, PT, DPT.",
+      "source": "05_pt_lang_weimann p1"
+    },
+    {
+      "index": 81,
+      "date": "2023-09-15",
+      "type": "diagnosis",
+      "detail": "Antalgic gait, modified ADL independence, off full duty work, Robert Stewart, PT, DPT.",
+      "source": "05_pt_lang_weimann p1"
+    },
+    {
+      "index": 84,
+      "date": "2023-09-22",
+      "type": "diagnosis",
+      "detail": "Neck, shoulder severe neck pain radiating to shoulder.",
+      "source": "05_pt_lang_weimann p4"
+    },
+    {
+      "index": 90,
+      "date": "2023-12-01",
+      "type": "diagnosis",
+      "detail": "Cervical spine cervical symptoms provoked during treatment, Robert Stewart, PT, DPT.",
+      "source": "05_pt_lang_weimann p29"
+    },
+    {
+      "index": 94,
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Left elbow, left wrist, cervical spine decreased range of motion left elbow flexion, left wrist extension, cervical rotation, Amanda Gregory, PT, OCS.",
+      "source": "06_pt_emory_sports p1"
+    },
+    {
+      "index": 95,
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Left elbow, left wrist reduced strength left elbow flexors and left wrist extensors, Amanda Gregory, PT, OCS.",
+      "source": "06_pt_emory_sports p1"
+    },
+    {
+      "index": 97,
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Off full duty work restrictions per surgeon.",
+      "source": "06_pt_emory_sports p1"
+    },
+    {
+      "index": 100,
+      "date": "2023-12-18",
+      "type": "imaging",
+      "detail": "MRI Cervical Spine, Dr. Lucas Harrison, MD.",
+      "source": "07_imaging_pharmacy p1"
+    },
+    {
+      "index": 106,
+      "date": "2023-09-07",
+      "type": "procedure",
+      "detail": "Left humerus and left distal radius dynamic plate fixation of left humerus; volar plate fixation of left distal radius, Dr. Myrtle Turner, MD, FACS.",
+      "source": "07_imaging_pharmacy p4"
+    },
+    {
+      "index": 109,
+      "date": "2024-03-14",
+      "type": "diagnosis",
+      "detail": "Left arm permanent lifting restriction >20 lbs, Dr. Myrtle Turner, MD, FACS.",
+      "source": "07_imaging_pharmacy p4"
+    },
+    {
+      "index": 110,
+      "date": "2023-12-01",
+      "type": "diagnosis",
+      "detail": "Cervical spine C5-C6 progression of C5-C6 disc bulge from 4mm to 6mm with left neural foraminal stenosis, Dr. Myrtle Turner, MD, FACS.",
+      "source": "07_imaging_pharmacy p4"
+    },
+    {
+      "index": 112,
+      "date": "2024-04-02",
+      "type": "procedure",
+      "detail": "Cervical spine chronic pain management or surgical decompression (recommended), Dr. Myrtle Turner, MD, FACS.",
+      "source": "07_imaging_pharmacy p4"
+    },
+    {
+      "index": 113,
+      "date": "2023-09-04",
+      "type": "encounter",
+      "detail": "ADMIT DATE / HR 09/04/2023, Littel Inc Emergency Hospital.",
+      "source": "08_billing_and_claims p1"
+    },
+    {
+      "index": 114,
+      "date": "2023-09-04",
+      "type": "procedure",
+      "detail": "Operating Room Services, CPT 27535, DR. ELIZABETH FOSTER, MD.",
+      "source": "08_billing_and_claims p1"
+    },
+    {
+      "index": 115,
+      "date": "2023-09-04",
+      "type": "procedure",
+      "detail": "Anesthesia, CPT 01402.",
+      "source": "08_billing_and_claims p1"
+    },
+    {
+      "index": 117,
+      "date": "2023-09-04",
+      "type": "imaging",
+      "detail": "Radiology/Diagnostic - CPT 70450.",
+      "source": "08_billing_and_claims p1"
+    },
+    {
+      "index": 118,
+      "date": "2023-09-04",
+      "type": "procedure",
+      "detail": "ICD-10-PCS codes OPS00ZZ/0PSG0ZZ (not narratively described), DR. ELIZABETH FOSTER, MD.",
+      "source": "08_billing_and_claims p1"
+    },
+    {
+      "index": 122,
+      "date": "2023-09-07",
+      "type": "procedure",
+      "detail": "09/07/2023 11 24515 LT ... Dr. Myrtle Turner, MD, FACS, Dr. Myrtle Turner, MD, FACS.",
+      "source": "08_billing_and_claims p5"
+    },
+    {
+      "index": 132,
+      "date": "2022-09-15",
+      "type": "imaging",
+      "detail": "09/15/2022 11 72040 A ... Dr. Alistair Finch, MD, Dr. Alistair Finch, MD.",
+      "source": "08_billing_and_claims p6"
+    },
+    {
+      "index": 133,
+      "date": "2023-12-18",
+      "type": "imaging",
+      "detail": "12/18/2023 11 72141 A ... Dr. Lucas Harrison, MD, Dr. Lucas Harrison, MD.",
+      "source": "08_billing_and_claims p7"
+    },
+    {
+      "index": 135,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Date of injury, Amanda Gregory, PT, OCS.",
+      "source": "08_billing_and_claims p10"
+    },
+    {
+      "index": 142,
+      "date": "2023-09-04",
+      "type": "imaging",
+      "detail": "Leukocytosis (WBC 14.2), Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p4"
+    },
+    {
+      "index": 143,
+      "date": "2023-09-04",
+      "type": "imaging",
+      "detail": "Mildly low hemoglobin 12.8, Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p4"
+    },
+    {
+      "index": 144,
+      "date": "2023-09-04",
+      "type": "diagnosis",
+      "detail": "Lumbar spine mild paraspinal lumbar tenderness, Dr. Elizabeth Foster, MD.",
+      "source": "01_ems_and_ed p5"
+    },
+    {
+      "index": 160,
+      "date": "2023-09-04",
+      "type": "medication",
+      "detail": "Ancef (Cefazolin) 1g IV ... 09/04/2023 ... JM, J. Marsh RN.",
+      "source": "02_hospitalization p3"
+    },
+    {
+      "index": 172,
+      "date": "2023-09-07",
+      "type": "procedure",
+      "detail": "Assistant: Dr. Charles Vance, MD (Resident), Dr. Charles Vance, MD (Resident).",
+      "source": "02_hospitalization p5"
+    },
+    {
+      "index": 173,
+      "date": "2023-09-08",
+      "type": "diagnosis",
+      "detail": "Risk of infection or DVT (recommended).",
+      "source": "02_hospitalization p6"
+    },
+    {
+      "index": 175,
+      "date": "2023-09-21",
+      "type": "procedure",
+      "detail": "Surgical staple removal, Dr. Myrtle Turner.",
+      "source": "04_ortho_followup p1"
+    },
+    {
+      "index": 181,
+      "date": "2023-11-14",
+      "type": "encounter",
+      "detail": "SCHEDULED DATE 11/14/2023, STATUS NO SHOW, Voicemail left; reschedule offered (cancelled), Robert Stewart, PT, DPT.",
+      "source": "05_pt_lang_weimann p32"
+    },
+    {
+      "index": 193,
+      "date": "2023-12-18",
+      "type": "imaging",
+      "detail": "Cervical spine MRI report signing, Dr. Lucas Harrison, MD.",
+      "source": "07_imaging_pharmacy p2"
+    },
+    {
+      "index": 199,
+      "date": "2023-09-06",
+      "type": "procedure",
+      "detail": "Cardiac monitoring, CPT 93010.",
+      "source": "08_billing_and_claims p2"
+    },
+    {
+      "index": 201,
+      "date": "2023-09-04",
+      "type": "procedure",
+      "detail": "A0425 (ambulance mileage), Paramedic James Vance, NREMT-P.",
+      "source": "08_billing_and_claims p4"
+    }
+  ],
+  "candidate_events_flagged_unsupported_by_audit": [
+    {
+      "doc_id": "01_ems_and_ed",
+      "event_index": 9,
+      "date": "2023-09-04",
+      "detail": "Left pain complaint.",
+      "source": "01_ems_and_ed p1",
+      "explanation": "The detail 'Left pain complaint' is vague; source specifies 'severe neck and lower back pain' and 'left knee pain', not simply generic left-side pain, so attribution is imprecise but not contradicted.",
+      "confidence": 0.5
+    },
+    {
+      "doc_id": "02_hospitalization",
+      "event_index": 160,
+      "date": "2023-09-04",
+      "detail": "Ancef (Cefazolin) 1g IV ... 09/04/2023 ... JM, J. Marsh RN.",
+      "source": "02_hospitalization p3",
+      "explanation": "The MAR on p3 shows an Ancef 1g IV row for 09/04/2023 with an initial 'JM' entry, but the exact administration time is illegible/ambiguous in the OCR (columns not clearly aligned), so exact time attribution is uncertain though the date and provider initial are plausible.",
+      "confidence": 0.5
+    },
+    {
+      "doc_id": "07_imaging_pharmacy",
+      "event_index": 105,
+      "date": "2023-09-04",
+      "detail": "Motor vehicle collision, Dr. Myrtle Turner, MD, FACS.",
+      "source": "07_imaging_pharmacy p4",
+      "explanation": "The letter states the MVA occurred September 4, 2023, but does not present this as a diagnosis by Dr. Turner; it's a historical fact, not a 'diagnosis' type event, though the date and detail are consistent with the text ('following a severe motor vehicle collision on September 4, 2023').",
+      "confidence": 0.6
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 119,
+      "date": "2023-09-04",
+      "detail": "Nerve block.",
+      "source": "08_billing_and_claims p2",
+      "explanation": "p2 lists '0370 01402 NERVE BLOCK TRAY' as a supply/tray charge on 09/04/2023, not explicitly documented as a performed nerve block procedure narrative; the label is a billing line item description, so the clinical inference is plausible but not directly stated as a procedure event.",
+      "confidence": 0.55
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 135,
+      "date": "2023-09-04",
+      "detail": "Date of injury, Amanda Gregory, PT, OCS.",
+      "source": "08_billing_and_claims p10",
+      "explanation": "p10 shows '14. DATE OF CURRENT ILLNESS/INJURY 09/04/2023' on Amanda Gregory's claim form, but this is a billing form field, not a diagnosis entry per se; framing as 'diagnosis' type is a stretch though the date and provider are correctly sourced.",
+      "confidence": 0.55
+    },
+    {
+      "doc_id": "08_billing_and_claims",
+      "event_index": 139,
+      "date": "2024-04-18",
+      "detail": "Physician services (surgical, FACS), Dr. Myrtle Turner, MD, FACS.",
+      "source": "08_billing_and_claims p14",
+      "explanation": "p14 is an EOB for claim CLM-17007979 (Dr. Myrtle Turner) with statement date 04/18/2024 showing billed/paid amounts, not a description of an actual encounter or 'physician services (surgical, FACS)' rendered on that date; the EOB reflects claim processing, not a new encounter.",
+      "confidence": 0.75
+    }
+  ],
+  "candidate_events_flagged_contradicted_by_audit": [
+    {
+      "doc_id": "01_ems_and_ed",
+      "event_index": 16,
+      "date": "2023-09-04",
+      "detail": "Patient reports 2 beers at lunch today; odor noted by EMS.",
+      "source": "01_ems_and_ed p3",
+      "explanation": "Triage documentation states 'Patient reports 2 beers at lunch today; odor noted by EMS,' but EMS narrative and ED note explicitly report the patient stating '4 beers before driving,' creating an internal contradiction in the source that the event does not flag.",
+      "confidence": 0.6
+    }
+  ]
 }

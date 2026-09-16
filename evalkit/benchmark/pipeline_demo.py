@@ -104,6 +104,7 @@ def run_pipeline_demo_for_case(case: Case, tracker: BudgetTracker, tool: str | N
     scorecard = build_summary_scorecard(
         tool=tool, run=1, cost_usd=cost_usd, claims=judged["claims"],
         fact_coverage=judged["fact_coverage"], usefulness=judged["usefulness"], material_facts=material_facts,
+        summary_text=summary_text,
     )
 
     return {

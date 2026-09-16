@@ -1,6 +1,6 @@
 {
   "case_id": "case-davis",
-  "reference_path": "C:\\Users\\wix\\Documents\\\u05de\u05d9\u05d5\u05e0\u05d9\u05dd \u05dc\u05e2\u05d1\u05d5\u05d3\u05d4\\interview-ai-or-kadosh\\exercise\\data\\case-davis\\summaries\\input_timeline.json",
+  "reference_path": "data/case-davis/summaries/input_timeline.json",
   "likely_reference_omissions": [
     "[01_EMS_and_ED_Admit_2024-01-08] EMS run sheet details the mechanism (industrial stamping press entrapment), field vitals (BP 92/58, HR 124, RR 22, SpO2 95, GCS 11, pain 10), and prehospital interventions (tourniquet applied by factory responder at 12:48, IV Fentanyl 100mcg, tourniquet time documented) that are not captured in any event.",
     "[01_EMS_and_ED_Admit_2024-01-08] The ED physician note documents a ~20 minute entrapment time and that the patient was 'pale, diaphoretic, and hypotensive' with 'weak peripheral pulses' on arrival, which is not reflected in the timeline.",

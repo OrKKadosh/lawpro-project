@@ -198,7 +198,7 @@ def run_window_config(
     for start, end in ranges:
         chunk_text = _slice_text(case, window["doc_id"], start, end)
         before = tracker.total_spent
-        candidates = extract_candidates(
+        candidates, _incomplete = extract_candidates(
             tracker, doc_id=window["doc_id"], chunk_text=chunk_text, category="chunk_experiment"
         )
         result.cost_usd += tracker.total_spent - before

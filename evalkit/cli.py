@@ -22,6 +22,7 @@ from pathlib import Path
 from chronos import client
 from chronos import timeline as chronos_timeline
 from chronos.client import PlatformError
+from chronos.constants import TOOLS
 from evalkit.budget import BudgetTracker
 from evalkit.discover import discover_cases
 from evalkit.extraction.prepare import run_full_extraction
@@ -85,6 +86,22 @@ def _print_unknown_case_on_platform(case_id: str) -> None:
     )
 
 
+def prompt_choose_tool(case_id: str, input_fn=input) -> str:
+    """No prior benchmark result exists to pick a tool automatically for
+    this case -- ask the reviewer directly, matching prompt_choose_case()'s
+    interactive style, rather than making them re-invoke the command with
+    --tool. Only ever called when stdin is interactive (cmd_run checks
+    sys.stdin.isatty() first) -- a script piping/redirecting input still
+    gets the old hard error demanding --tool, so scriptability is
+    unaffected."""
+    print(f"No benchmark-selected summarizer exists for {case_id} yet.")
+    while True:
+        choice = input_fn(f"Choose a summarizer ({'/'.join(TOOLS)}): ").strip().upper()
+        if choice in TOOLS:
+            return choice
+        print(f"  '{choice}' isn't one of {', '.join(TOOLS)} -- try again.")
+
+
 def cmd_list_cases(args: argparse.Namespace) -> None:
     for case in discover_cases():
         pages = sum(d.pages for d in case.documents)
@@ -142,8 +159,11 @@ def cmd_evaluate_timeline(args: argparse.Namespace) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(result, indent=2), encoding="utf-8")
     es = result["extraction_score"]
+    cov = result["candidate_audit_coverage"]
     print(f"extraction_score composite={es['composite']} has_confirmed_fabrication={es['has_confirmed_fabrication']}")
-    print(f"source_grounded_precision={result['source_grounded_precision']}")
+    print(f"source audit: selected={cov['events_selected_for_audit']} completed={cov['events_with_a_verdict']} "
+          f"({cov['audit_completion_rate']} completion rate, {cov['unparseable_sources_count']} unparseable sources) "
+          f"-> source_grounded_precision_among_completed={cov['source_grounded_precision_among_completed']}")
     print(f"written to {out_path}")
     print(tracker.summary())
 
@@ -191,6 +211,7 @@ def cmd_evaluate(args: argparse.Namespace) -> None:
     scorecard = build_summary_scorecard(
         tool=tool, run=args.run, cost_usd=0.0, claims=judged["claims"],
         fact_coverage=judged["fact_coverage"], usefulness=judged["usefulness"], material_facts=material_facts,
+        summary_text=summary_text,
     )
     print()
     print(render_judge_output(case.case_id, tool, judged, scorecard))
@@ -251,6 +272,11 @@ def cmd_run(args: argparse.Namespace) -> None:
     print()
     print("=== Step 3 of 4: generate a narrative summary from the timeline ===")
     tool = args.tool or choose_tool_for_case(case.case_id)
+    if not tool and sys.stdin.isatty():
+        # Interactive reviewer flow: ask directly rather than making them re-invoke the
+        # command with --tool -- a real usability gap (a case with no prior controlled-
+        # benchmark result, e.g. a genuinely new case dropped into data/, always hits this).
+        tool = prompt_choose_tool(case.case_id)
     if not tool:
         print(f"No tool was specified, and this case has no prior benchmark result to pick one from "
               f"automatically. Re-run with --tool <letter> to choose one yourself.", file=sys.stderr)

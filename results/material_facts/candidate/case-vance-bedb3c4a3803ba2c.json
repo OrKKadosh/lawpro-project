@@ -1,0 +1,335 @@
+{
+  "case_id": "case-vance",
+  "benchmark_timeline_path": "our own extraction: runs/candidate_timelines/case-vance.json",
+  "benchmark_event_count": 202,
+  "timeline_hash": "bedb3c4a3803ba2cf50b8151faa6d6353514bb9c39702d3f12eba005ea2ba7f6",
+  "timeline_source": "candidate_extraction",
+  "material_facts": [
+    {
+      "fact_id": "mva-mechanism",
+      "category": "incident/mechanism",
+      "description": "Patient was involved in a 2-vehicle side-impact motor vehicle collision requiring mechanical extrication.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        0,
+        1,
+        18,
+        36,
+        105
+      ]
+    },
+    {
+      "fact_id": "alcohol-involvement",
+      "category": "incident/mechanism",
+      "description": "EMS and ED noted odor of alcohol and patient-reported drinking prior to driving, with elevated serum ethanol of 110 mg/dL confirmed at the hospital.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        5,
+        6,
+        16,
+        17
+      ]
+    },
+    {
+      "fact_id": "humerus-fracture",
+      "category": "major injury",
+      "description": "Patient sustained an open (compound) displaced mid-shaft left humerus fracture with active bleeding and 2.2cm overriding.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        7,
+        21,
+        27
+      ]
+    },
+    {
+      "fact_id": "radius-fracture",
+      "category": "major injury",
+      "description": "Patient sustained a displaced spiral fracture of the left distal radius with intra-articular extension and spiral deformity.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        8,
+        28
+      ]
+    },
+    {
+      "fact_id": "scalp-lac",
+      "category": "major injury",
+      "description": "Patient had a 2cm superficial scalp laceration and mild altered mental status (GCS 14) at the scene.",
+      "materiality_weight": 1,
+      "supporting_event_ids": [
+        2,
+        19
+      ]
+    },
+    {
+      "fact_id": "left-knee-contusion",
+      "category": "major injury",
+      "description": "Patient sustained a left knee contusion in the collision.",
+      "materiality_weight": 1,
+      "supporting_event_ids": [
+        23
+      ]
+    },
+    {
+      "fact_id": "cervical-injury-acute",
+      "category": "major diagnosis",
+      "description": "Acute cervical spine injury with C4-C7 tenderness, muscle spasm, and prevertebral soft tissue swelling consistent with trauma was diagnosed at the ED.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        20,
+        30,
+        39
+      ]
+    },
+    {
+      "fact_id": "neurovascular-compromise",
+      "category": "major diagnosis",
+      "description": "Left forearm/wrist showed weak radial pulse, delayed capillary refill, and decreased distal sensation at presentation, indicating neurovascular compromise.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        22
+      ]
+    },
+    {
+      "fact_id": "cspine-imaging-acute",
+      "category": "major imaging finding",
+      "description": "Acute cervical spine imaging showed C5-C6 disc narrowing with a 6mm disc bulge and mild retrolisthesis, with onset noted as inconclusive by the radiologist.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        29
+      ]
+    },
+    {
+      "fact_id": "preexisting-cervical",
+      "category": "relevant pre-existing condition",
+      "description": "One year prior to the MVA, patient had a cervical strain from heavy squat lifting with imaging showing a 4mm C5-C6 disc bulge and mild degenerative disc disease, without fracture.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "fact_id": "orif-surgery",
+      "category": "surgery/procedure",
+      "description": "On 2023-09-07, patient underwent left upper extremity reconstruction with ORIF via dynamic plate fixation of the humerus, volar plate fixation of the distal radius, and repair of the extensor tendon sheath.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        32,
+        33,
+        34,
+        35,
+        37,
+        106,
+        122
+      ]
+    },
+    {
+      "fact_id": "hospital-course",
+      "category": "treatment course",
+      "description": "Patient was hospitalized from 2023-09-04 to 2023-09-08 with IV antibiotics (Ancef/Cephalexin), IV/oral opioid pain management, ambulation with PT, and neuro checks before discharge.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        11,
+        25,
+        43,
+        113,
+        145,
+        146,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        156,
+        157,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        199,
+        200
+      ]
+    },
+    {
+      "fact_id": "pt-course-stewart",
+      "category": "treatment course",
+      "description": "Patient completed a 30-session outpatient physical therapy course (Sept-Dec 2023) with Robert Stewart, PT, DPT, addressing left upper extremity ROM/strength deficits and cervical spine pain, including several missed/no-show sessions.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        57,
+        78,
+        82,
+        83,
+        85,
+        86,
+        87,
+        88,
+        89,
+        91,
+        134,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184
+      ]
+    },
+    {
+      "fact_id": "pt-course-gregory",
+      "category": "treatment course",
+      "description": "Patient continued physical therapy with Amanda Gregory, PT, OCS from January to March 2024 addressing persistent muscle wasting, decreased ROM/strength, and chronic cervical disc bulge, until MMI was reached.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        93,
+        94,
+        95,
+        96,
+        98,
+        99,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191
+      ]
+    },
+    {
+      "fact_id": "pt-noncompliance",
+      "category": "treatment gap/compliance issue",
+      "description": "Patient missed multiple physical therapy appointments in November 2023 (no-shows on 11/14, 11/17, 11/21), with documented rebound in elbow stiffness before returning to treatment on 11/27/2023.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        63,
+        88,
+        89,
+        181,
+        182,
+        183,
+        184
+      ]
+    },
+    {
+      "fact_id": "residual-radial-deficit",
+      "category": "functional limitation",
+      "description": "Following surgery, patient had persistent left radial nerve sensory deficit and wrist extension weakness documented through late 2023.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        38,
+        55,
+        56,
+        66,
+        67
+      ]
+    },
+    {
+      "fact_id": "cervical-progression",
+      "category": "major imaging finding",
+      "description": "Follow-up cervical spine MRI in December 2023 showed progression of the C5-C6 disc bulge from 4mm (pre-accident) to 6mm with new left neural foraminal stenosis.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        68,
+        100,
+        110,
+        133,
+        193
+      ]
+    },
+    {
+      "fact_id": "fracture-healing",
+      "category": "major imaging finding",
+      "description": "By December 2023 and confirmed February 2024, X-rays showed the left humerus and distal radius fractures were well-healed with stable hardware and complete bony fusion.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        58,
+        65,
+        70,
+        75,
+        76,
+        77
+      ]
+    },
+    {
+      "fact_id": "causation-opinion",
+      "category": "causation opinion",
+      "description": "Treating surgeon opined that the motor vehicle accident exacerbated the patient's pre-existing cervical disc disease.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        111
+      ]
+    },
+    {
+      "fact_id": "mmi-orthopedic",
+      "category": "prognosis/MMI",
+      "description": "On 2024-03-14, the treating surgeon determined the patient reached Maximum Medical Improvement for the left upper extremity with permanent functional impairment, including 15-degree elbow flexion/extension deficit, 20-degree wrist supination deficit, permanently blunted radial hand sensation, and chronic mild-to-moderate neck pain.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        71,
+        72,
+        73,
+        74,
+        108
+      ]
+    },
+    {
+      "fact_id": "mmi-pt",
+      "category": "prognosis/MMI",
+      "description": "Physical therapy discharge in March 2024 similarly documented MMI with a persistent 15-degree elbow extension deficit, sensory blunting over the radial hand, and chronic neck pain baseline of 3/10.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        99
+      ]
+    },
+    {
+      "fact_id": "permanent-lifting-restriction",
+      "category": "functional limitation",
+      "description": "Patient was given a permanent work restriction of no lifting greater than 20 lbs with the left arm.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        109
+      ]
+    },
+    {
+      "fact_id": "off-work-restriction",
+      "category": "functional limitation",
+      "description": "Patient was kept off full-duty work per surgeon's restrictions during the recovery period.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        81,
+        97
+      ]
+    },
+    {
+      "fact_id": "cervical-surgical-recommendation",
+      "category": "treatment course",
+      "description": "In April 2024, the surgeon recommended ongoing chronic pain management or surgical decompression for the cervical spine.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        112
+      ]
+    }
+  ],
+  "human_spot_checked": false
+}

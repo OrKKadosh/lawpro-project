@@ -1,6 +1,6 @@
 {
   "case_id": "case-davis",
-  "benchmark_timeline_path": "C:\\Users\\wix\\Documents\\\u05de\u05d9\u05d5\u05e0\u05d9\u05dd \u05dc\u05e2\u05d1\u05d5\u05d3\u05d4\\interview-ai-or-kadosh\\exercise\\data\\case-davis\\summaries\\input_timeline.json",
+  "benchmark_timeline_path": "data/case-davis/summaries/input_timeline.json",
   "benchmark_event_count": 39,
   "material_facts": [
     {

@@ -209,7 +209,7 @@ def run_window_variant(case: Case, tracker: BudgetTracker, window_key: str, vari
     for start, end in ranges:
         chunk_text = _slice_text(case, window["doc_id"], start, end)
         before = tracker.total_spent
-        candidates = extract_candidates(
+        candidates, _incomplete = extract_candidates(
             tracker, doc_id=window["doc_id"], chunk_text=chunk_text,
             category="prompt_experiment", system_prompt=PROMPT_VARIANTS[variant_name],
         )

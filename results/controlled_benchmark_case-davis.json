@@ -11,21 +11,22 @@
           "run": 1,
           "cost_usd": 0.022146,
           "faithfulness": {
-            "composite": 0.959,
+            "composite": 0.986,
             "ship_eligible": true,
             "gate_triggering_claims": [],
-            "claim_count": 24,
-            "flawed_claim_count": 2,
+            "claim_count": 23,
+            "flawed_claim_count": 1,
             "claim_counts_by_status": {
               "supported": 22,
-              "overclaimed": 1,
-              "unsupported": 1
+              "overclaimed": 1
             },
             "claim_counts_by_materiality": {
-              "major": 10,
+              "major": 9,
               "critical": 10,
               "minor": 4
-            }
+            },
+            "omission_shaped_claims_excluded": 1,
+            "untraceable_claims_excluded": 0
           },
           "coverage": {
             "weighted_coverage_rate": 0.927,
@@ -71,21 +72,22 @@
           "run": 2,
           "cost_usd": 0.020406,
           "faithfulness": {
-            "composite": 0.948,
+            "composite": 0.98,
             "ship_eligible": true,
             "gate_triggering_claims": [],
-            "claim_count": 22,
-            "flawed_claim_count": 2,
+            "claim_count": 18,
+            "flawed_claim_count": 1,
             "claim_counts_by_status": {
-              "supported": 20,
-              "overclaimed": 1,
-              "unsupported": 1
+              "supported": 17,
+              "overclaimed": 1
             },
             "claim_counts_by_materiality": {
               "critical": 7,
-              "major": 8,
-              "minor": 7
-            }
+              "major": 5,
+              "minor": 6
+            },
+            "omission_shaped_claims_excluded": 4,
+            "untraceable_claims_excluded": 0
           },
           "coverage": {
             "weighted_coverage_rate": 0.817,
@@ -128,14 +130,15 @@
           }
         }
       ],
-      "mean_faithfulness": 0.954,
+      "mean_faithfulness": 0.983,
       "mean_coverage": 0.872,
       "mean_usefulness": 3.93,
       "ship_eligible": true,
       "total_cost_usd": 0.0426,
       "mean_cost_usd": 0.0213,
       "stability": {
-        "material_fact_overlap_rate": 0.944,
+        "shared_topic_agreement_rate": 0.944,
+        "content_overlap_stability_rate": 0.85,
         "critical_cross_run_conflict_count": 0,
         "agree": 17,
         "disagree": 1,
@@ -1010,7 +1013,7 @@
           "run": 1,
           "cost_usd": 0.01998,
           "faithfulness": {
-            "composite": 0.818,
+            "composite": 0.828,
             "ship_eligible": false,
             "gate_triggering_claims": [
               {
@@ -1024,19 +1027,21 @@
                 "reason": "Timeline states Dr. Marcus Vance performed the amputation, not Dr. Sarah Chen; this is a misattribution to a nonexistent/wrong physician."
               }
             ],
-            "claim_count": 22,
-            "flawed_claim_count": 5,
+            "claim_count": 19,
+            "flawed_claim_count": 4,
             "claim_counts_by_status": {
-              "supported": 17,
+              "supported": 15,
               "overclaimed": 1,
-              "unsupported": 2,
+              "unsupported": 1,
               "contradicted": 2
             },
             "claim_counts_by_materiality": {
-              "minor": 5,
-              "major": 8,
-              "critical": 9
-            }
+              "minor": 4,
+              "major": 7,
+              "critical": 8
+            },
+            "omission_shaped_claims_excluded": 3,
+            "untraceable_claims_excluded": 0
           },
           "coverage": {
             "weighted_coverage_rate": 0.817,
@@ -1082,7 +1087,7 @@
           "run": 2,
           "cost_usd": 0.01998,
           "faithfulness": {
-            "composite": 0.636,
+            "composite": 0.677,
             "ship_eligible": false,
             "gate_triggering_claims": [
               {
@@ -1106,18 +1111,19 @@
                 "reason": "Timeline states the amputation was between shoulder and elbow, not shoulder and wrist."
               }
             ],
-            "claim_count": 24,
-            "flawed_claim_count": 4,
+            "claim_count": 22,
+            "flawed_claim_count": 2,
             "claim_counts_by_status": {
               "supported": 20,
-              "unsupported": 2,
               "contradicted": 2
             },
             "claim_counts_by_materiality": {
-              "minor": 21,
+              "minor": 19,
               "critical": 2,
               "major": 1
-            }
+            },
+            "omission_shaped_claims_excluded": 2,
+            "untraceable_claims_excluded": 0
           },
           "coverage": {
             "weighted_coverage_rate": 0.768,
@@ -1159,14 +1165,15 @@
           }
         }
       ],
-      "mean_faithfulness": 0.727,
+      "mean_faithfulness": 0.752,
       "mean_coverage": 0.792,
       "mean_usefulness": 4.36,
       "ship_eligible": false,
       "total_cost_usd": 0.04,
       "mean_cost_usd": 0.02,
       "stability": {
-        "material_fact_overlap_rate": 0.812,
+        "shared_topic_agreement_rate": 0.812,
+        "content_overlap_stability_rate": 0.812,
         "critical_cross_run_conflict_count": 2,
         "agree": 13,
         "disagree": 3,
@@ -2008,20 +2015,21 @@
           "run": 1,
           "cost_usd": 0.004574,
           "faithfulness": {
-            "composite": 0.881,
+            "composite": 1.0,
             "ship_eligible": true,
             "gate_triggering_claims": [],
-            "claim_count": 20,
-            "flawed_claim_count": 5,
+            "claim_count": 14,
+            "flawed_claim_count": 0,
             "claim_counts_by_status": {
-              "supported": 15,
-              "unsupported": 5
+              "supported": 14
             },
             "claim_counts_by_materiality": {
               "critical": 8,
-              "minor": 5,
-              "major": 7
-            }
+              "major": 5,
+              "minor": 1
+            },
+            "omission_shaped_claims_excluded": 6,
+            "untraceable_claims_excluded": 0
           },
           "coverage": {
             "weighted_coverage_rate": 0.598,
@@ -2071,20 +2079,22 @@
           "run": 2,
           "cost_usd": 0.004599,
           "faithfulness": {
-            "composite": 0.845,
+            "composite": 0.98,
             "ship_eligible": true,
             "gate_triggering_claims": [],
-            "claim_count": 20,
-            "flawed_claim_count": 6,
+            "claim_count": 15,
+            "flawed_claim_count": 1,
             "claim_counts_by_status": {
               "supported": 14,
-              "unsupported": 6
+              "unsupported": 1
             },
             "claim_counts_by_materiality": {
               "critical": 7,
-              "major": 10,
-              "minor": 3
-            }
+              "major": 7,
+              "minor": 1
+            },
+            "omission_shaped_claims_excluded": 5,
+            "untraceable_claims_excluded": 0
           },
           "coverage": {
             "weighted_coverage_rate": 0.549,
@@ -2131,14 +2141,15 @@
           }
         }
       ],
-      "mean_faithfulness": 0.863,
+      "mean_faithfulness": 0.99,
       "mean_coverage": 0.574,
       "mean_usefulness": 3.79,
       "ship_eligible": true,
       "total_cost_usd": 0.0092,
       "mean_cost_usd": 0.0046,
       "stability": {
-        "material_fact_overlap_rate": 0.917,
+        "shared_topic_agreement_rate": 0.917,
+        "content_overlap_stability_rate": 0.647,
         "critical_cross_run_conflict_count": 0,
         "agree": 11,
         "disagree": 1,
@@ -2940,21 +2951,22 @@
           "run": 1,
           "cost_usd": 0.020176,
           "faithfulness": {
-            "composite": 0.918,
+            "composite": 0.938,
             "ship_eligible": true,
             "gate_triggering_claims": [],
-            "claim_count": 21,
-            "flawed_claim_count": 3,
+            "claim_count": 17,
+            "flawed_claim_count": 2,
             "claim_counts_by_status": {
-              "supported": 18,
-              "overclaimed": 2,
-              "unsupported": 1
+              "supported": 15,
+              "overclaimed": 2
             },
             "claim_counts_by_materiality": {
-              "major": 8,
-              "critical": 8,
-              "minor": 5
-            }
+              "major": 7,
+              "critical": 6,
+              "minor": 4
+            },
+            "omission_shaped_claims_excluded": 4,
+            "untraceable_claims_excluded": 0
           },
           "coverage": {
             "weighted_coverage_rate": 0.793,
@@ -3001,20 +3013,21 @@
           "run": 2,
           "cost_usd": 0.022416,
           "faithfulness": {
-            "composite": 0.929,
+            "composite": 1.0,
             "ship_eligible": true,
             "gate_triggering_claims": [],
-            "claim_count": 24,
-            "flawed_claim_count": 3,
+            "claim_count": 20,
+            "flawed_claim_count": 0,
             "claim_counts_by_status": {
-              "supported": 21,
-              "unsupported": 3
+              "supported": 20
             },
             "claim_counts_by_materiality": {
-              "major": 10,
+              "major": 7,
               "critical": 9,
-              "minor": 5
-            }
+              "minor": 4
+            },
+            "omission_shaped_claims_excluded": 4,
+            "untraceable_claims_excluded": 0
           },
           "coverage": {
             "weighted_coverage_rate": 0.902,
@@ -3057,14 +3070,15 @@
           }
         }
       ],
-      "mean_faithfulness": 0.923,
+      "mean_faithfulness": 0.969,
       "mean_coverage": 0.848,
       "mean_usefulness": 3.93,
       "ship_eligible": true,
       "total_cost_usd": 0.0426,
       "mean_cost_usd": 0.0213,
       "stability": {
-        "material_fact_overlap_rate": 1.0,
+        "shared_topic_agreement_rate": 1.0,
+        "content_overlap_stability_rate": 0.773,
         "critical_cross_run_conflict_count": 0,
         "agree": 17,
         "disagree": 0,

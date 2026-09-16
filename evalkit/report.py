@@ -47,6 +47,7 @@ def run_controlled_benchmark_for_case(case: Case, tracker: BudgetTracker) -> dic
                 tool=tool, run=r.run, cost_usd=r.cost_usd,
                 claims=judged["claims"], fact_coverage=judged["fact_coverage"],
                 usefulness=judged["usefulness"], material_facts=material_facts,
+                summary_text=r.summary,
             )
             run_scorecards.append(scorecard)
 
@@ -81,16 +82,25 @@ def render_final_report(all_case_results: dict[str, dict]) -> str:
     for case_id, result in all_case_results.items():
         lines.append(f"## {case_id}")
         lines.append("")
-        lines.append("| Tool | Faithfulness | Ship-eligible | Coverage | Usefulness | Stability (agree) | Critical cross-run conflicts | Mean cost/summary |")
-        lines.append("|---|---|---|---|---|---|---|---|")
+        lines.append("| Tool | Faithfulness | Ship-eligible | Coverage | Usefulness | Shared-topic agreement | Content-overlap stability | Critical cross-run conflicts | Mean cost/summary |")
+        lines.append("|---|---|---|---|---|---|---|---|---|")
         for tool, tc in sorted(result["tools"].items()):
             stab = tc.get("stability") or {}
             lines.append(
                 f"| {tool} | {tc['mean_faithfulness']} | {'yes' if tc['ship_eligible'] else '**NO**'} | "
                 f"{tc['mean_coverage']} | {tc['mean_usefulness']} | "
-                f"{stab.get('material_fact_overlap_rate')} | {stab.get('critical_cross_run_conflict_count')} | "
+                f"{stab.get('shared_topic_agreement_rate')} | {stab.get('content_overlap_stability_rate')} | "
+                f"{stab.get('critical_cross_run_conflict_count')} | "
                 f"${tc['mean_cost_usd']} |"
             )
+        lines.append("")
+        lines.append(
+            "*Shared-topic agreement* = agree / (agree + disagree) across material facts BOTH runs mention -- "
+            "silent on content only one run mentions. *Content-overlap stability* = agree / (agree + disagree + "
+            "run1-only + run2-only) -- the number that actually catches a run silently dropping or adding a large "
+            "chunk of material content (FINDINGS.md: shared-topic agreement alone can show 1.0 even when one run "
+            "omits most of the other's material facts -- never read that number alone as \"stability\")."
+        )
         lines.append("")
     return "\n".join(lines)
 

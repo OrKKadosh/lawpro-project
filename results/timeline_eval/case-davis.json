@@ -1,30 +1,34 @@
 {
   "case_id": "case-davis",
-  "reference_path": "C:\\Users\\wix\\Documents\\\u05de\u05d9\u05d5\u05e0\u05d9\u05dd \u05dc\u05e2\u05d1\u05d5\u05d3\u05d4\\interview-ai-or-kadosh\\exercise\\data\\case-davis\\summaries\\input_timeline.json",
+  "reference_path": "data/case-davis/summaries/input_timeline.json",
   "reference_event_count": 39,
   "candidate_event_count": 140,
   "reference_agreement": 0.769,
   "date_agreement_among_matched": 0.9,
   "type_agreement_among_matched": 0.733,
-  "source_grounded_precision": 0.943,
+  "source_grounded_precision_among_completed": 0.884,
+  "source_audit_completion_rate": 1.0,
   "candidate_audit_coverage": {
     "events_total": 140,
     "events_fully_audited_high_materiality": 80,
     "events_sampled_routine": 6,
-    "events_with_a_verdict": 35,
-    "source_grounded_precision": 0.943,
+    "events_selected_for_audit": 86,
+    "events_with_a_verdict": 86,
+    "audit_completion_rate": 1.0,
+    "unparseable_sources_count": 0,
+    "source_grounded_precision_among_completed": 0.884,
     "routine_sample_method": "evenly-spaced, deterministic, n=6 (PLAN.md SS7/D.2: risk-based, not exhaustive by default)"
   },
   "extraction_score": {
-    "composite": 0.605,
+    "composite": 0.672,
     "has_confirmed_fabrication": true,
     "counts": {
-      "missing": 11,
-      "matched_agree": 25,
-      "matched_contradicted": 3,
-      "extra_unaudited": 88,
-      "extra_grounded": 22,
-      "extra_ungrounded": 2
+      "missing": 9,
+      "matched_agree": 29,
+      "matched_contradicted": 1,
+      "extra_grounded": 61,
+      "extra_unaudited": 42,
+      "extra_ungrounded": 7
     },
     "items": [
       {
@@ -159,12 +163,12 @@
         "agreement_check": "same_event_agrees"
       },
       {
-        "status": "matched_contradicted",
-        "severity": "critical",
+        "status": "matched_agree",
+        "severity": "major",
         "reference_index": 18,
         "candidate_index": 44,
         "match_score": 0.412,
-        "agreement_check": "same_event_contradicts"
+        "agreement_check": "same_event_agrees"
       },
       {
         "status": "matched_agree",
@@ -175,27 +179,12 @@
         "agreement_check": "same_event_agrees"
       },
       {
-        "status": "missing",
+        "status": "matched_agree",
         "severity": "major",
         "reference_index": 15,
-        "reference_event": {
-          "date": "2024-01-15",
-          "type": "medication",
-          "detail": "Discharge medications: Gabapentin 300mg PO TID, Oxycodone 5mg PO q4-6h PRN, Cefdinir 300mg PO BID for 5 more days.",
-          "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
-        },
-        "note": "was a weak greedy-alignment pairing, reclassified"
-      },
-      {
-        "status": "extra_unaudited",
-        "severity": null,
         "candidate_index": 36,
-        "candidate_event": {
-          "date": "2024-01-15",
-          "type": "medication",
-          "detail": "Cefdinir 300mg PO BID for 5 more days (ordered).",
-          "source": "02_Inpatient_Surgery_and_Ward_Stay p8"
-        }
+        "match_score": 0.385,
+        "agreement_check": "same_event_agrees"
       },
       {
         "status": "matched_agree",
@@ -278,12 +267,12 @@
         "agreement_check": "same_event_agrees"
       },
       {
-        "status": "matched_contradicted",
-        "severity": "critical",
+        "status": "matched_agree",
+        "severity": "major",
         "reference_index": 14,
         "candidate_index": 33,
         "match_score": 0.28,
-        "agreement_check": "same_event_contradicts"
+        "agreement_check": "same_event_agrees"
       },
       {
         "status": "matched_agree",
@@ -302,27 +291,12 @@
         "agreement_check": "same_event_agrees"
       },
       {
-        "status": "missing",
-        "severity": "major",
+        "status": "matched_contradicted",
+        "severity": "critical",
         "reference_index": 11,
-        "reference_event": {
-          "date": "2024-01-08",
-          "type": "medication",
-          "detail": "Postoperative inpatient pain regimen initiated: Hydromorphone (Dilaudid) PCA, Gabapentin 300mg PO, Ancef (Cefazolin) 1g IV, and PRN Oxycodone 5-10mg PO.",
-          "source": "02_Inpatient_Surgery_and_Ward_Stay p3"
-        },
-        "note": "was a weak greedy-alignment pairing, reclassified"
-      },
-      {
-        "status": "extra_unaudited",
-        "severity": null,
         "candidate_index": 112,
-        "candidate_event": {
-          "date": "2024-01-10",
-          "type": "medication",
-          "detail": "PRN pain medication: Oxycodone 5-10mg PO PRN.",
-          "source": "02_Inpatient_Surgery_and_Ward_Stay p4"
-        }
+        "match_score": 0.25,
+        "agreement_check": "same_event_contradicts"
       },
       {
         "status": "matched_agree",
@@ -349,12 +323,12 @@
         "agreement_check": "same_event_agrees"
       },
       {
-        "status": "matched_contradicted",
-        "severity": "critical",
+        "status": "matched_agree",
+        "severity": "major",
         "reference_index": 8,
         "candidate_index": 26,
         "match_score": 0.15,
-        "agreement_check": "same_event_contradicts"
+        "agreement_check": "same_event_agrees"
       },
       {
         "status": "matched_agree",
@@ -397,47 +371,47 @@
         "agreement_check": "same_event_agrees"
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 0,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "encounter",
           "detail": "Left arm industrial machinery entrapment, arm crush injury.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp1"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 1,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "diagnosis",
           "detail": "Left arm/hand complete mechanical disruption, bone protrusion, cold pulseless hand.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp1"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 2,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "procedure",
           "detail": "Left arm tourniquet application, factory responder.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp1"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 3,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "procedure",
           "detail": "Machine dismantled by emergency crews to free arm.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp1"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
         }
       },
       {
@@ -448,18 +422,18 @@
           "date": "2024-01-08",
           "type": "medication",
           "detail": "IV access: Fentanyl 100mcg.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp1"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 5,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "diagnosis",
           "detail": "GCS 11, brief loss of consciousness (reported history).",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp1"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
         }
       },
       {
@@ -470,118 +444,119 @@
           "date": "2024-01-08",
           "type": "encounter",
           "detail": "Left arm hospital admission, Dr. Marcus Vance, MD, FACS.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp2"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p2"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 9,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "encounter",
           "detail": "Consulting Dr. Marcus Vance, MD, FACS; Dr. Elena Rostova, MD, Dr. Marcus Vance, MD, FACS; Dr. Elena Rostova, MD.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp2"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p2"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 11,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "diagnosis",
           "detail": "Serum ETOH test (ordered).",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp3"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p3"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 12,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "diagnosis",
           "detail": "Left upper extremity crush injury with complete brachial artery and nerve transection, exposed bone, massive soft tissue loss, Dr. David Cho, MD, FACEP.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp4"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 14,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "encounter",
           "detail": "Immediate orthopedic trauma consultation (Dr. Marcus Vance) (ordered), Dr. Marcus Vance.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp4"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 15,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "procedure",
           "detail": "PRBC transfusion: packed red blood cells 2 units, Dr. David Cho, MD, FACEP.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp4"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 16,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "procedure",
           "detail": "Left arm emergent amputation (planned), Dr. David Cho, MD, FACEP.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp4"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 17,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "imaging",
           "detail": "Left upper extremity (humerus, elbow, forearm) X-ray and CT angiography, Dr. David Cho, MD, FACEP.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp5"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p5"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 19,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "diagnosis",
           "detail": "Brachial artery, left arm CT angiography, Dr. David Cho, MD, FACEP.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp5"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p5"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 20,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "diagnosis",
           "detail": "Left upper extremity unsalvageable limb, complete mechanical and vascular disruption, Dr. David Cho, MD, FACEP.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp5"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p5"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_ungrounded",
+        "severity": "critical",
         "candidate_index": 21,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "imaging",
           "detail": "Left elbow and forearm angiography, Dr. David Cho, MD, FACEP.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp6"
-        }
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p6"
+        },
+        "audit_issue": "wrong_date"
       },
       {
         "status": "extra_grounded",
@@ -639,15 +614,16 @@
         }
       },
       {
-        "status": "extra_grounded",
-        "severity": "minor",
+        "status": "extra_ungrounded",
+        "severity": "critical",
         "candidate_index": 29,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "imaging",
           "detail": "Elevated WBC, low Hgb, low Hct consistent with blood loss/inflammation.",
           "source": "02_Inpatient_Surgery_and_Ward_Stay p7"
-        }
+        },
+        "audit_issue": "wrong_date"
       },
       {
         "status": "extra_grounded",
@@ -661,16 +637,15 @@
         }
       },
       {
-        "status": "extra_ungrounded",
-        "severity": "critical",
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 31,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "imaging",
           "detail": "Urine drug screen.",
           "source": "02_Inpatient_Surgery_and_Ward_Stay p7"
-        },
-        "audit_issue": "unsupported"
+        }
       },
       {
         "status": "extra_unaudited",
@@ -794,16 +769,15 @@
         }
       },
       {
-        "status": "extra_ungrounded",
-        "severity": "critical",
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 51,
         "candidate_event": {
           "date": "2024-11-12",
           "type": "procedure",
           "detail": "Left stump neuroma excision and deep muscle transposition (planned), Dr. Marcus Vance.",
           "source": "03_Ortho_Followups_and_Neuroma_Revision p2"
-        },
-        "audit_issue": "wrong_date"
+        }
       },
       {
         "status": "extra_grounded",
@@ -835,19 +809,20 @@
           "date": "2024-12-15",
           "type": "therapy",
           "detail": "Physical and occupational therapy (cancelled), M. Reyes.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp1"
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p1"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_ungrounded",
+        "severity": "critical",
         "candidate_index": 56,
         "candidate_event": {
           "date": "2024-12-15",
           "type": "procedure",
           "detail": "Left arm Myoelectric Transhumeral Prosthesis prescription (considered).",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp1"
-        }
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p1"
+        },
+        "audit_issue": "unsupported"
       },
       {
         "status": "extra_unaudited",
@@ -857,40 +832,42 @@
           "date": "2025-01-10",
           "type": "medication",
           "detail": "Current medication: Gabapentin 600mg TID.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp2"
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_ungrounded",
+        "severity": "critical",
         "candidate_index": 59,
         "candidate_event": {
           "date": null,
           "type": "procedure",
           "detail": "Left arm amputation.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp2"
-        }
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+        },
+        "audit_issue": "wrong_date"
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_ungrounded",
+        "severity": "critical",
         "candidate_index": 60,
         "candidate_event": {
           "date": null,
           "type": "procedure",
           "detail": "Left arm stump neuroma surgery.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp2"
-        }
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+        },
+        "audit_issue": "wrong_date"
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 61,
         "candidate_event": {
           "date": "2025-01-10",
           "type": "diagnosis",
           "detail": "Left hand phantom sensations.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp2"
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
         }
       },
       {
@@ -901,7 +878,7 @@
           "date": "2025-01-12",
           "type": "encounter",
           "detail": "Reduced left shoulder ROM, Sarah Jenkins, PT, DPT.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp3"
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p3"
         }
       },
       {
@@ -912,7 +889,7 @@
           "date": "2025-01-12",
           "type": "encounter",
           "detail": "Decreased left shoulder strength, Sarah Jenkins, PT, DPT.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp3"
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p3"
         }
       },
       {
@@ -923,40 +900,41 @@
           "date": "2025-01-12",
           "type": "therapy",
           "detail": "Left shoulder/arm myoelectric prosthesis training (planned), Sarah Jenkins, PT, DPT.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp3"
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p3"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_ungrounded",
+        "severity": "critical",
         "candidate_index": 67,
         "candidate_event": {
           "date": "2025-02-05",
           "type": "procedure",
           "detail": "Left arm stump neuroma revision, Dr. Vance.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp4"
-        }
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p4"
+        },
+        "audit_issue": "wrong_date"
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 68,
         "candidate_event": {
           "date": "2025-02-05",
           "type": "procedure",
           "detail": "Left residual biceps and triceps electrode calibration for myoelectric prosthesis, Robert Chen, CPO, LPO.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp4"
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p4"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 69,
         "candidate_event": {
           "date": "2025-02-05",
           "type": "therapy",
           "detail": "Left arm plan for therapy and follow-up (planned), Robert Chen, CPO, LPO.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp4"
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p4"
         }
       },
       {
@@ -1011,29 +989,29 @@
           "date": "2024-01-08",
           "type": "encounter",
           "detail": "Emergency department visit, Dr. David Cho, MD, FACEP.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp1"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 84,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "procedure",
           "detail": "Operating Room Services, CPT/HCPCS 27535, 3 units, $45,000.00, Dr. David Cho, MD, FACEP.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp1"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 85,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "procedure",
           "detail": "Principal procedure (ICD-10-PCS 0XJD0ZZ), Dr. David Cho, MD, FACEP.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp1"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
         }
       },
       {
@@ -1044,84 +1022,85 @@
           "date": "2024-01-08",
           "type": "encounter",
           "detail": "ICU admission/stay.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp1"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 87,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "procedure",
           "detail": "Anesthesia service, CPT 01402.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp1"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 88,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "diagnosis",
           "detail": "Diagnosis codes S48.112A and S47.2XXA (ICD-10 codes, clinical meaning not narratively confirmed in this chunk), Dr. David Cho, MD, FACEP.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp1"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_ungrounded",
+        "severity": "critical",
         "candidate_index": 89,
         "candidate_event": {
           "date": "2024-01-09",
           "type": "procedure",
           "detail": "Major orthopedic instrument tray supply charge, suggests a second procedure/OR use on 01/09/2024.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp2"
-        }
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+        },
+        "audit_issue": "unsupported"
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 90,
         "candidate_event": {
           "date": "2024-01-11",
           "type": "procedure",
           "detail": "Wound (site unspecified) wound culture.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp2"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 91,
         "candidate_event": {
           "date": "2024-01-11",
           "type": "procedure",
           "detail": "Wound (site unspecified) wound culture.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp2"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 92,
         "candidate_event": {
           "date": "2024-01-11",
           "type": "procedure",
           "detail": "Cervical spine rigid cervical collar application, billed under CPT 96365 (code mismatch with described item, no further clinical narrative given).",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp2"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 93,
         "candidate_event": {
           "date": "2024-01-12",
           "type": "medication",
           "detail": "01/12/2024, 0250, J1650, OXYCODONE 5MG TAB.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp2"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
         }
       },
       {
@@ -1132,95 +1111,95 @@
           "date": "2024-01-14",
           "type": "medication",
           "detail": "01/14/2024, 0250, J8499, MORPHINE SULFATE 4MG INJ.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp2"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 95,
         "candidate_event": {
           "date": "2024-01-15",
           "type": "imaging",
           "detail": "Intraoperative C-arm fluoroscopy, suggesting an OR procedure on 01/15/2024.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp2"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 96,
         "candidate_event": {
           "date": "2024-11-12",
           "type": "procedure",
           "detail": "Operating room procedure, CPT 76000, no further clinical narrative provided, Dr. David Cho, MD, FACEP.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp3"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 97,
         "candidate_event": {
           "date": "2024-11-12",
           "type": "procedure",
           "detail": "Principal procedure (ICD-10-PCS 0QSG04Z), no further clinical narrative given, Dr. David Cho, MD, FACEP.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp3"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 98,
         "candidate_event": {
           "date": "2024-11-12",
           "type": "procedure",
           "detail": "Anesthesia service, CPT 01402.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp3"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 99,
         "candidate_event": {
           "date": "2024-11-12",
           "type": "diagnosis",
           "detail": "Diagnosis codes M96.5 (postprocedural scoliosis, per code, but not clinically confirmed in this chunk) and G54.6, Dr. David Cho, MD, FACEP.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp3"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 100,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "procedure",
           "detail": "24920, 01/08/2024, DX A, Referring Provider Dr. Marcus Vance, MD, FACS, Dr. Marcus Vance, MD, FACS.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp4"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p4"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 101,
         "candidate_event": {
           "date": "2024-11-12",
           "type": "procedure",
           "detail": "Peripheral nerve (per CPT code convention, not clinically confirmed in text) M96.5, Dr. Marcus Vance, MD, FACS.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp5"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p5"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 102,
         "candidate_event": {
           "date": "2025-02-05",
           "type": "procedure",
           "detail": "Lower limb (per code convention, not narratively confirmed) S48.112D, Robert Chen, CPO, LPO.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp6"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p6"
         }
       },
       {
@@ -1231,7 +1210,7 @@
           "date": "2025-01-12",
           "type": "therapy",
           "detail": "S48.112D, G54.6, Sarah Jenkins, PT, DPT.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp7"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p7"
         }
       },
       {
@@ -1242,7 +1221,7 @@
           "date": "2024-01-08",
           "type": "medication",
           "detail": "Last tetanus Unsure - Tdap administered per protocol.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp3"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p3"
         }
       },
       {
@@ -1341,7 +1320,7 @@
           "date": "2025-01-10",
           "type": "medication",
           "detail": "Current medication: Tylenol Extra Strength.",
-          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series pp2"
+          "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
         }
       },
       {
@@ -1352,7 +1331,7 @@
           "date": "2024-01-14",
           "type": "medication",
           "detail": "01/14/2024, 0250, J8499, LISINOPRIL 10MG TAB.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp2"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
         }
       },
       {
@@ -1363,7 +1342,7 @@
           "date": "2024-01-08",
           "type": "medication",
           "detail": "Pharmacy charge, HCPCS J1650.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp1"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
         }
       },
       {
@@ -1374,18 +1353,18 @@
           "date": "2024-11-12",
           "type": "medication",
           "detail": "Pharmacy charge, HCPCS J1650, specific medication not identified.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp3"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 118,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "diagnosis",
           "detail": "High fall risk.",
-          "source": "01_EMS_and_ED_Admit_2024-01-08 pp3"
+          "source": "01_EMS_and_ED_Admit_2024-01-08 p3"
         }
       },
       {
@@ -1444,14 +1423,14 @@
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 124,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "encounter",
           "detail": "Inpatient room and board.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp1"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
         }
       },
       {
@@ -1462,7 +1441,7 @@
           "date": "2024-02-15",
           "type": "encounter",
           "detail": "CLM-50761454, Midwest Regional Medical Center, billed $145,230.50, paid 116,184.40, EFT issued 02/15/2024.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp8"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p8"
         }
       },
       {
@@ -1554,36 +1533,36 @@
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 135,
         "candidate_event": {
           "date": "2024-01-08",
           "type": "procedure",
           "detail": "Laboratory panel, CPT 80048.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp1"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 136,
         "candidate_event": {
           "date": "2024-01-14",
           "type": "procedure",
           "detail": "CBC with differential.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp2"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
         }
       },
       {
-        "status": "extra_unaudited",
-        "severity": null,
+        "status": "extra_grounded",
+        "severity": "minor",
         "candidate_index": 137,
         "candidate_event": {
           "date": "2024-01-15",
           "type": "procedure",
           "detail": "Cervical spine rigid cervical collar, discharge supply.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp2"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
         }
       },
       {
@@ -1594,7 +1573,7 @@
           "date": "2025-02-10",
           "type": "therapy",
           "detail": "97110, 02/10/2025, 4 units, Sarah Jenkins, PT, Sarah Jenkins, PT, DPT.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp7"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p7"
         }
       },
       {
@@ -1605,7 +1584,7 @@
           "date": "2026-06-15",
           "type": "therapy",
           "detail": "97537, 06/15/2026, 4 units, Sarah Jenkins, PT, Sarah Jenkins, PT, DPT.",
-          "source": "06_Comprehensive_Billing_and_Financial_Audit pp7"
+          "source": "06_Comprehensive_Billing_and_Financial_Audit p7"
         }
       }
     ]
@@ -1633,6 +1612,111 @@
     }
   ],
   "additional_source_grounded_events_missing_from_reference": [
+    {
+      "index": 0,
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Left arm industrial machinery entrapment, arm crush injury.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "index": 1,
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Left arm/hand complete mechanical disruption, bone protrusion, cold pulseless hand.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "index": 2,
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Left arm tourniquet application, factory responder.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "index": 3,
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Machine dismantled by emergency crews to free arm.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "index": 5,
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "GCS 11, brief loss of consciousness (reported history).",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p1"
+    },
+    {
+      "index": 9,
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Consulting Dr. Marcus Vance, MD, FACS; Dr. Elena Rostova, MD, Dr. Marcus Vance, MD, FACS; Dr. Elena Rostova, MD.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p2"
+    },
+    {
+      "index": 11,
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Serum ETOH test (ordered).",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p3"
+    },
+    {
+      "index": 12,
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Left upper extremity crush injury with complete brachial artery and nerve transection, exposed bone, massive soft tissue loss, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
+    },
+    {
+      "index": 14,
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Immediate orthopedic trauma consultation (Dr. Marcus Vance) (ordered), Dr. Marcus Vance.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
+    },
+    {
+      "index": 15,
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "PRBC transfusion: packed red blood cells 2 units, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
+    },
+    {
+      "index": 16,
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Left arm emergent amputation (planned), Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p4"
+    },
+    {
+      "index": 17,
+      "date": "2024-01-08",
+      "type": "imaging",
+      "detail": "Left upper extremity (humerus, elbow, forearm) X-ray and CT angiography, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p5"
+    },
+    {
+      "index": 19,
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Brachial artery, left arm CT angiography, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p5"
+    },
+    {
+      "index": 20,
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Left upper extremity unsalvageable limb, complete mechanical and vascular disruption, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p5"
+    },
+    {
+      "index": 21,
+      "date": "2024-01-08",
+      "type": "imaging",
+      "detail": "Left elbow and forearm angiography, Dr. David Cho, MD, FACEP.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p6"
+    },
     {
       "index": 23,
       "date": "2024-01-08",
@@ -1746,6 +1830,48 @@
       "source": "03_Ortho_Followups_and_Neuroma_Revision p3"
     },
     {
+      "index": 56,
+      "date": "2024-12-15",
+      "type": "procedure",
+      "detail": "Left arm Myoelectric Transhumeral Prosthesis prescription (considered).",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p1"
+    },
+    {
+      "index": 59,
+      "date": null,
+      "type": "procedure",
+      "detail": "Left arm amputation.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+    },
+    {
+      "index": 60,
+      "date": null,
+      "type": "procedure",
+      "detail": "Left arm stump neuroma surgery.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+    },
+    {
+      "index": 61,
+      "date": "2025-01-10",
+      "type": "diagnosis",
+      "detail": "Left hand phantom sensations.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2"
+    },
+    {
+      "index": 68,
+      "date": "2025-02-05",
+      "type": "procedure",
+      "detail": "Left residual biceps and triceps electrode calibration for myoelectric prosthesis, Robert Chen, CPO, LPO.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p4"
+    },
+    {
+      "index": 69,
+      "date": "2025-02-05",
+      "type": "therapy",
+      "detail": "Left arm plan for therapy and follow-up (planned), Robert Chen, CPO, LPO.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p4"
+    },
+    {
       "index": 76,
       "date": "2026-06-22",
       "type": "diagnosis",
@@ -1760,11 +1886,137 @@
       "source": "05_Prior_Medical_Records_2022 p1"
     },
     {
+      "index": 84,
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Operating Room Services, CPT/HCPCS 27535, 3 units, $45,000.00, Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "index": 85,
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Principal procedure (ICD-10-PCS 0XJD0ZZ), Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "index": 87,
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Anesthesia service, CPT 01402.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "index": 88,
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "Diagnosis codes S48.112A and S47.2XXA (ICD-10 codes, clinical meaning not narratively confirmed in this chunk), Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "index": 89,
+      "date": "2024-01-09",
+      "type": "procedure",
+      "detail": "Major orthopedic instrument tray supply charge, suggests a second procedure/OR use on 01/09/2024.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "index": 90,
+      "date": "2024-01-11",
+      "type": "procedure",
+      "detail": "Wound (site unspecified) wound culture.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "index": 91,
+      "date": "2024-01-11",
+      "type": "procedure",
+      "detail": "Wound (site unspecified) wound culture.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "index": 92,
+      "date": "2024-01-11",
+      "type": "procedure",
+      "detail": "Cervical spine rigid cervical collar application, billed under CPT 96365 (code mismatch with described item, no further clinical narrative given).",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "index": 93,
+      "date": "2024-01-12",
+      "type": "medication",
+      "detail": "01/12/2024, 0250, J1650, OXYCODONE 5MG TAB.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "index": 95,
+      "date": "2024-01-15",
+      "type": "imaging",
+      "detail": "Intraoperative C-arm fluoroscopy, suggesting an OR procedure on 01/15/2024.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "index": 96,
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Operating room procedure, CPT 76000, no further clinical narrative provided, Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
+    },
+    {
+      "index": 97,
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Principal procedure (ICD-10-PCS 0QSG04Z), no further clinical narrative given, Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
+    },
+    {
+      "index": 98,
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Anesthesia service, CPT 01402.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
+    },
+    {
+      "index": 99,
+      "date": "2024-11-12",
+      "type": "diagnosis",
+      "detail": "Diagnosis codes M96.5 (postprocedural scoliosis, per code, but not clinically confirmed in this chunk) and G54.6, Dr. David Cho, MD, FACEP.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
+    },
+    {
+      "index": 100,
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "24920, 01/08/2024, DX A, Referring Provider Dr. Marcus Vance, MD, FACS, Dr. Marcus Vance, MD, FACS.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p4"
+    },
+    {
+      "index": 101,
+      "date": "2024-11-12",
+      "type": "procedure",
+      "detail": "Peripheral nerve (per CPT code convention, not clinically confirmed in text) M96.5, Dr. Marcus Vance, MD, FACS.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p5"
+    },
+    {
+      "index": 102,
+      "date": "2025-02-05",
+      "type": "procedure",
+      "detail": "Lower limb (per code convention, not narratively confirmed) S48.112D, Robert Chen, CPO, LPO.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p6"
+    },
+    {
       "index": 111,
       "date": "2024-01-08",
       "type": "medication",
       "detail": "PRN pain medication: Oxycodone 5-10mg PO PRN.",
       "source": "02_Inpatient_Surgery_and_Ward_Stay p3"
+    },
+    {
+      "index": 118,
+      "date": "2024-01-08",
+      "type": "diagnosis",
+      "detail": "High fall risk.",
+      "source": "01_EMS_and_ED_Admit_2024-01-08 p3"
     },
     {
       "index": 119,
@@ -1779,6 +2031,13 @@
       "type": "procedure",
       "detail": "Left arm stump JP drain placement, Dr. Marcus Vance, MD, FACS.",
       "source": "02_Inpatient_Surgery_and_Ward_Stay p1"
+    },
+    {
+      "index": 124,
+      "date": "2024-01-08",
+      "type": "encounter",
+      "detail": "Inpatient room and board.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
     },
     {
       "index": 127,
@@ -1800,17 +2059,56 @@
       "type": "diagnosis",
       "detail": "Head no loss of consciousness reported, Dr. Arthur Pendelton.",
       "source": "05_Prior_Medical_Records_2022 p1"
+    },
+    {
+      "index": 135,
+      "date": "2024-01-08",
+      "type": "procedure",
+      "detail": "Laboratory panel, CPT 80048.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
+    },
+    {
+      "index": 136,
+      "date": "2024-01-14",
+      "type": "procedure",
+      "detail": "CBC with differential.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
+    },
+    {
+      "index": 137,
+      "date": "2024-01-15",
+      "type": "procedure",
+      "detail": "Cervical spine rigid cervical collar, discharge supply.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2"
     }
   ],
   "candidate_events_flagged_unsupported_by_audit": [
     {
-      "doc_id": "02_Inpatient_Surgery_and_Ward_Stay",
-      "event_index": 31,
-      "date": "2024-01-08",
-      "detail": "Urine drug screen.",
-      "source": "02_Inpatient_Surgery_and_Ward_Stay p7",
-      "explanation": "This is a duplicate of event 30 referencing the same single urine drug screen panel (cannabinoids and ethanol), not a distinct second test.",
-      "confidence": 0.6
+      "doc_id": "04_Prosthetic_Fitting_and_Rehabilitation_Series",
+      "event_index": 56,
+      "date": "2024-12-15",
+      "detail": "Left arm Myoelectric Transhumeral Prosthesis prescription (considered).",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p1",
+      "explanation": "p1 states the prosthetic prescription was submitted by NextStep Prosthetics and is under peer review by the insurer as of the 12/15/2024 letter, not that the prescription itself was made or 'considered' on that date; the letter is about a denial/delay notification, so framing it as the prescription event is a stretch.",
+      "confidence": 0.55
+    },
+    {
+      "doc_id": "04_Prosthetic_Fitting_and_Rehabilitation_Series",
+      "event_index": 57,
+      "date": "2025-01-10",
+      "detail": "Status post left arm amputation.",
+      "source": "04_Prosthetic_Fitting_and_Rehabilitation_Series p2",
+      "explanation": "p2 intake form says 'Rehab for left arm amputation and training with new prosthetic arm' and lists 'Amputation Jan 2024' under treatments tried, supporting status post amputation, but the visit itself is dated 01/10/2025 as the encounter, which matches; this is essentially accurate.",
+      "confidence": 0.75
+    },
+    {
+      "doc_id": "06_Comprehensive_Billing_and_Financial_Audit",
+      "event_index": 89,
+      "date": "2024-01-09",
+      "detail": "Major orthopedic instrument tray supply charge, suggests a second procedure/OR use on 01/09/2024.",
+      "source": "06_Comprehensive_Billing_and_Financial_Audit p2",
+      "explanation": "p2 lists '01/09/2024, 0360, A4550, STERILE INSTRUMENT TRAY, MAJOR ORTHO' as a supply charge, but the inference of 'a second procedure/OR use' is an interpretive addition not stated in the source.",
+      "confidence": 0.55
     }
   ],
   "candidate_events_flagged_contradicted_by_audit": []

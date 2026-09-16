@@ -17,7 +17,7 @@ from typing import Any
 
 from chronos import timeline as chronos_timeline
 from evalkit.budget import BudgetExceeded, BudgetTracker
-from evalkit.discover import Case
+from evalkit.discover import Case, relpath
 from evalkit.llm import call_json
 
 HIGH_MATERIALITY_TYPES = {"procedure", "diagnosis", "imaging"}
@@ -63,8 +63,19 @@ def _sample_routine(indexed: list[tuple[int, dict]], n: int) -> list[tuple[int, 
 
 
 def _parse_source(source: str) -> tuple[str, int] | None:
-    """'01_ems_and_ed p8' -> ('01_ems_and_ed', 8). None if unparseable."""
-    match = re.match(r"^(.*?)\s+p(\d+)$", (source or "").strip())
+    """'01_ems_and_ed p8' -> ('01_ems_and_ed', 8). None if unparseable.
+
+    Accepts one-or-more leading 'p' (`p+`) as defense-in-depth against a
+    malformed "document pp8"-style source string -- the real fix is
+    upstream (normalize.py now coerces every observed page format to a
+    plain int before it ever reaches `f"{doc} p{page}"` composition), but
+    this parser must never silently drop an event just because an older,
+    already-committed candidate timeline (extracted before that fix) still
+    has the bug (FINDINGS.md: confirmed for real -- 75/140 of case-davis's
+    committed final timeline events had this exact "pp1"-style source
+    string, and this regex's stricter, single-'p' version silently
+    excluded every one of them from the audit with zero record)."""
+    match = re.match(r"^(.*?)\s+p+(\d+)$", (source or "").strip())
     if not match:
         return None
     return match.group(1), int(match.group(2))
@@ -115,9 +126,21 @@ class AuditReport:
     questionable_dates: list[dict] = field(default_factory=list)
     incorrect_source_attribution: list[dict] = field(default_factory=list)
     judge_call_failures: list[dict] = field(default_factory=list)
+    # Events whose `source` string couldn't be parsed at all (doc_id/page
+    # extraction failed) -- these used to be silently `continue`d out of the
+    # audit with zero record anywhere (FINDINGS.md: a real, confirmed gap).
+    # Recorded here explicitly instead, so audit completion accounting can
+    # never look artificially higher than it really is.
+    unparseable_sources: list[dict] = field(default_factory=list)
     events_total: int = 0
     events_fully_audited: int = 0
     events_sampled_routine: int = 0
+    # len(to_audit) -- every event actually SELECTED for audit (high-materiality +
+    # the routine sample), before any parsing/OCR/judge-call failures are
+    # subtracted. This is the honest denominator for "how much of what we meant
+    # to audit did we actually complete" -- events_fully_audited alone is a
+    # materiality classification, not a completion count (FINDINGS.md).
+    events_selected_for_audit: int = 0
     # index -> "yes"|"partial"|"no", for every event the judge actually returned
     # a verdict on (PLAN.md source_grounded_precision; also used by compare.py
     # to tell "genuinely additional, source-grounded" candidate events apart
@@ -138,6 +161,9 @@ class AuditReport:
             if v == "yes" or (v == "partial" and self.issue_by_index.get(i, "none") == "none")
         )
         audited = len(self.source_support_by_index)
+        completion_rate = (
+            round(audited / self.events_selected_for_audit, 3) if self.events_selected_for_audit else None
+        )
         return {
             "case_id": self.case_id,
             "reference_path": self.reference_path,
@@ -147,14 +173,22 @@ class AuditReport:
             "questionable_dates": self.questionable_dates,
             "incorrect_source_attribution": self.incorrect_source_attribution,
             "judge_call_failures": self.judge_call_failures,
+            "unparseable_sources": self.unparseable_sources,
             "source_support_by_index": self.source_support_by_index,
             "issue_by_index": self.issue_by_index,
             "coverage": {
                 "events_total": self.events_total,
                 "events_fully_audited_high_materiality": self.events_fully_audited,
                 "events_sampled_routine": self.events_sampled_routine,
+                # Explicitly separated per FINDINGS.md: "selected" (what the risk-based
+                # sampling picked out) is NOT the same as "completed" (what actually got a
+                # verdict back) -- a low completion rate must never hide behind a clean-
+                # looking precision number computed only over the completed subset.
+                "events_selected_for_audit": self.events_selected_for_audit,
                 "events_with_a_verdict": audited,
-                "source_grounded_precision": round(supported / audited, 3) if audited else None,
+                "audit_completion_rate": completion_rate,
+                "unparseable_sources_count": len(self.unparseable_sources),
+                "source_grounded_precision_among_completed": round(supported / audited, 3) if audited else None,
                 "routine_sample_method": (
                     f"evenly-spaced, deterministic, n={ROUTINE_SAMPLE_SIZE} "
                     "(PLAN.md SS7/D.2: risk-based, not exhaustive by default)"
@@ -168,7 +202,7 @@ def audit_reference_timeline(case: Case, tracker: BudgetTracker) -> AuditReport:
     ref_path = case.reference_timeline_path()
     raw = json.loads(ref_path.read_text(encoding="utf-8"))
     events = chronos_timeline.parse(raw)
-    return audit_events(case, events, tracker, source_path=str(ref_path))
+    return audit_events(case, events, tracker, source_path=relpath(ref_path))
 
 
 def audit_events(
@@ -188,21 +222,29 @@ def audit_events(
     sampled_routine = _sample_routine(routine, ROUTINE_SAMPLE_SIZE)
     to_audit = high + sampled_routine
 
-    by_doc: dict[str, list[dict]] = {}
-    for i, e in to_audit:
-        parsed = _parse_source(e.get("source") or "")
-        if parsed is None:
-            continue
-        doc_id, _page = parsed
-        by_doc.setdefault(doc_id, []).append(e)
-
     report = AuditReport(
         case_id=case.case_id,
         reference_path=source_path,
         events_total=len(events),
         events_fully_audited=len(high),
         events_sampled_routine=len(sampled_routine),
+        events_selected_for_audit=len(to_audit),
     )
+
+    by_doc: dict[str, list[dict]] = {}
+    for i, e in to_audit:
+        parsed = _parse_source(e.get("source") or "")
+        if parsed is None:
+            # Never silently drop this -- an unparseable source used to just `continue`
+            # with zero record anywhere, which could make audit completion look far
+            # higher than it really was (FINDINGS.md: confirmed for real, case-davis).
+            report.unparseable_sources.append({
+                "event_index": e["index"], "date": e.get("date"), "detail": e.get("detail"),
+                "raw_source": e.get("source"),
+            })
+            continue
+        doc_id, _page = parsed
+        by_doc.setdefault(doc_id, []).append(e)
 
     for doc_id, doc_events in sorted(by_doc.items()):
         try:

@@ -17,14 +17,27 @@ fact set is reused for every tool scored against that benchmark timeline.
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 from typing import Any, Optional
 
 from chronos import timeline as chronos_timeline
 from evalkit.budget import BudgetTracker
-from evalkit.discover import Case
+from evalkit.discover import Case, relpath
 from evalkit.llm import call_json
+
+
+def timeline_hash(events: list[dict]) -> str:
+    """Deterministic identity for a timeline -- used to verify a cached
+    material-fact set was actually built from the SAME timeline it's about
+    to grade coverage against, not merely "some timeline for this case_id"
+    (FINDINGS.md: a real, confirmed bug -- coverage for a summary generated
+    from our 202-event candidate timeline was silently scored against
+    material facts built from golden's 94-event benchmark timeline, because
+    caching was keyed only by case_id)."""
+    canonical = json.dumps(events, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
 MATERIAL_FACT_SYSTEM_PROMPT = """You are building the fixed set of material facts a clinical timeline \
 implies -- the facts a good attorney-facing summary of THIS TIMELINE should reflect. You will see only \
@@ -85,10 +98,13 @@ def build_material_fact_set(
     holds in spirit: the fact set is scoped to whatever timeline is passed
     in, never to a fact the summarizer wasn't actually given.
     """
+    timeline_source = "benchmark_reference"
     if events is None:
         ref_path = case.reference_timeline_path()
         events = chronos_timeline.parse(ref_path.read_text(encoding="utf-8"))
-        source_label = str(ref_path)
+        source_label = relpath(ref_path)
+    else:
+        timeline_source = "candidate_extraction"
     prompt = f"""Benchmark timeline for case `{case.case_id}` ({len(events)} events):
 
 {_format_events(events)}
@@ -103,6 +119,8 @@ Build the material fact set per the instructions above."""
         "case_id": case.case_id,
         "benchmark_timeline_path": source_label,
         "benchmark_event_count": len(events),
+        "timeline_hash": timeline_hash(events),
+        "timeline_source": timeline_source,
         "material_facts": result.get("material_facts", []),
     }
 
@@ -126,52 +144,66 @@ def load_frozen(case_id: str) -> dict[str, Any]:
 
 
 CANDIDATE_TIMELINES_DIR = Path(__file__).resolve().parents[2] / "runs" / "candidate_timelines"
+CANDIDATE_FACTS_DIR = Path(__file__).resolve().parents[2] / "results" / "material_facts" / "candidate"
 
 
 def get_or_build_material_facts(case: Case, tracker: BudgetTracker) -> dict[str, Any]:
-    """The material fact set to grade a summary's coverage against, for ANY
-    case -- not just the two with a frozen, human-spot-checked file.
+    """The material fact set to grade a summary's COVERAGE against -- always
+    built from, and verified against, the EXACT candidate timeline that was
+    actually fed to the summarizer (`runs/candidate_timelines/<case_id>.json`)
+    -- never from the benchmark reference (golden/input_timeline.json),
+    regardless of whether a frozen benchmark fact set already exists for
+    this case_id.
 
-    1. Reuse the frozen file if one exists (case-vance/case-davis: built
-       from their confirmed benchmark timeline, human-spot-checked before
-       freezing -- PLAN.md S9/S10. Never rebuilt once frozen; unaffected.)
-    2. Otherwise, build one now: from the case's benchmark reference if it
-       has one (golden/input_timeline), else from our own extracted
-       candidate timeline -- the only thing available for a genuinely new
-       case with no externally-supplied reference (CLAUDE.md's dynamic-
-       case-discovery requirement, extended to this step: a case dropped
-       into data/ with only OCR input must still be evaluable end to end).
-       Freezes the result so a later run reuses it instead of re-spending.
+    This is a deliberate, load-bearing distinction from `load_frozen()` /
+    the controlled benchmark's own material facts (results/material_facts/
+    <case_id>.json, built from golden/input_timeline -- correct there,
+    since the controlled benchmark's summaries genuinely were generated
+    from that exact timeline). This function is for callers grading a
+    summary generated from OUR OWN extraction (pipeline_demo.py, the CLI's
+    `evaluate`/`run` commands) -- a DIFFERENT timeline, with a different
+    event count (FINDINGS.md: confirmed for real -- case-vance's frozen
+    benchmark fact set was built from golden's 94 events, while the
+    candidate timeline actually summarized has 202; grading pipeline-demo
+    coverage against the 94-event-derived facts penalized the summarizer
+    for omitting facts it structurally could never have seen).
 
-       IMPORTANT, and flagged in the returned data (`human_spot_checked:
-       False`) rather than only in this docstring: this auto-built path
-       skips the human spot-check case-vance/case-davis's fact sets went
-       through before freezing (PLAN.md S9/S10's actual rigor standard).
-       A reviewer relying on this for a genuinely new case should spot-
-       check `results/material_facts/<case_id>.json` themselves before
-       trusting coverage scores computed against it, the same way the
-       original two were checked before this session trusted them.
+    Caching is keyed by (case_id, timeline_hash) under CANDIDATE_FACTS_DIR
+    -- never by case_id alone -- so a changed candidate timeline (e.g. after
+    a real extraction fix) can never silently reuse a stale fact set built
+    from a different timeline; the hash is verified on every load, not just
+    trusted from the filename.
+
+    IMPORTANT, flagged in the returned data (`human_spot_checked: False`):
+    this auto-built path skips the human spot-check case-vance/case-davis's
+    BENCHMARK fact sets went through before freezing (PLAN.md S9/S10's
+    actual rigor standard) -- a reviewer relying on a pipeline-demo/
+    `evaluate` coverage score should spot-check the relevant file under
+    results/material_facts/candidate/ themselves before trusting it, the
+    same way the two frozen benchmark fact sets were checked before this
+    session trusted them.
     """
-    try:
-        return load_frozen(case.case_id)
-    except FileNotFoundError:
-        pass
-
-    try:
-        fact_set = build_material_fact_set(case, tracker)
-        fact_set["human_spot_checked"] = False
-    except FileNotFoundError:
-        candidate_path = CANDIDATE_TIMELINES_DIR / f"{case.case_id}.json"
-        if not candidate_path.is_file():
-            raise FileNotFoundError(
-                f"No benchmark reference (golden/input_timeline) and no extracted timeline found "
-                f"for {case.case_id} -- run `extract {case.case_id}` first."
-            )
-        events = json.loads(candidate_path.read_text(encoding="utf-8"))["timeline"]["events"]
-        fact_set = build_material_fact_set(
-            case, tracker, events=events, source_label=f"our own extraction: {candidate_path}"
+    candidate_path = CANDIDATE_TIMELINES_DIR / f"{case.case_id}.json"
+    if not candidate_path.is_file():
+        raise FileNotFoundError(
+            f"No extracted timeline found for {case.case_id} -- run `extract {case.case_id}` first."
         )
-        fact_set["human_spot_checked"] = False
+    events = json.loads(candidate_path.read_text(encoding="utf-8"))["timeline"]["events"]
+    h = timeline_hash(events)
 
-    save_frozen(case.case_id, fact_set)
+    cached_path = CANDIDATE_FACTS_DIR / f"{case.case_id}-{h[:16]}.json"
+    if cached_path.is_file():
+        cached = json.loads(cached_path.read_text(encoding="utf-8"))
+        if cached.get("timeline_hash") == h:
+            return cached
+        # Hash mismatch (a cache-naming collision, or the file was hand-edited) --
+        # never trust a fact set whose recorded hash doesn't match; rebuild instead
+        # of silently serving stale/wrong-timeline facts.
+
+    fact_set = build_material_fact_set(
+        case, tracker, events=events, source_label=f"our own extraction: {relpath(candidate_path)}"
+    )
+    fact_set["human_spot_checked"] = False
+    CANDIDATE_FACTS_DIR.mkdir(parents=True, exist_ok=True)
+    cached_path.write_text(json.dumps(fact_set, indent=2), encoding="utf-8")
     return fact_set

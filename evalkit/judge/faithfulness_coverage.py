@@ -21,9 +21,17 @@ timeline it was generated from. The summary was written by a tool that saw ONLY 
 never had access to the original medical records, so it can only be right or wrong relative to what \
 the timeline actually says.
 
-STEP 1 -- ATOMIC CLAIMS. Decompose the summary into atomic factual claims. A single sentence often \
-contains several (a date, a finding, an attribution, a causal statement -- each is its own claim). \
-For each claim, determine:
+STEP 1 -- ATOMIC CLAIMS. Decompose the summary into atomic factual claims -- ONLY things the summary \
+text actually asserts. A single sentence often contains several (a date, a finding, an attribution, a \
+causal statement -- each is its own claim). For each claim, determine:
+
+CRITICAL RULE, do not violate it: a claim is something the summary SAYS, never something it DOESN'T \
+say. If a material fact from the timeline is missing, vague, or under-explained in the summary, that is \
+an OMISSION -- it belongs ONLY in Step 2 (material fact coverage) below, never as an entry in claims[]. \
+Do NOT create a claim like "no mention of X" or "summary omits Y" -- there is no claim to fact-check \
+when the summary says nothing. Putting an omission in claims[] would penalize FAITHFULNESS (does the \
+summary only assert what's true) for something that is actually a COVERAGE problem (did the summary \
+include everything material) -- these are deliberately separate dimensions and must never be conflated.
 
 - status:
   - "supported": the timeline states this, and the summary states it accurately
@@ -40,6 +48,9 @@ to a different physician
   - "minor": unsupported narrative flourish, nothing independently checkable
 - evidence_event_ids: the timeline event index/indices (from the numbered list below) this claim relates to
 - reason: one sentence explaining the verdict, citing the specific timeline content
+- summary_quote: the EXACT text from the summary (copy-pasted, not paraphrased) that makes this claim. \
+Every claim must be traceable to real summary text this way -- if you cannot quote the summary text that \
+asserts it, it is not a claim the summary actually makes, and you should not be creating it.
 
 STEP 2 -- MATERIAL FACT COVERAGE. You are given a fixed list of material facts derived from this same \
 timeline. For each one, does the summary reflect it -- "yes" (clearly stated), "partial" (touched on but \
@@ -57,7 +68,7 @@ Respond with ONLY this JSON, no other text, no markdown fences:
   "claims": [{"claim_id": "<c1>", "text": "<the claim, in your own words>",
               "status": "supported|unsupported|contradicted|overclaimed",
               "materiality": "critical|major|minor", "evidence_event_ids": [<int>, ...],
-              "reason": "<one sentence>"}],
+              "reason": "<one sentence>", "summary_quote": "<exact text from the summary>"}],
   "fact_coverage": [{"fact_id": "<from the material fact list>", "reflected": "yes|no|partial",
                       "notes": "<one sentence>"}],
   "usefulness": {"chronological_clarity": <1-5>, "concision": <1-5>, "organization": <1-5>,

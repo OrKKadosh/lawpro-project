@@ -109,12 +109,19 @@ def extract_candidates(
     category: str = "extraction",
     max_tokens: int = 16000,
     system_prompt: str = EXTRACTION_SYSTEM_PROMPT,
-) -> list[dict]:
+) -> tuple[list[dict], bool]:
     """Extract candidate events from one chunk of a document's OCR text.
 
     `chunk_text` should already carry [pN] page markers (see discover.py's
-    ocr_text / a page-range slice of it). Returns the raw list of candidate
-    dicts -- no dedup/salience/projection happens here.
+    ocr_text / a page-range slice of it). Returns (candidates, incomplete)
+    -- no dedup/salience/projection happens here. `incomplete=True` means
+    the model's response was cut off by max_tokens and only a PARTIAL set
+    of candidates could be recovered for this chunk (FINDINGS.md: this used
+    to be silently indistinguishable from a genuinely complete response --
+    `allow_salvage=True` here is a deliberate choice, recall-oriented
+    extraction prefers partial data over none, but the caller
+    (extract_all_candidates) MUST see this flag and act on it -- retry with
+    a smaller chunk -- rather than treating the chunk as done).
 
     `system_prompt` defaults to the frozen production prompt; the prompt
     iteration experiment (`prompt_experiment.py`) overrides it to compare
@@ -128,9 +135,10 @@ def extract_candidates(
 
 Extract every candidate clinical event per the instructions above."""
     result = call_json(
-        tracker, category, prompt=prompt, system=system_prompt, max_tokens=max_tokens
+        tracker, category, prompt=prompt, system=system_prompt, max_tokens=max_tokens, allow_salvage=True,
     )
+    incomplete = bool(result.pop("_incomplete_salvaged_response", False))
     candidates = result.get("candidates", [])
     for c in candidates:
         c["source_doc_id"] = doc_id
-    return candidates
+    return candidates, incomplete
