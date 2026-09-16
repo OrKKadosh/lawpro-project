@@ -20,3 +20,12 @@ Thumbs.db
 
 # Local Claude Code session state (machine/session-specific, not project config)
 .claude/scheduled_tasks.lock
+
+# Internal development/process artifacts -- kept locally, not part of the
+# reviewer-facing public submission.
+FINDINGS.md
+PROGRESS.md
+PLAN.md
+KICKOFF_PROMPT.md
+ERRORS.md
+CLAUDE.md

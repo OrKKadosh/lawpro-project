@@ -57,9 +57,7 @@ All API calls (extraction, evaluation judging, summarization) draw from one shar
 | | |
 |---|---|
 | `WRITEUP.md` | **The recommendation** — which summarizer to ship, confidence, what would change it |
-| `PLAN.md` | The evaluation methodology in full |
 | `DECISIONS.md` | Every design decision, with the reasoning (including real bugs found and fixed along the way) |
-| `FINDINGS.md` | Concrete data findings from the two test cases |
 | `results/` | Every current evaluation result, committed — readable without spending anything or rerunning code |
 | `results/historical/` | Superseded results, kept for provenance only — never current final evidence (see its own README) |
 | `evalkit/` | The implementation |
