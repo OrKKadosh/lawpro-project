@@ -5,7 +5,7 @@ What we're building, why it's structured this way, how it's evaluated, and in wh
 ## 1. Objective and evaluation principles
 
 - Recommend which of four black-box summarizers (A/B/C/D) LawPro should ship, backed by a defensible evaluation methodology, and deliver a runnable application that demonstrates the pipeline end-to-end.
-- Two cases, both with a confirmed exact input behind their 8 supplied summaries: `case-vance` (`golden/case-vance.timeline.json` — confirmed via the hiring contact, `FINDINGS.md`) and `case-davis` (`data/case-davis/summaries/input_timeline.json` — confirmed by the shipped file itself). Each case's 8 summaries form 4 same-tool run1/run2 pairs.
+- Two cases, both with a confirmed exact input behind their 8 supplied summaries: `case-vance` (`golden/case-vance.timeline.json` — confirmed by the user directly, `FINDINGS.md`'s "CONFIRMED FROM USER" section) and `case-davis` (`data/case-davis/summaries/input_timeline.json` — confirmed by the shipped file itself). Each case's 8 summaries form 4 same-tool run1/run2 pairs.
 - **A/B/C/D are case-local identifiers, not stable backends.** Every score is indexed `(case_id, tool_letter)`. No claim aggregates a letter across cases. "Not enough evidence for a global winner" is an acceptable conclusion if that's what the evidence shows.
 - Two experiments stay structurally separate and never share a scoring path (§2).
 - Factual correctness and stylistic quality are scored and reported separately; style can break a tie between factually-safe candidates, never compensate for a factual error.
@@ -138,7 +138,7 @@ Other Stage-0 metrics: date fidelity (event-date vs. note/billing/signing date s
 
 ## 8. Controlled summarizer benchmark
 
-Both cases have a confirmed exact input behind their 8 pre-generated summaries: Davis's `input_timeline.json` (the shipped file itself) and Vance's `golden/case-vance.timeline.json` (confirmed via direct communication with the hiring contact — `FINDINGS.md`). With input identity established for both, each case's 8 supplied summaries are the primary controlled benchmark directly.
+Both cases have a confirmed exact input behind their 8 pre-generated summaries: Davis's `input_timeline.json` (the shipped file itself) and Vance's `golden/case-vance.timeline.json` (confirmed by the user directly — `FINDINGS.md`'s "CONFIRMED FROM USER" section). With input identity established for both, each case's 8 supplied summaries are the primary controlled benchmark directly.
 
 - **Vance controlled benchmark**: the 8 supplied summaries (`A–D × run1/run2`), scored directly against golden — full faithfulness, coverage, usefulness, and pairwise-stability scores, on the same footing as Davis.
 - **Davis controlled benchmark**: unchanged — the 8 supplied summaries, scored directly against `input_timeline.json`.
@@ -181,7 +181,7 @@ Every judge: structured JSON in/out, schema-validated, one controlled repair-ret
 
 | | Timeline used | Pre-gen summaries | Fresh `/v1/summarize` | Judge calls | Exact-input certainty |
 |---|---|---|---|---|---|
-| Vance, controlled | golden, source-audited, unedited | 8 — is the controlled experiment (input confirmed via hiring contact) | Optional: 0–4, low priority | faithfulness+coverage+usefulness ×8; stability ×4 pairs | Yes — confirmed |
+| Vance, controlled | golden, source-audited, unedited | 8 — is the controlled experiment (input confirmed by the user directly) | Optional: 0–4, low priority | faithfulness+coverage+usefulness ×8; stability ×4 pairs | Yes — confirmed |
 | Davis, controlled | `input_timeline.json`, unedited | 8 — is the controlled experiment | Optional: 0–4, low priority | faithfulness+coverage+usefulness ×8; stability ×4 pairs | Yes — confirmed |
 | End-to-end, both cases | our extracted candidate timeline | none | 1–2 per case, through the tool(s) the controlled benchmark identifies as strong | reuses the same judges, separate `results/` path | n/a — uncontrolled demo, never cited for shipping |
 
@@ -277,7 +277,7 @@ Deterministic logic gets unit tests, no live API calls: date normalization (rela
 5. Full extraction pipeline on Vance, then Davis, using the frozen config.
 6. Stage-0 timeline evaluation scoring, both cases.
 7. Material-fact-set construction per case, frozen before any summary is judged.
-8. Controlled benchmark: both cases' 8 supplied summaries scored directly (input identity confirmed for both — Davis via `input_timeline.json`, Vance via `golden/case-vance.timeline.json` per the hiring contact); optional fresh runs for either case only as a sanity check.
+8. Controlled benchmark: both cases' 8 supplied summaries scored directly (input identity confirmed for both — Davis via `input_timeline.json`, Vance via `golden/case-vance.timeline.json` per the user's direct confirmation, `FINDINGS.md`); optional fresh runs for either case only as a sanity check.
 9. Judge calls and deterministic scoring — rubric/gate/fact-set already frozen from step 7, no post-hoc adjustment.
 10. End-to-end pipeline demo, separate results path.
 11. Optional sparse-input probe, if budget/time remain.

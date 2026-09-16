@@ -1,6 +1,6 @@
 {
   "case_id": "case-davis",
-  "description": "The final, strict-schema clinical timeline our extraction pipeline produced for this case (the exact output of run_full_extraction -> project_events). This is what a summarizer tool actually receives as input in the end-to-end pipeline demo.",
+  "description": "The final, strict-schema clinical timeline our extraction pipeline produced for this case.",
   "event_count": 140,
   "validation_problems": [],
   "events": [
@@ -535,7 +535,7 @@
     {
       "date": "2024-01-08",
       "type": "diagnosis",
-      "detail": "Diagnosis codes S48.112A and S47.2XXA (ICD-10 codes, clinical meaning not narratively confirmed in this chunk), Dr. David Cho, MD, FACEP.",
+      "detail": "S48.112A, S47.2XXA diagnosis codes, admit dx S48.112A, Dr. David Cho, MD, FACEP.",
       "source": "06_Comprehensive_Billing_and_Financial_Audit p1"
     },
     {
@@ -601,7 +601,7 @@
     {
       "date": "2024-11-12",
       "type": "diagnosis",
-      "detail": "Diagnosis codes M96.5 (postprocedural scoliosis, per code, but not clinically confirmed in this chunk) and G54.6, Dr. David Cho, MD, FACEP.",
+      "detail": "M96.5, G54.6 diagnosis codes; admit dx M96.5, Dr. David Cho, MD, FACEP.",
       "source": "06_Comprehensive_Billing_and_Financial_Audit p3"
     },
     {
@@ -613,13 +613,13 @@
     {
       "date": "2024-11-12",
       "type": "procedure",
-      "detail": "Peripheral nerve (per CPT code convention, not clinically confirmed in text) M96.5, Dr. Marcus Vance, MD, FACS.",
+      "detail": "M96.5, Dr. Marcus Vance, MD, FACS.",
       "source": "06_Comprehensive_Billing_and_Financial_Audit p5"
     },
     {
       "date": "2025-02-05",
       "type": "procedure",
-      "detail": "Lower limb (per code convention, not narratively confirmed) S48.112D, Robert Chen, CPO, LPO.",
+      "detail": "S48.112D, Robert Chen, CPO, LPO.",
       "source": "06_Comprehensive_Billing_and_Financial_Audit p6"
     },
     {

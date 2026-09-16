@@ -81,24 +81,50 @@ def _parse_source(source: str) -> tuple[str, int] | None:
     return match.group(1), int(match.group(2))
 
 
-def _build_prompt(doc_id: str, ocr_text: str, events: list[dict]) -> str:
+PAGE_CONTEXT_WINDOW = 1  # pages of context on either side of the cited page (PLAN.md S D.2)
+
+
+def _windowed_ocr_text(pages: list[str], cited_pages: list[int], window: int = PAGE_CONTEXT_WINDOW) -> str:
+    """OCR text restricted to the pages an event actually CITED, plus a
+    small context window either side -- never the whole document.
+    (FINDINGS.md: a real, confirmed gap -- the judge used to receive the
+    entire document for every event, so it could never distinguish "the
+    fact is genuinely on the cited page" from "the fact exists SOMEWHERE
+    in the document but not on the cited page"; both would pass as fully
+    supported.) Included page numbers are explicit in the output so the
+    prompt can tell the judge exactly which of them is the CITED one."""
+    include: set[int] = set()
+    for p in cited_pages:
+        for i in range(p - window, p + window + 1):
+            if 1 <= i <= len(pages):
+                include.add(i)
+    return "\n\n".join(f"[p{i}]\n{pages[i - 1]}" for i in sorted(include))
+
+
+def _build_prompt(doc_id: str, ocr_text: str, events: list[dict], cited_pages: list[int]) -> str:
     events_json = json.dumps(
         [
             {
                 "index": e["index"], "date": e["date"], "type": e["type"],
-                "detail": e["detail"], "source": e["source"],
+                "detail": e["detail"], "source": e["source"], "cited_page": e.get("_cited_page"),
             }
             for e in events
         ],
         indent=2,
     )
-    return f"""Source document `{doc_id}` (OCR text, pages marked [pN]):
+    return f"""Source document `{doc_id}` -- ONLY the cited page(s) and immediate neighbors are shown \
+below (pages marked [pN]), not the whole document. Pages actually cited by an event: {cited_pages}.
 
 {ocr_text}
 
 ---
 
-Reference timeline events citing this document:
+Reference timeline events citing this document. Each event's `cited_page` field names the SPECIFIC \
+page it claims to be supported by -- you must judge whether the event is supported ON THAT CITED \
+PAGE SPECIFICALLY, not merely "somewhere in what's shown above". If the fact is genuinely absent \
+from the cited page but you can see it stated on a DIFFERENT page shown above, that is a citation \
+error, not support: set source_supports="no" and issue="wrong_attribution", and say in your \
+explanation which page it actually appears on instead.
 {events_json}
 
 ---
@@ -108,7 +134,7 @@ Respond with ONLY this JSON structure, no other text, no markdown fences:
   "event_audits": [
     {{"index": <int>, "source_supports": "yes|no|partial",
       "issue": "none|unsupported|contradicted|wrong_date|wrong_attribution",
-      "explanation": "<one sentence, quote or paraphrase the source>", "confidence": <0.0-1.0>}}
+      "explanation": "<one sentence, quote or paraphrase the source; if wrong_attribution because the fact is on a different page than cited, say which page>", "confidence": <0.0-1.0>}}
   ],
   "notable_omissions": [
     "<one sentence per clinically material fact in this document not reflected in any event above>"
@@ -243,17 +269,20 @@ def audit_events(
                 "raw_source": e.get("source"),
             })
             continue
-        doc_id, _page = parsed
+        doc_id, page = parsed
+        e["_cited_page"] = page
         by_doc.setdefault(doc_id, []).append(e)
 
     for doc_id, doc_events in sorted(by_doc.items()):
         try:
-            ocr_text = case.ocr_text(doc_id)
+            pages = case.ocr_pages(doc_id)
         except FileNotFoundError:
             report.judge_call_failures.append({"doc_id": doc_id, "error": "OCR file not found"})
             continue
 
-        prompt = _build_prompt(doc_id, ocr_text, doc_events)
+        cited_pages = sorted({ev["_cited_page"] for ev in doc_events})
+        ocr_text = _windowed_ocr_text(pages, cited_pages, window=PAGE_CONTEXT_WINDOW)
+        prompt = _build_prompt(doc_id, ocr_text, doc_events, cited_pages)
         try:
             result = call_json(
                 tracker, category, prompt=prompt, system=AUDIT_SYSTEM_PROMPT, max_tokens=4096

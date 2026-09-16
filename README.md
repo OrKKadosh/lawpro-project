@@ -60,7 +60,8 @@ All API calls (extraction, evaluation judging, summarization) draw from one shar
 | `PLAN.md` | The evaluation methodology in full |
 | `DECISIONS.md` | Every design decision, with the reasoning (including real bugs found and fixed along the way) |
 | `FINDINGS.md` | Concrete data findings from the two test cases |
-| `results/` | Every evaluation result, committed — readable without spending anything or rerunning code |
+| `results/` | Every current evaluation result, committed — readable without spending anything or rerunning code |
+| `results/historical/` | Superseded results, kept for provenance only — never current final evidence (see its own README) |
 | `evalkit/` | The implementation |
 | `tests/` | The test suite (`pytest`), no live API calls |
 | `chronos/` | Provided, read-only — the API client and the strict timeline schema |

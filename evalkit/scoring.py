@@ -17,19 +17,32 @@ SEVERITY_WEIGHTS = {"critical": 5, "major": 2, "minor": 1}
 GATE_TRIGGER_STATUSES = {"unsupported", "contradicted", "overclaimed"}
 REFLECTED_SCORE = {"yes": 1.0, "partial": 0.5, "no": 0.0}
 
-# A "claim" the judge invented to describe something the SUMMARY DOESN'T SAY
-# is not a factual assertion the summary made -- it's an omission, and
-# omissions belong only in fact_coverage, never in claims[] (FINDINGS.md: a
-# real, pervasive bug -- omission-shaped entries like "No mention of prior
-# 2022 shoulder injury" were tagged status=unsupported and lowered
-# faithfulness for something the summary never asserted in the first place).
-# Deterministic safeguard, not just a prompt instruction (PLAN.md S10's own
-# principle -- "the judge proposes evidence, code decides the number" --
-# extends here: code must not blindly trust that the judge followed the
-# instruction not to do this). Applied uniformly to every claims[] this
-# function ever sees, including already-committed judge output from before
-# the prompt was fixed, so historical results get corrected by re-scoring
-# rather than needing a re-judge to be trustworthy.
+# LEGACY / DIAGNOSTIC-ONLY FALLBACK -- NOT the primary safeguard against
+# omission-shaped claims anymore. That job now belongs structurally to
+# evalkit/judge/schemas.py's validate_faithfulness_coverage_output(), which
+# REQUIRES every claim to carry a non-empty summary_quote that's an actual
+# substring of the summary, with a mandatory repair-retry and a hard
+# JudgeOutputInvalid failure if it still isn't -- checked BEFORE a judge
+# result is ever handed to this scoring layer (evalkit/judge/faithfulness_
+# coverage.py's judge_summary()). Every controlled-benchmark run scored
+# after that fix was introduced has real, validated summary_quotes on
+# every claim, so this regex heuristic never fires for them (the `if quote:
+# return False` line below always short-circuits first).
+#
+# This heuristic exists ONLY for claims with no summary_quote at all --
+# i.e. judge output collected before the schema-validation fix existed.
+# FOUND, THE HARD WAY, TO BE UNSAFE AS A GENERAL-PURPOSE CLASSIFIER
+# (FINDINGS.md): checked against the real pre-fix committed benchmark data,
+# it wrongly matched genuine unsupported factual assertions whose `reason`
+# field happened to contain phrasing like "does not state" (e.g. "The
+# rehabilitation delay was caused by insurer authorization" -- a real,
+# major-materiality unsupported claim -- was at risk of being excluded
+# because its reason said "...timeline does not state this delay as the
+# actual explanation..."). Do NOT rely on this path for the primary
+# controlled benchmark; it is retained only so a caller that somehow still
+# has old, quote-less judge JSON on hand (a historical diagnostic run, not
+# the controlled benchmark) doesn't crash outright -- never trust its
+# output as authoritative, and never use it in place of a real re-judge.
 _OMISSION_CLAIM_RE = re.compile(
     r"\bno mention\b|\bnot mention(ed)?\b|\bomit(s|ted|ting)?\b|"
     r"\bmissing from (the )?summary\b|\babsent from (the )?summary\b|"
@@ -40,13 +53,15 @@ _OMISSION_CLAIM_RE = re.compile(
 
 
 def is_omission_shaped_claim(claim: dict[str, Any]) -> bool:
-    """True if this claims[] entry describes an OMISSION (content the summary
-    doesn't contain) rather than a factual assertion the summary actually
-    makes. A claim with a real `summary_quote` (verbatim text from the
-    summary) is never omission-shaped by construction -- it's anchored to
-    something the summary really says. Without one (older judge output
-    predating the summary_quote safeguard, or a judge that ignored the
-    instruction), fall back to detecting the omission language directly."""
+    """LEGACY-ONLY fallback -- see the module-level comment above
+    _OMISSION_CLAIM_RE for the full rationale and its known false-positive
+    risk. True if this claims[] entry describes an OMISSION (content the
+    summary doesn't contain) rather than a factual assertion the summary
+    actually makes. A claim with a real `summary_quote` (verbatim text from
+    the summary, now REQUIRED and validated upstream for any current judge
+    run) is never omission-shaped by construction -- it's anchored to
+    something the summary really says, and this function returns False for
+    it immediately without ever consulting the unsafe regex heuristic."""
     quote = (claim.get("summary_quote") or "").strip()
     if quote:
         return False

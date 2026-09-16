@@ -13,8 +13,22 @@ from __future__ import annotations
 from typing import Any
 
 from evalkit.budget import BudgetTracker
-from evalkit.judge.schemas import validate_faithfulness_coverage_output
+from evalkit.judge.schemas import SchemaError, validate_faithfulness_coverage_output
 from evalkit.llm import call_json
+
+
+class JudgeOutputInvalid(RuntimeError):
+    """Raised when the judge's output still fails structural validation
+    (most commonly: a claim with no summary_quote, or one that isn't an
+    actual substring of the summary) after one repair retry. The caller
+    MUST treat this run as invalid/not scored -- FINDINGS.md documents why
+    this matters: the previous design silently excluded individual
+    unvalidated claims via a text heuristic and scored a composite from
+    whatever remained, which both dropped real claims from the denominator
+    and, worse, demonstrably let a genuine major-materiality unsupported
+    claim slip through uncounted in real committed data. An invalid judge
+    RUN is now an explicit, visible failure -- never silently patched
+    around at the claim level."""
 
 SYSTEM_PROMPT = """You are fact-checking one attorney-facing clinical summary against the exact \
 timeline it was generated from. The summary was written by a tool that saw ONLY this timeline -- it \
@@ -113,5 +127,28 @@ Summary to fact-check:
 
 Fact-check this summary per the instructions above."""
     result = call_json(tracker, category, prompt=prompt, system=SYSTEM_PROMPT, max_tokens=8000)
-    validate_faithfulness_coverage_output(result)
-    return result
+    try:
+        validate_faithfulness_coverage_output(result, summary_text)
+        return result
+    except SchemaError as exc:
+        repair_prompt = f"""{prompt}
+
+---
+Your previous response was INVALID: {exc}
+
+Every entry in claims[] MUST include a non-empty "summary_quote" field that is the EXACT, \
+verbatim text from the summary above (copy-pasted, not paraphrased, not summarized) -- it must \
+appear in the summary text word-for-word. If you cannot find exact summary text supporting a \
+claim, do not include that claim at all.
+
+Respond again with ONLY the corrected, complete JSON, no other text, no markdown fences."""
+        tracker.check_floor()
+        result2 = call_json(tracker, category, prompt=repair_prompt, system=SYSTEM_PROMPT, max_tokens=8000)
+        try:
+            validate_faithfulness_coverage_output(result2, summary_text)
+            return result2
+        except SchemaError as exc2:
+            raise JudgeOutputInvalid(
+                f"case={case_id!r} tool={tool!r} run={run}: judge output still invalid after one repair "
+                f"retry: {exc2}"
+            ) from exc2

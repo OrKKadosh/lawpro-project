@@ -150,7 +150,7 @@ A structured adversarial pre-submission review (16 numbered items, spanning the 
 
 ## Open questions / blockers
 - **Budget estimate recalibration confirmed**: extraction (step 5) cost $2.29 for 22 calls (~$0.10/call), consistent with the chunking experiment's rate — `PLAN.md` §12's original ~4-5x-lower estimates are now confirmed as a pattern, not a one-off. Still comfortably affordable (see below). Will do one pass reconciling §12 with real numbers once the remaining phases (end-to-end demo) confirm the full picture.
-- Git repo root is `C:/Users/wix` (home dir) with a large pre-existing unrelated staged changeset (Elasticsearch install from Downloads) — flagged to the user, not touched, no git operations performed yet.
+- Git repo root was found to be the machine's own home directory, with a large pre-existing unrelated staged changeset (an Elasticsearch install from Downloads) — flagged to the user, not touched, no git operations performed yet. (Later resolved: a clean, separate repo was initialized scoped to just this exercise directory, per PROGRESS.md's later "Application-compliance audit" entry.)
 - The Foster/Turner attribution-defaults-to-signing-physician limitation in our own extraction pipeline (`FINDINGS.md`) is still flagged, not fixed — candidate for the write-up's "known limitations" section rather than a last-minute fix.
 
 ## Budget spent so far

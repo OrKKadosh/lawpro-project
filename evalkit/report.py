@@ -17,7 +17,7 @@ from chronos import timeline as chronos_timeline
 from evalkit.benchmark.controlled import group_by_tool, load_controlled_benchmark
 from evalkit.budget import BudgetTracker
 from evalkit.discover import Case, discover_cases
-from evalkit.judge.faithfulness_coverage import judge_summary
+from evalkit.judge.faithfulness_coverage import JudgeOutputInvalid, judge_summary
 from evalkit.judge.material_facts import load_frozen
 from evalkit.judge.stability import judge_stability
 from evalkit.scoring import aggregate_tool_scorecard, build_summary_scorecard, score_stability
@@ -37,11 +37,20 @@ def run_controlled_benchmark_for_case(case: Case, tracker: BudgetTracker) -> dic
     for tool, tool_runs in sorted(grouped.items()):
         run_scorecards = []
         judge_outputs = []
+        invalid_runs = []
         for r in tool_runs:
-            judged = judge_summary(
-                tracker, case_id=case.case_id, tool=tool, run=r.run,
-                summary_text=r.summary, timeline_events=benchmark_events, material_facts=material_facts,
-            )
+            try:
+                judged = judge_summary(
+                    tracker, case_id=case.case_id, tool=tool, run=r.run,
+                    summary_text=r.summary, timeline_events=benchmark_events, material_facts=material_facts,
+                )
+            except JudgeOutputInvalid as exc:
+                # A run whose judge output still fails structural validation after one repair
+                # retry is EXCLUDED from scoring, not silently patched together from whatever
+                # claims happen to look valid (FINDINGS.md) -- explicit and visible here rather
+                # than invisible in the aggregate.
+                invalid_runs.append({"run": r.run, "error": str(exc)})
+                continue
             judge_outputs.append(judged)
             scorecard = build_summary_scorecard(
                 tool=tool, run=r.run, cost_usd=r.cost_usd,
@@ -62,6 +71,7 @@ def run_controlled_benchmark_for_case(case: Case, tracker: BudgetTracker) -> dic
 
         tool_scorecards[tool] = aggregate_tool_scorecard(run_scorecards, stability)
         tool_scorecards[tool]["judge_outputs"] = judge_outputs
+        tool_scorecards[tool]["invalid_runs"] = invalid_runs
 
     return {
         "case_id": case.case_id,

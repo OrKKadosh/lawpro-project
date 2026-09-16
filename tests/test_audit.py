@@ -14,6 +14,9 @@ import evalkit.reference.audit as audit
 class _FakeCase:
     case_id = "case-x"
 
+    def ocr_pages(self, doc_id):
+        return ["page 1 text", "page 2 text", "page 3 text"]
+
     def ocr_text(self, doc_id):
         return "some OCR text"
 
@@ -90,3 +93,53 @@ def test_parse_source_accepts_both_single_and_double_p():
     assert audit._parse_source("doc1 p8") == ("doc1", 8)
     assert audit._parse_source("doc1 pp8") == ("doc1", 8)
     assert audit._parse_source("completely unparseable") is None
+
+
+# --- page-scoped audit (FINDINGS.md: the judge used to receive the WHOLE
+# document, so it could never tell "supported on the cited page" apart from
+# "exists somewhere else in the document" -- both passed as full support) ---
+
+def test_windowed_ocr_text_only_includes_cited_pages_and_their_neighbors():
+    pages = [f"page {i} text" for i in range(1, 11)]
+    text = audit._windowed_ocr_text(pages, cited_pages=[5], window=1)
+    assert "[p4]" in text and "[p5]" in text and "[p6]" in text
+    assert "[p1]" not in text and "[p10]" not in text and "[p3]" not in text and "[p7]" not in text
+
+
+def test_windowed_ocr_text_stays_within_bounds_at_document_edges():
+    pages = ["page 1", "page 2", "page 3"]
+    text = audit._windowed_ocr_text(pages, cited_pages=[1], window=1)
+    assert "[p1]" in text and "[p2]" in text
+    assert "[p0]" not in text  # no page 0 -- must not crash or fabricate an out-of-range page
+
+
+def test_audit_does_not_grant_clean_support_when_fact_is_on_a_different_page_than_cited(monkeypatch):
+    """Exact reviewer spec: a fact appears on page 3, the event cites page 1
+    -- the audit must not return a clean, fully-supported verdict. Verified
+    by checking the judge is shown ONLY the cited page's window (page 1,
+    per PAGE_CONTEXT_WINDOW=1 that's pages 1-2), never page 3 where the
+    fact actually lives -- so a judge acting in good faith on what it's
+    given cannot claim full support for something it was never shown."""
+    class FakeCase:
+        case_id = "case-x"
+        def ocr_pages(self, doc_id):
+            return [
+                "Page 1: patient intake, no procedure details here.",
+                "Page 2: vitals and history.",
+                "Page 3: ACTUAL PROCEDURE NOTE -- appendectomy performed here.",
+            ]
+
+    seen_prompts = []
+    def fake_call_json(tracker, category, *, prompt, system, max_tokens):
+        seen_prompts.append(prompt)
+        return {"event_audits": [{"index": 0, "source_supports": "no", "issue": "wrong_attribution",
+                                   "explanation": "not found on cited page 1", "confidence": 0.9}],
+                "notable_omissions": []}
+    monkeypatch.setattr(audit, "call_json", fake_call_json)
+
+    events = [{"date": "2024-01-01", "type": "procedure", "detail": "appendectomy performed", "source": "doc1 p1"}]
+    report = audit.audit_events(FakeCase(), events, tracker=None)
+
+    assert "ACTUAL PROCEDURE NOTE" not in seen_prompts[0], "page 3's OCR text (where the fact actually lives) must not be shown to the judge at all"
+    assert report.source_support_by_index[0] != "yes", "must not grant clean support for a fact never shown to the judge"
+    assert report.issue_by_index[0] == "wrong_attribution"

@@ -1,0 +1,264 @@
+{
+  "case_id": "case-davis",
+  "benchmark_timeline_path": "our own extraction: runs/candidate_timelines/case-davis.json",
+  "benchmark_event_count": 140,
+  "timeline_hash": "33fe26ebd1e293a3e8feae65b7ae3650859ad234ab122ec03d4ab2759fcfb6ea",
+  "timeline_source": "candidate_extraction",
+  "material_facts": [
+    {
+      "fact_id": "mechanism",
+      "category": "incident/mechanism",
+      "description": "On 2024-01-08 the patient sustained a left arm crush/entrapment injury in industrial machinery, requiring tourniquet application and dismantling of the machine to free the arm.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "fact_id": "major-injury",
+      "category": "major injury",
+      "description": "The patient presented with a complete traumatic near-amputation of the left arm between the shoulder and elbow with complete brachial artery and nerve transection, exposed bone, and massive soft tissue loss, and traumatic shock from blood loss.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        1,
+        8,
+        12,
+        13,
+        20
+      ]
+    },
+    {
+      "fact_id": "imaging-findings",
+      "category": "major imaging finding",
+      "description": "Left upper extremity X-ray and CT angiography showed comminuted displaced supracondylar humerus fracture, open segmental forearm/hand fractures, carpal disorganization, and brachial artery disruption.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        17,
+        18,
+        19,
+        21
+      ]
+    },
+    {
+      "fact_id": "transfusion",
+      "category": "treatment course",
+      "description": "Patient received emergent resuscitation including 2 units PRBC transfusion and IV fentanyl/fluids for traumatic blood loss prior to surgery.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        4,
+        15,
+        26
+      ]
+    },
+    {
+      "fact_id": "amputation-surgery",
+      "category": "surgery/procedure",
+      "description": "On 2024-01-08 Dr. Marcus Vance performed an emergent left transhumeral (above-elbow) amputation with ligation of the brachial artery, traction-neurectomy of the median/ulnar/radial nerves, humeral sectioning, and myofascial closure.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        16,
+        22,
+        23,
+        24,
+        25,
+        84,
+        85,
+        100
+      ]
+    },
+    {
+      "fact_id": "icu-postop",
+      "category": "treatment course",
+      "description": "Following amputation surgery the patient was admitted to the ICU for postoperative monitoring including drain placement and later removal.",
+      "materiality_weight": 1,
+      "supporting_event_ids": [
+        27,
+        32,
+        34,
+        86,
+        120
+      ]
+    },
+    {
+      "fact_id": "phantom-pain",
+      "category": "major diagnosis",
+      "description": "The patient developed severe phantom limb pain (rated up to 8/10) and stump hypersensitivity following the amputation, managed with escalating gabapentin dosing and desensitization therapy.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        35,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        46,
+        58,
+        61
+      ]
+    },
+    {
+      "fact_id": "neuroma-diagnosis",
+      "category": "major diagnosis",
+      "description": "By mid-2024 the patient was diagnosed with a post-amputation traumatic neuroma of the ulnar/median nerves at the distal stump after failing conservative management of stump hypersensitivity.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "fact_id": "neuroma-surgery",
+      "category": "surgery/procedure",
+      "description": "On 2024-11-12 Dr. Marcus Vance performed excision of a 1.8 x 1.4 cm neuroma with proximal resection of the median and ulnar nerves and transposition/embedding of the nerve stumps into the triceps muscle.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        51,
+        52,
+        53,
+        54,
+        60,
+        96,
+        97,
+        99,
+        101,
+        128
+      ]
+    },
+    {
+      "fact_id": "prosthetic-fitting",
+      "category": "surgery/procedure",
+      "description": "The patient underwent fitting and calibration of a custom myoelectric transhumeral prosthesis beginning February 2025, including electrode calibration for biceps/triceps control.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        44,
+        56,
+        66,
+        68,
+        102
+      ]
+    },
+    {
+      "fact_id": "pt-course",
+      "category": "treatment course",
+      "description": "The patient underwent an extended physical/occupational therapy course from January 2025 through June 2026 addressing shoulder ROM/strength deficits, myoelectric prosthesis training, and functional use of the prosthetic arm.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        62,
+        63,
+        64,
+        65,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        129,
+        132,
+        138,
+        139
+      ]
+    },
+    {
+      "fact_id": "pt-cancellations",
+      "category": "treatment gap/compliance issue",
+      "description": "The patient had multiple missed/cancelled therapy sessions, including a cancelled PT/OT session in December 2024 and no-show appointments in May and November 2025, with a later lapse attributed to holiday workload and transportation issues.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        55,
+        122,
+        130,
+        131
+      ]
+    },
+    {
+      "fact_id": "functional-limitation",
+      "category": "functional limitation",
+      "description": "The patient has permanent loss of the left arm above the elbow requiring myoelectric prosthesis use, with residual shoulder weakness/fatigue and reliance on the prosthesis for grasping and bilateral coordination tasks.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        63,
+        64,
+        71,
+        73,
+        129,
+        132
+      ]
+    },
+    {
+      "fact_id": "mmi-discharge",
+      "category": "prognosis/MMI",
+      "description": "On 2026-06-22 the patient completed his comprehensive rehabilitation program with near-normal left shoulder active range of motion and was discharged to return to modified light/medium duty work.",
+      "materiality_weight": 3,
+      "supporting_event_ids": [
+        74,
+        75,
+        76
+      ]
+    },
+    {
+      "fact_id": "preexisting-shoulder",
+      "category": "relevant pre-existing condition",
+      "description": "In 2022 the patient sustained a left shoulder AC joint sprain and mild rotator cuff tendinitis after a motorcycle fall, treated with physical therapy and work restrictions, predating the 2024 amputation injury.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        133,
+        134
+      ]
+    },
+    {
+      "fact_id": "opioid-pain-management",
+      "category": "treatment course",
+      "description": "Post-surgical pain was managed with a multi-week course of IV/PCA opioids (fentanyl, hydromorphone) transitioning to oral oxycodone and gabapentin, with continued PRN opioid use into recovery.",
+      "materiality_weight": 1,
+      "supporting_event_ids": [
+        4,
+        33,
+        93,
+        105,
+        106,
+        111,
+        112,
+        113
+      ]
+    },
+    {
+      "fact_id": "infection-monitoring",
+      "category": "material complication",
+      "description": "Wound cultures were obtained and prophylactic IV antibiotics (Ancef, Cefdinir) were administered post-amputation, suggesting monitoring for surgical site infection risk.",
+      "materiality_weight": 1,
+      "supporting_event_ids": [
+        36,
+        90,
+        91,
+        109,
+        110
+      ]
+    },
+    {
+      "fact_id": "shock-trauma",
+      "category": "major diagnosis",
+      "description": "The patient presented with traumatic shock secondary to blood loss requiring transfusion and fluid resuscitation at the time of initial trauma evaluation.",
+      "materiality_weight": 2,
+      "supporting_event_ids": [
+        13,
+        15,
+        26,
+        29
+      ]
+    }
+  ],
+  "human_spot_checked": false
+}

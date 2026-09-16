@@ -84,6 +84,8 @@ def test_audit_events_reraises_budget_exceeded_instead_of_swallowing_it(monkeypa
     a silently-incomplete sample."""
     class FakeCase:
         case_id = "case-x"
+        def ocr_pages(self, doc_id):
+            return ["page 1 text"]
         def ocr_text(self, doc_id):
             return "some ocr text"
 
@@ -102,6 +104,8 @@ def test_audit_events_still_tolerates_an_ordinary_judge_failure(monkeypatch):
     recorded and skipped, not propagated."""
     class FakeCase:
         case_id = "case-x"
+        def ocr_pages(self, doc_id):
+            return ["page 1 text"]
         def ocr_text(self, doc_id):
             return "some ocr text"
 

@@ -381,3 +381,65 @@ def test_detail_composer_rejects_ungrounded_interpretation_of_a_billing_code():
     assert "knee" not in detail.lower(), detail
     assert "tibial" not in detail.lower(), detail
     assert "27535" in detail, "should fall back to the grounded raw snippet, not drop the content entirely"
+
+
+def test_detail_composer_rejects_ungrounded_body_site_and_laterality():
+    """Regression: found in the real case-davis run -- `body_site` and
+    `laterality` were appended to the composed sentence with NO grounding
+    check at all (unlike procedure/diagnosis_or_finding/concept, which are
+    checked), even when the model's own hedge said the value wasn't
+    clinically confirmed (e.g. body_site="peripheral nerve (per CPT code
+    convention, not clinically confirmed in text)" for a CMS-1500 form that
+    only ever showed the raw code "64784", never the words "peripheral" or
+    "nerve"). This is exactly how a decoded-from-a-billing-code body_site
+    value reached a committed final timeline (FINDINGS.md)."""
+    event = CanonicalEvent(
+        canonical_id="x", member_candidate_ids=[0],
+        date="2024-11-12", date_basis="billing_service_date", type="procedure", status="performed",
+        clinical_facts={
+            "concept": "nerve-related procedure billed under CPT 64784",
+            "body_site": "peripheral nerve (per CPT code convention, not clinically confirmed in text)",
+            "laterality": None,
+            "procedure": None, "diagnosis_or_finding": "M96.5", "medication": None, "dose": None,
+        },
+        attribution={"provider": "Dr. Marcus Vance, MD, FACS", "asserted_by": "billing_system", "certainty": "confirmed"},
+        materiality="high", confidence=0.5, conflict_group_id=None, needs_review=False,
+        evidence=[{"doc": "06_Comprehensive_Billing_and_Financial_Audit", "page": 5,
+                    "snippet": "64784, 11/12/2024, DX A, physician Dr. Marcus Vance, diagnosis M96.5"}],
+    )
+    detail = _compose_detail(event)
+    assert detail is not None
+    assert "peripheral" not in detail.lower(), detail
+    assert "nerve" not in detail.lower(), (
+        "the ungrounded, hedged body_site decode ('peripheral nerve...') must never reach the "
+        f"final composed sentence: {detail!r}"
+    )
+    assert "M96.5" in detail, "the genuinely grounded diagnosis code must still come through"
+
+
+def test_detail_composer_keeps_a_correct_body_site_even_without_verbatim_evidence_repetition():
+    """Regression, the other direction: a body_site value with no self-
+    disclosed hedge must NOT be dropped just because the ONE cited evidence
+    snippet happens not to restate it word-for-word (real case-davis
+    example: a follow-up note's own snippet just says "amputation", but
+    body_site="left arm" is still true and correctly carried over from
+    context elsewhere in the record). A full word-overlap grounding
+    requirement here was tried and reverted after real-data testing found
+    it stripped many genuinely correct body_site values across the corpus
+    (FINDINGS.md/DECISIONS.md) -- only a self-hedged-decode phrase should
+    ever remove one."""
+    event = CanonicalEvent(
+        canonical_id="x", member_candidate_ids=[0],
+        date="2024-01-08", date_basis="explicit_event_date", type="procedure", status="performed",
+        clinical_facts={
+            "concept": "amputation", "body_site": "left arm", "laterality": "left",
+            "procedure": "amputation", "diagnosis_or_finding": None, "medication": None, "dose": None,
+        },
+        attribution={"provider": None, "asserted_by": "patient_reported", "certainty": "confirmed"},
+        materiality="high", confidence=0.75, conflict_group_id=None, needs_review=False,
+        evidence=[{"doc": "04_prosthetic_fitting", "page": 2,
+                    "snippet": "What treatments have you already tried? Amputation Jan 2024"}],
+    )
+    detail = _compose_detail(event)
+    assert detail is not None
+    assert "arm" in detail.lower(), f"a true, un-hedged body_site must survive even without verbatim evidence repetition: {detail!r}"

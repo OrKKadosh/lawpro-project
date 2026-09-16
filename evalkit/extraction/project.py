@@ -36,6 +36,32 @@ def _significant_words(text: str) -> set[str]:
     return {w for w in re.findall(r"[a-z0-9]+", (text or "").lower()) if w not in _STOPWORDS and len(w) > 2}
 
 
+# A model's OWN self-disclosed hedge that it decoded a bare billing/procedure
+# code using outside medical-coding knowledge, not the source text (the exact
+# rule EXTRACTION_SYSTEM_PROMPT already forbids -- this is a deterministic
+# backstop for when the model violates it anyway, found via real case-davis
+# output: "Peripheral nerve (per CPT code convention, not clinically
+# confirmed in text)", "Lower limb (per code convention, not narratively
+# confirmed)", "postprocedural scoliosis, per code, but not clinically
+# confirmed in this chunk" -- all three share this exact phrasing pattern,
+# a much more precise and reliable signal than word-overlap grounding, which
+# either missed these (the code fragment itself, e.g. "M96", trivially
+# "grounds" the whole hedge-wrapped phrase it's attached to) or -- tried and
+# reverted after real-data testing -- over-triggered on genuinely correct,
+# just differently-worded body_site/laterality values elsewhere in the same
+# corpus (FINDINGS.md/DECISIONS.md: e.g. "left arm" dropped from a follow-up
+# note whose own evidence snippet just said "amputation", still true, just
+# not restated word-for-word in that one snippet).
+_SELF_HEDGED_DECODE_RE = re.compile(
+    r"\bper (cpt |icd )?code(\s+convention)?\b|\bnot (clinically|narratively) confirmed\b",
+    re.IGNORECASE,
+)
+
+
+def _is_self_hedged_decode(phrase: str) -> bool:
+    return bool(_SELF_HEDGED_DECODE_RE.search(phrase or ""))
+
+
 def _is_grounded(phrase: str, evidence_words: set[str]) -> bool:
     """Deterministic grounding check: does this interpreted clinical_facts
     value share any significant word with the actual cited evidence text?
@@ -48,7 +74,16 @@ def _is_grounded(phrase: str, evidence_words: set[str]) -> bool:
     and not actually stated anywhere in the source. A templated sentence
     built from clinical_facts is only as grounded as clinical_facts itself;
     this check is what actually enforces that, not the templating alone.
+
+    Also rejects a phrase carrying its own self-hedged-decode disclaimer
+    (see _SELF_HEDGED_DECODE_RE) outright, before the word-overlap check --
+    found necessary because the hedge text itself, or the bare code it's
+    attached to, can trivially share a word with the evidence (e.g. "M96"
+    appearing in both), which would otherwise let the whole hedge-wrapped
+    invented phrase through.
     """
+    if _is_self_hedged_decode(phrase):
+        return False
     phrase_words = _significant_words(phrase)
     if not phrase_words:
         return True  # nothing to check
@@ -88,6 +123,22 @@ def _primary_clause(event: CanonicalEvent) -> Optional[str]:
         return raw_snippet.strip().rstrip(".") if raw_snippet else None
 
     lat, site = cf.get("laterality"), cf.get("body_site")
+    # Self-hedge check applies here too, not just to procedure/diagnosis_or_finding/concept
+    # (FINDINGS.md: a real, confirmed gap -- body_site/laterality were appended completely
+    # unchecked, which is exactly how a hedged-but-still-decoded value like body_site=
+    # "peripheral nerve (per CPT code convention, not clinically confirmed in text)" reached
+    # a committed final timeline for case-davis). Deliberately the NARROW hedge-phrase check
+    # only, NOT the full word-overlap _is_grounded() check -- tried the full check first and
+    # reverted after real-data testing found it stripped plenty of genuinely correct,
+    # just-differently-worded body_site values (e.g. "left arm" from a follow-up note whose
+    # own evidence snippet just said "amputation", still true, never restated verbatim in
+    # every single snippet). A self-disclosed "I decoded this from a bare code" hedge is a
+    # precise, reliable signal; requiring literal word-repetition in one specific evidence
+    # snippet is not.
+    if site and _is_self_hedged_decode(site):
+        site = None
+    if lat and _is_self_hedged_decode(lat):
+        lat = None
     # site can already embed the laterality (e.g. body_site="left humerus/radius",
     # laterality="left") -- check lat against site too, not just against main,
     # or a redundant "left left humerus..." results.

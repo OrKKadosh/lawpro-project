@@ -1,101 +1,66 @@
 {
   "case_id": "case-davis",
-  "note": "END-TO-END PIPELINE DEMO -- uncontrolled (our own extraction quality is in the loop). Never cited for the shipping recommendation; see results/final_scorecard.md for that. [Re-judged after the material-fact timeline-binding fix (FINDINGS.md): coverage is now scored against material facts built from THIS candidate timeline, not the benchmark-derived frozen file.]",
-  "chosen_tool": "A",
+  "note": "END-TO-END PIPELINE DEMO -- uncontrolled (our own extraction quality is in the loop). Never cited for the shipping recommendation; see results/final_scorecard.md for that.",
+  "chosen_tool": "D",
   "chosen_tool_rationale": "highest mean_faithfulness among ship-eligible tools in results/controlled_benchmark_case-davis.json (computed dynamically, not hardcoded)",
   "timeline_event_count": 140,
-  "summarize_cost_usd": 0.034382,
-  "summary_text": "On January 8, 2024, the patient's left arm was entrapped in industrial machinery, sustaining a crush injury so severe that factory responders applied a tourniquet on scene and emergency crews had to dismantle the machine to free him. He arrived with a cold, pulseless hand, exposed bone, and a GCS of 11 with a reported brief loss of consciousness. Paramedics established IV access and gave fentanyl 100mcg before transferring him to the Midwest Regional trauma unit, where Dr. David Cho documented complete traumatic amputation at the level between the shoulder and elbow, with complete transection of the brachial artery and nerves, massive soft tissue loss, and traumatic shock from blood loss. X-ray and CT angiography confirmed a comminuted, displaced supracondylar humerus fracture with open segmental forearm and hand fractures, carpal disarray, and complete vascular disruption \u2014 an unsalvageable limb. He received two units of packed red blood cells and was taken emergently to the operating room the same day.\n\nDr. David Cho performed a left transhumeral amputation, sectioning the humerus at the junction of the middle and distal thirds, ligating and dividing the brachial artery, and performing traction neurectomy of the median, ulnar, and radial nerves with bupivacaine 0.5% injection before myofascial closure. He recovered in the ICU, was transitioned from IV PCA Dilaudid to oral oxycodone and gabapentin 300mg TID, and had his stump JP drain removed January 12. He was discharged on cefdinir and gabapentin for phantom and neuropathic pain.\n\nBy February 12, 2024, phantom limb pain rated 8/10 and severe stump hypersensitivity prompted an increase in gabapentin to 600mg TID and referral for desensitization therapy. At five-month follow-up on June 18, 2024, Dr. Vance identified a 1.5 cm tender nodule reproducing electric shock sensations \u2014 a post-amputation neuroma of the ulnar/median nerves that had failed conservative management. On November 12, 2024, Vance excised a 1.8 x 1.4 cm neuroma and transposed the proximal median and ulnar nerve stumps into the triceps muscle with 5-0 epineural sutures.\n\nProsthetic fitting followed: a custom myoelectric transhumeral prosthesis was delivered and calibrated on February 5, 2025, by Robert Chen, CPO, with electrode training beginning February 10 and progressive PT through grasping drills, bilateral coordination tasks, and fine motor control training into 2026, despite scattered no-shows in May and November 2025. By June 22, 2026, Sarah Jenkins, PT, DPT, discharged him from comprehensive rehabilitation with near-normal right shoulder range of motion, cleared to return to modified light/medium duty at his employer.",
+  "summarize_cost_usd": 0.035422,
+  "summary_text": "On January 8, 2024, the patient sustained a left arm industrial machinery entrapment injury, resulting in a crush injury to the left arm with complete mechanical disruption, bone protrusion, and a cold, pulseless hand. A factory responder applied a tourniquet to the left arm, and emergency crews dismantled the machine to free the arm. The patient received IV fentanyl 100mcg and was noted to have a GCS of 11 with a reported brief loss of consciousness. He was transferred to Midwest Regional trauma unit, where Dr. David Cho, MD, FACEP, diagnosed a complete traumatic amputation at a level between the shoulder and elbow, with complete brachial artery and nerve transection, exposed bone, and massive soft tissue loss, producing traumatic shock from blood loss. X-ray and CT angiography of the left humerus, elbow, and forearm demonstrated a comminuted displaced supracondylar humerus fracture, open segmental forearm/hand fractures, and carpal disorganization; angiography confirmed brachial artery disruption. The limb was deemed unsalvageable. The patient received 2 units of packed red blood cells and was taken emergently to surgery.\n\nDr. Marcus Vance, MD, FACS, performed a left transhumeral (above-elbow) amputation with myofascial closure, bone beveling, ligation and division of the brachial artery, and traction-neurectomy of the median, ulnar, and radial nerves with 0.5% bupivacaine injection; the humerus was sectioned at the junction of the middle and distal thirds. A JP drain was placed, and the patient was admitted to the ICU postoperatively, receiving additional PRBCs and lactated Ringers. Postoperative care included Dilaudid PCA transitioned to oral oxycodone and gabapentin 300mg TID, IV Ancef, and wound care; the JP drain was removed January 12, 2024, and he was discharged on cefdinir 300mg BID and gabapentin.\n\nBy February 12, 2024, he reported phantom limb pain rated 8/10 and stump hypersensitivity; gabapentin was increased to 600mg TID and desensitization therapy was initiated. By June 18, 2024, a tender 1.5 cm nodule at the medial residual border was identified as a post-amputation neuroma of the ulnar/median nerves, prompting surgery. On November 12, 2024, Dr. Vance excised a 1.8 x 1.4 cm neuroma and transposed the median and ulnar nerve stumps into the triceps muscle with 5-0 epineural sutures.\n\nProsthetic fitting began February 5, 2025, with a custom myoelectric transhumeral prosthesis and electrode calibration, followed by structured PT with Sarah Jenkins, PT, DPT, through 2026. Treatment lapsed with no-shows on May 12, 2025 and November 10, 2025, attributed by the patient to holiday workload and transportation issues. He completed his rehabilitation program on June 22, 2026, achieving near-normal left shoulder range of motion and returning to modified light/medium duty work. Notably, a 2022 left shoulder AC joint sprain and rotator cuff tendinitis, treated conservatively, predated this injury.",
   "scorecard": {
-    "tool": "A",
+    "tool": "D",
     "run": 1,
-    "cost_usd": 0.034382,
+    "cost_usd": 0.035422,
     "faithfulness": {
-      "composite": 0.808,
-      "ship_eligible": false,
-      "gate_triggering_claims": [
-        {
-          "claim_id": "c7",
-          "text": "Dr. David Cho performed the left transhumeral amputation",
-          "status": "contradicted",
-          "materiality": "critical",
-          "evidence_event_ids": [
-            22,
-            23,
-            24,
-            25
-          ],
-          "reason": "Timeline attributes the amputation surgery (event 22) and related steps (23,24,25) to Dr. Marcus Vance, MD, FACS, not Dr. David Cho.",
-          "summary_quote": "Dr. David Cho performed a left transhumeral amputation, sectioning the humerus at the junction of the middle and distal thirds, ligating and dividing the brachial artery, and performing traction neurectomy of the median, ulnar, and radial nerves with bupivacaine 0.5% injection before myofascial closure."
-        },
-        {
-          "claim_id": "c19",
-          "text": "By June 22, 2026, Sarah Jenkins PT DPT discharged him from comprehensive rehabilitation with near-normal right shoulder ROM, cleared to return to modified light/medium duty",
-          "status": "contradicted",
-          "materiality": "critical",
-          "evidence_event_ids": [
-            75,
-            76
-          ],
-          "reason": "Timeline event 76 states 'Left shoulder near normal active range of motion' \u2014 the summary incorrectly states 'right shoulder' instead of left, a laterality error.",
-          "summary_quote": "By June 22, 2026, Sarah Jenkins, PT, DPT, discharged him from comprehensive rehabilitation with near-normal right shoulder range of motion, cleared to return to modified light/medium duty at his employer."
-        }
-      ],
-      "claim_count": 19,
-      "flawed_claim_count": 2,
+      "composite": 1.0,
+      "ship_eligible": true,
+      "gate_triggering_claims": [],
+      "claim_count": 23,
+      "flawed_claim_count": 0,
       "claim_counts_by_status": {
-        "supported": 17,
-        "contradicted": 2
+        "supported": 23
       },
       "claim_counts_by_materiality": {
-        "critical": 7,
-        "major": 5,
-        "minor": 7
+        "critical": 8,
+        "major": 12,
+        "minor": 3
       },
       "omission_shaped_claims_excluded": 0,
       "untraceable_claims_excluded": 0
     },
     "coverage": {
-      "weighted_coverage_rate": 0.76,
-      "facts_total": 20,
-      "facts_missing": [
-        "f11",
-        "f15",
-        "f17",
-        "f19"
-      ],
+      "weighted_coverage_rate": 0.866,
+      "facts_total": 18,
+      "facts_missing": [],
       "coverage_by_fact_id": {
-        "f1": "yes",
-        "f2": "yes",
-        "f3": "yes",
-        "f4": "yes",
-        "f5": "yes",
-        "f6": "yes",
-        "f7": "partial",
-        "f8": "yes",
-        "f9": "yes",
-        "f10": "yes",
-        "f11": "no",
-        "f12": "partial",
-        "f13": "yes",
-        "f14": "partial",
-        "f15": "no",
-        "f16": "partial",
-        "f17": "no",
-        "f18": "yes",
-        "f19": "no",
-        "f20": "yes"
+        "mechanism": "yes",
+        "major-injury": "yes",
+        "imaging-findings": "yes",
+        "transfusion": "partial",
+        "amputation-surgery": "yes",
+        "icu-postop": "yes",
+        "phantom-pain": "yes",
+        "neuroma-diagnosis": "yes",
+        "neuroma-surgery": "yes",
+        "prosthetic-fitting": "yes",
+        "pt-course": "partial",
+        "pt-cancellations": "partial",
+        "functional-limitation": "partial",
+        "mmi-discharge": "yes",
+        "preexisting-shoulder": "yes",
+        "opioid-pain-management": "partial",
+        "infection-monitoring": "partial",
+        "shock-trauma": "yes"
       }
     },
     "usefulness": {
-      "mean": 3.29,
+      "mean": 4.57,
       "by_dimension": {
-        "chronological_clarity": 4,
+        "chronological_clarity": 5,
         "concision": 4,
-        "organization": 4,
-        "preserves_uncertainty": 3,
-        "separates_pre_existing_vs_post": 1,
-        "emphasis_on_material_facts": 3,
+        "organization": 5,
+        "preserves_uncertainty": 4,
+        "separates_pre_existing_vs_post": 5,
+        "emphasis_on_material_facts": 5,
         "avoids_repetitive_clutter": 4
       }
     }
@@ -104,45 +69,74 @@
     "claims": [
       {
         "claim_id": "c1",
-        "text": "Left arm entrapped in industrial machinery on 2024-01-08, crush injury, tourniquet applied by factory responders, machine dismantled by emergency crews",
+        "text": "Left arm industrial machinery entrapment on 2024-01-08 with crush injury, complete mechanical disruption, bone protrusion, cold pulseless hand",
         "status": "supported",
         "materiality": "critical",
         "evidence_event_ids": [
           0,
-          1,
-          2,
-          3
+          1
         ],
-        "reason": "Matches timeline events 0-3 directly.",
-        "summary_quote": "On January 8, 2024, the patient's left arm was entrapped in industrial machinery, sustaining a crush injury so severe that factory responders applied a tourniquet on scene and emergency crews had to dismantle the machine to free him."
+        "reason": "Matches timeline events 0 and 1 directly.",
+        "summary_quote": "resulting in a crush injury to the left arm with complete mechanical disruption, bone protrusion, and a cold, pulseless hand"
       },
       {
         "claim_id": "c2",
-        "text": "Patient arrived with cold pulseless hand, exposed bone, GCS 11, reported brief LOC",
+        "text": "Factory responder applied tourniquet",
         "status": "supported",
         "materiality": "major",
         "evidence_event_ids": [
-          1,
-          5
+          2
         ],
-        "reason": "Matches events 1 and 5, though event 5 notes 'reported history' hedge which summary preserves ('reported').",
-        "summary_quote": "He arrived with a cold, pulseless hand, exposed bone, and a GCS of 11 with a reported brief loss of consciousness."
+        "reason": "Matches event 2.",
+        "summary_quote": "A factory responder applied a tourniquet to the left arm"
       },
       {
         "claim_id": "c3",
-        "text": "Paramedics established IV access and gave fentanyl 100mcg before transfer",
+        "text": "Emergency crews dismantled machine to free arm",
         "status": "supported",
-        "materiality": "minor",
+        "materiality": "major",
         "evidence_event_ids": [
-          4,
-          6
+          3
         ],
-        "reason": "Matches event 4 (IV access, fentanyl) and event 6 (transfer); timeline does not specify 'paramedics' explicitly but this is a reasonable attribution given context.",
-        "summary_quote": "Paramedics established IV access and gave fentanyl 100mcg before transferring him to the Midwest Regional trauma unit"
+        "reason": "Matches event 3.",
+        "summary_quote": "emergency crews dismantled the machine to free the arm"
       },
       {
         "claim_id": "c4",
-        "text": "Dr. David Cho documented complete traumatic amputation at level between shoulder and elbow with complete transection of brachial artery and nerves, massive soft tissue loss, and traumatic shock from blood loss",
+        "text": "IV fentanyl 100mcg administered",
+        "status": "supported",
+        "materiality": "minor",
+        "evidence_event_ids": [
+          4
+        ],
+        "reason": "Matches event 4.",
+        "summary_quote": "The patient received IV fentanyl 100mcg"
+      },
+      {
+        "claim_id": "c5",
+        "text": "GCS 11 with reported brief loss of consciousness",
+        "status": "supported",
+        "materiality": "major",
+        "evidence_event_ids": [
+          5
+        ],
+        "reason": "Matches event 5, timeline notes 'reported history' which summary preserves with 'reported'.",
+        "summary_quote": "was noted to have a GCS of 11 with a reported brief loss of consciousness"
+      },
+      {
+        "claim_id": "c6",
+        "text": "Transfer to Midwest Regional trauma unit",
+        "status": "supported",
+        "materiality": "major",
+        "evidence_event_ids": [
+          6
+        ],
+        "reason": "Matches event 6.",
+        "summary_quote": "He was transferred to Midwest Regional trauma unit"
+      },
+      {
+        "claim_id": "c7",
+        "text": "Dr. David Cho diagnosed complete traumatic amputation between shoulder and elbow with complete brachial artery/nerve transection, exposed bone, massive soft tissue loss, causing traumatic shock from blood loss",
         "status": "supported",
         "materiality": "critical",
         "evidence_event_ids": [
@@ -150,39 +144,50 @@
           12,
           13
         ],
-        "reason": "Matches events 8, 12, 13 attributed to Dr. David Cho.",
-        "summary_quote": "Dr. David Cho documented complete traumatic amputation at the level between the shoulder and elbow, with complete transection of the brachial artery and nerves, massive soft tissue loss, and traumatic shock from blood loss."
+        "reason": "Matches events 8, 12, 13 attributed to Dr. Cho.",
+        "summary_quote": "Dr. David Cho, MD, FACEP, diagnosed a complete traumatic amputation at a level between the shoulder and elbow, with complete brachial artery and nerve transection, exposed bone, and massive soft tissue loss, producing traumatic shock from blood loss"
       },
       {
-        "claim_id": "c5",
-        "text": "X-ray and CT angiography confirmed comminuted displaced supracondylar humerus fracture with open segmental forearm/hand fractures, carpal disarray, and complete vascular disruption, unsalvageable limb",
+        "claim_id": "c8",
+        "text": "X-ray and CT angiography showed comminuted displaced supracondylar humerus fracture, open segmental forearm/hand fractures, carpal disorganization; angiography confirmed brachial artery disruption",
         "status": "supported",
         "materiality": "critical",
         "evidence_event_ids": [
           17,
           18,
           19,
-          20
+          21
         ],
-        "reason": "Matches events 17-20 findings from imaging attributed to Dr. Cho.",
-        "summary_quote": "X-ray and CT angiography confirmed a comminuted, displaced supracondylar humerus fracture with open segmental forearm and hand fractures, carpal disarray, and complete vascular disruption \u2014 an unsalvageable limb."
+        "reason": "Matches events 17-19, 21.",
+        "summary_quote": "X-ray and CT angiography of the left humerus, elbow, and forearm demonstrated a comminuted displaced supracondylar humerus fracture, open segmental forearm/hand fractures, and carpal disorganization; angiography confirmed brachial artery disruption"
       },
       {
-        "claim_id": "c6",
-        "text": "Patient received two units of PRBC and was taken emergently to OR same day",
+        "claim_id": "c9",
+        "text": "Limb deemed unsalvageable",
+        "status": "supported",
+        "materiality": "major",
+        "evidence_event_ids": [
+          20
+        ],
+        "reason": "Matches event 20.",
+        "summary_quote": "The limb was deemed unsalvageable"
+      },
+      {
+        "claim_id": "c10",
+        "text": "Patient received 2 units PRBC and taken emergently to surgery",
         "status": "supported",
         "materiality": "major",
         "evidence_event_ids": [
           15,
           16
         ],
-        "reason": "Matches event 15 (2 units PRBC) and event 16 (planned emergent amputation).",
-        "summary_quote": "He received two units of packed red blood cells and was taken emergently to the operating room the same day."
+        "reason": "Matches events 15 and 16.",
+        "summary_quote": "The patient received 2 units of packed red blood cells and was taken emergently to surgery"
       },
       {
-        "claim_id": "c7",
-        "text": "Dr. David Cho performed the left transhumeral amputation",
-        "status": "contradicted",
+        "claim_id": "c11",
+        "text": "Dr. Vance performed left transhumeral amputation with myofascial closure, bone beveling, ligation/division of brachial artery, traction-neurectomy of median/ulnar/radial nerves with 0.5% bupivacaine; humerus sectioned at junction of middle and distal thirds",
+        "status": "supported",
         "materiality": "critical",
         "evidence_event_ids": [
           22,
@@ -190,274 +195,273 @@
           24,
           25
         ],
-        "reason": "Timeline attributes the amputation surgery (event 22) and related steps (23,24,25) to Dr. Marcus Vance, MD, FACS, not Dr. David Cho.",
-        "summary_quote": "Dr. David Cho performed a left transhumeral amputation, sectioning the humerus at the junction of the middle and distal thirds, ligating and dividing the brachial artery, and performing traction neurectomy of the median, ulnar, and radial nerves with bupivacaine 0.5% injection before myofascial closure."
+        "reason": "Matches events 22-25 exactly.",
+        "summary_quote": "Dr. Marcus Vance, MD, FACS, performed a left transhumeral (above-elbow) amputation with myofascial closure, bone beveling, ligation and division of the brachial artery, and traction-neurectomy of the median, ulnar, and radial nerves with 0.5% bupivacaine injection; the humerus was sectioned at the junction of the middle and distal thirds"
       },
       {
-        "claim_id": "c8",
-        "text": "Sectioning of humerus at junction of middle/distal thirds, ligation/division of brachial artery, traction neurectomy of median/ulnar/radial nerves with bupivacaine 0.5%, myofascial closure",
+        "claim_id": "c12",
+        "text": "JP drain placed, patient admitted to ICU postoperatively, receiving additional PRBCs and lactated Ringers",
         "status": "supported",
         "materiality": "major",
         "evidence_event_ids": [
-          22,
-          23,
-          24,
-          25
-        ],
-        "reason": "Procedural details match events 22-25, only the physician attribution is wrong (see c7).",
-        "summary_quote": "sectioning the humerus at the junction of the middle and distal thirds, ligating and dividing the brachial artery, and performing traction neurectomy of the median, ulnar, and radial nerves with bupivacaine 0.5% injection before myofascial closure"
-      },
-      {
-        "claim_id": "c9",
-        "text": "Recovered in ICU, transitioned from IV PCA Dilaudid to oral oxycodone and gabapentin 300mg TID",
-        "status": "supported",
-        "materiality": "minor",
-        "evidence_event_ids": [
+          120,
           27,
-          33
+          26
         ],
-        "reason": "Matches events 27 and 33.",
-        "summary_quote": "He recovered in the ICU, was transitioned from IV PCA Dilaudid to oral oxycodone and gabapentin 300mg TID"
+        "reason": "Matches events 120, 27, 26.",
+        "summary_quote": "A JP drain was placed, and the patient was admitted to the ICU postoperatively, receiving additional PRBCs and lactated Ringers"
       },
       {
-        "claim_id": "c10",
-        "text": "Stump JP drain removed January 12",
+        "claim_id": "c13",
+        "text": "Postoperative care included Dilaudid PCA transitioned to oral oxycodone and gabapentin 300mg TID, IV Ancef, wound care",
+        "status": "supported",
+        "materiality": "major",
+        "evidence_event_ids": [
+          33,
+          105,
+          109,
+          110,
+          121
+        ],
+        "reason": "Matches events 33, 105, 109/110, 121.",
+        "summary_quote": "Postoperative care included Dilaudid PCA transitioned to oral oxycodone and gabapentin 300mg TID, IV Ancef, and wound care"
+      },
+      {
+        "claim_id": "c14",
+        "text": "JP drain removed January 12, 2024",
         "status": "supported",
         "materiality": "minor",
         "evidence_event_ids": [
           34
         ],
-        "reason": "Matches event 34 dated 2024-01-12.",
-        "summary_quote": "had his stump JP drain removed January 12"
+        "reason": "Matches event 34.",
+        "summary_quote": "the JP drain was removed January 12, 2024"
       },
       {
-        "claim_id": "c11",
-        "text": "Discharged on cefdinir and gabapentin for phantom and neuropathic pain",
+        "claim_id": "c15",
+        "text": "Discharged on cefdinir 300mg BID and gabapentin",
         "status": "supported",
         "materiality": "minor",
         "evidence_event_ids": [
           36,
           37
         ],
-        "reason": "Matches events 36 and 37, both dated 2024-01-15, medications ordered near discharge.",
-        "summary_quote": "He was discharged on cefdinir and gabapentin for phantom and neuropathic pain."
+        "reason": "Matches events 36 and 37 (dated 2024-01-15, implying discharge meds).",
+        "summary_quote": "he was discharged on cefdinir 300mg BID and gabapentin"
       },
       {
-        "claim_id": "c12",
-        "text": "By Feb 12, 2024, phantom limb pain rated 8/10 and severe stump hypersensitivity prompted gabapentin increase to 600mg TID and referral for desensitization therapy",
+        "claim_id": "c16",
+        "text": "By Feb 12, 2024 phantom limb pain rated 8/10 and stump hypersensitivity reported, gabapentin increased to 600mg TID, desensitization therapy initiated",
         "status": "supported",
-        "materiality": "major",
+        "materiality": "critical",
         "evidence_event_ids": [
           39,
           40,
-          41,
           42,
           43
         ],
-        "reason": "Matches events 39-43 all dated 2024-02-12 attributed to Dr. Vance.",
-        "summary_quote": "By February 12, 2024, phantom limb pain rated 8/10 and severe stump hypersensitivity prompted an increase in gabapentin to 600mg TID and referral for desensitization therapy."
+        "reason": "Matches events 39, 40, 42, 43.",
+        "summary_quote": "By February 12, 2024, he reported phantom limb pain rated 8/10 and stump hypersensitivity; gabapentin was increased to 600mg TID and desensitization therapy was initiated"
       },
       {
-        "claim_id": "c13",
-        "text": "At five-month follow-up June 18 2024, Dr. Vance identified 1.5cm tender nodule reproducing electric shock sensations, post-amputation neuroma of ulnar/median nerves, failed conservative management",
+        "claim_id": "c17",
+        "text": "By June 18, 2024 tender 1.5cm nodule at medial residual border identified as post-amputation neuroma of ulnar/median nerves, prompting surgery",
         "status": "supported",
         "materiality": "critical",
         "evidence_event_ids": [
-          45,
           47,
           48,
           49,
-          50
+          50,
+          51
         ],
-        "reason": "Matches events 45-50 attributed to Dr. Vance dated 2024-06-18.",
-        "summary_quote": "At five-month follow-up on June 18, 2024, Dr. Vance identified a 1.5 cm tender nodule reproducing electric shock sensations \u2014 a post-amputation neuroma of the ulnar/median nerves that had failed conservative management."
+        "reason": "Matches events 47-51, including failed conservative management leading to surgical plan.",
+        "summary_quote": "By June 18, 2024, a tender 1.5 cm nodule at the medial residual border was identified as a post-amputation neuroma of the ulnar/median nerves, prompting surgery"
       },
       {
-        "claim_id": "c14",
-        "text": "On Nov 12 2024 Vance excised 1.8x1.4cm neuroma and transposed proximal median/ulnar nerve stumps into triceps with 5-0 epineural sutures",
+        "claim_id": "c18",
+        "text": "Nov 12, 2024 Dr. Vance excised 1.8x1.4cm neuroma and transposed median/ulnar nerve stumps into triceps muscle with 5-0 epineural sutures",
         "status": "supported",
         "materiality": "critical",
         "evidence_event_ids": [
-          51,
           52,
           53,
           54
         ],
-        "reason": "Matches events 51-54 attributed to Dr. Vance dated 2024-11-12.",
-        "summary_quote": "On November 12, 2024, Vance excised a 1.8 x 1.4 cm neuroma and transposed the proximal median and ulnar nerve stumps into the triceps muscle with 5-0 epineural sutures."
+        "reason": "Matches events 52-54.",
+        "summary_quote": "On November 12, 2024, Dr. Vance excised a 1.8 x 1.4 cm neuroma and transposed the median and ulnar nerve stumps into the triceps muscle with 5-0 epineural sutures"
       },
       {
-        "claim_id": "c15",
-        "text": "Custom myoelectric transhumeral prosthesis delivered and calibrated on Feb 5 2025 by Robert Chen, CPO",
+        "claim_id": "c19",
+        "text": "Prosthetic fitting began Feb 5, 2025 with custom myoelectric transhumeral prosthesis and electrode calibration",
         "status": "supported",
         "materiality": "major",
         "evidence_event_ids": [
           66,
           68
         ],
-        "reason": "Matches events 66 and 68 dated 2025-02-05 attributed to Robert Chen.",
-        "summary_quote": "a custom myoelectric transhumeral prosthesis was delivered and calibrated on February 5, 2025, by Robert Chen, CPO"
+        "reason": "Matches events 66 and 68.",
+        "summary_quote": "Prosthetic fitting began February 5, 2025, with a custom myoelectric transhumeral prosthesis and electrode calibration"
       },
       {
-        "claim_id": "c16",
-        "text": "Electrode training beginning Feb 10",
+        "claim_id": "c20",
+        "text": "Followed by structured PT with Sarah Jenkins, PT, DPT, through 2026",
         "status": "supported",
-        "materiality": "minor",
+        "materiality": "major",
         "evidence_event_ids": [
-          70
-        ],
-        "reason": "Matches event 70 dated 2025-02-10.",
-        "summary_quote": "with electrode training beginning February 10"
-      },
-      {
-        "claim_id": "c17",
-        "text": "Progressive PT through grasping drills, bilateral coordination tasks, and fine motor control training into 2026",
-        "status": "supported",
-        "materiality": "minor",
-        "evidence_event_ids": [
+          62,
+          65,
+          70,
+          71,
           72,
           73,
+          74,
+          75,
           132
         ],
-        "reason": "Matches events 72, 73, and 132.",
-        "summary_quote": "progressive PT through grasping drills, bilateral coordination tasks, and fine motor control training into 2026"
+        "reason": "Matches multiple PT events through 2026-06-22/06-15.",
+        "summary_quote": "followed by structured PT with Sarah Jenkins, PT, DPT, through 2026"
       },
       {
-        "claim_id": "c18",
-        "text": "Scattered no-shows in May and November 2025",
+        "claim_id": "c21",
+        "text": "No-shows May 12, 2025 and November 10, 2025 attributed to holiday workload and transportation issues",
         "status": "supported",
-        "materiality": "minor",
+        "materiality": "major",
         "evidence_event_ids": [
           130,
-          131
+          131,
+          122
         ],
-        "reason": "Matches events 130 and 131.",
-        "summary_quote": "despite scattered no-shows in May and November 2025"
+        "reason": "Matches events 130, 131, and 122; though the attribution statement is dated 2025-08-11 which is between the two no-shows, but summary presents it as explaining the lapses generally, consistent with timeline content.",
+        "summary_quote": "Treatment lapsed with no-shows on May 12, 2025 and November 10, 2025, attributed by the patient to holiday workload and transportation issues"
       },
       {
-        "claim_id": "c19",
-        "text": "By June 22, 2026, Sarah Jenkins PT DPT discharged him from comprehensive rehabilitation with near-normal right shoulder ROM, cleared to return to modified light/medium duty",
-        "status": "contradicted",
+        "claim_id": "c22",
+        "text": "Completed rehabilitation program June 22, 2026, achieving near-normal left shoulder ROM and returning to modified light/medium duty",
+        "status": "supported",
         "materiality": "critical",
         "evidence_event_ids": [
           75,
           76
         ],
-        "reason": "Timeline event 76 states 'Left shoulder near normal active range of motion' \u2014 the summary incorrectly states 'right shoulder' instead of left, a laterality error.",
-        "summary_quote": "By June 22, 2026, Sarah Jenkins, PT, DPT, discharged him from comprehensive rehabilitation with near-normal right shoulder range of motion, cleared to return to modified light/medium duty at his employer."
+        "reason": "Matches events 75 and 76.",
+        "summary_quote": "He completed his rehabilitation program on June 22, 2026, achieving near-normal left shoulder range of motion and returning to modified light/medium duty work"
+      },
+      {
+        "claim_id": "c23",
+        "text": "2022 left shoulder AC joint sprain and rotator cuff tendinitis, treated conservatively, predated injury",
+        "status": "supported",
+        "materiality": "major",
+        "evidence_event_ids": [
+          77,
+          80,
+          81,
+          82
+        ],
+        "reason": "Matches events 77, 80-82.",
+        "summary_quote": "Notably, a 2022 left shoulder AC joint sprain and rotator cuff tendinitis, treated conservatively, predated this injury"
       }
     ],
     "fact_coverage": [
       {
-        "fact_id": "f1",
+        "fact_id": "mechanism",
         "reflected": "yes",
-        "notes": "Fully covered in first sentence."
+        "notes": "Fully described entrapment, tourniquet, and machine dismantling."
       },
       {
-        "fact_id": "f2",
+        "fact_id": "major-injury",
         "reflected": "yes",
-        "notes": "Cold pulseless hand, exposed bone, and brachial artery/nerve transection with soft tissue loss described."
+        "notes": "Complete transection, exposed bone, soft tissue loss, and shock all covered."
       },
       {
-        "fact_id": "f3",
+        "fact_id": "imaging-findings",
         "reflected": "yes",
-        "notes": "Unsalvageable limb and traumatic shock from blood loss stated."
+        "notes": "All imaging findings listed accurately."
       },
       {
-        "fact_id": "f4",
-        "reflected": "yes",
-        "notes": "Amputation details fully described, though misattributed to Dr. Cho instead of Dr. Vance."
-      },
-      {
-        "fact_id": "f5",
-        "reflected": "yes",
-        "notes": "PRBC transfusion and ICU recovery mentioned; IV fluid resuscitation (LR) not explicitly mentioned but PRBC and ICU covered."
-      },
-      {
-        "fact_id": "f6",
-        "reflected": "yes",
-        "notes": "Fracture findings from imaging fully stated."
-      },
-      {
-        "fact_id": "f7",
+        "fact_id": "transfusion",
         "reflected": "partial",
-        "notes": "Mentions transition to oxycodone/gabapentin postoperatively and gabapentin increase in Feb 2024, but doesn't mention morphine or medication continuation through 2025."
+        "notes": "PRBC transfusion mentioned but fentanyl/fluid resuscitation context less explicit as pre-surgical resuscitation; fentanyl mentioned earlier in prehospital context, not clearly tied to resuscitation phase."
       },
       {
-        "fact_id": "f8",
+        "fact_id": "amputation-surgery",
         "reflected": "yes",
-        "notes": "Phantom limb pain 8/10 and stump hypersensitivity described, failed conservative management noted at neuroma stage."
+        "notes": "Surgical details comprehensively covered."
       },
       {
-        "fact_id": "f9",
+        "fact_id": "icu-postop",
         "reflected": "yes",
-        "notes": "Neuroma identification on 2024-06-18 with measurements/description covered (though 1.8x1.4cm size given later at excision, consistent with timeline)."
+        "notes": "ICU admission and drain placement/removal covered."
       },
       {
-        "fact_id": "f10",
+        "fact_id": "phantom-pain",
         "reflected": "yes",
-        "notes": "Neuroma excision and nerve transposition into triceps on 2024-11-12 covered in detail."
+        "notes": "Phantom pain and gabapentin escalation covered, though desensitization therapy provider/location (Hope Valley) omitted, still generally reflected."
       },
       {
-        "fact_id": "f11",
-        "reflected": "no",
-        "notes": "Summary does not mention a neuroma revision procedure occurring on 2025-02-05 (event 67); it only mentions prosthesis fitting that date."
+        "fact_id": "neuroma-diagnosis",
+        "reflected": "yes",
+        "notes": "Neuroma diagnosis and failed conservative management described."
       },
       {
-        "fact_id": "f12",
+        "fact_id": "neuroma-surgery",
+        "reflected": "yes",
+        "notes": "Surgical details fully covered."
+      },
+      {
+        "fact_id": "prosthetic-fitting",
+        "reflected": "yes",
+        "notes": "Prosthetic fitting and electrode calibration covered."
+      },
+      {
+        "fact_id": "pt-course",
         "reflected": "partial",
-        "notes": "Desensitization therapy referral mentioned but shrinker sock fitting (event 44) is omitted."
+        "notes": "PT course through 2026 mentioned but specific shoulder ROM/strength deficits and functional milestones (grasping drills, bilateral coordination) not detailed."
       },
       {
-        "fact_id": "f13",
-        "reflected": "yes",
-        "notes": "Prosthetic training progression through 2026 described including grasping drills, bilateral coordination, fine motor training."
-      },
-      {
-        "fact_id": "f14",
+        "fact_id": "pt-cancellations",
         "reflected": "partial",
-        "notes": "No-shows in May/November 2025 mentioned but December 2024 PT cancellation and holiday/transportation lapse (event 122) omitted."
+        "notes": "No-shows in May/Nov 2025 covered but December 2024 cancelled PT/OT session omitted."
       },
       {
-        "fact_id": "f15",
-        "reflected": "no",
-        "notes": "Reduced shoulder ROM/strength and 15-minute fatigue during 2025 PT evaluation not mentioned."
-      },
-      {
-        "fact_id": "f16",
+        "fact_id": "functional-limitation",
         "reflected": "partial",
-        "notes": "Comprehensive rehab completion and return to modified duty mentioned, but ROM laterality is wrong (right vs left) and 'near normal' language mildly preserved."
+        "notes": "Final ROM and return to duty mentioned, but ongoing shoulder weakness/fatigue and specific grasping/bilateral coordination reliance not explicitly stated."
       },
       {
-        "fact_id": "f17",
-        "reflected": "no",
-        "notes": "2022 motorcycle fall / prior shoulder injury history is entirely omitted from the summary."
-      },
-      {
-        "fact_id": "f18",
+        "fact_id": "mmi-discharge",
         "reflected": "yes",
-        "notes": "CT angiography and X-ray findings supporting unsalvageable limb determination are covered."
+        "notes": "Discharge date, ROM outcome, and return to duty all covered."
       },
       {
-        "fact_id": "f19",
-        "reflected": "no",
-        "notes": "Cefazolin/Ancef administration and wound cultures during hospitalization not mentioned (only cefdinir at discharge is mentioned)."
-      },
-      {
-        "fact_id": "f20",
+        "fact_id": "preexisting-shoulder",
         "reflected": "yes",
-        "notes": "Myoelectric prosthesis fitting and training covered."
+        "notes": "2022 injury and treatment covered, correctly noted as predating amputation."
+      },
+      {
+        "fact_id": "opioid-pain-management",
+        "reflected": "partial",
+        "notes": "Dilaudid PCA to oxycodone/gabapentin transition covered, but continued PRN opioid use into recovery and morphine dosing not mentioned."
+      },
+      {
+        "fact_id": "infection-monitoring",
+        "reflected": "partial",
+        "notes": "Ancef and cefdinir mentioned but wound cultures not mentioned."
+      },
+      {
+        "fact_id": "shock-trauma",
+        "reflected": "yes",
+        "notes": "Traumatic shock from blood loss and PRBC transfusion covered."
       }
     ],
     "usefulness": {
-      "chronological_clarity": 4,
+      "chronological_clarity": 5,
       "concision": 4,
-      "organization": 4,
-      "preserves_uncertainty": 3,
-      "separates_pre_existing_vs_post": 1,
-      "emphasis_on_material_facts": 3,
+      "organization": 5,
+      "preserves_uncertainty": 4,
+      "separates_pre_existing_vs_post": 5,
+      "emphasis_on_material_facts": 5,
       "avoids_repetitive_clutter": 4
     }
-  },
-  "material_fact_set_timeline_hash": "1d7e77126372693b"
+  }
 }
