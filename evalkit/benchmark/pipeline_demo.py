@@ -18,6 +18,7 @@ from pathlib import Path
 
 from chronos import client
 from chronos import timeline as chronos_timeline
+from chronos.client import PlatformError
 from evalkit.budget import BudgetTracker
 from evalkit.discover import Case, discover_cases
 from evalkit.judge.faithfulness_coverage import judge_summary
@@ -66,7 +67,29 @@ def run_pipeline_demo_for_case(case: Case, tracker: BudgetTracker, tool: str | N
             "-- run the controlled benchmark (evalkit/report.py) first, or pass tool= explicitly"
         )
     tracker.check_floor()  # /v1/summarize is a paid call too -- the safety floor applies to it, not just /v1/generate
-    response = client.summarize(tool, case_id=case.case_id, timeline=timeline_events)
+    try:
+        response = client.summarize(tool, case_id=case.case_id, timeline=timeline_events)
+    except PlatformError as exc:
+        # "not_found" is shared between "unknown case_id" and "unknown tool letter" -- the platform
+        # only distinguishes them in `detail` (an unknown-tool error carries `available_tools`), not
+        # in `type`. Disambiguate before blaming the case -- an earlier version of this handler
+        # assumed every not_found here meant an unregistered case, which would misreport a bad tool
+        # letter as a nonexistent case.
+        if exc.type == "not_found" and "available_tools" in exc.detail:
+            raise RuntimeError(f"No summarization tool '{tool}' -- available: {', '.join(exc.detail['available_tools'])}") from exc
+        if exc.type == "not_found":
+            # The platform checks case_id against its own registered case list (chronos/client.py's
+            # summarize() docstring) -- independent of what this pipeline discovers under data/. A
+            # genuinely new case (e.g. a synthetic fixture with no platform-side registration) can be
+            # extracted and have its timeline evaluated locally, but a real summary can't be generated
+            # for it: the platform itself has no record of the case. Not a bug in this pipeline.
+            raise RuntimeError(
+                f"The live platform doesn't recognize case_id '{case.case_id}' for /v1/summarize -- "
+                f"it only accepts cases it has registered on its own side. Extraction and timeline "
+                f"evaluation work for any case dropped into data/, but a real summary can only be "
+                f"generated for a case the platform itself already knows about."
+            ) from exc
+        raise
     tracker.record("pipeline_demo_summarize", response)
     summary_text = response["summary"]
     cost_usd = response.get("cost_usd", 0.0)

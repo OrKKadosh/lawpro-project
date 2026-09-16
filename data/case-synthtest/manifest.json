@@ -1,0 +1,17 @@
+{
+  "case_id": "case-synthtest",
+  "label": "Reyes — rear-end MVA, low-speed, Mar 2024 (synthetic CLI test fixture, no golden/no pre-generated summaries)",
+  "source_medrec_case": null,
+  "documents": [
+    {
+      "doc_id": "01_ed_visit",
+      "title": "01_ed_visit.pdf",
+      "pages": 3
+    },
+    {
+      "doc_id": "02_ortho_and_pt",
+      "title": "02_ortho_and_pt.pdf",
+      "pages": 4
+    }
+  ]
+}

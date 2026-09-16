@@ -21,8 +21,9 @@ from pathlib import Path
 
 from chronos import client
 from chronos import timeline as chronos_timeline
+from chronos.client import PlatformError
 from evalkit.budget import BudgetTracker
-from evalkit.discover import discover_cases, get_case
+from evalkit.discover import discover_cases
 from evalkit.extraction.prepare import run_full_extraction
 from evalkit.judge.faithfulness_coverage import judge_summary
 from evalkit.judge.material_facts import get_or_build_material_facts
@@ -41,6 +42,47 @@ def _load_candidate_timeline(case_id: str) -> list[dict]:
         print(f"no extracted timeline found for {case_id} -- run `extract {case_id}` first", file=sys.stderr)
         sys.exit(1)
     return json.loads(path.read_text(encoding="utf-8"))["timeline"]["events"]
+
+
+def _resolve_case(raw: str):
+    """Accept either a case_id or its 1-based number from the same listing
+    `list-cases`/the interactive picker print -- typing the number you just
+    saw on screen is the natural thing to do, and every subcommand that
+    takes a case_id should accept it, not just the interactive picker."""
+    cases = discover_cases()
+    if raw.isdigit():
+        idx = int(raw)
+        if 1 <= idx <= len(cases):
+            return cases[idx - 1]
+    for case in cases:
+        if case.case_id == raw:
+            return case
+    known = ", ".join(f"{i}={c.case_id}" for i, c in enumerate(cases, 1))
+    print(f"Unknown case '{raw}'. Known cases: {known}", file=sys.stderr)
+    sys.exit(1)
+
+
+def _print_unknown_case_on_platform(case_id: str) -> None:
+    """The /v1/summarize endpoint only accepts case_ids the platform itself
+    has registered -- it's checked server-side (chronos/client.py's
+    `summarize()` docstring), independent of what this pipeline can discover
+    under data/. This is a real, load-bearing limitation, not a bug here:
+    extraction, timeline building, and evaluation-against-our-own-extraction
+    all work for any case dropped into data/ (CLAUDE.md's no-hardcoding
+    rule), but a genuinely new case can't get a real summary generated for
+    it, because the platform has no record of it."""
+    try:
+        known = ", ".join(c["case_id"] for c in client.cases()["cases"])
+    except Exception:
+        known = "(couldn't reach /v1/cases to list them)"
+    print(
+        f"The live platform doesn't recognize case_id '{case_id}' for /v1/summarize -- "
+        f"it only accepts cases it has registered on its own side: {known}. This is a platform-side "
+        f"limitation, not a gap in this pipeline: extraction and timeline evaluation work for any case "
+        f"dropped into data/, but generating a real summary is only possible for a case the platform "
+        f"itself already knows about.",
+        file=sys.stderr,
+    )
 
 
 def cmd_list_cases(args: argparse.Namespace) -> None:
@@ -72,7 +114,7 @@ def prompt_choose_case(cases: list, input_fn=input):
 
 
 def cmd_extract(args: argparse.Namespace) -> None:
-    case = get_case(args.case_id)
+    case = _resolve_case(args.case_id)
     tracker = BudgetTracker()
     result = run_full_extraction(case, tracker)
     CANDIDATE_TIMELINES_DIR.mkdir(parents=True, exist_ok=True)
@@ -85,7 +127,7 @@ def cmd_extract(args: argparse.Namespace) -> None:
 
 
 def cmd_evaluate_timeline(args: argparse.Namespace) -> None:
-    case = get_case(args.case_id)
+    case = _resolve_case(args.case_id)
     timeline_events = _load_candidate_timeline(case.case_id)
     tracker = BudgetTracker()
     try:
@@ -107,20 +149,35 @@ def cmd_evaluate_timeline(args: argparse.Namespace) -> None:
 
 
 def cmd_summarize(args: argparse.Namespace) -> None:
-    case = get_case(args.case_id)
+    case = _resolve_case(args.case_id)
     timeline_events = _load_candidate_timeline(case.case_id)
     # Non-negotiable per CLAUDE.md: validate before ever calling /v1/summarize.
     chronos_timeline.parse({"events": timeline_events})
     tracker = BudgetTracker()
     tracker.check_floor()  # /v1/summarize is a paid call too -- the safety floor applies to it, not just /v1/generate
-    response = client.summarize(args.tool, case_id=case.case_id, timeline=timeline_events)
+    try:
+        response = client.summarize(args.tool, case_id=case.case_id, timeline=timeline_events)
+    except PlatformError as exc:
+        # "not_found" is shared between "unknown case_id" and "unknown tool letter" --
+        # the platform only distinguishes them in `detail` (an unknown-tool error carries
+        # `available_tools`), not in `type`. Printing "unknown case" for what was actually
+        # an unknown tool would be actively misleading (caught for real: `summarize
+        # case-vance ZZZ` -- a perfectly valid, registered case -- first reported
+        # "doesn't recognize case_id 'case-vance'", which is false).
+        if exc.type == "not_found" and "available_tools" in exc.detail:
+            print(f"No summarization tool '{args.tool}' -- available: {', '.join(exc.detail['available_tools'])}", file=sys.stderr)
+            sys.exit(1)
+        if exc.type == "not_found":
+            _print_unknown_case_on_platform(case.case_id)
+            sys.exit(1)
+        raise
     tracker.record("cli_summarize", response)
     print(json.dumps(response, indent=2))
     print(tracker.summary())
 
 
 def cmd_evaluate(args: argparse.Namespace) -> None:
-    case = get_case(args.case_id)
+    case = _resolve_case(args.case_id)
     summary_text = Path(args.summary_path).read_text(encoding="utf-8")
     timeline_events = _load_candidate_timeline(case.case_id)
     tracker = BudgetTracker()
@@ -163,7 +220,7 @@ def cmd_run(args: argparse.Namespace) -> None:
     from evalkit.benchmark.pipeline_demo import choose_tool_for_case, run_pipeline_demo_for_case
 
     if args.case_id:
-        case = get_case(args.case_id)
+        case = _resolve_case(args.case_id)
     else:
         case = prompt_choose_case(discover_cases())
         print(f"\n-> Running the full pipeline for {case.case_id}\n")
@@ -202,7 +259,11 @@ def cmd_run(args: argparse.Namespace) -> None:
 
     print()
     print("=== Step 4 of 4: fact-check the summary and score it ===")
-    demo_result = run_pipeline_demo_for_case(case, tracker, tool=tool)
+    try:
+        demo_result = run_pipeline_demo_for_case(case, tracker, tool=tool)
+    except RuntimeError as exc:
+        print(f"-> {exc}", file=sys.stderr)
+        sys.exit(1)
     print()
     print(render_judge_output(case.case_id, tool, demo_result["judge_output"], demo_result["scorecard"]))
 

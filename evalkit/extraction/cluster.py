@@ -69,6 +69,43 @@ def facts_clearly_distinct(cf_a: dict[str, Any], cf_b: dict[str, Any]) -> bool:
     checking. A populated name field beats a blunt text-overlap threshold
     whenever the two names disagree entirely.
 
+    Checks EVERY populated field pair, not just the first one found -- an
+    existence check ("does any field pair disagree"), order-independent by
+    construction, since only a disagreement causes an early return; an
+    agreement never stops the scan early. This matters: two different
+    "fix the field check" attempts were tried this session and BOTH
+    reverted after real-data testing found them unsafe (full account in
+    FINDINGS.md/DECISIONS.md) --
+      1. "Stop at the first field both candidates populate, in a
+         most-specific-first order" -- this looked like it would fix the
+         Harrison/X-ray case-vance fabrication (concept disagreeing vetoed
+         a merge procedure would have allowed), but a second adversarial
+         review, testing it against the real cached candidates end-to-end
+         (not just a unit-test fixture), found it silently dropped a
+         materiality="high" billing event (an Anesthesia line, CPT 01402)
+         from case-vance's actual final timeline -- because the boilerplate
+         token "CPT" alone was enough to make two DIFFERENT billed
+         procedures' `procedure` fields register as "agreeing," and
+         stopping at that first comparable field meant a genuinely
+         disagreeing `diagnosis_or_finding`/`concept` was never consulted.
+         ~16 case-vance and 4 case-davis real clusters were affected.
+      2. "Field agreement forces a merge" (not just non-blocking) -- tested
+         separately, collapsed case-vance's final timeline from 202 to 137
+         events (a third of it gone), for the same underlying reason: a
+         single shared boilerplate word is too weak a signal to override
+         Jaccard corpus-wide.
+    Both attempts changed WHICH fields get consulted (via ordering/
+    early-stopping); the original "check everything, block on any
+    disagreement" property in THIS version never had that flaw -- it's
+    restored here deliberately, unchanged from before this session's
+    investigation. The Harrison/X-ray fabrication remains genuinely
+    unresolved as a result (a real, disclosed limitation, not silently
+    dropped) -- see FINDINGS.md for why: a proper fix needs boilerplate
+    tokens (billing codes, generic category words) excluded from the
+    word-overlap comparison, which is a larger, more carefully-tested
+    change than this session's remaining budget/time supported doing
+    safely.
+
     Deliberately compares each field to ITSELF only (medication vs.
     medication, concept vs. concept), never pooling every field's words
     into one bag -- an earlier version of this idea pooled fields and

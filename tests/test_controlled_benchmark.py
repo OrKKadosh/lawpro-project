@@ -8,7 +8,11 @@ from evalkit.discover import discover_cases
 
 
 def test_both_cases_have_exactly_four_tools_two_runs_each():
-    cases = {c.case_id: c for c in discover_cases()}
+    # Scoped to the two cases with pre-generated controlled-benchmark summaries --
+    # not "every case discover_cases() finds". Other cases (e.g. a synthetic CLI
+    # test fixture under data/) legitimately have no summaries/ dir at all, and
+    # discover_cases() finding them is the intended behavior, not a regression.
+    cases = {c.case_id: c for c in discover_cases() if c.case_id in ("case-vance", "case-davis")}
     assert set(cases) == {"case-vance", "case-davis"}
     for case in cases.values():
         runs = load_controlled_benchmark(case)

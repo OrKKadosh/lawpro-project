@@ -160,6 +160,56 @@ def test_same_medication_reworded_across_sources_still_merges():
     assert len(clusters) == 1, "same medication restated across two sources should still merge into one event"
 
 
+def test_clearly_distinct_blocks_on_any_disagreeing_field_regardless_of_order():
+    """Characterizes the current, deliberately-kept-simple behavior after
+    two different "smarter" replacements were each tried and reverted this
+    session (full account in FINDINGS.md/DECISIONS.md, both found unsafe
+    via real-data testing, not just a hypothetical concern):
+
+    1. "Decide on the single most-specific field both candidates populate,
+       stop there" -- looked like it would fix the Harrison/X-ray
+       case-vance fabrication below, but silently dropped a
+       materiality="high" billing event (Anesthesia CPT 01402) from
+       case-vance's real final timeline, because a shared boilerplate
+       token ("CPT") made two DIFFERENT billed procedures' `procedure`
+       fields register as "agreeing" and the genuinely-disagreeing
+       `diagnosis_or_finding`/`concept` fields were never even checked.
+    2. "Field agreement forces a merge" -- collapsed case-vance's final
+       timeline from 202 to 137 events for the same underlying reason.
+
+    So `facts_clearly_distinct()` stays a simple existence check: does ANY
+    populated field pair disagree, checked in full regardless of order.
+    This correctly blocks the CPT-boilerplate case (a real regression
+    caught in review, reproduced here) and, as a KNOWN, DISCLOSED, still-
+    open limitation, also still blocks the Harrison/X-ray merge that a
+    smarter check could in principle allow (not asserted as desired
+    behavior -- see FINDINGS.md for why a real fix needs boilerplate-token
+    filtering, not just field reordering)."""
+    from evalkit.extraction.cluster import facts_clearly_distinct
+
+    # Regression catch: two DIFFERENT billed procedures on the same visit must
+    # stay distinct even though their procedure fields share the boilerplate
+    # token "CPT" -- the exact real-data shape that broke the reverted fix.
+    or_services = {"concept": "surgical procedure", "procedure": "Operating Room Services, CPT 27535"}
+    anesthesia = {"concept": "anesthesia", "procedure": "Anesthesia, CPT 01402"}
+    assert facts_clearly_distinct(or_services, anesthesia), (
+        "two different billed procedures sharing only the boilerplate token 'CPT' "
+        "must still be flagged clearly distinct, not silently merged"
+    )
+
+    # Known, disclosed, still-open limitation (not desired behavior, just the
+    # current reality): concept disagreeing still blocks this merge even
+    # though procedure agrees -- see the Harrison/X-ray fabrication in
+    # FINDINGS.md. This assertion exists so a future attempt to fix it
+    # changes this test deliberately, not by silent side effect.
+    finch = {"concept": "imaging study", "procedure": "X-ray cervical spine, three-view series"}
+    harrison = {"concept": "X-ray cervical spine (prior)", "procedure": "X-ray"}
+    assert facts_clearly_distinct(finch, harrison), (
+        "documents the known-open Harrison/X-ray limitation -- concept disagreement still "
+        "blocks this merge under the current, deliberately-simple, safe implementation"
+    )
+
+
 def test_salience_compression_does_not_merge_distinct_routine_medications():
     """Regression: found in the real case-davis extraction run (after the
     prompt/clustering fixes) -- 36 routine medication events shared no

@@ -22,7 +22,7 @@ def test_cmd_evaluate_timeline_degrades_gracefully_with_no_reference(monkeypatch
     crash uncaught on any case with no reference timeline, even though
     `cmd_run`'s inline call to the same function was already fixed --
     PROGRESS.md claimed this was handled everywhere; it wasn't."""
-    monkeypatch.setattr(cli, "get_case", lambda case_id: _FakeCase())
+    monkeypatch.setattr(cli, "_resolve_case", lambda case_id: _FakeCase())
     monkeypatch.setattr(cli, "_load_candidate_timeline", lambda case_id: [{"date": "2024-01-01", "type": "diagnosis", "detail": "x"}])
 
     def fake_stage0_evaluate(case, events, tracker):
@@ -39,7 +39,7 @@ def test_cli_summarize_checks_budget_floor_before_the_paid_call(monkeypatch):
     consulted the budget floor -- check_floor() was only ever called by
     call_json (used for /v1/generate), leaving the single most expensive
     call in the pipeline with no floor protection at all."""
-    monkeypatch.setattr(cli, "get_case", lambda case_id: _FakeCase())
+    monkeypatch.setattr(cli, "_resolve_case", lambda case_id: _FakeCase())
     monkeypatch.setattr(cli, "_load_candidate_timeline", lambda case_id: [{"date": "2024-01-01", "type": "diagnosis", "detail": "x"}])
     monkeypatch.setattr(cli.chronos_timeline, "parse", lambda x: x)
 
